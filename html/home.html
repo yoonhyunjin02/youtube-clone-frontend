@@ -4,83 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
+    <link rel="stylesheet" href="../css/header.css">
 </head>
 <body>
     <!-- header : 홈 화면 상단바 -->
     <header>
-      <!-- 로고영역 -->
-      <div class="left-section" >
-        <img src="../assets\icons\hamburger.svg" alt="menu" style="background-color: black; padding: 10px;">
-        <img src="../assets\icons\Youtube-Logo.svg" alt="youtube logo">
-        <div class="logo">YouTube</div>
-      </div>
+        <!-- 로고영역 -->
+            <div class="left-section" >
+                <img src="../assets\icons\hamburger.svg" alt="menu" style="background-color: black; padding: 10px;">
+                <img src="../assets\icons\Youtube-Logo.svg" alt="youtube logo">
+                <div class="logo">YouTube</div>
+            </div>
 
         <!--검색창 영역-->
-        <form class="search-form">
-          <input type="search" placeholder="Search..."> 
-          <button type="submit">
-            <img src="../assets\icons\SearchBox-Button.svg" alt="searchicon">
-          </button>
-        </form>
+            <form class="search-form">
+                <input type="search" placeholder="Search..."> 
+                <button type="submit">
+                  <img src="../assets\icons\SearchBox-Button.svg" alt="searchicon">
+                </button>
+            </form>
 
       <!---오른쪽 아이콘 영역-->
-      <div class="right-section">
-        <div class="icon mic"><img src="../assets\icons\mic.svg" alt="micicon"></div>
-        <div class="icon Create" >
-          <img src="../assets\icons\Create.svg" alt="video" style="background-color: black; padding: 10px;">
-        </div>
-        <div class="icon Apps" >
-          <img src="../assets\icons\Apps.svg" alt="apps" style="background-color: black; padding: 10px;">
-        </div>
-        <div class="icon Notifications" >
-          <img src="../assets\icons\Notifications.svg" alt="alarm" style="background-color: black; padding: 10px;">
-        </div>
-        <div class="icon profile"><img src="../assets\icons\Profile-pic.svg" alt="profile"></div>
-      </div>
+          <div class="right-section">
+              <div class="icon mic"><img src="../assets\icons\mic.svg" alt="micicon"></div>
+                  <div class="icon Create" >
+                      <img src="../assets\icons\Create.svg" alt="video" style="background-color: black; padding: 10px;">
+                  </div>
+              <div class="icon Apps" >
+                  <img src="../assets\icons\Apps.svg" alt="apps" style="background-color: black; padding: 10px;">
+              </div>
+              <div class="icon Notifications" >
+                  <img src="../assets\icons\Notifications.svg" alt="alarm" style="background-color: black; padding: 10px;">
+              </div>
+                  <div class="icon profile"><img src="../assets\icons\Profile-pic.svg" alt="profile"></div>
+          </div>
   </header>
 
-    <!-- nav : 홈 화면 네비게이션 -->
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Explore</a></li>
-            ...
-        </ul>
-    </nav>
 
-    <!-- main : 홈 화면 블록 -->
-    <main>
-        <!-- section : 홈 화면 필터 버튼-->
-        <section class="filter-bar">
-            <button>All</button>
-            <button>Item</button>
-            ...
-        </section>
-        
-        <!-- section : 홈 화면 비디오-->
-        <section class="video-grid">
-
-            <!-- article : 홈 화면 비디오-->
-            <article class="video-card">
-                <a href="영상링크">
-                    <figure>
-                        <img src="썸네일" alt="Video thumbnail">
-                        <figcaption class="duration">영상 재생 시간</figcaption>
-                    </figure>
-
-                    <!-- div : 홈 화면 비디오정보-->
-                    <div class="video-info">
-                        <img class="channel-avatar" src="영상 게시자 프로필 사진" alt="Jesica Lambert"/>
-                        <div class="video-text">
-                        <h3 class="video-title">영상 제목</h3>
-                        <p class="channel-name">게시자 이름</p>
-                        <p class="meta-info">조회수 및 영상 올린 시간</p>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            ...
-        </section>
-    </main>
 </body>
 </html>
