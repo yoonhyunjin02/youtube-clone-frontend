@@ -1,29 +1,31 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-  }
-  img{
+}
+img{
     width: 24px;
     height: 24px;
-  }
+}
+.sidebar{
+    padding-left:8px;
+    padding-top:1px;
+    background-color: rgba(33, 33, 33,1);
+    width:240px;
+}
 .nav-section{
     border-top:1px solid rgba(48, 48, 48,1);
     padding:0px;
     width:224px;
 }
 .nav-title{
-    padding-left:24px;
+    padding-left:20px;
     font-weight: 700;
     font-size:14px;
     line-height: 100%;
     letter-spacing: 0%;
     color:rgba(170,170,170,1);
 }
-.sidebar{
-    padding:8px;
-    background-color: rgba(33, 33, 33,1);
-    width:240px;
-}
+
 ul{
     list-style-type: none;
     padding: 5px;  
@@ -36,8 +38,8 @@ a{
     padding-right: 8px;
     display: flex;
     align-items: center;
-    gap: 12px;               /* 아이콘과 텍스트 사이 간격 */
-    padding: 10px 20px;      /* 좌우 여백을 좀 더 줘서 가운데로 보이게 */
+    gap: 24px;               
+    padding: 10px 20px;      
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -51,4 +53,14 @@ a:hover{
 }
 section{
     color:white;
+}
+li.home a {
+    background-color: rgba(48, 48, 48, 1);
+}
+li.home a:hover {
+    background-color: rgb(56, 56, 56);
+}
+.top .nav-section {
+    
+    border-top: none;
 }
