@@ -1,118 +1,146 @@
-/* 전체 초기화 */
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #0f0f0f;
-  color: white;
-  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+    color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
-.top-bar {
-  height: 56px;
-  background-color: #212121;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.05);
+header {
+    height: 56px;
+    width: 100%;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 1px 1px rgba(255,255,255,0.05);
 }
 
-/* 좌측 */
 .left-section {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
-.left-section img {
-  height: 24px;
+.menu-icon {
+    height: 24px;          /* 원하는 크기 */
+    width: 24px;           /* 비율 고정하려면 height만 쓰면 됨 */
+    cursor: pointer;
+    padding: 8px;          /* 패딩 (아이콘 주변 여백) */
+    border-radius: 50%;    /* 원형 hover 효과용 */
 }
 
-/* 가운데 */
-.center-section {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  justify-content: center;
+.menu-icon:hover {
+    background-color: #303030;
+}
+
+.youtube-logo {
+    height: 20px;          /* 유튜브 로고 크기 */
+    cursor: pointer;
 }
 
 .search-form {
-  display: flex;
-  align-items: center;
-  background-color: #121212;
-  height: 40px;
-  width: 470px;
-  border: 1px solid #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;        /* ← mic icon도 수직 정렬 */
+    flex: 1;
 }
 
 .search-form input {
-  flex: 1;
-  height: 100%;
-  padding: 0 12px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 16px;
-  outline: none;
-  border-radius: 0;
+    height: 36px;
+    width: 362px;
+    background-color: #121212;
+    color: white;
+    border: 1px solid #303030;
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    padding: 0 16px;
+    font-size: 14px;
+    outline: none;
 }
 
-.search-button {
-  background-color: #303030;
-  border: none;
-  width: 60px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease;
+.search-form button {
+    height: 36px;
+    width: 50px;
+    background-color: #303030;
+    border: 1px solid #303030;
+    /* border-left: none; */
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
-.search-button:hover {
-  background-color: #444;
+.search-form button img {
+    width: 24px;
+    height: 24px;
 }
 
-.mic-icon {
-  background-color: #000;
-  border: none;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease;
+.mic {
+    height: 36px;
+    width: 36px;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: 5px;              /* ← 검색 버튼과 마이크 사이 여백 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.mic-icon:hover {
-  background-color: #333;
+.mic:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* ← hover 효과 추가 */
 }
 
-/* 우측 */
+.mic img {
+    width: 13px;
+    height: 18px;
+}
+
+
 .right-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;                     /* ← 피그마 기준: 아이콘 사이 10px */
+    margin-right: 16px;
+    height: 40px;
 }
 
-.icon img,
-.mic-icon img,
-.search-button img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  transition: transform 0.2s ease;
+.right-section .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;                    /* ← padding 제거! */
+    border-radius: 50%;            /* ← hover 효과 원형 처리 */
 }
 
-.icon:hover img,
-.search-button:hover img,
-.mic-icon:hover img {
-  transform: scale(1.1);
+.right-section .icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.icon.profile img {
-  border-radius: 50%;
+.right-section .icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;           /* ← 아이콘 잘리지 않고 꽉 차게 */
 }
 
+/* 프로필만 따로 처리 */
+.right-section .icon.profile {
+    width: 40px;                  /* ← 너비 40px 유지 */
+    height: 40px;                 /* ← 높이 40px 유지 */
+    border-radius: 50%;           /* ← 동그랗게 */
+    overflow: hidden;             /* ← 원형 안쪽 넘치는 이미지 자르기 */
+}
+
+.right-section .icon.profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;           /* ← 원형 프로필 */
+    object-fit: cover;
+}
