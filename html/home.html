@@ -5,11 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
     <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- header : 홈 화면 상단바 -->
     <header>
+        <!-- 로고영역 -->
+        <div class="left-section">
+            <img class="menu-icon" src="../assets/icons/hamburger.svg" alt="menu">
+            <img class="youtube-logo" src="../assets/icons/Youtube-Logo.svg" alt="youtube logo">
+        </div>
+
+        <!--검색창 영역-->
+        <form class="search-form">
+            <input type="search" placeholder="Search"> 
+            <button type="submit"><img src="../assets\icons\search.svg" alt="search"></button>
+            <div class="icon mic"><img src="../assets\icons\mic.svg" alt="micicon"></div>
+        </form>
+
+        <!---오른쪽 아이콘 영역-->
+        <div class="right-section">
+            <div class="icon Create" ><img src="../assets\icons\Create.svg" alt="video"></div>
+            <div class="icon Apps" ><img src="../assets\icons\Apps.svg" alt="apps"></div>
+            <div class="icon Notifications" ><img src="../assets\icons\Notifications.svg" alt="alarm"></div>
+            <div class="icon profile"><img src="../assets\icons\Profile-pic.svg" alt="profile"></div>
+        </div>
     </header>
 
     <!-- nav : 홈 화면 네비게이션 -->
@@ -23,7 +44,6 @@
             </ul>
         </section>
 
-        
         <!-- 라이브러리 -->
         <section>
             <ul class="nav-section">
@@ -35,12 +55,9 @@
                 <li><a href="#"><img src="../assets/icons/showmore.svg" alt="Show More icon" /><span>Show More</span></a></li>
             </ul>
         </section>
-
-        
         
         <!--구독자 목록-->
         <section aria-label="SUBSCRIPTIONS">
-            
             <ul class="nav-section">
                 <h3 class="nav-title">SUBSCRIPTIONS</h2>
                 <li><a href="#"><img src="../assets/img/JamesGouse.png" alt="James Gouse" /><span>James Gouse</span></a></li>
@@ -54,7 +71,6 @@
             </ul>
         </section>
         
-    
         <!--탐색-->
         <section aria-label="MORE FROM YOUTUBE">
             
@@ -67,7 +83,6 @@
             </ul>
         </section>
         
-
         <!--설정-->
         <section>
             <ul class="nav-section">
@@ -77,8 +92,6 @@
                 <li><a href="#"><img src="../assets/icons/sendfeedback.svg" alt="Sendfeedback" /><span>Send feedback</span></a></li>
             </ul>
         </section>
-
-        
     </nav>
 
     <!-- main : 홈 화면 블록 -->
