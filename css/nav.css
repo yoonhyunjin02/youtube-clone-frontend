@@ -26,7 +26,7 @@
     color:rgba(170,170,170,1);
 }
 
-ul{
+.sidebar ul{
     list-style-type: none;
     padding: 5px;  
     width:224px;
