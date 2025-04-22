@@ -1,0 +1,21 @@
+# macOS (맥에서 생기는 쓸데없는 파일)
+.DS_Store
+
+# Windows (숨김 파일)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 로그 파일
+*.log
+
+# node_modules (npm install 하면 생기는 폴더)
+node_modules/
+
+# 빌드 결과물 (혹시 나중에 build 하게 되면)
+dist/
+build/
+
+# 환경 변수 (민감 정보 저장할 때 사용 가능)
+.env
+.env.*
