@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+</head>
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <header>
+        <div class="logo">YouTube 로고</div>
+        <input type="search" placeholder="Search..."> 검색창
+        <div class="icons">마이크 아이콘</div>
+        <div class="icons">동영상+. 탭, 알림, 프로필 아이콘</div>
+    </header>
+
+    <!-- nav : 홈 화면 네비게이션 -->
+    <nav class="sidebar">
+        <!-- 기본 메뉴 -->
+        <section>
+            <ul class="nav-section">
+                <li><a href="#"><img src="../assets/icons/home.svg" alt="Home icon" /><span>Home</span></a></li>
+                <li><a href="#"><img src="../assets/icons/explore.svg" alt="Explore icon" /><span>Explore</span></a></li>
+                <li><a href="#"><img src="../assets/icons/subscriptions.svg" alt="Subscriptions icon" /><span>Subscriptions</span></a></li>
+            </ul>
+        </section>
+
+        <hr/>
+
+        <!-- 라이브러리 -->
+        <section>
+            <ul class="nav-section">
+                <li><a href="#"><img src="../assets/icons/library.svg" alt="Library icon" /><span>Library</span></a></li>
+                <li><a href="#"><img src="../assets/icons/history.svg" alt="History icon" /><span>History</span></a></li>
+                <li><a href="#"><img src="../assets/icons/yourvideos.svg" alt="Your Videos icon" /><span>Your Videos</span></a></li>
+                <li><a href="#"><img src="../assets/icons/watchlater.svg" alt="Watch Later icon" /><span>Watch Later</span></a></li>
+                <li><a href="#"><img src="../assets/icons/likedvideos.svg" alt="Liked Videos icon" /><span>Liked Videos</span></a></li>
+                <li><a href="#"><img src="../assets/icons/showmore.svg" alt="Show More icon" /><span>Show More</span></a></li>
+            </ul>
+        </section>
+
+        <hr/>
+        
+        <!--구독자 목록-->
+        <section aria-label="Subscriptions">
+            <h2 class="nav-title">SUBSCRIPTIONS</h2>
+            <ul class="nav-section">
+                <li><a href="#"><img src="../assets/img/JamesGouse.png" alt="James Gouse" /><span>James Gouse</span></a></li>
+                <li><a href="#"><img src="../assets/img/AlanCooper.png" alt="Alan Cooper" /><span>Alan Cooper</span></a></li>
+                <li><a href="#"><img src="../assets/img/MarcusLevin.png" alt="Marcus Levin" /><span>Marcus Levin</span></a></li>
+                <li><a href="#"><img src="../assets/img/AlexisSears.png" alt="Alexis Sears" /><span>Alexis Sears</span></a></li>
+                <li><a href="#"><img src="../assets/img/JesicaLambert.png" alt="Jesica Lambert" /><span>Jesica Lambert</span></a></li>
+                <li><a href="#"><img src="../assets/img/AnnaWhite.png" alt="Anna White" /><span>Anna White</span></a></li>
+                <li><a href="#"><img src="../assets/img/SkylarDias.png" alt="Skylar Dias" /><span>Skylar Dias</span></a></li>
+                <li><a href="#"><img src="../assets/icons/showmore.svg" alt="Show More icon" /><span>Show 13 More</span></a></li>
+            </ul>
+        </section>
+        <hr/>
+    
+        <!--탐색-->
+        <section aria-label="More from YouTube">
+            <h2 class="nav-title">MORE FROM YOUTUBE</h2>
+            <ul class="nav-section">
+                <li><a href="#"><img src="../assets/icons/youtubepremium.svg" alt="youtubepremium" /><span>YouTube Premium</span></a></li>
+                <li><a href="#"><img src="../assets/icons/gaming.svg" alt="Gaming" /><span>Gaming</span></a></li>
+                <li><a href="#"><img src="../assets/icons/live.svg" alt="Live" /><span>Live</span></a></li>
+                <li><a href="#"><img src="../assets/icons/sports.svg" alt="sports" /><span>sports</span></a></li>
+            </ul>
+        </section>
+        <hr/>
+
+        <!--설정-->
+        <section>
+            <ul class="nav-section">
+                <li><a href="#"><img src="../assets/icons/settings.svg" alt="Settings" /><span>Settings</span></a></li>
+                <li><a href="#"><img src="../assets/icons/reporthistory.svg" alt="Reporthistory" /><span>Report history</span></a></li>
+                <li><a href="#"><img src="../assets/icons/help.svg" alt="Help" /><span>Help</span></a></li>
+                <li><a href="#"><img src="../assets/icons/sendfeedback.svg" alt="Sendfeedback" /><span>Send feedback</span></a></li>
+            </ul>
+        </section>
+
+        <hr/>
+    </nav>
+
+    <!-- main : 홈 화면 블록 -->
+    <main>
+        <!-- section : 홈 화면 필터 버튼-->
+        <section class="filter-bar">
+            <button>All</button>
+            <button>Item</button>
+            <!-- 필터 버튼 추가 예정 -->
+        </section>
+        
+        <!-- section : 홈 화면 비디오-->
+        <section class="video-grid">
+
+            <!-- article : 홈 화면 비디오-->
+            <article class="video-card">
+                <a href="영상링크">
+                    <figure>
+                        <img src="썸네일" alt="Video thumbnail">
+                        <figcaption class="duration">영상 재생 시간</figcaption>
+                    </figure>
+
+                    <!-- div : 홈 화면 비디오정보-->
+                    <div class="video-info">
+                        <img class="channel-avatar" src="영상 게시자 프로필 사진" alt="Jesica Lambert"/>
+                        <div class="video-text">
+                        <h2 class="video-title">영상 제목</h2>
+                        <p class="channel-name">게시자 이름</p>
+                        <p class="meta-info">조회수 및 영상 올린 시간</p>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>
