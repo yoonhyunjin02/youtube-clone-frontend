@@ -1,3 +1,4 @@
+/* 전체 초기화 */
 body {
   margin: 0;
   padding: 0;
@@ -6,44 +7,111 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-header {
+.top-bar {
   height: 56px;
-  background-color: #212121; /* 피그마 기준 */
+  background-color: #212121;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
-  box-shadow: 0 1px 1px rgba(255,255,255,0.05);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
+/* 좌측 */
 .left-section {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
+.left-section img {
+  height: 24px;
 }
 
-.search-form {
+/* 가운데 */
+.center-section {
   display: flex;
+  align-items: center;
+  gap: 10px;
   flex: 1;
   justify-content: center;
 }
 
-.search-form input {
-  height: 40px;
-  width: 60%;
+.search-form {
+  display: flex;
+  align-items: center;
   background-color: #121212;
-  color: white;
+  height: 40px;
+  width: 470px;
   border: 1px solid #303030;
-  border-radius: 20px 0 0 20px;
-  padding: 0 16px;
-  font-size: 14px;
-  outline: none;
 }
 
-.search-form button {
-  height:
+.search-form input {
+  flex: 1;
+  height: 100%;
+  padding: 0 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  border-radius: 0;
+}
+
+.search-button {
+  background-color: #303030;
+  border: none;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #444;
+}
+
+.mic-icon {
+  background-color: #000;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.mic-icon:hover {
+  background-color: #333;
+}
+
+/* 우측 */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon img,
+.mic-icon img,
+.search-button img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+
+.icon:hover img,
+.search-button:hover img,
+.mic-icon:hover img {
+  transform: scale(1.1);
+}
+
+.icon.profile img {
+  border-radius: 50%;
+}
