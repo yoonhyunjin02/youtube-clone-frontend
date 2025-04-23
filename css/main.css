@@ -1,11 +1,32 @@
 main {
-  max-width: 1200px; /* 혹은 원하는 최대 너비 */
-  margin: 0 auto;    /* 중앙 정렬 */
-  padding: 20px;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
+.filter-bar {
+  width: 1200px;
+  flex-shrink: 0;
+  background-color: rgba(33, 33, 33, 1);
 }
 
 .video-grid {
   display: grid;
+  padding: 20px;
   grid-template-columns: repeat(4, minmax(276px, 1fr));
   gap: 24px;
 }
