@@ -1,79 +1,84 @@
-.video-grid {
-  width: 1151px;
-  height: 1395px;
-  top: 138px;
-  left: 264px;
-
+main {
+  max-width: 1200px; /* 혹은 원하는 최대 너비 */
+  margin: 0 auto;    /* 중앙 정렬 */
+  padding: 20px;
 }
 
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(276px, 1fr));
+  gap: 24px;
+}
 
 .video-card {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10x;
-  padding: 0;
-  margin: 0;
   background-color: #121212;
-  border-radius: 8px;
+  overflow: hidden;
 }
 
 .video-card a {
-  width: 276px;
-  height: 247px;
-  left: 292px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .video-figure {
   position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .video-figure img {
-  width:276px;
-  height: 155px;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
 .video-length {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
+  bottom: 2px;
+  right: 2px;
   background: rgba(0, 0, 0, 0.75);
   color: white;
   font-size: 12px;
   padding: 2px 6px;
-  border-radius: 4px;
 }
-
 
 .video-info {
   display: flex;
-  margin-top: 10px;
-  width: 252px;
-  height: 74px;
-  top: 155px;
   gap: 10px;
+  padding: 12px 10px;
 }
 
-.video-info .video-title {
-  color: #ffffff;
-
-}
 .video-info img {
   width: 36px;
   height: 36px;
-  border-radius: 24px;
+  border-radius: 50%;
 }
 
 .video-description {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0px;
+}
+.video-description p {
+  margin: 0; /* 전체 문단 여백 제거 */
+}
+.video-title {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.0;
 }
 
+
 .channel-name,
-.video-card,
 .view,
 .update-date {
   color: #aaaaaa;
-  size: 12px;
+  margin: 0px;
+  font-size: 12px;
+  line-height:0.8;
 }
