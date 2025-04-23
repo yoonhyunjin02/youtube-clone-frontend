@@ -1,0 +1,86 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.filter-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 1200px;
+    height: 58px;
+    background-color: #212121;
+}
+
+.filter-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filter-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.category-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 32px;
+    padding: 8px 12px 8px 12px;
+    background-color: #303030;
+    color: white;
+    border: 1px solid #AAAAAA;
+    border-radius: 999px;
+    font-size: 14px;
+    white-space: nowrap;
+    margin: 12px 12px 12px 0 ;
+}
+
+.category-btn:hover {
+    background-color: #555;
+    color: white;
+}
+
+.category-btn.active {
+    background-color: white;
+    color: black;
+}
+
+.category-btn:first-child {
+    margin-left: 24px;
+}
+
+.scroll-next {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border: none;
+    background-color: #212121;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.scroll-next img {
+    width: 16px;
+    height: 16px;
+    z-index: 1;
+}
+
+
+.scroll-next::before {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.scroll-next:hover::before {
+    background-color: #555; 
+}
