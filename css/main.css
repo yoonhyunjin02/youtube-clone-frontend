@@ -1,18 +1,21 @@
 .video-grid {
+  width: 1151px;
+  height: 1395px;
+  top: 138;
+  left: 264px;
+
+}
+.video-card {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  padding: 24px;
+  background-color: #121212;
+  border-radius: 8px;
 }
 
-.video-card {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 0px;
-}
-.video figure {
+.video-figure {
   position: relative;
-  width: 276px;
-  height: 155px;
 }
 
 .video-figure img {
@@ -22,12 +25,12 @@
 
 .video-length {
   position: absolute;
-  bottom: 8px;       /* 아래에서 8px 위 */
-  right: 8px;        /* 오른쪽에서 8px 왼쪽 */
-  background-color: rgba(0, 0, 0, 0.8);  /* 어두운 반투명 배경 */
-  color: #fff;
-  padding: 2px 6px;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
   font-size: 12px;
+  padding: 2px 6px;
   border-radius: 4px;
 }
 
@@ -35,9 +38,15 @@
 .video-info {
   display: flex;
   margin-top: 10px;
+  width: 252px;
+  height: 74px;
+  top: 155px;
   gap: 10px;
 }
 
+.video-info .video-title {
+  color: #ffffff;
+}
 .video-info img {
   width: 36px;
   height: 36px;
