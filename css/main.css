@@ -4,6 +4,7 @@ main {
   display: block;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -29,17 +30,46 @@ body {
 }
 .video-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  justify-content: center; 
   padding: 20px;
-  /* 이 아래 코드를 수정해야하는데... */
-  grid-template-columns: repeat(4, minmax(250px, 1fr)); /* 자동으로 줄어들지만 최소 250px */
-  gap: 24px;
-  width: 100%;
-  box-sizing: border-box;
+  max-width: 1040px;
+  margin: 0 auto;
 }
 
+/* 1칸 */
+@media (max-width: 599px) {
+  .video-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* 2칸 */
+@media (min-width: 600px) and (max-width: 899px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3칸 */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 4칸 이상은 4칸 고정 */
+@media (min-width: 1200px) {
+  .video-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
 .video-card {
-  overflow: hidden;
-  min-width: 0;
+  width: 100%;
+  max-width: 240px;
 }
 
 .video-card a {
@@ -119,14 +149,3 @@ body {
 .channel-name:hover {
   color: #ffffff;
 }
-
-/* 추가적인 반응형 미디어 쿼리: 필요 시 확장 가능 */
-/* @media (max-width: 480px) {
-  .video-info img {
-      width: 28px;
-      height: 28px;
-  }
-  .video-title {
-      font-size: 12px;
-  }
-} */
