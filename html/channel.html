@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
+    <link rel="icon" type="image/png" href="/assets/img/youtube.png" />
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link  rel="stylesheet" href="../css/main.css">
     <link  rel="stylesheet" href="../css/channel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- header : 홈 화면 상단바 -->
@@ -99,214 +100,237 @@
     <!-- main : 홈 화면 블록 -->
     <main>
         <section class="channel-header">
-            <img src="../assets/img/channelbanner.png" alt="channel">
-            <img src="../assets/img/MarcusLevin.png" alt="MarcusLevin">
-            <h2 class="channel-owner">Marcus Levin</h2>
-            <p class="subscriber-num">1.2M subscribers</p>
+            <img class="channel-banner" src="../assets/img/channelbanner.png" alt="channel">
+
+            <div class="channel-info">
+                <div class="channel-left">
+                    <img  class="channel-profile" src="../assets/img/MarcusLevin.svg" alt="Marcus Levin">
+                    
+                    <div class="channel-text">
+                        <h2 class="channel-owner">Marcus Levin</h2>
+                        <p class="subscriber-num">1.2M subscribers</p>
+                    </div>
+                </div>
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+            
             <nav class="channel-nav">
-                <a href="#">HOME</a>
-                <a href="#">VIDEOS</a>
-                <a href="#">PLAYLIST</a>
-                <a href="#">COMMUNITY</a>
-                <a href="#">CHANNELS</a>
-                <a href="#">ABOUT</a>
-                <img src="../assets/icons/search.svg">
-                <img src="../assets/icons/Top-Menu.svg">
+                <div class="nav-links">
+                    <a href="#" class="active">HOME</a>
+                    <a href="#">VIDEOS</a>
+                    <a href="#">PLAYLIST</a>
+                    <a href="#">COMMUNITY</a>
+                    <a href="#">CHANNELS</a>
+                    <a href="#">ABOUT</a>
+                    <img src="../assets/icons/search.svg">
+                </div>
+
+                <div class="channel-icons">
+                    <img src="../assets/icons/Top-Menu.svg">
+                </div>
             </nav>
         </section>
 
         <section class="channel-featured-video">
-            <!-- 메인 플레이 : video 플레이어가 들어갈 곳(이미지로 처리할지 비디오로 처리할지 모르겠음) -->
-            <img src="../assets/img/Youtube player.png" alt="featured-video">
+            <div class="video-thumbnail">
+                <!-- 메인 플레이 : video 플레이어가 들어갈 곳(이미지로 처리할지 비디오로 처리할지 모르겠음) -->
+                <img src="../assets/img/Youtube player.png" alt="featured-video">
+            </div>
+
             <div class="featured-vid-info">
-                <p class="featured-vid-title">Blind Woodtuner: Tuning passion into fine art<p>
-                <p><span class="featured-vid-views">576,969 views</span> . <span class="featured-vid-date">3 weeks ago</span></p>
-                <p class="featured-vid-description">Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.</p>
+                <h3 class="featured-vid-title">Blind Woodtuner: Tuning passion into fine art</h3>
+                <p><span class="featured-vid-views">576,969 views . </span><span class="featured-vid-date">3 weeks ago</span></p>
+                <p class="featured-vid-description">
+                    Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. 
+                    Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.
+                </p>
             </div>
         </section>
-        <section class="channel-video-list">
-            <div clss="video-list1">
-                <h2>Search On '21</h2>
-                <span class="play-all">
-                    <img src="../assets/icons/play.svg">
-                    <p>PLAY ALL</p>
-                </span>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 1.svg" alt="video1">
-                        <span class="video-length">23:45</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">Marcus Levin</span><br>
-                                <span class="view">329K views.</span>
-                                <span class="update-date">1 week ago</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 2.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 3.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 4.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 5.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
+
+        <section class="channel-video-listall">
+            <div class="channel-video-list">
+                <div class="section-header">
+                    <h2>Search On '21</h2>
+                    <button class="play-all">
+                        <p>▶ PLAY ALL</p>
+                    </button >
+                </div>
+
+                <div class="video-list">
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 1.svg" alt="video1">
+                            <span class="video-length">23:45</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">Marcus Levin</span><br>
+                                    <span class="view">329K views .</span>
+                                    <span class="update-date">1 week ago</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 2.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 3.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 4.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 5.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                </div>
             </div>
-            <div clss="video-list2">
-                <h2>Search On '21</h2>
-                <span class="play-all">
-                    <img src="../assets/icons/play.svg">
-                    <p>PLAY ALL</p>
-                </span>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 1.svg" alt="video1">
-                        <span class="video-length">23:45</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 2.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 3.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 4.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
-                <a href="#">
-                    <figure class="video-figure">
-                        <img src="../assets/img/video 5.svg" alt="video1">
-                        <span class="video-length">12:34</span>
-                    </figure>
-                    <figcaption class="video-info">
-                        <!-- <img class="channel-avatar" src="../assets/img/JamesGouse.png" alt="JamesGouse"> -->
-                        <div class="video-description">
-                            <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
-                            <p>
-                                <span class="channel-name">James Gouse</span><br>
-                                <span class="view">329K Views.</span>
-                                <span class="update-date">1 week age</span>
-                            </p>
-                        </div>
-                    </figcaption>
-                </a>
+
+            <div class="channel-video-list">
+                <div class="section-header">
+                    <h2>Search On '21</h2>
+                    <button class="play-all">
+                        <!-- <img src="../assets/icons/play.svg"> -->
+                        <p>▶ PLAY ALL</p>
+                    </button >
+                </div>
+
+                <div class="video-list">
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 1.svg" alt="video1">
+                            <span class="video-length">23:45</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">Marcus Levin</span><br>
+                                    <span class="view">329K views .</span>
+                                    <span class="update-date">1 week ago</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 2.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 3.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 4.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                    <a href="#">
+                        <figure class="video-figure">
+                            <img src="../assets/img/video 5.svg" alt="video1">
+                            <span class="video-length">12:34</span>
+                        </figure>
+                        <figcaption class="video-info">
+                            <div class="video-description">
+                                <p class="video-title">Lorem ipsum dolor sit amet, consecte...</p>
+                                <p>
+                                    <span class="channel-name">James Gouse</span><br>
+                                    <span class="view">329K Views.</span>
+                                    <span class="update-date">1 week age</span>
+                                </p>
+                            </div>
+                        </figcaption>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
