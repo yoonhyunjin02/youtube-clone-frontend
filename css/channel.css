@@ -1,0 +1,108 @@
+//css 재원님 원래 코드
+
+.channel-header{
+    width: 100%;
+    background-color: rgb(26, 26, 26);
+}
+.channel-header-img{
+    width: 100%;
+    height:192px;
+    
+}
+.channel-header-youtuber{
+    border-radius: 50%;
+    filter: brightness(70%);
+    width: 80px;
+    height: 80px;
+}
+.channel-header-info{
+    display:flex;
+    width:100%;
+    align-items:center;
+    justify-content: space-between;
+    padding-top:6px;
+    padding-right: 65px;
+    padding-left: 65px;
+}
+.subscirbes-button{
+    padding-top:10px;
+    padding-right: 16px;
+    padding-bottom:10px;
+    padding-left: 16px;
+    gap:10px;
+    text-decoration: none;
+    color:white;
+    background-color: rgba(204,0,0,1);
+    size:14px;
+    border-radius: 2px;
+    font-weight: 700;
+    line-height: 100%;
+}
+.channel-header-text{
+    gap:0px;
+    padding-top:18px;
+    padding-bottom:18px;
+
+}
+.channel-owner{
+    font-size:24px;
+    font-weight: 400;
+}
+.subscriber-num{
+    font-size:14px;
+    font-weight: 400;
+    color:rgba(170,170,170,1);
+}
+.channel-owner-info{
+    display:flex;
+    align-items: center;
+    gap:20px;
+}
+.channel-nav{
+    padding-left:65px;
+    padding-right: 65px;
+    display:flex;
+    text-decoration: none;
+    color:white;
+    
+}
+.channel-nav-tool{
+    display:flex;
+    justify-content: space-between;
+}
+.channel-featured-video{
+    display: flex;
+    padding-top:24px;
+    padding-right: 287px;
+    padding-bottom:24px;
+}
+.featured-vid-info{
+    padding-left:24px;
+    width:410px;
+}
+.featured-vid-title{
+    padding-bottom:20px;
+    font-size: 14;
+    letter-spacing: 1%;
+    font-weight: 700;
+    text-decoration:none;
+    color:white;
+}
+.featured-vid-views, .featured-vid-date{
+    font-size:13px;
+    letter-spacing: 0%;
+    color:rgba(170,170,170,1);
+    padding-bottom:19px;
+}
+.featured-vid-description{
+    font-size:14px;
+    letter-spacing: 1%;
+    font-weight: 400;
+}
+.featured-vid-player{
+    width: 448px;
+    height:238px;
+}
+.channel-main{
+    padding-left:65px;
+}
