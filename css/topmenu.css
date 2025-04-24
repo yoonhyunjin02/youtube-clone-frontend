@@ -7,9 +7,13 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    width: 1200px;
-    height: 58px;
+    width: 100%;
+    height: 56px;
     background-color: #212121;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+    white-space: nowrap;
+    padding-bottom: 10px;
 }
 
 .filter-wrapper {
@@ -31,11 +35,12 @@
     padding: 8px 12px 8px 12px;
     background-color: #303030;
     color: white;
-    border: 1px solid #AAAAAA;
+    border: 0.3px solid #AAAAAA;
     border-radius: 999px;
     font-size: 14px;
     white-space: nowrap;
     margin: 12px 12px 12px 0 ;
+    cursor: pointer;
 }
 
 .category-btn:hover {
@@ -53,16 +58,20 @@
 }
 
 .scroll-next {
-    position: relative;
+    position: absolute;      /* 부모 기준으로 고정! */
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);  /* 세로 중앙 정렬 */
     width: 56px;
     height: 56px;
     border: none;
     background-color: #212121;
-    opacity: 0.5;
+    opacity: 0.9;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    cursor: pointer;
+    z-index: 10;             /* 다른 요소 위에! */
 }
 
 .scroll-next img {

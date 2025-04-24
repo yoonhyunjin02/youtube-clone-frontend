@@ -1,8 +1,9 @@
 main {
   flex: 1;
-  max-width: 100%;
   margin: 0 auto;
   display: block;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -10,9 +11,12 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+  background-color: #0f0f0f;
+  color: white;
 }
 
 .container {
+  width: 100%;
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -23,17 +27,19 @@ body {
   flex-shrink: 0;
   background-color: rgba(33, 33, 33, 1);
 }
-
 .video-grid {
   display: grid;
   padding: 20px;
-  grid-template-columns: repeat(4, minmax(276px, 1fr));
+  /* 이 아래 코드를 수정해야하는데... */
+  grid-template-columns: repeat(4, minmax(250px, 1fr)); /* 자동으로 줄어들지만 최소 250px */
   gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .video-card {
-  /* background-color: #121212; */
   overflow: hidden;
+  min-width: 0;
 }
 
 .video-card a {
@@ -81,19 +87,20 @@ body {
 .video-description {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 8px;
 }
+
 .video-description p {
-  margin: 0; /* 전체 문단 여백 제거 */
+  margin: 0;
 }
+
 .video-title {
   font-weight: 600;
   color: #ffffff;
   font-size: 14px;
   margin: 0;
-  line-height: 1.0;
+  line-height: 1.4;
 }
-
 
 .channel-name,
 .view,
@@ -101,5 +108,25 @@ body {
   color: #aaaaaa;
   margin: 0px;
   font-size: 12px;
-  line-height:0.8;
+  line-height: 0.8;
 }
+
+.channel-name {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.channel-name:hover {
+  color: #ffffff;
+}
+
+/* 추가적인 반응형 미디어 쿼리: 필요 시 확장 가능 */
+/* @media (max-width: 480px) {
+  .video-info img {
+      width: 28px;
+      height: 28px;
+  }
+  .video-title {
+      font-size: 12px;
+  }
+} */
