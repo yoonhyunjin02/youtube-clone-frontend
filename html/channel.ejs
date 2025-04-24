@@ -5,97 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
     <link rel="icon" type="image/png" href="/assets/img/youtube.png" />
-    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link  rel="stylesheet" href="../css/channel.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- header : 홈 화면 상단바 -->
-    <header>
-        <!-- 로고영역 -->
-        <div class="left-section">
-            <img class="menu-icon" src="../assets/icons/hamburger.svg" alt="menu">
-            <img class="youtube-logo" src="../assets/icons/Youtube-Logo.svg" alt="youtube logo">
-        </div>
-
-        <!--검색창 영역-->
-        <form class="search-form">
-            <input type="search" placeholder="Search"> 
-            <button type="submit"><img src="../assets\icons\search.svg" alt="search"></button>
-            <div class="icon mic"><img src="../assets\icons\mic.svg" alt="micicon"></div>
-        </form>
-
-        <!---오른쪽 아이콘 영역-->
-        <div class="right-section">
-            <div class="icon Create" ><img src="../assets\icons\Create.svg" alt="video"></div>
-            <div class="icon Apps" ><img src="../assets\icons\Apps.svg" alt="apps"></div>
-            <div class="icon Notifications" ><img src="../assets\icons\Notifications.svg" alt="alarm"></div>
-            <div class="icon profile"><img src="../assets\icons\Profile-pic.svg" alt="profile"></div>
-        </div>
-    </header>
+    <%- include('partials/header') %>
 
     <!-- nav : 홈 화면 네비게이션 -->
-    <nav class="sidebar">
-        <!-- 기본 메뉴 -->
-        <section class="topsection">
-            <ul class="nav-section">
-                <li class="home"><a href="#"><img src="../assets/icons/homeicon.svg" alt="Home icon" /><span>Home</span></a></li>
-                <li><a href="#"><img src="../assets/icons/explore.svg" alt="Explore icon" /><span>Explore</span></a></li>
-                <li><a href="#"><img src="../assets/icons/subscriptions.svg" alt="Subscriptions icon" /><span>Subscriptions</span></a></li>
-            </ul>
-        </section>
-
-        <!-- 라이브러리 -->
-        <section>
-            <ul class="nav-section">
-                <li><a href="#"><img src="../assets/icons/library.svg" alt="Library icon" /><span>Library</span></a></li>
-                <li><a href="#"><img src="../assets/icons/history.svg" alt="History icon" /><span>History</span></a></li>
-                <li><a href="#"><img src="../assets/icons/yourvideos.svg" alt="Your Videos icon" /><span>Your Videos</span></a></li>
-                <li><a href="#"><img src="../assets/icons/watchlater.svg" alt="Watch Later icon" /><span>Watch Later</span></a></li>
-                <li><a href="#"><img src="../assets/icons/likedvideos.svg" alt="Liked Videos icon" /><span>Liked Videos</span></a></li>
-                <li><a href="#"><img src="../assets/icons/showmore.svg" alt="Show More icon" /><span>Show More</span></a></li>
-            </ul>
-        </section>
-        
-        <!--구독자 목록-->
-        <section aria-label="SUBSCRIPTIONS">
-            <ul class="nav-section">
-                <h3 class="nav-title">SUBSCRIPTIONS</h2>
-                <li><a href="#"><img src="../assets/img/JamesGouse.png" alt="James Gouse" /><span>James Gouse</span></a></li>
-                <li><a href="#"><img src="../assets/img/AlanCooper.png" alt="Alan Cooper" /><span>Alan Cooper</span></a></li>
-                <li><a href="#"><img src="../assets/img/MarcusLevin.png" alt="Marcus Levin" /><span>Marcus Levin</span></a></li>
-                <li><a href="#"><img src="../assets/img/AlexisSears.png" alt="Alexis Sears" /><span>Alexis Sears</span></a></li>
-                <li><a href="#"><img src="../assets/img/JesicaLambert.png" alt="Jesica Lambert" /><span>Jesica Lambert</span></a></li>
-                <li><a href="#"><img src="../assets/img/AnnaWhite.png" alt="Anna White" /><span>Anna White</span></a></li>
-                <li><a href="#"><img src="../assets/img/SkylarDias.png" alt="Skylar Dias" /><span>Skylar Dias</span></a></li>
-                <li><a href="#"><img src="../assets/icons/showmore.svg" alt="Show More icon" /><span>Show 13 More</span></a></li>
-            </ul>
-        </section>
-        
-        <!--탐색-->
-        <section aria-label="MORE FROM YOUTUBE">
-            
-            <ul class="nav-section">
-                <h3 class="nav-title">MORE FROM YOUTUBE</h2>
-                <li><a href="#"><img src="../assets/icons/youtubepremium.svg" alt="youtubepremium" /><span>YouTube Premium</span></a></li>
-                <li><a href="#"><img src="../assets/icons/gaming.svg" alt="Gaming" /><span>Gaming</span></a></li>
-                <li><a href="#"><img src="../assets/icons/live.svg" alt="Live" /><span>Live</span></a></li>
-                <li><a href="#"><img src="../assets/icons/sports.svg" alt="sports" /><span>sports</span></a></li>
-            </ul>
-        </section>
-        
-        <!--설정-->
-        <section>
-            <ul class="nav-section">
-                <li><a href="#"><img src="../assets/icons/settings.svg" alt="Settings" /><span>Settings</span></a></li>
-                <li><a href="#"><img src="../assets/icons/reporthistory.svg" alt="Reporthistory" /><span>Report history</span></a></li>
-                <li><a href="#"><img src="../assets/icons/help.svg" alt="Help" /><span>Help</span></a></li>
-                <li><a href="#"><img src="../assets/icons/sendfeedback.svg" alt="Sendfeedback" /><span>Send feedback</span></a></li>
-            </ul>
-        </section>
-    </nav>
+    <%- include('partials/nav') %>
 
     <!-- main : 홈 화면 블록 -->
     <main>
@@ -244,7 +165,6 @@
                 <div class="section-header">
                     <h2>Search On '21</h2>
                     <button class="play-all">
-                        <!-- <img src="../assets/icons/play.svg"> -->
                         <p>▶ PLAY ALL</p>
                     </button >
                 </div>

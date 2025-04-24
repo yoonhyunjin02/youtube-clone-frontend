@@ -4,37 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
-    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="icon" type="image/png" href="/assets/img/youtube.png" />
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/topmenu.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/video.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- header : 홈 화면 상단바 -->
-    <header>
-        <!-- 로고영역 -->
-        <div class="left-section">
-            <img class="menu-icon" src="../assets/icons/hamburger.svg" alt="menu">
-            <img class="youtube-logo" src="../assets/icons/Youtube-Logo.svg" alt="youtube logo">
-        </div>
+    <%- include('partials/header') %>
 
-        <!--검색창 영역-->
-        <form class="search-form">
-            <input type="search" placeholder="Search"> 
-            <button type="submit"><img src="../assets\icons\search.svg" alt="search"></button>
-            <div class="icon mic"><img src="../assets\icons\mic.svg" alt="micicon"></div>
-        </form>
-
-        <!---오른쪽 아이콘 영역-->
-        <div class="right-section">
-            <div class="icon Create" ><img src="../assets\icons\Create.svg" alt="video"></div>
-            <div class="icon Apps" ><img src="../assets\icons\Apps.svg" alt="apps"></div>
-            <div class="icon Notifications" ><img src="../assets\icons\Notifications.svg" alt="alarm"></div>
-            <div class="icon profile"><img src="../assets\icons\Profile-pic.svg" alt="profile"></div>
-        </div>
-    </header>
         <!--전체 화면 -->
     <div class="video-page-container">
         <!--본 영상 영역-->
@@ -142,13 +122,13 @@
                     </div> 
                     <!-- 댓글 입력 -->
                     <div class="comment-input">
-                        <img class="input-img" src="../assets\img\User-Avatar.png" alt="profile img">
+                        <img class="input-img" src="../assets\img\Profile-pic.svg" alt="profile img">
                         <input class="input-text" type="text" placeholder="Add a public comment...">
                     </div>
                     <!-- 댓글 리스트 -->
                     <div class="comment">
                         <div class="comment-flex">
-                            <img class="input-img" src="../assets\img\JamesGouse.png" alt="JamesGouse">
+                            <img class="input-img" src="../assets\img\JamesGouse.svg" alt="JamesGouse">
                             <div class="commnet-body">
                                 <div class="comment-meta">
                                     <span class="comment-body-name">James Gouse</span>
@@ -163,7 +143,7 @@
                             </div>
                         </div>
                         <div class="comment-flex">
-                            <img class="input-img" src="../assets\img\AlanCooper.png" alt="AlanCooper">
+                            <img class="input-img" src="../assets\img\AlanCooper.svg" alt="AlanCooper">
                             <div class="commnet-body">
                                 <div class="comment-meta">
                                     <span class="comment-body-name">Alan Cooper</span>

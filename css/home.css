@@ -1,0 +1,233 @@
+/* 공통 설정                */
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+main {
+    flex: 1;
+    margin: 0 auto;
+    display: block;
+    overflow-x: hidden;
+}
+
+/* Filter Bar (카테고리 버튼) */
+.filter-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 56px;
+    background-color: #212121;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+    white-space: nowrap;
+}
+
+.filter-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;                /* Firefox */
+}
+
+.filter-wrapper::-webkit-scrollbar {
+    display: none;                        /* Chrome, Safari */
+}
+
+.category-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 8px 12px;
+    background-color: #303030;
+    color: white;
+    border: 0.3px solid #AAAAAA;
+    border-radius: 999px;
+    font-size: 14px;
+    white-space: nowrap;
+    margin: 12px 12px 12px 0;
+    cursor: pointer;
+}
+
+.category-btn:hover {
+    background-color: #555;
+}
+
+.category-btn.active {
+    background-color: white;
+    color: black;
+}
+
+.category-btn:first-child {
+    margin-left: 24px;
+}
+
+.scroll-next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border: none;
+    background-color: #212121;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scroll-next img {
+    width: 16px;
+    height: 16px;
+    z-index: 1;
+}
+
+.scroll-next::before {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.scroll-next:hover::before {
+    background-color: #555;
+}
+
+/* 비디오 그리드 & 카드 레이아웃 */
+.container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+/* 반응형 설정 */
+@media (max-width: 599px) {
+    .video-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.video-card {
+    width: 100%;
+    max-width: 240px;
+}
+
+.video-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-figure {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.video-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-length {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+/* 비디오 설명 영역          */
+.video-info {
+    display: flex;
+    gap: 10px;
+    padding: 12px 10px;
+}
+
+.video-info img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.video-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.video-description p {
+    margin: 0;
+}
+
+.video-title {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.channel-name,
+.view,
+.update-date {
+    color: #aaaaaa;
+    margin: 0;
+    font-size: 12px;
+    line-height: 0.8;
+    text-decoration: none;
+}
+
+.channel-name:hover {
+    color: #ffffff;
+}

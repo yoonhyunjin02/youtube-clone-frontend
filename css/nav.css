@@ -12,7 +12,17 @@
     padding-top:1px;
     background-color: rgba(33, 33, 33,1);
     width:240px;
+    top: 56px; 
+    overflow-y: auto;
+
+    scrollbar-width: none;              /* Firefox */
+    -ms-overflow-style: none;           /* IE, Edge */
 }
+
+.sidebar::-webkit-scrollbar {         /* Chrome, Safari */
+    display: none;
+}
+
 .nav-section{
     border-top:1px solid rgba(48, 48, 48,1);
     margin: 0;
