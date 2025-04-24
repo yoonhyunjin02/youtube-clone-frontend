@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/topmenu.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <header>
+        <!-- 로고영역 -->
+        <div class="left-section">
+            <img class="menu-icon" src="../assets/icons/hamburger.svg" alt="menu">
+            <img class="youtube-logo" src="../assets/icons/Youtube-Logo.svg" alt="youtube logo">
+        </div>
+
+        <!--검색창 영역-->
+        <form class="search-form">
+            <input type="search" placeholder="Search"> 
+            <button type="submit"><img src="../assets\icons\search.svg" alt="search"></button>
+            <div class="icon mic"><img src="../assets\icons\mic.svg" alt="micicon"></div>
+        </form>
+
+        <!---오른쪽 아이콘 영역-->
+        <div class="right-section">
+            <div class="icon Create" ><img src="../assets\icons\Create.svg" alt="video"></div>
+            <div class="icon Apps" ><img src="../assets\icons\Apps.svg" alt="apps"></div>
+            <div class="icon Notifications" ><img src="../assets\icons\Notifications.svg" alt="alarm"></div>
+            <div class="icon profile"><img src="../assets\icons\Profile-pic.svg" alt="profile"></div>
+        </div>
+    </header>
+        <!--전체 화면 -->
+        <div class="video-page-container">
+
+            <!--본 영상 영역-->
+            <main class="video-main">
+                <!--영상 재생 영역-->
+                <section class="video-player">
+                    <!--영상 스크린-->
+                    <div class="video-screen">
+                        <img src="../assets\img\video 1.svg" alt="video-player">
+                        
+                        <!-- 상단 바 -->
+                        <div class="video-top-bar">
+                            <span class="video-player-title">Blind Woodturner: Turning passion into fine art</span>
+                            <button class="info-btn"><img src="../assets\icons\ico-info.png" alt="info-btn"></button>
+                        </div>
+
+                        <!-- 하단 바-->
+                        <div class="video-bottom-bar">
+                            <div class="left-controler">
+                                <img src="../assets\icons\ico-play.png" alt="play-btn">
+                                <img src="../assets\icons\ico-next.png" alt="next-btn">
+                                <img src="../assets\icons\ico-sound.png" alt="sound-btn">
+                                <span>5.07 / 15.28</span>
+                            </div>
+                            <div class="right-controls">
+                                <img src="../assets\icons\ico-titles.png" alt="titles-btn">
+                                <img src="../assets\icons\ico-hd.png" alt="hd-btn">
+                                <img src="../assets\icons\ico-theater.png" alt="theater-btn">
+                                <img src="../assets\icons\ico-tv.png" alt="tv-btn">
+                                <img src="../assets\icons\ico-fullscreen.png" alt="fullscreen-btn">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!--영상 제목 및 정보-->
+                <section class="video-title-info">
+                    <h1>Blind Woodturner: Turning passion into fine art</h1>
+
+                    <div class="video-stats">
+                        <!-- 조회수, 날짜 -->
+                        <span class="video-meta">576,969 views • Oct 8, 2021</span>
+
+                        <!-- 좋아요, 싫어요, 공유, 저장, 더보기 -->
+                        <div class="video-actions">
+                            <div>
+                                <img src="../assets\icons\like.png" alt="Like" />
+                                <span>1.7K</span>
+                            </div>
+                            <div>
+                                <img src="../assets\icons\dislike.png" alt="Dislike" />
+                                <span>632</span>
+                            </div>
+                            <div>
+                                <img src="../assets\icons\share.png" alt="Share" />
+                                <span>SHARE</span>
+                            </div>
+                            <div>
+                                <img src="../assets\icons\save.png" alt="Save" />
+                                <span>SAVE</span>
+                            </div>
+                            <div>
+                                <img src="../assets\icons\more.png" alt="More" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 채널 정보 -->
+                <section class="channel-info">
+                    <div>
+                        <!-- 채널 프로필 정보 -->
+                        <div>
+                            <!-- 채널 프로필 이미지 -->
+                            <img src="../assets\img\MarcusLevin.png" alt="MarcusLevin profile" />
+                            <!-- 채널 이름 -->
+                            <div>
+                                <h3>Marcus Levin</h3>
+                                <span>1.2M subscribers</span>
+                            </div>
+                        </div>
+                        <!-- 구독 버튼 -->
+                        <button class="subscribe-btn">SUBSCRIBE</button>
+                    </div>
+                        <!-- 영상 설명 -->
+                        <p class="channel-description">
+                            Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.
+                        </p>  
+                        <p class="show-more">SHOW MORE</p>  
+                </section>
+
+                <!-- 댓글 영역 -->
+                <section class="comments-section">
+                    <!-- 댓글 수 및 정렬 -->
+                    <div class="comments-header">
+                        <div class="sort">
+                            <img src="../assets/icons/list filter.png" alt="Sort icon">
+                            <span>SORT BY</span>
+                        </div>
+                    </div> 
+                    
+                    <!-- 댓글 입력 -->
+                    <div class="comment-input">
+                        <img src="../assets\img\User-Avatar.png" alt="profile img">
+                        <input type="text" placeholder="Add a public comment..." />
+                    </div>
+
+                    <!-- 댓글 리스트 -->
+                    <div class="comment">
+                        <img src="../assets\img\JamesGouse.png" alt="JamesGouse">
+                        <div class="comment-body">
+                            <div class="comment-meta">
+                                <strong>James Gouse</strong>
+                                <span>8 hours ago</span>
+                            </div>
+                            <p>Wow, world is full of different skills</p>
+                            <div class="comment-actions">
+                                <img src="../assets/icons/like.png" alt="Like"><span>3</span>
+                                <img src="../assets/icons/dislike.png" alt="Dislike">
+                                <button>REPLY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment">
+                        <img src="../assets\img\AlanCooper.png" alt="AlanCooper">
+                        <div class="comment-body">
+                            <div class="comment-meta">
+                                <strong>Alan Cooper</strong>
+                                <span>4 days ago</span>
+                            </div>
+                            <p>Can you provide?</p>
+                            <p>On January 2, 2022</p>
+                        </div>
+                    </div>
+                    
+                </section>
+            </main>
+
+            <!--추천 영상 영역-->
+            <section class="recommended-videos">
+                <!--추천 영상 필터-->
+                <nav class="recommended-tag">
+                    <button>All</button>
+                    <button>From Marcus Levin</button>
+                </nav>
+
+                <!--추천 영상 카드-->
+                <div class="recommended-list">
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 1.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">James Gouse</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 2.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">Marcus Levin</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 3.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">Alexis Sears </span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 4.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">Jesica Lambert</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 5.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">Anna White</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 6.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">Skylar Dias</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 7.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">Alan Cooper</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 8.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">James Gouse</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                    <article class="recommended-card">
+                        <a href="#">
+                            <!--추천 영상 썸네일-->
+                            <figure class="video-thumbnail">
+                                <img src="../assets/img/video 9.svg" alt="video1">
+                                <span class="video-length">23:45</span>
+                            </figure>
+                            <!--추천 영상 정보-->
+                            <figcaption class="video-meta">
+                                <div class="video-description">
+                                    <p class="video-title">Ep 6: Living to Serve | SEARCH ON</p>
+                                    <p>
+                                        <span class="channel-name">James Gouse</span><br>
+                                        <span class="view">15K Views.1 week age</span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+
+                    
+                </div>
+            </section>
+        </div>
+    
+</body>
+</html>
