@@ -117,3 +117,13 @@ li.home a:hover {
 .topsection .nav-section {
     border-top: none;
 }
+/* video-page 토글 */
+.video-page .sidebar {
+    transform: translateX(-100%);       
+    /* 클릭전엔 없음 */
+}
+
+.video-page .sidebar.open {
+    transform: translateX(0);
+    /* 클릭후에 생김 */
+}

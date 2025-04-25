@@ -1,6 +1,30 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
+
+/* --사이드바 고려 위치조정 */
+.video-page-container {
+    padding-top: 56px;              /* ✅ header 높이만큼 위에서 띄우기 */
+    box-sizing: border-box;
+    width: calc(100% - 240px);      /* ✅ 사이드바 공간 빼고 */
+}
+/* 만약 header가 fixed라면, z-index 조정 */
+    header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px;                      /* 헤더 밑에 딱 붙게 */
+    left: 0;
+    height: calc(100vh - 56px);     /* 화면 높이에서 헤더 높이 뺌 */
+    /* overflow-y: auto;               스크롤 가능하게 */
+}
+/* 사이드바 고려 위치조정-- */
+
 .video-page-container{
     display:flex;
     flex-wrap: wrap;
