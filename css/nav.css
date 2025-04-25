@@ -18,6 +18,47 @@
     scrollbar-width: none;              /* Firefox */
     -ms-overflow-style: none;           /* IE, Edge */
 }
+.sidebar {
+      /* 모션추가 */
+    transition: all 0.1s ease;
+    transform: translateX(0); 
+}
+
+/* sidebar-toggle */
+.sidebar.collapsed{
+    width:72px;
+    padding-left:4px;
+    padding-right:4px;
+}
+.sidebar.collapsed a{
+    padding:16px;
+
+}
+.sidebar.collapsed section:nth-of-type(n+3) {
+    display: none;
+}
+
+.sidebar.collapsed .topsection span, .sidebar.collapsed .nav-section span{
+    display:none;
+}
+.sidebar.collapsed li a img[alt="Show More icon"] {
+    display: none;
+}
+.sidebar.collapsed .nav-section img{
+    width: 32px;
+    height: 32px;
+}
+.sidebar.collapsed ul{
+    padding: 0;  
+    width:100%;
+    border-top:none;
+}
+.sidebar.collapsed .home a{
+    background-color: rgba(33, 33, 33,1);
+}
+.sidebar.collapsed .home a:hover{
+    background-color: rgba(48,48,48,1);
+}
 
 .sidebar::-webkit-scrollbar {         /* Chrome, Safari */
     display: none;
