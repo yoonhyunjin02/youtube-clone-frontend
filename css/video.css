@@ -3,7 +3,9 @@
 }
 .video-page-container{
     display:flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     background-color: rgb(22, 22, 22);
 }
 .video-main{
