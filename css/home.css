@@ -173,6 +173,9 @@ main {
 .video-figure img {
     width: 100%;
     height: auto;
+    /* 크기가 다른 썸네일 때문에 최대 크기 정의 */
+    max-height: 135px;
+    object-fit: cover;
     display: block;
 }
 
@@ -216,6 +219,15 @@ main {
     font-size: 14px;
     margin: 0;
     line-height: 1.4;
+
+    /* 제목 2줄 넘어가면 ...으로 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;     /* 최대 2줄 */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
 }
 
 .channel-name,
@@ -230,4 +242,20 @@ main {
 
 .channel-name:hover {
     color: #ffffff;
+}
+
+/* =================================== */
+.video-list {
+    display: flex;             /* 가로로 배열 */
+    flex-wrap: wrap;           /* 넘치면 자동 줄바꿈 */
+    gap: 20px;                 /* 카드 사이 여백 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
+.video-card-home {
+    width: 300px;               /* 카드 하나의 너비 고정 */
+    background-color: #181818;  /* (원하면) 카드 배경색 */
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;     /* padding 포함 계산 */
 }

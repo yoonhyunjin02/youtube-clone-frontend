@@ -312,6 +312,18 @@ main {
     font-size: 14px;
     font-weight: bold;
     color: white;
+    margin-bottom: 4px;
+
+    /* 제목 2줄 넘어가면 ...으로 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;     /* 최대 2줄 */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+
+    min-height: 40px;
 }
 
 .channel-name, .view, .update-date {
@@ -326,4 +338,58 @@ main {
 a {
     text-decoration: none;        /* 모든 a 태그 밑줄 제거 */
     color: inherit;               /* 기본 색상 유지 */
+}
+
+/* =================== */
+
+
+.video-list {
+    width: 100%;
+    margin: 0;                        /* 여백 제거 */
+    display: grid;
+    grid-template-columns: repeat(5, minmax(240px, 1fr));
+    gap: 5px;
+    justify-content: start;           /* 좌측 정렬 */
+    padding-left: 0;               /* ✅ 소제목과 맞추기 (소제목 padding과 동일하게) */
+}
+
+.video-figure video {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.video-info {
+    margin-top: 6px;
+    color: white;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 65px 0 0;
+    color: white;
+}
+
+.section-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.play-all {
+    background: none;
+    border: none;
+    color: #AAAAAA;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.channel-featured-video .video-thumbnail video {
+    width: 480px;           /* 원하는 크기로 조정 (예시: 480px) */
+    height: auto;           /* 비율 유지 */
+    border-radius: 8px;     /* (선택) 둥근 모서리 */
 }

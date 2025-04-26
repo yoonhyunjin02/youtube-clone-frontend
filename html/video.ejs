@@ -17,97 +17,78 @@
 
     <%- include('partials/nav') %>
     
-        <!--전체 화면 -->
+    <!--전체 화면 -->
     <div class="video-page-container">
         <!--본 영상 영역-->
         <main class="video-main">
             <!--영상 재생 영역-->
             <section class="video-player">
-                <!-- 영상 스크린
-                <div class="video-screen">
-                    <img src="../assets\img\video 1.svg" alt="video-player">
-                        
-                        상단 바
-                        <div class="video-top-bar">
-                            <span class="video-player-title">Blind Woodturner: Turning passion into fine art</span>
-                            <button class="info-btn"><img src="../assets\icons\ico-info.png" alt="info-btn"></button>
-                        </div>
-
-                        하단 바
-                        <div class="video-bottom-bar">
-                            <div class="left-controler">
-                                <img src="../assets\icons\ico-play.png" alt="play-btn">
-                                <img src="../assets\icons\ico-next.png" alt="next-btn">
-                                <img src="../assets\icons\ico-sound.png" alt="sound-btn">
-                                <span>5.07 / 15.28</span>
-                            </div>
-                            <div class="right-controls">
-                                <img src="../assets\icons\ico-titles.png" alt="titles-btn">
-                                <img src="../assets\icons\ico-hd.png" alt="hd-btn">
-                                <img src="../assets\icons\ico-theater.png" alt="theater-btn">
-                                <img src="../assets\icons\ico-tv.png" alt="tv-btn">
-                                <img src="../assets\icons\ico-fullscreen.png" alt="fullscreen-btn">
-                            </div>
-                        </div>
-                    </div>-->
-                <img class="video-player-img" src="../assets/img/Youtube player.png" alt="video-player">
+                <video controls autoplay width="100%">
+                    <source src="https://storage.googleapis.com/youtube-clone-video/<%= videoInfo.id %>.mp4" type="video/mp4">
+                    동영상을 찾을 수 없습니다.
+                </video>
             </section>
+
             <!--영상 제목 및 정보-->
             <section class="video-title-info">
-                <span class="video-player-title">Blind Woodturner: Turning passion into fine art</span>
+                <!-- 제목 -->
+                <span class="video-player-title"><%= videoInfo.title %></span>
 
-                    <div class="video-stats">
-                        <!-- 조회수, 날짜 -->
-                        <span class="video-meta">576,969 views • Oct 8, 2021</span>
+                <div class="video-stats">
+                    <!-- 조회수, 날짜 -->
+                    <span class="video-meta">
+                        <%= videoInfo.views.toLocaleString() %> views • <%= getRelativeTime(videoInfo.created_dt) %>
+                    </span>
 
-                        <!-- 좋아요, 싫어요, 공유, 저장, 더보기 -->
-                        <div class="video-actions">
-                            <div class="action-button">
-                                <button><img class="action-img" src="../assets\icons\like.svg" alt="Like" /></button>
-                                <span class="action-text">1.7K</span>
-                            </div>
-                            <div class="action-button">
-                                <button><img class="action-img" src="../assets\icons\dislike.svg" alt="Dislike" /></button>
-                                <span>632</span>
-                            </div>
-                            <div class="action-button">
-                                <button><img class="action-img" src="../assets\icons\share.svg" alt="Share" /></button>
-                                <span>SHARE</span>
-                            </div>
-                            <div class="action-button">
-                                <button><img class="action-img" src="../assets\icons\save.svg" alt="Save" /></button>
-                                <span>SAVE</span>
-                            </div>
-                            <div class="action-button">
-                                <button><img class="action-img" src="../assets\icons\more.svg" alt="More" /></button>
-                            </div>
+                    <!-- 좋아요, 싫어요, 공유, 저장, 더보기 -->
+                    <div class="video-actions">
+                        <div class="action-button">
+                            <button><img class="action-img" src="../assets/icons/like.svg" alt="Like" /></button>
+                            <span class="action-text"><%= videoInfo.likes.toLocaleString() %></span>
+                        </div>
+                        <div class="action-button">
+                            <button><img class="action-img" src="../assets/icons/dislike.svg" alt="Dislike" /></button>
+                            <span class="action-text"><%= videoInfo.dislikes.toLocaleString() %></span>
+                        </div>
+                        <div class="action-button">
+                            <button><img class="action-img" src="../assets/icons/share.svg" alt="Share" /></button>
+                            <span>SHARE</span>
+                        </div>
+                        <div class="action-button">
+                            <button><img class="action-img" src="../assets/icons/save.svg" alt="Save" /></button>
+                            <span>SAVE</span>
+                        </div>
+                        <div class="action-button">
+                            <button><img class="action-img" src="../assets/icons/more.svg" alt="More" /></button>
                         </div>
                     </div>
+                </div>
             </section>
 
             <!-- 채널 정보 -->
             <section class="channel-info">
                 <div class="channel-info-top">
                     <!-- 채널 프로필 정보 -->
-                    <div class="channel-owner">
+                    <a href="/channel?id=<%= channelInfo.id %>" class="channel-owner" style="text-decoration: none; color: inherit;">
                         <!-- 채널 프로필 이미지 -->
-                        <img class="channel-owner-img" src="../assets\img\MarcusLevin.svg" alt="MarcusLevin profile" />
-                        <!-- 채널 이름 -->
+                        <img class="channel-owner-img" src="<%= channelInfo.channel_profile %>" alt="<%= channelInfo.channel_name %> profile" />
+                        
+                        <!-- 채널 이름, 구독자 수 -->
                         <div class="channel-owner-info">
-                            <span class="channel-owner-name">Marcus Levin</span><br>
-                            <span class="channel-subscription">1.2M subscribers</span>
+                            <span class="channel-owner-name"><%= channelInfo.channel_name %></span><br>
+                            <span class="channel-subscription"><%= channelInfo.subscribers.toLocaleString() %> subscribers</span>
                         </div>
-                    </div>
+                    </a>
                     <!-- 구독 버튼 -->
-                    <button class="subscribe-btn">SUBSCRIBES</button>
+                    <button class="subscribe-btn">SUBSCRIBE</button>
                 </div>
-                <div>
-                    <!-- 영상 설명 -->
+                <!-- 설명은 API에 없으니까 이 아래 부분은 주석처리 -->
+                <!--<div>
                     <p class="channel-description">
-                        Chris Fisher, also known as the Blind Woodturner, learned his craft by listening to hundreds of hours of YouTube videos and experimenting in his workshop. Now he’s a YouTube creator himself, sells his products worldwide, and does demonstrations all around the country.
+                        설명이 들어갈 자리 (API 없으므로 생략)
                     </p>  
                     <button class="show-more">SHOW MORE</button>  
-                </div>
+                </div>-->
             </section>
 
             <!-- 댓글 영역 -->
@@ -163,208 +144,20 @@
                 </section>
         </main>
 
-            <!--추천 영상 영역-->
+        <!--추천 영상 영역-->
         <section class="recommended-videos">
-                <!--추천 영상 필터-->
-                <nav class="recommended-tag">
-                    <button>All</button>
-                    <button>From Marcus Levin</button>
-                </nav>
-                <!--추천 영상 카드-->
-                <div class="recommended-list">
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 1.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 2.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 3.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 4.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 5.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 6.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 7.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 8.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 1.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                    <article>
-                        <a href="#" class="recommended-list-a">
-                            <!--추천 영상 썸네일-->
-                            <figure class="video-thumbnail">
-                                <img src="../assets/img/video 2.svg" alt="video1">
-                                <span class="video-length">23:45</span>
-                            </figure>
-                            <!--추천 영상 정보-->
-                            <figcaption class="video-meta">
-                                <div class="video-description">
-                                    <span class="video-title">Ep 6: Living to Serve | SEARCH ON</span><br>
-                                    <span>
-                                        <span class="channel-name">James Gouse</span><br>
-                                        <span class="view">15K Views.1 week age</span>
-                                    </span>
-                                </div>
-                            </figcaption>
-                        </a>
-                    </article>
-                </div>
+            <!--추천 영상 필터-->
+            <nav class="recommended-tag">
+                <button>All</button>
+                <button>From Marcus Levin</button>
+            </nav>
+            <!--추천 영상 카드-->
+            <div class="recommended-list">
+                <% recommendedVideos.forEach(video => { %>
+                    <%- include('partials/videoCard-video', { video: video, getRelativeTime: getRelativeTime }) %>
+                <% }); %>
+            </div>                         
         </section>
     </div>
-    
 </body>
 </html>

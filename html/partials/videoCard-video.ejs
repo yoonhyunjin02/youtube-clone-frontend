@@ -1,0 +1,17 @@
+<article>
+    <a href="/video?id=<%= video.id %>" class="recommended-list-a">
+        <!-- 썸네일 -->
+        <figure class="video-thumbnail">
+        <img src="<%= video.thumbnail %>" alt="video thumbnail">
+        <!-- <span class="video-length">23:45</span> (길이 표시 따로 없음) -->
+        </figure>
+        <!-- 설명 -->
+        <figcaption class="video-meta">
+        <div class="video-description">
+            <span class="video-title"><%= video.title %></span><br>
+            <span class="channel-name"><%= video.channel.channel_name %></span><br>
+            <span class="view"><%= video.views.toLocaleString() %> views • <%= getRelativeTime(video.created_dt) %></span>
+        </div>
+        </figcaption>
+    </a>
+</article>

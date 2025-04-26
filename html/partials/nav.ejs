@@ -2,7 +2,13 @@
     <!-- 기본 메뉴 -->
     <section class="topsection">
         <ul class="nav-section">
-            <li class="home"><a href="#"><img src="../assets/icons/homeicon.svg" alt="Home icon" /><span>Home</span></a></li>
+            <!-- <li class="home"><a href="#"><img src="../assets/icons/homeicon.svg" alt="Home icon" /><span>Home</span></a></li> -->
+            <li class="home">
+                <a href="/"> <!-- 여기를 '/'로 수정 -->   
+                    <img src="../assets/icons/homeicon.svg" alt="Home icon" />
+                    <span>Home</span>
+                </a> 
+            </li>
             <li><a href="#"><img src="../assets/icons/explore.svg" alt="Explore icon" /><span>Explore</span></a></li>
             <li><a href="#"><img src="../assets/icons/subscriptions.svg" alt="Subscriptions icon" /><span>Subscriptions</span></a></li>
         </ul>
@@ -24,14 +30,27 @@
     <section aria-label="SUBSCRIPTIONS">
         <ul class="nav-section">
             <h2 class="nav-title">SUBSCRIPTIONS</h2>
-            <li><a href="#"><img src="../assets/img/JamesGouse.svg" alt="James Gouse" /><span>James Gouse</span></a></li>
-            <li><a href="#"><img src="../assets/img/AlanCooper.svg" alt="Alan Cooper" /><span>Alan Cooper</span></a></li>
-            <li><a href="#"><img src="../assets/img/MarcusLevin.svg" alt="Marcus Levin" /><span>Marcus Levin</span></a></li>
-            <li><a href="#"><img src="../assets/img/AlexisSears.svg" alt="Alexis Sears" /><span>Alexis Sears</span></a></li>
-            <li><a href="#"><img src="../assets/img/JesicaLambert.svg" alt="Jesica Lambert" /><span>Jesica Lambert</span></a></li>
-            <li><a href="#"><img src="../assets/img/AnnaWhite.svg" alt="Anna White" /><span>Anna White</span></a></li>
-            <li><a href="#"><img src="../assets/img/SkylarDias.svg" alt="Skylar Dias" /><span>Skylar Dias</span></a></li>
-            <li><a href="#"><img src="../assets/icons/showmore.svg" alt="Show More icon" /><span>Show 13 More</span></a></li>
+            <% subscriberList.forEach((sub, index) => { %>
+                <li class="subscriber-item <%= index >= 7 ? 'hidden' : '' %>">
+                    <!-- <a href="#">
+                        <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
+                        <span><%= sub.channel_name %></span>
+                    </a> -->
+                    <!-- 구독자 채널 클릭 시 해당 채널 페이지로 이동 -->
+                    <a href="/channel?id=<%= sub.id %>"> <!--네비게이션에서 클릭할 때 id를 넘김 -->
+                        <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
+                        <span><%= sub.channel_name %></span>
+                    </a>                    
+                </li>
+            <% }); %>
+            <% if (subscriberList.length > 7) { %>
+                <li class="show-more">
+                    <a href="#" class="show-more-btn">
+                        <img src="/assets/icons/showmore.svg" alt="Show More icon">
+                        <span>Show <%= subscriberList.length - 7 %> More</span>
+                    </a>
+                </li>
+            <% } %>
         </ul>
     </section>
     

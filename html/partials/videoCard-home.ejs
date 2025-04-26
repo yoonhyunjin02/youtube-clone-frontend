@@ -1,0 +1,25 @@
+<article class="video-card">
+    <!-- 썸네일: 영상 페이지로 이동 -->
+    <a href="/video?id=<%= video.id %>">
+        <figure class="video-figure">
+            <img src="<%= video.thumbnail %>" alt="썸네일">
+            <span class="video-length">12:34</span>
+        </figure>
+    </a>
+
+    <figcaption class="video-info">
+        <!-- 프로필: 채널 페이지로 이동 -->
+        <a href="/channel?id=<%= video.channel.id %>">
+            <img class="channel-avatar" src="<%= video.channel.channel_profile %>" alt="channel-profile">
+        </a>
+
+        <div class="video-description">
+            <p class="video-title"><%= video.title %></p>
+            <p>
+                <span class="channel-name"><%= video.channel.channel_name %></span><br>
+                <span class="view"><%= video.views.toLocaleString() %> Views.</span>
+                <span class="update-date"><%= getRelativeTime(video.created_dt) %></span>
+            </p>
+        </div>
+    </figcaption>
+</article>
