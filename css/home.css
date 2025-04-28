@@ -179,7 +179,7 @@ main {
     display: block;
 }
 
-.video-length {
+/* .video-length {
     position: absolute;
     bottom: 2px;
     right: 2px;
@@ -188,7 +188,7 @@ main {
     font-size: 12px;
     padding: 2px 6px;
     border-radius: 2px;
-}
+} */
 
 /* 비디오 설명 영역          */
 .video-info {
@@ -258,4 +258,10 @@ main {
     padding: 10px;
     border-radius: 8px;
     box-sizing: border-box;     /* padding 포함 계산 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }

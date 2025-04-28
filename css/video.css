@@ -54,6 +54,7 @@
     font-size: 18px;
     letter-spacing: 1%;
 }
+
 .video-stats{
     display:flex;
     padding-top:5px;
@@ -257,6 +258,7 @@
     font-weight: 400;
     line-height: 20px;
     color:rgba(255, 255, 255, 1);
+    text-decoration: none; /*밑줄 제거*/
 
     /* 제목 2줄 넘어가면 ...으로 */
     display: -webkit-box;
@@ -272,6 +274,11 @@
     font-weight: 400;
     line-height: 18px;
 }
+
+.channel-name:hover {
+    color: white;             /* hover 시 색상 (예: 연회색) */
+}
+
 .video-length {
     position: absolute;
     right: 3px;
@@ -295,4 +302,9 @@
 }
 .video-description{
     padding: 5px;
+}
+
+a {
+    color: inherit;              /* 부모 요소 색상 상속 */
+    text-decoration: none;       /* 밑줄 제거 */
 }
