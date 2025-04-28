@@ -83,7 +83,7 @@ main {
 }
 
 /* 구독자 수*/
-.subscriber-num {
+.channel-subscription {
     color: #AAAAAA;
     width: 400;
     font-size: 14px;
@@ -397,4 +397,11 @@ a {
     width: 480px;           /* 원하는 크기로 조정 (예시: 480px) */
     height: auto;           /* 비율 유지 */
     border-radius: 8px;     /* (선택) 둥근 모서리 */
+}
+/* 구독했을때 버튼 색변화 */
+.subscribe-btn.subscribed {
+    background-color: #363636;
+}
+.subscribe-btn:hover{
+    filter: brightness(1.2);
 }

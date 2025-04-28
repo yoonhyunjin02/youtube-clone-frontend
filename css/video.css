@@ -76,19 +76,21 @@
 .video-actions button{
     background-color: rgb(22, 22, 22);
     all:unset;
+    display:flex;
+    align-items: center;
+    padding:5px;
+    border-radius: 5px;
 }
 .action-img{
-    width: 32px;
-    height: 36px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 .action-text{
     font-size:14px;
     font-weight: 700;
     letter-spacing: 0%;
-}
-.action-button{
-    display:flex;
-    align-items: center;
+    padding-left:10px;
 }
 .channel-info{
     display:flex;
@@ -317,4 +319,16 @@ a {
 
 .like-btn.active .like-icon {
     color: white;            /* 눌렀을 때 색칠 */
+}
+
+/*구독버튼 css*/
+.subscribe-btn.subscribed {
+    background-color: #363636;
+}
+.subscribe-btn:hover{
+    filter: brightness(1.2);
+}
+.video-actions button:hover{
+    background-color:#363636;
+    
 }
