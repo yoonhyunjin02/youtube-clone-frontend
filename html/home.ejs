@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/nav.css">
     <link  rel="stylesheet" href="../css/home.css">
+    <link  rel="stylesheet" href="../css/home_search.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -53,8 +54,11 @@
                 <%- include('partials/videoCard-home', { video: video }) %> 
                 <% }); %>
             </section>
+
+            <!-- search-result: 검색 결과용 (처음엔 display: none) -->
+            <section class="search-result" style="display: none;"></section>
         </main>
     </div>
-    <!-- <script src="../js\home.js"></script> -->
+    <script src="../js\home_search.js"></script>
 </body>
 </html>
