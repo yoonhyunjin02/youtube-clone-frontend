@@ -179,7 +179,7 @@ main {
     display: block;
 }
 
-.video-length {
+/* .video-length {
     position: absolute;
     bottom: 2px;
     right: 2px;
@@ -188,7 +188,7 @@ main {
     font-size: 12px;
     padding: 2px 6px;
     border-radius: 2px;
-}
+} */
 
 /* 비디오 설명 영역          */
 .video-info {
