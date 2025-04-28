@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBtn = document.querySelector(".search-form button");
     const videoGrid = document.querySelector(".video-grid");
     const searchResult = document.querySelector(".search-result");
-
-    videoGrid.style.display = "grid";
-    searchResult.style.display = "none";
+    const categoryBtns = document.querySelectorAll(".category-btn");  
     
     //영상 가져오기 함수
     async function fetchVideos() {
@@ -63,20 +61,21 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
     //검색 기능 함수 생성
-    async function handleSearch() {
-        const keyword = searchInput.value.toLowerCase(); //필터 키워드 저장
+    async function handleSearch(keyword) {
+        const allVideos = await fetchVideos(); // API에서 정보가져오기
 
-        if (keyword === "") {
-            //검색어 없으면 홈 화면 다시 보여주기
+        if (!keyword || keyword.trim() === "") {
+            // 검색어 없으면 홈 화면 복구
             videoGrid.style.display = "grid";
             searchResult.style.display = "none";
             return;
         }
-        const allVideos = await fetchVideos(); // 전체 영상 리스트 가져오기
+
+        const lowerKeyword = keyword.toLowerCase();
         const filtered = allVideos.filter(video =>
-            video.title.toLowerCase().includes(keyword) ||  // 조건1:제목에 검색어가 있거나
-            video.tags.join(",").toLowerCase().includes(keyword) ||// 조건2: 태그에 검색어가 있으면
-            video.channel.channel_name.toLowerCase().includes(keyword)
+            video.title.toLowerCase().includes(lowerKeyword) ||
+            video.tags.join(",").toLowerCase().includes(lowerKeyword) ||
+            video.channel.channel_name.toLowerCase().includes(lowerKeyword)
         );
 
         if (filtered.length === 0) {
@@ -84,22 +83,36 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             renderVideos(filtered);
         }
-
-        
     }
     
     //버튼 기능 실행
     searchBtn.addEventListener("click", (e) => {
-        e.preventDefault();  // 폼 전송 막기
-        handleSearch();
+        e.preventDefault();
+        const keyword = searchInput.value;
+        handleSearch(keyword);
     });
     //검색창에서 엔터키 눌렀을 때도 검색 실행됨.
     searchInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
-            handleSearch();
+            const keyword = searchInput.value;
+            handleSearch(keyword);
         }
-    })
+    });
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const category = btn.textContent.trim(); 
+            if (category === "전체") {
+                // "전체" 누르면 홈 복귀
+                videoGrid.style.display = "grid";
+                searchResult.style.display = "none";
+            } else {
+                handleSearch(category);
+            }
+        });
+    });
     
     
 });  //DOMContentLoaded 마지막
