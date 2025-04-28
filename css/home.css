@@ -259,3 +259,9 @@ main {
     border-radius: 8px;
     box-sizing: border-box;     /* padding 포함 계산 */
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
