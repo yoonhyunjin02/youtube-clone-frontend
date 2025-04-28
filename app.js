@@ -66,6 +66,15 @@ async function getSubscriberList() {
     return [...apiSubscriberList, ...dummySubscribers];  // 합친 리스트
 }
 
+// 조회수 포맷팅
+function formatViews(views) {
+    if (views >= 1_000_000_000) return (views / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'B';
+    if (views >= 1_000_000)     return (views / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (views >= 1_000)         return (views / 1_000).toFixed(1).replace(/\.0$/, '') + 'K';
+    return views.toString();
+}
+
+
 // 라우터 - 어떤 주소에 어떤 페이지를 줄 건지
 // localhost:3000/으로 들어오면 html/home.ejs 파일을 보여줌
 // http://localhost:3000
@@ -99,7 +108,8 @@ app.get('/', async (req, res) => {
         res.render('home', { 
             videoList: videoListWithChannel,           // 비디오 리스트 전달
             subscriberList: subscriberList,            // 구독자
-            getRelativeTime: getRelativeTime           // 상대 시간 함수 전달
+            getRelativeTime: getRelativeTime,           // 상대 시간 함수 전달
+            formatViews
         });
     }
     catch (error) {
@@ -145,7 +155,8 @@ app.get('/channel', async (req, res) => {
             featuredVideo,
             channelVideoList: videoListWithoutFirst, 
             subscriberList,
-            getRelativeTime 
+            getRelativeTime,
+            formatViews 
         });
     } catch (error) {
         console.error('채널 페이지 에러:', error);
@@ -202,7 +213,8 @@ app.get('/video', async (req, res) => {
             channelInfo, 
             subscriberList,
             recommendedVideos,
-            getRelativeTime
+            getRelativeTime,
+            formatViews
         });
 
     } catch (error) {

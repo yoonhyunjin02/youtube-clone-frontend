@@ -20,7 +20,7 @@
             </a>
             <!-- 조회수, 날짜 (비디오 페이지로 이동) -->
             <a href="/video?id=<%= video.id %>">
-                <span class="view"><%= video.views.toLocaleString() %> views • <%= getRelativeTime(video.created_dt) %></span>
+                <span class="view"><%= formatViews(video.views) %> views • <%= getRelativeTime(video.created_dt) %></span>
             </a>
         </div>
     </figcaption>

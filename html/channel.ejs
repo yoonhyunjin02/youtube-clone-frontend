@@ -109,7 +109,7 @@
                                         <p class="video-title"><%= video.title %></p>
                                         <p>
                                             <span class="channel-name"><%= channelInfo.channel_name %></span><br>
-                                            <span class="view"><%= video.views.toLocaleString() %> Views</span>
+                                            <span class="view"><%= formatViews(video.views) %> Views</span>
                                         </p>
                                     </div>
                                 </figcaption>

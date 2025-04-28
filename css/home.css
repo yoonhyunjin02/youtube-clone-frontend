@@ -206,7 +206,6 @@ main {
 .video-description {
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 
 .video-description p {
