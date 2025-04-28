@@ -31,7 +31,7 @@
                         <!-- <h2 class="channel-owner">Marcus Levin</h2> -->
                         <!-- <p class="subscriber-num">1.2M subscribers</p> -->
                         <h2 class="channel-owner"><%= channelInfo.channel_name %></h2>
-                        <p class="subscriber-num">구독자 <%= channelInfo.subscribers.toLocaleString() %>명</p>
+                        <p class="channel-subscription">구독자 <%= channelInfo.subscribers.toLocaleString() %>명</p>
                     </div>
                 </div>
                 <button class="subscribe-btn">SUBSCRIBE</button>
@@ -119,5 +119,6 @@
             <% } %>
         </section>
     </main>
+    <script src="../js/button.js"></script>
 </body>
 </html>
