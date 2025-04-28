@@ -308,3 +308,13 @@ a {
     color: inherit;              /* 부모 요소 색상 상속 */
     text-decoration: none;       /* 밑줄 제거 */
 }
+
+/* 댓글 좋아요, 싫어요 눌렀을 때 색상 변화 */
+.like-btn .like-icon {
+    color: gray;             /* 기본 테두리 느낌 (아이콘 자체가 테두리만 있음) */
+    transition: color 0.3s ease;
+}
+
+.like-btn.active .like-icon {
+    color: white;            /* 눌렀을 때 색칠 */
+}
