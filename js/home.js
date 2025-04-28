@@ -8,9 +8,30 @@ document.addEventListener("DOMContentLoaded", () => {
     //영상 리스트 불러오기 함수 생성
     async function fetchVideos() {
         const res = await fetch("http://techfree-oreumi-api.kro.kr:5000/video/getVideoList");
-        const data = await res.json();
-        return data;
+        const data = await res.json(); // data가 전체 영상 리스트
+    
+        const videosWithChannel = await Promise.all(
+            data.map(async (video) => {
+                try {
+                    const channelRes = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${video.channel_id}`);
+                    const channelInfo = await channelRes.json();
+                    return { ...video, channel: channelInfo }; // 영상+채널 정보 합치기
+                } catch (error) {
+                    console.error('채널 정보 오류:', error);
+                    return { 
+                        ...video, 
+                        channel: { 
+                            channel_name: 'Unknown', 
+                            channel_profile: '/assets/icons/default-profile.svg' 
+                        }
+                    };
+                }
+            })
+        );
+    
+        return videosWithChannel; 
     }
+    
     //검색 기능 함수 생성
     async function handleSearch() {
         const keyword = searchInput.value.toLowerCase(); //필터 키워드 저장
@@ -43,19 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
             </a>
 
             <figcaption class="video-info">
-                <a href="/channel?id=${video.channel_id}">
-                    <img class="channel-avatar" src="/assets/img/Profile-pic.svg" alt="channel-profile">
+                <a href="/channel?id=${video.channel.id}">
+                    <img class="channel-avatar" src="${video.channel.channel_profile}" alt="channel-profile">
                 </a>
                 <div class="video-description">
                     <p class="video-title">${video.title}</p>
                     <p>
-                        <span class="channel-name">채널 ID: ${video.channel_id}</span><br>
+                        <span class="channel-name">${video.channel.channel_name}</span><br>
                         <span class="view">${video.views.toLocaleString()} Views.</span>
                         <span class="update-date">1 week ago</span>
                     </p>
                 </div>
             </figcaption>
-        `;
+            `;
             videoGrid.appendChild(article); // 생성된 기사를 뒤에서부터 추가
         });
     }
