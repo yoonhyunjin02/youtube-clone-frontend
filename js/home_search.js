@@ -74,15 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const allVideos = await fetchVideos(); // 전체 영상 리스트 가져오기
         const filtered = allVideos.filter(video =>
-          video.title.toLowerCase().includes(keyword) ||  // 조건1:제목에 검색어가 있거나
-          video.tags.join(",").toLowerCase().includes(keyword) // 조건2: 태그에 검색어가 있으면
+            video.title.toLowerCase().includes(keyword) ||  // 조건1:제목에 검색어가 있거나
+            video.tags.join(",").toLowerCase().includes(keyword) ||// 조건2: 태그에 검색어가 있으면
+            video.channel.channel_name.toLowerCase().includes(keyword)
         );
 
         if (filtered.length === 0) {
             alert("검색 결과가 없습니다.");
+        } else {
+            renderVideos(filtered);
         }
 
-        renderVideos(filtered);
+        
     }
     
     //버튼 기능 실행
@@ -90,6 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();  // 폼 전송 막기
         handleSearch();
     });
+    //검색창에서 엔터키 눌렀을 때도 검색 실행됨.
+    searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            handleSearch();
+        }
+    })
     
     
 });  //DOMContentLoaded 마지막
