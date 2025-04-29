@@ -64,6 +64,10 @@
     display: none;
 }
 
+.show-more-btn img {
+    transition: transform 0.3s ease;
+}
+
 .nav-section{
     border-top:1px solid rgba(48, 48, 48,1);
     margin: 0;

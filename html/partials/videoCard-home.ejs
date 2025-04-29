@@ -1,9 +1,13 @@
 <article class="video-card">
     <!-- 썸네일: 영상 페이지로 이동 -->
     <a href="/video?id=<%= video.id %>">
-        <figure class="video-figure">
-            <img src="<%= video.thumbnail %>" alt="썸네일">
-            <!-- <span class="video-length">12:34</span> -->
+        <figure class="video-thumbnail video-card">
+            <img class="thumbnail" src="<%= video.thumbnail %>" alt="video thumbnail">
+            
+            <video class="preview" muted loop preload="none">
+                <source src="https://storage.googleapis.com/youtube-clone-video/<%= video.id %>.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </figure>
     </a>
 
@@ -24,7 +28,7 @@
             </a>
             <!-- 제목: 비디오 페이지로 이동 -->
             <a href="/video?id=<%= video.id %>">
-                <span class="view"><%= video.views.toLocaleString() %> Views.</span>
+                <span class="view"><%= formatViews(video.views) %> Views • </span>
                 <span class="update-date"><%= getRelativeTime(video.created_dt) %></span>
             </a>
         </div>

@@ -76,7 +76,6 @@ main {
 .scroll-next {
     position: absolute;
     top: 50%;
-    right: 0;
     transform: translateY(-50%);
     width: 56px;
     height: 56px;
@@ -88,6 +87,19 @@ main {
     justify-content: center;
     cursor: pointer;
     z-index: 10;
+}
+
+.scroll-next#left {
+    left: 0;
+    right: auto;
+}
+
+#left img {
+    transform: rotate(180deg);
+}
+
+.scroll-next#right {
+    right: 0;
 }
 
 .scroll-next img {
@@ -163,20 +175,38 @@ main {
     color: inherit;
 }
 
-.video-figure {
+.video-thumbnail {
     position: relative;
     width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
 
-.video-figure img {
+.video-thumbnail img,
+.video-thumbnail video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    /* 크기가 다른 썸네일 때문에 최대 크기 정의 */
-    max-height: 135px;
+    height: 100%;
     object-fit: cover;
     display: block;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.video-thumbnail video {
+    opacity: 0;
+}
+
+.video-thumbnail:hover video {
+    opacity: 1;
+}
+
+.video-thumbnail:hover img {
+    opacity: 0;
 }
 
 /* .video-length {
@@ -190,7 +220,7 @@ main {
     border-radius: 2px;
 } */
 
-/* 비디오 설명 영역          */
+/* 비디오 설명 영역*/
 .video-info {
     display: flex;
     gap: 10px;
@@ -206,7 +236,6 @@ main {
 .video-description {
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 
 .video-description p {

@@ -57,9 +57,24 @@
                         <div class="action-button">
                             <button><img class="action-img" src="../assets/icons/save2.svg" alt="Save" />
                             <span class="action-text">SAVE</span></button>
+                            <!-- 저장 모달 -->
+                            <div class="save-modal">
+                                <div class="save-modal-content">
+                                    <button class="save-option-btn"><img src="../assets/icons/save-offline.svg" alt="Download"><span class="save-text">Download</span></button>
+                                    <button class="save-option-btn"><img src="../assets/icons/save-online.svg" alt="Save"><span class="save-text">Save</span></button>
+                                </div>
+                            </div>
+                            <!-- 저장 모달 -->
                         </div>
                         <div class="action-button">
                             <button class="action-text"><img class="action-img" src="../assets/icons/more2.svg" alt="More" /></button>
+                            <!-- 더보기 모달 -->
+                            <div class="more-modal">
+                                <div class="more-modal-content">
+                                    <button class="more-option-btn"><img src="../assets/icons/report.svg" alt="report"><span class="report-text">Report</span></button>
+                                </div>
+                            </div>
+                            <!-- 더보기 모달 -->
                         </div>
                     </div>
                 </div>
@@ -101,6 +116,14 @@
                                 <img class="sortby-img" src="../assets/icons/list filter.png" alt="Sort icon">
                                 <span>SORT BY</span>
                             </button>
+                            <!-- 정렬 모달 -->
+                            <div class="sortby-modal">
+                                <div class="sortby-modal-content">
+                                    <button class="sortby-option-btn"><span class="sortby-text">Top comments</span></button>
+                                    <button class="sortby-option-btn"><span class="sortby-text">Newest first</span></button>
+                                </div>
+                            </div>
+                            <!-- 정렬 모달 -->
                         </div>
                     </div> 
                     <!-- 댓글 입력 -->
@@ -153,15 +176,38 @@
             </nav>
             <!--추천 영상 카드-->
             <div class="recommended-list">
-                <% recommendedVideos.forEach(video => { %>
-                    <%- include('partials/videoCard-video', { video: video, getRelativeTime: getRelativeTime }) %>
-                <% }); %>
+                <article class="video-card">
+                    <% recommendedVideos.forEach(video => { %>
+                        <%- include('partials/videoCard-video', { video: video, getRelativeTime: getRelativeTime }) %>
+                    <% }); %>
+                </article>  
             </div>                         
         </section>
     </div>
     <!-- 댓글 기능 -->
+
+    <!-- 공유 모달 -->
+    <div class="share-modal">
+        <div class="share-box">
+            <div class="share-header">
+                <span>SHARE</span>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="link-container">
+                <input 
+                    type="text" 
+                    id="share-link" 
+                    value="https://localhost:3000/video?id=<%= videoInfo.id %>" 
+                    readonly
+                >
+                <button class="copy-btn">copy</button>
+            </div>
+        </div>
+    </div>
+    <!-- 공유 모달 -->
     <script src="/js/comment.js"></script>
     <script src="../js/button.js"></script>
     <script src="../js/video_search.js"></script>
+    <script src="/js/thumbnail-play.js"></script>
 </body>
 </html>

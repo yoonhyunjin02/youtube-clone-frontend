@@ -24,7 +24,13 @@
         <main>
             <!--filter-bar-->
             <section class="filter-bar">
-                <div class="filter-wrapper">
+                <div>
+                    <button class="scroll-next" id="left">
+                        <img src="../assets/icons/Top-Menu.svg" alt="이전 버튼" />
+                    </button>
+                </div>
+
+                <div class="filter-wrapper" id="scroll-container">
                     <button class="category-btn active">전체</button>
                     <button class="category-btn">동물</button>
                     <button class="category-btn">복제</button>
@@ -66,7 +72,9 @@
                     <button class="category-btn">정보</button>
                 </div>
                 <div>
-                    <button class="scroll-next"><img src="../assets/icons/Top-Menu.svg" alt="다음 버튼" /></button>
+                    <button class="scroll-next" id="right">
+                        <img src="../assets/icons/Top-Menu.svg" alt="다음 버튼" />
+                    </button>
                 </div>
             </section>
 
@@ -82,5 +90,7 @@
         </main>
     </div>
     <script src="../js\home_search.js"></script>
+    <script src="/js/topmenu.js"></script>
+    <script src="/js/thumbnail-play.js"></script>
 </body>
 </html>

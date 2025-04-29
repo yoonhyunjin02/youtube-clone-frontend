@@ -97,23 +97,27 @@
                     </div>
                     <div class="video-list">
                         <% chunk.forEach(video => { %>
-                            <a href="/video?id=<%= video.id %>">
-                                <figure class="video-figure">
-                                    <video muted loop autoplay width="300">
-                                        <source src="https://storage.googleapis.com/youtube-clone-video/<%= video.id %>.mp4" type="video/mp4">
-                                    </video>
-                                    <span class="video-length"></span>
-                                </figure>
-                                <figcaption class="video-info">
-                                    <div class="video-description">
-                                        <p class="video-title"><%= video.title %></p>
-                                        <p>
-                                            <span class="channel-name"><%= channelInfo.channel_name %></span><br>
-                                            <span class="view"><%= video.views.toLocaleString() %> Views</span>
-                                        </p>
-                                    </div>
-                                </figcaption>
-                            </a>
+                            <article class="video-card">
+                                <a href="/video?id=<%= video.id %>">
+                                    <figure class="video-figure">
+                                        <img class="thumbnail" src="<%= video.thumbnail %>" alt="썸네일">
+                                        
+                                        <video class="preview" muted loop preload="none">
+                                            <source src="https://storage.googleapis.com/youtube-clone-video/<%= video.id %>.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </figure>
+                                    <figcaption class="video-info">
+                                        <div class="video-description">
+                                            <p class="video-title"><%= video.title %></p>
+                                            <p>
+                                                <span class="channel-name"><%= channelInfo.channel_name %></span><br>
+                                                <span class="view"><%= formatViews(video.views) %> Views</span>
+                                            </p>
+                                        </div>
+                                    </figcaption>
+                                </a>
+                            </article>
                         <% }); %>
                     </div>
                 </div>
@@ -121,6 +125,7 @@
         </section>
     </main>
     <script src="../js/button.js"></script>
+    <script src="/js/thumbnail-play.js"></script>
     <script src="../js/channel_search.js"></script>
 </body>
 </html>

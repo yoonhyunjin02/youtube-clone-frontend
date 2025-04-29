@@ -73,7 +73,7 @@
     align-items: center;
     gap:10px;
 }
-.video-actions button{
+.video-actions button, .sortby-option-btn{
     background-color: rgb(22, 22, 22);
     all:unset;
     display:flex;
@@ -241,11 +241,6 @@
     font-weight: 400;
     border:1px solid rgb(65, 65, 65);
 }
-.video-thumbnail img{
-    width:176px;
-    height: 94px;
-    object-fit: cover;
-}
 
 .recommended-list a{
     display: flex;
@@ -291,12 +286,54 @@
     color: #fff;
     border-radius: 2px;
 }
-.video-thumbnail {
+
+a > .video-thumbnail {
+    position: relative;
+    width: 176px;
+    height: 94px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+/*.video-thumbnail {
     position: relative;
     overflow: visible;  /* 타임코드가 잘 보이도록 */
-    margin:0;
-    padding:0;
+    /* margin:0;
+    padding:0; 
+}*/
+
+/* .video-thumbnail img{
+    width:176px;
+    height: 94px;
+    object-fit: cover;
+} */
+
+.video-thumbnail img,
+.video-thumbnail video {
+    width: 176px;
+    height: 94px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
+
+.video-thumbnail video {
+    opacity: 0;
+}
+
+.video-thumbnail:hover video {
+    opacity: 1;
+}
+
+.video-thumbnail:hover img {
+    opacity: 0;
+}
+
 .recommended-list-a{
     margin-bottom:5px;
     width:402px;
@@ -331,4 +368,185 @@ a {
 .video-actions button:hover{
     background-color:#363636;
     
+}
+
+/* 공유 모달*/
+.share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.share-box {
+    background: #282828;
+    width: 450px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.share-header h3 {
+    color: white;
+    font-size: 15px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.link-container {
+    display: flex;
+    gap: 10px;
+    background: #141414;
+    border: 1px solid #404040;
+    border-radius: 7px;
+}
+
+#share-link {
+    all:unset;
+    flex: 1;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.copy-btn {
+    background: #3da5fe;
+    color: white;
+    border: none;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin:7px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.copy-btn:hover {
+    background: #2d8fd6;
+}
+
+/* 더보기 모달 */
+.action-button {
+    position: relative;
+}
+
+.more-modal {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.more-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 120px;
+    border-radius: 12px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.more-option-btn:hover {
+    background: #383838;
+}
+.report-text{
+    font-size:13px;
+    padding-left :10px;
+}
+.more-option-btn img{
+    width: 20px;
+}
+
+/* 저장 모달 */
+
+.save-modal {
+    position: absolute;
+    top: 28px;
+    right:0;
+    display: none;
+    z-index: 1000;
+}
+
+.save-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 120px;
+    border-radius: 12px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.save-text{
+    font-size:13px;
+    padding-left :10px;
+}
+.save-option-btn img{
+    width: 20px;
+}
+
+/* 정렬 모달 */
+.sort {
+    position: relative;
+}
+.sortby-modal {
+    position: absolute;
+    top: 100%; 
+    left: 130px;    
+    margin-top: 5px;
+    display:none;
+}
+
+.sortby-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 130px;
+    border-radius: 12px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.sortby-option-btn {
+    font-size:14px;
+    padding: 10px;
+    background-color: #282828;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s; 
+}
+
+.sortby-option-btn:hover {
+    filter: brightness(1.3);
+}
+
+.sortby-option-btn.active {
+    background-color: #404040; 
+}
+.sortby-option-btn.active:hover{
+    filter: brightness(1.3);
 }
