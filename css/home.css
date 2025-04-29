@@ -76,7 +76,6 @@ main {
 .scroll-next {
     position: absolute;
     top: 50%;
-    right: 0;
     transform: translateY(-50%);
     width: 56px;
     height: 56px;
@@ -88,6 +87,19 @@ main {
     justify-content: center;
     cursor: pointer;
     z-index: 10;
+}
+
+.scroll-next#left {
+    left: 0;
+    right: auto;
+}
+
+#left img {
+    transform: rotate(180deg);
+}
+
+.scroll-next#right {
+    right: 0;
 }
 
 .scroll-next img {
