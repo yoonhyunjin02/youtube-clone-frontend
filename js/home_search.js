@@ -1,3 +1,4 @@
+// home_search.js
 // html보다 나중에 js가 실행되도록 DOMContentLoaded 감쌈
 document.addEventListener("DOMContentLoaded", () => {
     // 검색창, 검색버튼, 영상리스트 불러오기
@@ -46,26 +47,39 @@ document.addEventListener("DOMContentLoaded", () => {
             const div = document.createElement("div");
             div.className = "search-item"; // 검색 결과 전용 스타일
             div.innerHTML = `
-                <a href="/video?id=${video.id}">
-                    <img src="${video.thumbnail}" alt="썸네일" style="width: 300px;">
-                    <div class="search-info">
-                        <h3>${video.title}</h3>
-                        <p>${video.channel.channel_name}</p>
-                        <p>${video.views.toLocaleString()} views • 1 week ago</p>
+                <div class="video-card">
+                    <a href="/video?id=${video.id}" class="video-figure">
+                        <img src="${video.thumbnail}" alt="썸네일">
+                    </a>
+                    <div class="video-info">
+                    <a href="/channel?id=${video.channel.id}">
+                        <img src="${video.channel.channel_profile}" alt="${video.channel.channel_name}">
+                    </a>
+                    <div class="video-description">
+                        <a href="/video?id=${video.id}">
+                        <p class="video-title">${video.title}</p>
+                        </a>
+                        <a href="/channel?id=${video.channel.id}">
+                        <p class="channel-name">${video.channel.channel_name}</p>
+                        </a>
+                        <a href="/video?id=${video.id}">
+                        <p class="view">${video.views.toLocaleString()} views • 1 week ago</p>
+                        </a>
                     </div>
-                </a>
-            `;
+                    </div>
+                </div>
+                `;
+
             searchResult.appendChild(div);
         });
     }
-    
     
     //검색 기능 함수 생성
     async function handleSearch(keyword) {
         const allVideos = await fetchVideos(); // API에서 정보가져오기
 
+        // 검색어 없으면 홈 화면 복구
         if (!keyword || keyword.trim() === "") {
-            // 검색어 없으면 홈 화면 복구
             videoGrid.style.display = "grid";
             searchResult.style.display = "none";
             return;
@@ -113,15 +127,23 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
-    // 페이지 로드 시 URL 쿼리(search) 자동 검색
+    // 현재 페이지 url의 쿼리스트링 가져오기
     const urlParams = new URLSearchParams(window.location.search);
     const searchQuery = urlParams.get("search");
+    // 페이지 로드 시 URL 쿼리(search) 자동 검색
     if (searchQuery) {
         searchInput.value = searchQuery;  // 검색창에 검색어 보여주기
         handleSearch(searchQuery);        // 검색 실행
     }
+    // 페이지 로드 직후 바로 video-grid 숨기기
+    if (searchQuery) {
+        
+        if (videoGrid) {
+            videoGrid.style.display = "none";
+        }
+        if (searchResult) {
+            searchResult.style.display = "block";
+        }
+    }
 
-    
-    
 });  //DOMContentLoaded 마지막

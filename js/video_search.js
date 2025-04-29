@@ -1,25 +1,26 @@
 // video_search.js
+//js 파일이 html파일보다 먼저 실행되는 것을 방지
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector(".search-form input[type='search']");
-  const searchBtn = document.querySelector(".search-form button");
+    const searchInput = document.querySelector(".search-form input[type='search']");
+    const searchBtn = document.querySelector(".search-form button");
 
-  if (searchInput && searchBtn) {
-      searchBtn.addEventListener("click", (e) => {
-          e.preventDefault();
-          const keyword = searchInput.value.trim();
-          if (keyword) {
-              window.location.href = `/?search=${encodeURIComponent(keyword)}`;
-          }
-      });
+    if (searchInput && searchBtn) {
+        searchBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const keyword = searchInput.value.trim();
+            if (keyword) {
+                window.location.href = `/?search=${encodeURIComponent(keyword)}`;
+            }
+        });
 
-      searchInput.addEventListener("keydown", (e) => {
-          if (e.key === "Enter") {
-              e.preventDefault();
-              const keyword = searchInput.value.trim();
-              if (keyword) {
-                  window.location.href = `/?search=${encodeURIComponent(keyword)}`;
-              }
-          }
-      });
-  }
+        searchInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                const keyword = searchInput.value.trim();
+                if (keyword) {
+                    window.location.href = `/?search=${encodeURIComponent(keyword)}`;
+                }
+            }
+        });
+    }
 });
