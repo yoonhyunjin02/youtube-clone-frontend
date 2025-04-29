@@ -2,7 +2,6 @@
     <!-- 기본 메뉴 -->
     <section class="topsection">
         <ul class="nav-section">
-            <!-- <li class="home"><a href="#"><img src="../assets/icons/homeicon.svg" alt="Home icon" /><span>Home</span></a></li> -->
             <li class="home">
                 <a href="/"> <!-- 여기를 '/'로 수정 -->   
                     <img src="../assets/icons/homeicon.svg" alt="Home icon" />
@@ -32,10 +31,6 @@
             <h2 class="nav-title">SUBSCRIPTIONS</h2>
             <% subscriberList.forEach((sub, index) => { %>
                 <li class="subscriber-item <%= index >= 7 ? 'hidden' : '' %>">
-                    <!-- <a href="#">
-                        <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
-                        <span><%= sub.channel_name %></span>
-                    </a> -->
                     <!-- 구독자 채널 클릭 시 해당 채널 페이지로 이동 -->
                     <a href="/channel?id=<%= sub.id %>"> <!--네비게이션에서 클릭할 때 id를 넘김 -->
                         <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
@@ -77,3 +72,4 @@
     </section>
 </nav>
 <script src="../../js/sidebarToggle.js"></script>
+<script src="../../js/sidebarshowmore.js"></script>
