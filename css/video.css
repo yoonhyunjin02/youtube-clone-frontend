@@ -241,11 +241,6 @@
     font-weight: 400;
     border:1px solid rgb(65, 65, 65);
 }
-.video-thumbnail img{
-    width:176px;
-    height: 94px;
-    object-fit: cover;
-}
 
 .recommended-list a{
     display: flex;
@@ -291,12 +286,54 @@
     color: #fff;
     border-radius: 2px;
 }
-.video-thumbnail {
+
+a > .video-thumbnail {
+    position: relative;
+    width: 176px;
+    height: 94px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+/*.video-thumbnail {
     position: relative;
     overflow: visible;  /* 타임코드가 잘 보이도록 */
-    margin:0;
-    padding:0;
+    /* margin:0;
+    padding:0; 
+}*/
+
+/* .video-thumbnail img{
+    width:176px;
+    height: 94px;
+    object-fit: cover;
+} */
+
+.video-thumbnail img,
+.video-thumbnail video {
+    width: 176px;
+    height: 94px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
+
+.video-thumbnail video {
+    opacity: 0;
+}
+
+.video-thumbnail:hover video {
+    opacity: 1;
+}
+
+.video-thumbnail:hover img {
+    opacity: 0;
+}
+
 .recommended-list-a{
     margin-bottom:5px;
     width:402px;

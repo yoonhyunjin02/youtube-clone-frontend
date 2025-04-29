@@ -168,9 +168,11 @@
             </nav>
             <!--추천 영상 카드-->
             <div class="recommended-list">
-                <% recommendedVideos.forEach(video => { %>
-                    <%- include('partials/videoCard-video', { video: video, getRelativeTime: getRelativeTime }) %>
-                <% }); %>
+                <article class="video-card">
+                    <% recommendedVideos.forEach(video => { %>
+                        <%- include('partials/videoCard-video', { video: video, getRelativeTime: getRelativeTime }) %>
+                    <% }); %>
+                </article>  
             </div>                         
         </section>
     </div>
@@ -195,9 +197,8 @@
         </div>
     </div>
     <!-- 공유 모달 -->
-    
     <script src="/js/comment.js"></script>
-    
-    <script src="../js/button.js"></script>
+    <script src="/js/button.js"></script>
+    <script src="/js/thumbnail-play.js"></script>
 </body>
 </html>
