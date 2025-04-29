@@ -78,8 +78,8 @@
                 </div>
             </section>
 
-            <!--video-grid-->
-            <section class="video-grid">
+            <!--video-grid 검색 시 홈 화면에 등장 방지를 위해서 display:none 설정-->  
+            <section class="video-grid" style="display: none;"> 
                 <% videoList.forEach(video => { %>
                 <%- include('partials/videoCard-home', { video: video }) %> 
                 <% }); %>

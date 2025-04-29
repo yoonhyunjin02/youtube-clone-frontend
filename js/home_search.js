@@ -7,7 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoGrid = document.querySelector(".video-grid");
     const searchResult = document.querySelector(".search-result");
     const categoryBtns = document.querySelectorAll(".category-btn");  
-    
+    // 현재 페이지 url의 쿼리스트링 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get("search");
+
+    // 페이지 로드 시작하자마자 무조건 videoGrid 숨기기
+    if (videoGrid) videoGrid.style.display = "none";
+    if (searchResult) searchResult.style.display = "none";
+
     //영상 가져오기 함수
     async function fetchVideos() {
         const res = await fetch("http://techfree-oreumi-api.kro.kr:5000/video/getVideoList");
@@ -48,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div.className = "search-item"; // 검색 결과 전용 스타일
             div.innerHTML = `
                 <div class="video-card">
-                    <a href="/video?id=${video.id}" class="video-figure">
+                    <a href="/video?id=${video.id}" class="video-thumbnail">
                         <img src="${video.thumbnail}" alt="썸네일">
                     </a>
                     <div class="video-info">
@@ -103,17 +110,22 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBtn.addEventListener("click", (e) => {
         e.preventDefault();
         const keyword = searchInput.value;
-        handleSearch(keyword);
+        if (keyword) {
+            window.location.href = `/?search=${encodeURIComponent(keyword)}`; 
+        }
     });
     //검색창에서 엔터키 눌렀을 때도 검색 실행됨.
     searchInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
-            const keyword = searchInput.value;
-            handleSearch(keyword);
+            const keyword = searchInput.value.trim();
+            if (keyword) {
+                window.location.href = `/?search=${encodeURIComponent(keyword)}`;
+            }
         }
     });
 
+    // 필터 바에 있는 버튼 누르면 검색.
     categoryBtns.forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -127,23 +139,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    // 현재 페이지 url의 쿼리스트링 가져오기
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get("search");
+    
     // 페이지 로드 시 URL 쿼리(search) 자동 검색
     if (searchQuery) {
-        searchInput.value = searchQuery;  // 검색창에 검색어 보여주기
-        handleSearch(searchQuery);        // 검색 실행
-    }
-    // 페이지 로드 직후 바로 video-grid 숨기기
-    if (searchQuery) {
-        
-        if (videoGrid) {
-            videoGrid.style.display = "none";
-        }
-        if (searchResult) {
-            searchResult.style.display = "block";
-        }
+        searchInput.value = searchQuery;
+        handleSearch(searchQuery);
+    } else {
+        videoGrid.style.display = "grid";
+        searchResult.style.display = "none";
     }
 
 });  //DOMContentLoaded 마지막
