@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const shareBtn = document.querySelectorAll('.action-button')[2];
         const saveBtn = document.querySelectorAll('.action-button')[3];
         const moreBtn = document.querySelectorAll('.action-button')[4];
+        const sortbyBtn = document.querySelector('.sortby-btn');
         const likeImg = likeBtn.querySelector('img');
         const dislikeImg = dislikeBtn.querySelector('img');
         const likeCount = likeBtn.querySelector('.action-text');
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const closeModal = document.querySelector('.close-modal');
         const moreModal = document.querySelector('.more-modal');
         const saveModal = document.querySelector('.save-modal');
+        const sortbyModal = document.querySelector('.sortby-modal');
 
     
         let liked = false;
@@ -150,6 +152,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 saveModal.style.display = 'none';
             }
         });
+        
+        //sortby-modal
+        sortbyBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); //
+            if (sortbyModal.style.display === 'flex') {
+                sortbyModal.style.display = 'none';
+            } else {
+                sortbyModal.style.display = 'flex';
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (sortbyModal.style.display === 'flex') {
+                sortbyModal.style.display = 'none';
+            }
+        });
+        document.querySelector('.sortby-modal-content').addEventListener('click', function(e) {
+            if(e.target.closest('.sortby-option-btn')) {
+                document.querySelectorAll('.sortby-option-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                e.target.closest('.sortby-option-btn').classList.add('active');
+            }
+        });
+        
+        document.querySelector('.sortby-option-btn:first-child').classList.add('active');
     }
 });
 async function copyLink() {
