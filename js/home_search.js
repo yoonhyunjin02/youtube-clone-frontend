@@ -113,6 +113,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // 페이지 로드 시 URL 쿼리(search) 자동 검색
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get("search");
+    if (searchQuery) {
+        searchInput.value = searchQuery;  // 검색창에 검색어 보여주기
+        handleSearch(searchQuery);        // 검색 실행
+    }
+
     
     
 });  //DOMContentLoaded 마지막
