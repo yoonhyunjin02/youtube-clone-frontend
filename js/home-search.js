@@ -17,31 +17,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //영상 가져오기 함수
     async function fetchVideos() {
-        const res = await fetch("http://techfree-oreumi-api.kro.kr:5000/video/getVideoList");
-        const data = await res.json();
-    
-        // 영상 데이터 부르기
-        const videosWithChannel = await Promise.all(
-            data.map(async (video) => {
-                try {
-                    const channelRes = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${video.channel_id}`);
-                    const channelInfo = await channelRes.json();
-                    return { ...video, channel: channelInfo };
-                } catch (error) {
-                    console.error('채널 정보 오류:', error);
-                    return {
-                        ...video,
-                        channel: {
-                            channel_name: 'Unknown',
-                            channel_profile: '/assets/icons/default-profile.svg'
-                        }
-                    };
-                }
-            })
-        );
-    
-        return videosWithChannel;
+        try {const res = await fetch("http://techfree-oreumi-api.kro.kr:5000/video/getVideoList");
+            const data = await res.json();
+        
+            // 영상 데이터 부르기
+            const videosWithChannel = await Promise.all(
+                data.map(async (video) => {
+                    try {
+                        const channelRes = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${video.channel_id}`);
+                        const channelInfo = await channelRes.json();
+                        return { ...video, channel: channelInfo };
+                    } catch (error) {
+                        console.error('채널 정보 오류:', error);
+                        return {
+                            ...video,
+                            channel: {
+                                channel_name: 'Unknown',
+                                channel_profile: '/assets/icons/default-profile.svg'
+                            }
+                        };
+                    }
+                })
+            );
+        
+            return videosWithChannel;
+        } catch (error) {
+            console.error("영상 목록 불러오기 실패:", error);
+            return [];
+        }
     }
+        
     
 
     //영상 리스트 불러오기 함수 생성
@@ -81,27 +86,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //검색 기능 함수 생성
     async function handleSearch(keyword) {
-        const allVideos = await fetchVideos(); // API에서 정보가져오기
+        try {const allVideos = await fetchVideos(); // API에서 정보가져오기
 
-        // 검색어 없으면 홈 화면 복구
-        if (!keyword || keyword.trim() === "") {
-            videoGrid.style.display = "grid";
-            searchResult.style.display = "none";
-            return;
+            // 검색어 없으면 홈 화면 복구
+            if (!keyword || keyword.trim() === "") {
+                videoGrid.style.display = "grid";
+                searchResult.style.display = "none";
+                return;
+            }
+    
+            const lowerKeyword = keyword.toLowerCase();
+            const filtered = allVideos.filter(video =>
+                video.title.toLowerCase().includes(lowerKeyword) ||
+                video.tags.join(",").toLowerCase().includes(lowerKeyword) ||
+                video.channel.channel_name.toLowerCase().includes(lowerKeyword)
+            );
+    
+            if (filtered.length === 0) {
+                alert("검색 결과가 없습니다.");
+            } else {
+                renderVideos(filtered);
+            }
+        } catch (error) {
+            console.error("검색 처리 중 오류:", error);
         }
-
-        const lowerKeyword = keyword.toLowerCase();
-        const filtered = allVideos.filter(video =>
-            video.title.toLowerCase().includes(lowerKeyword) ||
-            video.tags.join(",").toLowerCase().includes(lowerKeyword) ||
-            video.channel.channel_name.toLowerCase().includes(lowerKeyword)
-        );
-
-        if (filtered.length === 0) {
-            alert("검색 결과가 없습니다.");
-        } else {
-            renderVideos(filtered);
-        }
+        
     }
     
     //버튼 기능 실행
