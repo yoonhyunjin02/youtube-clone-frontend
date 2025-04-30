@@ -52,7 +52,7 @@
 
 ### ✅ 홈(Home)
 - 최신 영상 카드 출력 / 검색창 기능 / 필터 카테고리 클릭 이동
-- 마우스 hover 시 썸네일 동영상 미리보기 재생 구현
+- 마우스 hover 시 썸네일 **미리보기 동영상 재생** 기능 구현
 
 ### ✅ 채널(Channel)
 - 채널 프로필/배너 출력 / 채널별 영상 리스트 동적 렌더링
@@ -63,9 +63,11 @@
 - 좋아요/싫어요 토글 기능 / 공유/저장 버튼 / 정렬 모달 구현
 
 ### ✅ 공통 기능
-- 반응형 UI (미디어쿼리)
-- 상단바/네비바 ejs 템플릿 재사용 및 사이드바 토글 기능
-- svg hover 효과, js 기능 모듈화, 컴포넌트 기반 관리
+- 반응형 UI (미디어쿼리 기반 일부 페이지 적용)
+- 상단바/네비바 ejs 템플릿 **재사용 및 모듈화** 구조 적용
+- 사이드바 토글 기능 / JS 기능 분리 및 모듈화
+- SVG 버튼 상태 변화 및 아이콘 동적 처리 구현
+- **videoCard 템플릿 분기 사용으로 모든 페이지에서 공통 카드 컴포넌트 재사용**
 
 ---
 
@@ -81,7 +83,7 @@ youtube-clone-frontend/
 │   └── partials/ (header, nav, videoCard 등)
 │   └── home.ejs, video.ejs, channel.ejs
 ├── css/ (home.css, video.css, channel.css 등)
-├── js/  (button.js, thumbnail-play.js 등)
+├── js/  (button.js, thumbnail-play.js, search 관련 js 등)
 ├── server.js
 └── README.md
 ```
