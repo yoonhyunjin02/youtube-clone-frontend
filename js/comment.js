@@ -39,6 +39,68 @@ document.addEventListener('DOMContentLoaded', () => {
         commentList.prepend(newComment);
         commentCount++;
         commentNum.textContent = `${commentCount} Comments`;
+
+        const likeBtn = newComment.querySelector('.like-btn');
+        const dislikeBtn = newComment.querySelector('.dislike-btn');
+        const likeImg = likeBtn.querySelector('img');
+        const dislikeImg = dislikeBtn.querySelector('img');
+        const likeCount = newComment.querySelector('.like-count');
+        const dislikeCount = newComment.querySelector('.dislike-count');
+
+        let liked = false;
+        let disliked = false;
+
+        likeBtn.addEventListener('click', function () {
+            let currentLikes = parseInt(likeCount.textContent);
+            if (!liked) {
+                currentLikes += 1;
+                likeImg.src = '../assets/icons/like-filled.svg';
+                likeCount.textContent = currentLikes;
+                liked = true;
+                likeBtn.classList.add('active'); // ✅ 활성화 클래스 추가
+
+                if (disliked) {
+                    let currentDislikes = parseInt(dislikeCount.textContent);
+                    currentDislikes -= 1;
+                    dislikeImg.src = '../assets/icons/dislike.svg';
+                    dislikeCount.textContent = currentDislikes;
+                    disliked = false;
+                    dislikeBtn.classList.remove('active'); // ✅ 비활성화
+                }
+            } else {
+                currentLikes -= 1;
+                likeImg.src = '../assets/icons/like.svg';
+                likeCount.textContent = currentLikes;
+                liked = false;
+                likeBtn.classList.remove('active'); // ✅ 비활성화
+            }
+        });
+
+        dislikeBtn.addEventListener('click', function () {
+            let currentDislikes = parseInt(dislikeCount.textContent);
+            if (!disliked) {
+                currentDislikes += 1;
+                dislikeImg.src = '../assets/icons/dislike-filled.svg';
+                dislikeCount.textContent = currentDislikes;
+                disliked = true;
+                dislikeBtn.classList.add('active'); // ✅ 활성화
+
+                if (liked) {
+                    let currentLikes = parseInt(likeCount.textContent);
+                    currentLikes -= 1;
+                    likeImg.src = '../assets/icons/like.svg';
+                    likeCount.textContent = currentLikes;
+                    liked = false;
+                    likeBtn.classList.remove('active'); // ✅ 비활성화
+                }
+            } else {
+                currentDislikes -= 1;
+                dislikeImg.src = '../assets/icons/dislike.svg';
+                dislikeCount.textContent = currentDislikes;
+                disliked = false;
+                dislikeBtn.classList.remove('active'); // ✅ 비활성화
+            }
+        });
     }
 
     function escapeHtml(unsafe) {
@@ -50,49 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/'/g, "&#039;");
     }
 
-    // 좋아요/싫어요 기능 (토글 + 색상 변경)
-    document.addEventListener('click', function (e) {
-        const likeBtn = e.target.closest('.like-btn');
-        const dislikeBtn = e.target.closest('.dislike-btn');
-
-        if (likeBtn) {
-            const commentActions = likeBtn.parentElement;
-            const likeCountSpan = likeBtn.nextElementSibling;
-            const dislikeBtnElem = commentActions.querySelector('.dislike-btn');
-            const dislikeCountSpan = dislikeBtnElem.nextElementSibling;
-
-            if (!likeBtn.classList.contains('active')) {
-                likeBtn.classList.add('active');
-                likeCountSpan.textContent = parseInt(likeCountSpan.textContent) + 1;
-
-                if (dislikeBtnElem.classList.contains('active')) {
-                    dislikeBtnElem.classList.remove('active');
-                    dislikeCountSpan.textContent = Math.max(0, parseInt(dislikeCountSpan.textContent) - 1);
-                }
-            } else {
-                likeBtn.classList.remove('active');
-                likeCountSpan.textContent = Math.max(0, parseInt(likeCountSpan.textContent) - 1);
-            }
-        }
-
-        if (dislikeBtn) {
-            const commentActions = dislikeBtn.parentElement;
-            const dislikeCountSpan = dislikeBtn.nextElementSibling;
-            const likeBtnElem = commentActions.querySelector('.like-btn');
-            const likeCountSpan = likeBtnElem.nextElementSibling;
-
-            if (!dislikeBtn.classList.contains('active')) {
-                dislikeBtn.classList.add('active');
-                dislikeCountSpan.textContent = parseInt(dislikeCountSpan.textContent) + 1;
-
-                if (likeBtnElem.classList.contains('active')) {
-                    likeBtnElem.classList.remove('active');
-                    likeCountSpan.textContent = Math.max(0, parseInt(likeCountSpan.textContent) - 1);
-                }
-            } else {
-                dislikeBtn.classList.remove('active');
-                dislikeCountSpan.textContent = Math.max(0, parseInt(dislikeCountSpan.textContent) - 1);
-            }
-        }
-    });
+    // 공유 모달
+    const shareBtn = document.querySelector('.share-btn');
+    const ShareModal = document.querySelector('.share-modal');
+    if (shareBtn && ShareModal) {
+        shareBtn.addEventListener('click', () => {
+            ShareModal.style.display = 'flex';
+        });
+    }
 });

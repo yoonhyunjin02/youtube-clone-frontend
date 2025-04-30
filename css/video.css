@@ -217,9 +217,14 @@
 }
 .comment-actions img{
     width: 24px;
+    height: 24px;
 }
 .comment-actions button{
     all:unset;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -549,4 +554,18 @@ a {
 }
 .sortby-option-btn.active:hover{
     filter: brightness(1.3);
+}
+
+/* ====댓글 내부 좋아요, 싫어요 크기==== */
+.comment-actions img[src*="like.svg"],
+.comment-actions img[src*="dislike.svg"] {
+    width: 24px;
+    height: 24px;
+}
+
+/* 채워진 아이콘은 16px */
+.comment-actions img[src*="like-filled"],
+.comment-actions img[src*="dislike-filled"] {
+    width: 16px;
+    height: 16px;
 }
