@@ -54,28 +54,26 @@ document.addEventListener("DOMContentLoaded", () => {
             const div = document.createElement("div");
             div.className = "search-item"; // 검색 결과 전용 스타일
             div.innerHTML = `
-                <div class="video-card">
+                <div class="search-item">
                     <a href="/video?id=${video.id}" class="video-thumbnail">
-                        <img src="${video.thumbnail}" alt="썸네일">
+                    <img src="${video.thumbnail}" alt="썸네일">
                     </a>
                     <div class="video-info">
-                    <a href="/channel?id=${video.channel.id}">
-                        <img src="${video.channel.channel_profile}" alt="${video.channel.channel_name}">
-                    </a>
-                    <div class="video-description">
-                        <a href="/video?id=${video.id}">
+                    <a href="/video?id=${video.id}">
                         <p class="video-title">${video.title}</p>
+                    </a>
+                    <a href="/channel?id=${video.channel.id}" class="channel-meta">
+                        <img src="${video.channel.channel_profile}" alt="${video.channel.channel_name}">
+                        <span>${video.channel.channel_name}</span>
+                    </a>
+                    <a href="/video?id=${video.id}">
+                        <span class="view">${video.views.toLocaleString()} views • 1 week ago</span>
                         </a>
-                        <a href="/channel?id=${video.channel.id}">
-                        <p class="channel-name">${video.channel.channel_name}</p>
-                        </a>
-                        <a href="/video?id=${video.id}">
-                        <p class="view">${video.views.toLocaleString()} views • 1 week ago</p>
-                        </a>
-                    </div>
+
                     </div>
                 </div>
-                `;
+            `;
+
 
             searchResult.appendChild(div);
         });

@@ -1,0 +1,73 @@
+.search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.search-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 24px;
+}
+
+/* 썸네일 왼쪽 */
+.search-item .video-thumbnail {
+  width: 250px;
+  height: 140px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.search-item .video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* 오른쪽 정보 */
+.search-item .video-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+/* 제목 */
+.search-item .video-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 프로필 + 채널명 + 날짜 */
+.search-item .channel-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.search-item .channel-meta img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.search-item .channel-meta span:hover {
+  color: white;
+}
+
+/* 설명 텍스트 */
+.search-item .video-desc {
+  font-size: 13px;
+  color: #ccc;
+  line-height: 1.5;
+}
