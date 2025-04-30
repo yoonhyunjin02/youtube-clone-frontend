@@ -39,18 +39,29 @@
             </div>
             
             <nav class="channel-nav">
-                <div class="nav-links">
-                    <a href="#" class="active">HOME</a>
-                    <a href="#">VIDEOS</a>
-                    <a href="#">PLAYLIST</a>
-                    <a href="#">COMMUNITY</a>
-                    <a href="#">CHANNELS</a>
-                    <a href="#">ABOUT</a>
-                    <img src="../assets/icons/search.svg">
-                </div>
-
-                <div class="channel-icons">
-                    <img src="../assets/icons/Top-Menu.svg">
+                <div class="nav-scroll-wrapper">
+                    <!-- 왼쪽 버튼 -->
+                    <button class="scroll-tab-btn scroll-tab-left">
+                        <img src="/assets/icons/Top-Menu.svg" alt="←">
+                    </button>
+                
+                    <!-- 스크롤 가능한 탭 컨테이너 -->
+                    <div class="nav-links-scrollable">
+                        <div class="nav-links">
+                        <a href="#" class="active">HOME</a>
+                        <a href="#">VIDEOS</a>
+                        <a href="#">PLAYLIST</a>
+                        <a href="#">COMMUNITY</a>
+                        <a href="#">CHANNELS</a>
+                        <a href="#">ABOUT</a>
+                        <img src="../assets/icons/search.svg">
+                        </div>
+                    </div>
+                
+                    <!-- 오른쪽 버튼 -->
+                    <button class="scroll-tab-btn scroll-tab-right">
+                        <img src="/assets/icons/Top-Menu.svg" alt="→">
+                    </button>
                 </div>
             </nav>
         </section>
@@ -118,7 +129,8 @@
                                                 <p class="video-title"><%= video.title %></p>
                                                 <p>
                                                     <span class="channel-name"><%= channelInfo.channel_name %></span><br>
-                                                    <span class="view"><%= formatViews(video.views) %> Views</span>
+                                                    <span class="view"><%= formatViews(video.views) %> Views • </span>
+                                                    <span class="update-date"><%= getRelativeTime(video.created_dt) %></span>
                                                 </p>
                                             </div>
                                         </figcaption>
@@ -140,5 +152,6 @@
     <script src="/js/thumbnail-play.js"></script>
     <script src="../js/channel-search.js"></script>
     <script src="../js/channel-scroll.js"></script>
+    <script src="/js/channel-nav-scroll.js"></script>
 </body>
 </html>
