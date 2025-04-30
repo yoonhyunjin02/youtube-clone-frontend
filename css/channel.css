@@ -439,3 +439,67 @@ a {
 .subscribe-btn:hover{
     filter: brightness(1.2);
 }
+
+/* ==========가로 스크롤 스타일 */
+.scrollable-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+
+    /* optional: 스크롤 바 숨기기 (웹킷 기반 브라우저용) */
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE 10+ */
+}
+
+.scrollable-list::-webkit-scrollbar {
+    display: none;                /* Chrome/Safari/Opera */
+}
+
+.video-card {
+    flex: 0 0 auto;               /* 고정 너비로 슬라이드처럼 */
+    width: 240px;                 /* 썸네일 너비에 맞춰 조정 */
+}
+
+.scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-left,
+.scroll-right {
+    position: absolute;
+    top: 50%;
+    background-color: #303030;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    z-index: 1;
+}
+.scroll-left:hover,
+.scroll-right:hover {
+    background-color: lightgray
+}
+
+.scroll-left {
+    left: -20px;
+}
+
+.scroll-left img {
+    transform: rotate(180deg);
+}
+
+.scroll-right {
+    right: -20px;
+}
+
+.scroll-left img,
+.scroll-right img {
+    width: 20px;
+    height: 20px;
+    filter: invert(100%);
+}
