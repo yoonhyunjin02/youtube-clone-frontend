@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -108,7 +109,8 @@ header {
     height: 40px;
 }
 
-.right-section .icon {
+.right-section button{
+    all:unset;
     width: 40px;
     height: 40px;
     display: flex;
@@ -116,29 +118,181 @@ header {
     justify-content: center;
     cursor: pointer;
     padding: 0;
-    border-radius: 50%;
+    border-radius: 40px;
 }
-
-.right-section .icon:not(.profile):hover {
+.icon-Create img{
+    height: 40px;
+}
+.icon-Create button{
+    padding-right: 10px;
+    width:80px;
+}
+.right-section button:not(.profile-btn):hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.right-section .icon img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+.right-section img {
+    width: 24px;
+    height: 24px;
 }
 
-.right-section .icon.profile {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.right-section .icon.profile img {
-    width: 32px;
-    height: 32px;
+.icon-profile img {
+    height: 24px;
+    width: 24px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/* create 모달 */
+.icon-Create{
+    position: relative;
+}
+.create-modal {
+    position: absolute;
+    top: 40px;
+    left:0;
+    display: none;
+    z-index: 1000;
+}
+
+.create-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 160px;
+    border-radius: 12px;
+    padding-top:7px;
+    padding-bottom:7px;
+}
+.create-modal-content button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    width: 100%;
+    gap: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+    color: white;
+    border-radius: 0;
+}
+
+.create-modal-content span{
+    font-size:13px;
+    padding-left :5px;
+}
+.create-modal-content img{
+    width: 20px;
+    margin-left:7px;
+}
+
+/* notice 모달 */
+.icon-Notifications{
+    position: relative;
+}
+.notice-modal {
+    position: absolute;
+    top: 40px;
+    right:0;
+    display: none;
+    z-index: 1000;
+}
+.notice-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 480px;
+    height:650px;
+    border-radius: 12px;
+}
+.notice-modal-header{
+    display:flex;
+    border-bottom: 1px solid rgb(87, 87, 87);
+    align-items: center;
+    justify-content: space-between;
+    padding-left:17px;
+    padding-right:17px;
+    padding-top:5x;
+    padding-bottom:5px;
+}
+.notice-modal-text{
+    color:rgb(114, 114, 114);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top:150px;
+}
+.notice-modal-main img{
+    width:120px;
+    height:120px;
+    filter: invert(60%);
+}
+.notice-modal-main span{
+    width: 300px;
+    text-align: center;
+}
+
+/* 프로필 모달 */
+.icon-profile{
+    position: relative;
+}
+.profile-modal {
+    position: absolute;
+    top: 40px;
+    right:0;
+    display: none;
+    z-index: 1000;
+}
+.profile-modal-container {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    border-radius: 12px;
+    width:300px;
+}
+.profile-modal-header{
+    display: flex;
+    
+    padding:16px;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+.profile-modal img{
+    width:24px;
+    height:24px;
+    margin-right:16px;
+    fill:"currentColor";
+}
+.profile-modal-header img{
+    width:40px;
+    height:40px;
+    margin-right:16px;
+}
+
+.profile-modal-container button{
+    width:100%;
+    padding-left:16px;
+    border-radius: 0;
+    display:flex;
+    justify-content: flex-start;   
+    box-sizing:border-box;
+} 
+.profile-modal-header button{
+    color:#3EA6FF;
+    padding-left:0;
+}
+.profile-modal-main1,.profile-modal-main2,.profile-modal-main3,.profile-modal-main4,.profile-modal-main5{
+    padding:8px 0px;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+.profile-modal-main5{
+    border-bottom:none;
+}
+.filter {
+    filter:invert(1);
+}
+.profile-modal-headertext button:hover{
+    background-color: #212121;
 }
