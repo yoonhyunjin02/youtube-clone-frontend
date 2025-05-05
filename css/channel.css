@@ -1,0 +1,410 @@
+/* ================================
+   기본 설정
+   ================================ */
+   * {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* ================================
+     레이아웃 설정
+     ================================ */
+  
+  /* 메인 영역 */
+  main {
+    margin-left: 240px; /* 사이드바 너비만큼 띄우기 */
+    padding-top: 56px; /* 헤더 높이만큼 위에서 띄우기 */
+    width: calc(100% - 240px); /* 사이드바 공간 제외 */
+    background-color: #0f0f0f; /* 유튜브 배경 느낌 유지 */
+  }
+  
+  /* 헤더 설정 */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* 사이드바 설정 */
+  .sidebar {
+    position: fixed;
+    top: 56px; /* 헤더 바로 아래에 위치 */
+    left: 0;
+    height: calc(100vh - 56px); /* 화면 높이에서 헤더 높이 제외 */
+    /* overflow-y: auto; 스크롤 가능하게 */
+  }
+  
+  /* ================================
+     채널 헤더
+     ================================ */
+  
+  /* 채널 헤더 배경 및 폰트 설정 */
+  .channel-header {
+    background-color: #181818;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* 채널 배너 이미지 설정 */
+  .channel-banner {
+    width: 100%;
+    max-height: 192px;
+    object-fit: cover;
+  }
+  
+  /* 채널 정보 영역 */
+  .channel-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 65px 4px 65px;
+  }
+  
+  /* 채널 정보 왼쪽 영역 */
+  .channel-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* 채널 프로필 이미지 */
+  .channel-profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+  /* 채널 텍스트 정보 */
+  .channel-text {
+    padding: 18px 0;
+    margin: 0;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 채널 이름 */
+  .channel-owner {
+    width: 400px;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  /* 구독자 수 */
+  .channel-subscription {
+    color: #AAAAAA;
+    width: 400px;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  /* 구독 버튼 */
+  .subscribe-btn {
+    background-color: #cc0000;
+    color: white;
+    height: 36px;
+    width: 116px;
+    border: none;
+    padding: 10px 16px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* 구독 버튼 호버 효과 */
+  .subscribe-btn:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  
+  /* 구독 버튼 포커스 효과 */
+  .subscribe-btn:focus {
+    outline: 2px solid #cc0000;
+    outline-offset: 2px;
+  }
+  
+  /* 구독한 상태의 버튼 */
+  .subscribe-btn.subscribed {
+    background-color: #363636;
+  }
+  
+  /* ================================
+     채널 네비게이션
+     ================================ */
+  
+  /* 채널 네비게이션 영역 */
+  .channel-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    padding: 0 65px;
+  }
+  
+  /* 네비게이션 링크 */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  /* 네비게이션 링크 스타일 */
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #AAAAAA;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 1rem 0;
+    position: relative;
+    width: 104px;
+    height: 47px;
+  }
+  
+  /* 네비게이션 링크 호버 및 활성화 상태 */
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: white;
+  }
+  
+  /* 활성화된 네비게이션 링크 하단 밑줄 */
+  .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 104px;
+    border-bottom: 1px solid #AAAAAA;
+  }
+  
+  /* 네비게이션 아이콘 이미지 */
+  .nav-links img {
+    width: 24px;
+    height: 24px;
+    color: #AAAAAA;
+  }
+  
+  /* 네비게이션 화살표 아이콘 */
+  .nav-icons img {
+    width: 24px;
+    height: 24px;
+    padding: 0 4px;
+    color: #AAAAAA;
+    cursor: pointer;
+  }
+  
+  /* ================================
+     채널 대표 영상
+     ================================ */
+  
+  /* 대표 영상 영역 */
+  .channel-featured-video {
+    width: 100%;
+    height: auto;
+    padding: 24px 20px 24px 65px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .featured-vid-info {
+    max-width: 400px;
+    height: 238px;
+    color: white;
+    padding-bottom: 88px;
+    margin-top: 6px;
+  }
+  
+  
+  /* 비디오 썸네일 이미지 */
+  .video-thumbnail img {
+    width: 424px;
+    height: 238px;
+    object-fit: cover;
+  }
+  .video-thumbnail video {
+    width: 424px;
+    height: 238px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* 비디오 썸네일 비디오 */
+  .channel-featured-video .video-thumbnail video {
+    width: 480px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* 비디오 정보 */
+  .channel-featured-video .video-info {
+    max-width: 400px;
+    height: 238px;
+    color: white;
+    padding-bottom: 88px;
+    margin-top: 6px;
+  }
+  
+  /* 대표 영상 제목 */
+  .featured-vid-title {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin: 0;
+  }
+  
+  /* 대표 영상 조회수 및 업로드 날짜 */
+  .featured-vid-views,
+  .featured-vid-date {
+    color: #aaa;
+    font-size: 13px;
+    padding-bottom: 19px;
+    margin: 0;
+  }
+  
+  /* 대표 영상 설명 */
+  .featured-vid-description {
+    max-width: 400px;
+    height: 80px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  /* ================================
+     채널 비디오 리스트
+     ================================ */
+  
+  /* 전체 비디오 리스트 영역 */
+  .channel-video-listall {
+    width: 100%;
+    height: 1152px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 개별 비디오 리스트 */
+  .channel-video-list {
+    width: 100%;
+    padding: 0 65px;
+    margin-bottom: 40px;
+  }
+  
+  /* 마지막 비디오 리스트 제외한 간격 설정 */
+  .channel-video-list:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  
+  /* 섹션 헤더 */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 65px 0 0;
+    color: white;
+    border-top: 1px solid #303030;
+  }
+  
+  /* 섹션 헤더 제목 */
+  .section-header h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 9px 8px 8px 0;
+  }
+  
+  /* 전체 재생 버튼 */
+  .play-all {
+    background: none;
+    border: none;
+    color: #AAAAAA;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 16px;
+  }
+  
+  /* 비디오 리스트 그리드 */
+  .video-list {
+    width: 100%;
+    margin: 0;
+    padding: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 240px));
+    gap: 16px;
+    justify-content: start;
+    padding-left: 0;
+  }
+  
+  /* 비디오 리스트 링크 */
+  .video-list1 a {
+    position: relative;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* 비디오 피규어 */
+  .video-figure {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  /* 비디오 썸네일 이미지 및 비디오 */
+  .video-figure img,
+  .video-figure video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    display: block;
+    pointer-events: none;
+  }
+  
+  /* 비디오 초기 상태 */
+  .video-figure video {
+    opacity: 0;
+  }
+  
+  /* 비디오 호버 시 효과 */
+  .video-figure:hover video {
+    opacity: 1;
+  }
+  
+  .video-figure:hover img {
+    opacity: 0;
+  }
+  
+  /* 비디오 정보 */
+  .video-list .video-info {
+    width: 186px;
+    height: 76px;
+    color: white;
+    margin-top: 6px;
+  }
+  
+  /* 비디오 제목 */
+  .video-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+   
+  ::contentReference[oaicite:18]{index=18}
+   
+  
