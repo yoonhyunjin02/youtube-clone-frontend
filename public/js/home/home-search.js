@@ -56,33 +56,86 @@ document.addEventListener("DOMContentLoaded", () => {
         searchResult.innerHTML = "";              // 기존 검색결과 비우기
     
         videos.forEach(video => {
-            const div = document.createElement("div");
-            div.className = "search-item"; // 검색 결과 전용 스타일
+            const div = document.createElement("article");
+            div.className = "video-card"; // 검색 결과 전용 스타일
             div.innerHTML = `
-                <div class="search-item">
-                    <a href="/video?id=${video.id}" class="video-thumbnail">
-                    <img src="${video.thumbnail}" alt="썸네일">
-                    </a>
-                    <div class="video-info">
+                <article class="search-item">
                     <a href="/video?id=${video.id}">
-                        <p class="video-title">${video.title}</p>
+                        <figure class="video-thumbnail video-card">
+                            <img class="thumbnail" src="${video.thumbnail}" alt="video thumbnail">
+                            <video class="preview" muted loop preload="none">
+                                <source src="https://storage.googleapis.com/youtube-clone-video/${video.id}.mp4" type="video/mp4">
+                            </video>
+                        </figure>
                     </a>
-                    <a href="/channel?id=${video.channel.id}" class="channel-meta">
-                        <img src="${video.channel.channel_profile}" alt="${video.channel.channel_name}">
-                        <span>${video.channel.channel_name}</span>
-                    </a>
-                    <a href="/video?id=${video.id}">
-                        <span class="view">${video.views.toLocaleString()} views • 1 week ago</span>
-                        </a>
 
-                    </div>
-                </div>
+                    <figcaption class="video-info">
+                        <a href="/channel?id=${video.channel.id}">
+                            <img class="channel-avatar" src="${video.channel.channel_profile}" alt="channel-profile">
+                        </a>
+                        <div class="video-description">
+                            <a href="/video?id=${video.id}">
+                                <p class="video-title">${video.title}</p>
+                            </a>
+                            <a href="/channel?id=${video.channel.id}">
+                                <span class="channel-name">${video.channel.channel_name}</span><br>
+                            </a>
+                            <a href="/video?id=${video.id}">
+                                <span class="view">${formatViews(video.views)} Views • </span>
+                                <span class="update-date">${getRelativeTime(video.created_dt)}</span>
+                            </a>
+                        </div>
+                    </figcaption>
+                </article>
             `;
+
 
 
             searchResult.appendChild(div);
         });
+        enableThumbnailPreview();
     }
+    function formatViews(views) {
+        if (views >= 1_000_000) return (views / 1_000_000).toFixed(1) + "M";
+        if (views >= 1_000) return (views / 1_000).toFixed(1) + "K";
+        return views.toString();
+    }
+    function getRelativeTime(dateString) {
+        const now = new Date();
+        const past = new Date(dateString);
+        const seconds = Math.floor((now - past) / 1000);
+    
+        const units = [
+            { name: "년", value: 60 * 60 * 24 * 365 },
+            { name: "개월", value: 60 * 60 * 24 * 30 },
+            { name: "일", value: 60 * 60 * 24 },
+            { name: "시간", value: 60 * 60 },
+            { name: "분", value: 60 },
+            { name: "초", value: 1 },
+        ];
+    
+        for (let unit of units) {
+            const count = Math.floor(seconds / unit.value);
+            if (count > 0) return `${count}${unit.name} 전`;
+        }
+        return "방금 전";
+    }
+    function enableThumbnailPreview() {
+        document.querySelectorAll('.video-thumbnail').forEach(thumb => {
+            const video = thumb.querySelector('.preview');
+            if (!video) return;
+
+            thumb.addEventListener('mouseenter', () => {
+                video.play();
+            });
+
+            thumb.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    }
+    
     
     //검색 기능 함수 생성
     async function handleSearch(keyword) {

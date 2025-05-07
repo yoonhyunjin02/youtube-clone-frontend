@@ -7,6 +7,11 @@
   margin: 0 auto;
 }
 
+/*검색 결과 카드 가로 길이 확장 */
+.search-result .video-card {
+  max-width: 500px;
+}
+
 .search-item {
   display: flex;
   gap: 20px;
