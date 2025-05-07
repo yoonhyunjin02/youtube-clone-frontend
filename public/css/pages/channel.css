@@ -20,6 +20,12 @@ main {
     box-sizing: border-box;
     width: calc(100% - 240px);
     background-color: #0f0f0f;
+    transition: all 0.3s ease;
+}
+
+.sidebar.collapsed ~ main {
+    margin-left: 72px;
+    width: calc(100% - 72px);
 }
 
 header {
@@ -142,6 +148,7 @@ header {
     position: relative;
     width: 104px;
     height: 47px;
+    flex: 0 0 auto;
 }
 
 .nav-links a:hover,
@@ -214,9 +221,16 @@ header {
 
 .featured-vid-description {
     max-width: 400px;
-    height: 80px;
+    height: 100%;
     font-size: 14px;
     color: white;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 8;
+    -webkit-line-clamp: 8;    /* 최대 3줄로 제한 (원하는 줄수로 변경 가능) */
+    -webkit-box-orient: vertical;
 }
 
 .channel-featured-video .video-thumbnail video {
