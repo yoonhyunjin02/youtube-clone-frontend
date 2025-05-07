@@ -10,10 +10,8 @@ const videoRouter = require('./routes/video');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// 정적 파일 서빙
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
-app.use('/css', express.static(path.join(__dirname, 'css')));
-app.use('/js', express.static(path.join(__dirname, 'js')));
+// 정적 파일 서빙, public/ 폴더를 root로 매핑
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 라우트 연결
 app.use('/', homeRouter);
