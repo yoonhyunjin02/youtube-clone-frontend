@@ -1,0 +1,220 @@
+/* ======================== */
+/* 공통 스타일 */
+/* ======================== */
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    padding-left: 8px;
+    padding-top: 1px;
+    background-color: rgba(33, 33, 33, 1);
+    width: 240px;
+    top: 56px;
+    overflow-y: auto;
+
+    scrollbar-width: none;              /* Firefox */
+    -ms-overflow-style: none;           /* IE, Edge */
+    transition: all 0.1s ease;
+    transform: translateX(0);
+}
+
+.sidebar::-webkit-scrollbar {         /* Chrome, Safari */
+    display: none;
+}
+
+.sidebar img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.sidebar section {
+    color: white;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 5px;
+    width: 224px;
+}
+
+.nav-section {
+    border-top: 1px solid rgba(48, 48, 48, 1);
+    margin: 0;
+    padding: 0px;
+    width: 224px;
+}
+
+.topsection .nav-section {
+    border-top: none;
+}
+
+.nav-title {
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(170, 170, 170, 1);
+}
+
+.sidebar a {
+    padding-left: 24px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.sidebar a:hover {
+    background-color: rgba(48, 48, 48, 1);
+}
+
+li.home a {
+    background-color: rgba(48, 48, 48, 1);
+}
+
+li.home a:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+/* ======================== */
+/* 기본 메뉴 (홈, 탐색, 구독 등) */
+/* ======================== */
+.nav-section li a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ======================== */
+/* SUBSCRIPTIONS (구독자 목록) */
+/* ======================== */
+.hidden {
+    display: none;
+}
+
+/* ======================== */
+/* Show More 버튼 */
+/* ======================== */
+.show-more a {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.show-more a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+
+.show-more a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.show-more-btn img {
+    transition: transform 0.3s ease;
+}
+
+/* ======================== */
+/* MORE FROM YOUTUBE (탐색) */
+/* ======================== */
+/* 기존 공통 스타일 복붙 (중복 허용) */
+.nav-section li a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ======================== */
+/* 설정 섹션 */
+/* ======================== */
+/* 기존 공통 스타일 복붙 (중복 허용) */
+.nav-section li a img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ======================== */
+/* sidebar-toggle (사이드바 접기) */
+/* ======================== */
+.sidebar.collapsed {
+    width: 72px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.sidebar.collapsed a {
+    padding: 16px;
+}
+
+.sidebar.collapsed section:nth-of-type(n+3) {
+    display: none;
+}
+
+.sidebar.collapsed .topsection span,
+.sidebar.collapsed .nav-section span {
+    display: none;
+}
+
+.sidebar.collapsed li a img[alt="Show More icon"] {
+    display: none;
+}
+
+.sidebar.collapsed .nav-section img {
+    width: 32px;
+    height: 32px;
+}
+
+.sidebar.collapsed ul {
+    padding: 0;
+    width: 100%;
+    border-top: none;
+}
+
+.sidebar.collapsed .home a {
+    background-color: rgba(33, 33, 33, 1);
+}
+
+.sidebar.collapsed .home a:hover {
+    background-color: rgba(48, 48, 48, 1);
+}
+
+/* ======================== */
+/* video-page 토글 */
+/* ======================== */
+.video-page .sidebar {
+    transform: translateX(-100%);
+}
+
+.video-page .sidebar.open {
+    transform: translateX(0);
+}

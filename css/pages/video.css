@@ -1,0 +1,587 @@
+/* ============================= */
+/* 공통 설정 */
+/* ============================= */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ============================= */
+/* 기본 레이아웃 */
+/* ============================= */
+.video-page-container {
+    padding-top: 56px;
+    box-sizing: border-box;
+    width: calc(100% - 240px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgb(22, 22, 22);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    height: calc(100vh - 56px);
+}
+
+/* ============================= */
+/* 영상 메인 영역 */
+/* ============================= */
+.video-main {
+    padding-left: 24px;
+    padding-top: 24px;
+    width: 664px;
+}
+
+.video-player-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0;
+}
+
+/* ============================= */
+/* 영상 제목 및 정보 */
+/* ============================= */
+.video-title-info {
+    padding-top: 24px;
+    border-bottom: 1px solid rgba(48, 48, 48, 1);
+    gap: 0;
+}
+
+.video-player-title {
+    padding-top: 3px;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1%;
+}
+
+.video-stats {
+    display: flex;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-meta {
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(170, 170, 170, 1);
+}
+
+.video-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.video-actions button,
+.sortby-option-btn {
+    background-color: rgb(22, 22, 22);
+    all: unset;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.action-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.action-text {
+    font-size: 14px;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.video-actions button:hover {
+    background-color: #363636;
+}
+
+/* ============================= */
+/* 채널 정보 */
+/* ============================= */
+.channel-info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    border-bottom: 1px solid rgba(48, 48, 48, 1);
+    padding-bottom: 20px;
+}
+
+.channel-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.channel-owner {
+    display: flex;
+    align-items: center;
+}
+
+.channel-owner-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.channel-owner-name,
+.channel-description {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.channel-subscription {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(170, 170, 170, 1);
+}
+
+.subscribe-btn {
+    background-color: rgba(204, 0, 0, 1);
+    color: white;
+    border-radius: 2px;
+    padding: 10px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+}
+
+.subscribe-btn.subscribed {
+    background-color: #363636;
+}
+
+.subscribe-btn:hover {
+    filter: brightness(1.2);
+}
+
+.channel-description {
+    margin-left: 64px;
+}
+
+.show-more {
+    all: unset;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 64px;
+    color: rgba(170, 170, 170, 1);
+}
+
+/* ============================= */
+/* 댓글 영역 */
+/* ============================= */
+.comments-header {
+    padding-top: 24px;
+    padding-bottom: 10px;
+}
+
+.comments-num {
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 32px;
+}
+
+.sortby-img {
+    width: 18px;
+    height: 13px;
+    margin-right: 5px;
+}
+
+.sortby-btn {
+    font-size: 14px;
+    font-weight: 700;
+    all: unset;
+    max-width: 100%;
+    height: auto;
+}
+
+.comment-input {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 32px;
+}
+
+.input-img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+}
+
+.input-text {
+    all: unset;
+    font-size: 14px;
+    padding-bottom: 8px;
+    font-weight: 400;
+    color: rgba(170, 170, 170, 1);
+    border-bottom: 1px solid rgba(48, 48, 48, 1);
+    width: 100%;
+}
+
+.comment-flex {
+    display: flex;
+    padding-bottom: 16px;
+}
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(170, 170, 170, 1);
+    padding: 5px;
+}
+
+.comment-meta {
+    padding-bottom: 8px;
+}
+
+.comment-body-name {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.comment-body-date {
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(170, 170, 170, 1);
+}
+
+.comment-body-detail {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.comment-actions img {
+    width: 24px;
+    height: 24px;
+}
+
+.comment-actions button {
+    all: unset;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================= */
+/* 추천 영상 */
+/* ============================= */
+.recommended-videos {
+    padding-left: 24px;
+    padding-top: 24px;
+    width: 426px;
+}
+
+.recommended-tag {
+    padding-top: 4px;
+    padding-bottom: 16px;
+}
+
+.recommended-tag button {
+    all: unset;
+    background-color: rgb(39, 39, 39);
+    border-radius: 32px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid rgb(65, 65, 65);
+}
+
+.recommended-list a {
+    display: flex;
+}
+
+.recommended-list-a {
+    margin-bottom: 5px;
+    width: 402px;
+    padding-right: 20px;
+}
+
+.video-description {
+    padding: 5px;
+}
+
+.video-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: white;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.channel-name,
+.view {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.channel-name:hover {
+    color: white;
+}
+
+/* ============================= */
+/* 비디오 썸네일 */
+/* ============================= */
+a > .video-thumbnail {
+    position: relative;
+    width: 176px;
+    height: 94px;
+    overflow: hidden;
+    display: block;
+}
+
+.video-thumbnail img,
+.video-thumbnail video {
+    width: 176px;
+    height: 94px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.video-thumbnail video {
+    opacity: 0;
+}
+
+.video-thumbnail:hover video {
+    opacity: 1;
+}
+
+.video-thumbnail:hover img {
+    opacity: 0;
+}
+
+.video-length {
+    position: absolute;
+    right: 3px;
+    bottom: 7px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 3px 4px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* ============================= */
+/* 좋아요 버튼 색상 변화 */
+/* ============================= */
+.like-btn .like-icon {
+    color: gray;
+    transition: color 0.3s ease;
+}
+
+.like-btn.active .like-icon {
+    color: white;
+}
+
+/* ============================= */
+/* 모달들 */
+/* ============================= */
+.share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.share-box {
+    background: #282828;
+    width: 450px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.share-header h3 {
+    color: white;
+    font-size: 15px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.link-container {
+    display: flex;
+    gap: 10px;
+    background: #141414;
+    border: 1px solid #404040;
+    border-radius: 7px;
+}
+
+#share-link {
+    all: unset;
+    flex: 1;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.copy-btn {
+    background: #3da5fe;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    margin: 7px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.copy-btn:hover {
+    background: #2d8fd6;
+}
+
+.action-button {
+    position: relative;
+}
+
+.more-modal,
+.save-modal {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.more-modal-content,
+.save-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 120px;
+    border-radius: 12px;
+    padding: 5px 0;
+}
+
+.more-option-btn:hover,
+.save-option-btn:hover {
+    background: #383838;
+}
+
+.report-text,
+.save-text {
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.more-option-btn img,
+.save-option-btn img {
+    width: 20px;
+}
+
+/* ============================= */
+/* 정렬 모달 */
+/* ============================= */
+.sort {
+    position: relative;
+}
+
+.sortby-modal {
+    position: absolute;
+    top: 100%;
+    left: 130px;
+    margin-top: 5px;
+    display: none;
+}
+
+.sortby-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 130px;
+    border-radius: 12px;
+    padding: 10px 0;
+}
+
+.sortby-option-btn {
+    font-size: 14px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sortby-option-btn:hover {
+    filter: brightness(1.3);
+}
+
+.sortby-option-btn.active {
+    background-color: #404040;
+}
+
+.sortby-option-btn.active:hover {
+    filter: brightness(1.3);
+}
+
+/* ============================= */
+/* 댓글 아이콘 크기 */
+/* ============================= */
+.comment-actions img[src*="like.svg"],
+.comment-actions img[src*="dislike.svg"] {
+    width: 24px;
+    height: 24px;
+}
+
+.comment-actions img[src*="like-filled"],
+.comment-actions img[src*="dislike-filled"] {
+    width: 16px;
+    height: 16px;
+}

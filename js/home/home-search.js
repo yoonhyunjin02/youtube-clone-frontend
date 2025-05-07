@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ...video,
                             channel: {
                                 channel_name: 'Unknown',
-                                channel_profile: '/assets/icons/default-profile.svg'
+                                channel_profile: '/assets/profiles/default-profile.svg'
                             }
                         };
                     }

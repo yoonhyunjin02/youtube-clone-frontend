@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/home.css">
 
-    <title>YouTube</title>
-    <link rel="icon" type="image/png" href="/assets/img/youtube.png" />
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <link  rel="stylesheet" href="../css/home.css">
-    <link  rel="stylesheet" href="../css/home-search.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-</head>
 <body>
     <!-- header : 홈 화면 상단바 -->
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
     <div class="container">
         <!-- nav : 홈 화면 네비게이션 -->
-        <%- include('partials/nav') %>
+        <%- include('../partials/nav') %>
         <!-- main : 홈 화면 블록 -->
         <main>
             <!--filter-bar-->
             <section class="filter-bar">
                 <div>
                     <button class="scroll-next" id="left">
-                        <img src="../assets/icons/Top-Menu.svg" alt="이전 버튼" />
+                        <img src="/assets/icons/Top-Menu.svg" alt="이전 버튼" />
                     </button>
                 </div>
 
@@ -73,7 +63,7 @@
                 </div>
                 <div>
                     <button class="scroll-next" id="right">
-                        <img src="../assets/icons/Top-Menu.svg" alt="다음 버튼" />
+                        <img src="/assets/icons/Top-Menu.svg" alt="다음 버튼" />
                     </button>
                 </div>
             </section>
@@ -81,7 +71,7 @@
             <!--video-grid 검색 시 홈 화면에 등장 방지를 위해서 display:none 설정-->  
             <section class="video-grid" style="display: none;"> 
                 <% videoList.forEach(video => { %>
-                <%- include('partials/videoCard-home', { video: video }) %> 
+                    <%- include('../partials/videoCard-home', { video: video }) %>
                 <% }); %>
             </section>
 
@@ -89,9 +79,12 @@
             <section class="search-result" style="display: none;"></section>
         </main>
     </div>
-    <script src="../js\home-search.js"></script>
-    <script src="/js/topmenu.js"></script>
-    <script src="/js/thumbnail-play.js"></script>
-    <script src="/js/buttonHeader.js"></script>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+
+    <script src="/js/home/home-search.js"></script>
+    <script src="/js/home/topmenu.js"></script>
 </body> 
 </html>

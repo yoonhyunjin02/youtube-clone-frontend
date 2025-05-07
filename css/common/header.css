@@ -1,4 +1,6 @@
-
+/* ======================== */
+/* 공통 */
+/* ======================== */
 body {
     margin: 0;
     padding: 0;
@@ -18,6 +20,9 @@ header {
     box-shadow: 0 1px 1px rgba(255,255,255,0.05);
 }
 
+/* ======================== */
+/* 왼쪽 영역 (left-section) */
+/* ======================== */
 .left-section {
     display: flex;
     align-items: center;
@@ -41,6 +46,9 @@ header {
     cursor: pointer;
 }
 
+/* ======================== */
+/* 검색창 (search-form) */
+/* ======================== */
 .search-form {
     display: flex;
     justify-content: center;
@@ -100,7 +108,9 @@ header {
     height: 18px;
 }
 
-
+/* ======================== */
+/* 오른쪽 영역 (right-section) */
+/* ======================== */
 .right-section {
     display: flex;
     align-items: center;
@@ -109,8 +119,8 @@ header {
     height: 40px;
 }
 
-.right-section button{
-    all:unset;
+.right-section button {
+    all: unset;
     width: 40px;
     height: 40px;
     display: flex;
@@ -120,13 +130,16 @@ header {
     padding: 0;
     border-radius: 40px;
 }
-.icon-Create img{
+
+.icon-Create img {
     height: 40px;
 }
-.icon-Create button{
+
+.icon-Create button {
     padding-right: 10px;
-    width:80px;
+    width: 80px;
 }
+
 .right-section button:not(.profile-btn):hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -143,14 +156,17 @@ header {
     object-fit: cover;
 }
 
-/* create 모달 */
-.icon-Create{
+/* ======================== */
+/* Create 모달 */
+/* ======================== */
+.icon-Create {
     position: relative;
 }
+
 .create-modal {
     position: absolute;
     top: 40px;
-    left:0;
+    left: 0;
     display: none;
     z-index: 1000;
 }
@@ -161,9 +177,10 @@ header {
     background: #282828;
     width: 160px;
     border-radius: 12px;
-    padding-top:7px;
-    padding-bottom:7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
 }
+
 .create-modal-content button {
     box-sizing: border-box;
     display: flex;
@@ -179,120 +196,144 @@ header {
     border-radius: 0;
 }
 
-.create-modal-content span{
-    font-size:13px;
-    padding-left :5px;
-}
-.create-modal-content img{
-    width: 20px;
-    margin-left:7px;
+.create-modal-content span {
+    font-size: 13px;
+    padding-left: 5px;
 }
 
-/* notice 모달 */
-.icon-Notifications{
+.create-modal-content img {
+    width: 20px;
+    margin-left: 7px;
+}
+
+/* ======================== */
+/* Notifications 모달 */
+/* ======================== */
+.icon-Notifications {
     position: relative;
 }
+
 .notice-modal {
     position: absolute;
     top: 40px;
-    right:0;
+    right: 0;
     display: none;
     z-index: 1000;
 }
+
 .notice-modal-content {
     display: flex;
     flex-direction: column;
     background: #282828;
     width: 480px;
-    height:650px;
+    height: 650px;
     border-radius: 12px;
 }
-.notice-modal-header{
-    display:flex;
+
+.notice-modal-header {
+    display: flex;
     border-bottom: 1px solid rgb(87, 87, 87);
     align-items: center;
     justify-content: space-between;
-    padding-left:17px;
-    padding-right:17px;
-    padding-top:5x;
-    padding-bottom:5px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-.notice-modal-text{
-    color:rgb(114, 114, 114);
-    display:flex;
+
+.notice-modal-text {
+    color: rgb(114, 114, 114);
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-top:150px;
+    margin-top: 150px;
 }
-.notice-modal-main img{
-    width:120px;
-    height:120px;
+
+.notice-modal-main img {
+    width: 120px;
+    height: 120px;
     filter: invert(60%);
 }
-.notice-modal-main span{
+
+.notice-modal-main span {
     width: 300px;
     text-align: center;
 }
 
-/* 프로필 모달 */
-.icon-profile{
+/* ======================== */
+/* Profile 모달 */
+/* ======================== */
+.icon-profile {
     position: relative;
 }
+
 .profile-modal {
     position: absolute;
     top: 40px;
-    right:0;
+    right: 0;
     display: none;
     z-index: 1000;
 }
+
 .profile-modal-container {
     display: flex;
     flex-direction: column;
     background: #282828;
     border-radius: 12px;
-    width:300px;
-}
-.profile-modal-header{
-    display: flex;
-    
-    padding:16px;
-    border-bottom: 1px solid rgb(107, 107, 107);
-}
-.profile-modal img{
-    width:24px;
-    height:24px;
-    margin-right:16px;
-    fill:"currentColor";
-}
-.profile-modal-header img{
-    width:40px;
-    height:40px;
-    margin-right:16px;
+    width: 300px;
 }
 
-.profile-modal-container button{
-    width:100%;
-    padding-left:16px;
-    border-radius: 0;
-    display:flex;
-    justify-content: flex-start;   
-    box-sizing:border-box;
-} 
-.profile-modal-header button{
-    color:#3EA6FF;
-    padding-left:0;
-}
-.profile-modal-main1,.profile-modal-main2,.profile-modal-main3,.profile-modal-main4,.profile-modal-main5{
-    padding:8px 0px;
+.profile-modal-header {
+    display: flex;
+    padding: 16px;
     border-bottom: 1px solid rgb(107, 107, 107);
 }
-.profile-modal-main5{
-    border-bottom:none;
+
+.profile-modal img {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    fill: "currentColor";
 }
+
+.profile-modal-header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+}
+
+.profile-modal-container button {
+    width: 100%;
+    padding-left: 16px;
+    border-radius: 0;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.profile-modal-header button {
+    color: #3EA6FF;
+    padding-left: 0;
+}
+
+.profile-modal-main1,
+.profile-modal-main2,
+.profile-modal-main3,
+.profile-modal-main4,
+.profile-modal-main5 {
+    padding: 8px 0px;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+
+.profile-modal-main5 {
+    border-bottom: none;
+}
+
 .filter {
-    filter:invert(1);
+    filter: invert(1);
 }
-.profile-modal-headertext button:hover{
+
+.profile-modal-headertext button:hover {
     background-color: #212121;
 }

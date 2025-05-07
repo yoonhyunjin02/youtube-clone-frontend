@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newComment = document.createElement('div');
         newComment.classList.add('comment-flex');
         newComment.innerHTML = `
-            <img class="input-img" src="../assets/img/Profile-pic.svg" alt="profile">
+            <img class="input-img" src="/assets/profile/Profile-pic.svg" alt="profile">
             <div class="commnet-body">
                 <div class="comment-meta">
                     <span class="comment-body-name">You</span>
@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <span class="comment-body-detail">${escapeHtml(text)}</span>
                 <div class="comment-actions">
-                    <button class="like-btn"><img src="../assets/icons/like.svg" alt="Like"></button>
+                    <button class="like-btn"><img src="/assets/icons/like.svg" alt="Like"></button>
                     <span class="like-count">0</span>
-                    <button class="dislike-btn"><img src="../assets/icons/dislike.svg" alt="Dislike"></button>
+                    <button class="dislike-btn"><img src="/assets/icons/dislike.svg" alt="Dislike"></button>
                     <span class="dislike-count">0</span>
                     <button>REPLY</button>
                 </div>
@@ -54,25 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
             let currentLikes = parseInt(likeCount.textContent);
             if (!liked) {
                 currentLikes += 1;
-                likeImg.src = '../assets/icons/like-filled.svg';
+                likeImg.src = '/assets/icons/like-filled.svg';
                 likeCount.textContent = currentLikes;
                 liked = true;
-                likeBtn.classList.add('active'); // ✅ 활성화 클래스 추가
+                likeBtn.classList.add('active'); // 활성화 클래스 추가
 
                 if (disliked) {
                     let currentDislikes = parseInt(dislikeCount.textContent);
                     currentDislikes -= 1;
-                    dislikeImg.src = '../assets/icons/dislike.svg';
+                    dislikeImg.src = '/assets/icons/dislike.svg';
                     dislikeCount.textContent = currentDislikes;
                     disliked = false;
-                    dislikeBtn.classList.remove('active'); // ✅ 비활성화
+                    dislikeBtn.classList.remove('active'); // 비활성화
                 }
             } else {
                 currentLikes -= 1;
-                likeImg.src = '../assets/icons/like.svg';
+                likeImg.src = '/assets/icons/like.svg';
                 likeCount.textContent = currentLikes;
                 liked = false;
-                likeBtn.classList.remove('active'); // ✅ 비활성화
+                likeBtn.classList.remove('active'); // 비활성화
             }
         });
 
@@ -80,25 +80,25 @@ document.addEventListener('DOMContentLoaded', () => {
             let currentDislikes = parseInt(dislikeCount.textContent);
             if (!disliked) {
                 currentDislikes += 1;
-                dislikeImg.src = '../assets/icons/dislike-filled.svg';
+                dislikeImg.src = '/assets/icons/dislike-filled.svg';
                 dislikeCount.textContent = currentDislikes;
                 disliked = true;
-                dislikeBtn.classList.add('active'); // ✅ 활성화
+                dislikeBtn.classList.add('active'); // 활성화
 
                 if (liked) {
                     let currentLikes = parseInt(likeCount.textContent);
                     currentLikes -= 1;
-                    likeImg.src = '../assets/icons/like.svg';
+                    likeImg.src = '/assets/icons/like.svg';
                     likeCount.textContent = currentLikes;
                     liked = false;
-                    likeBtn.classList.remove('active'); // ✅ 비활성화
+                    likeBtn.classList.remove('active'); // 비활성화
                 }
             } else {
                 currentDislikes -= 1;
-                dislikeImg.src = '../assets/icons/dislike.svg';
+                dislikeImg.src = '/assets/icons/dislike.svg';
                 dislikeCount.textContent = currentDislikes;
                 disliked = false;
-                dislikeBtn.classList.remove('active'); // ✅ 비활성화
+                dislikeBtn.classList.remove('active'); // 비활성화
             }
         });
     }

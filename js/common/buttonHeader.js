@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         profileModal.style.display = 'none';
         noticeModal.style.display = 'none';
-        noticeImg.src='../assets/icons/notifications.svg';
+        noticeImg.src='/assets/icons/notifications.svg';
         if (createModal.style.display === 'flex') {
             createModal.style.display = 'none';
         }
@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         createModal.style.display = 'none';
         profileModal.style.display = 'none';
         if (noticeModal.style.display === 'flex') {
-            noticeImg.src='../assets/icons/notifications.svg';
+            noticeImg.src='/assets/icons/notifications.svg';
             noticeModal.style.display = 'none';
         }
         else {
-            noticeImg.src='../assets/icons/notifications-filled.svg';
+            noticeImg.src='/assets/icons/notifications-filled.svg';
             noticeModal.style.display = 'flex';
         }
         
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         createModal.style.display = 'none';
         noticeModal.style.display = 'none';
-        noticeImg.src='../assets/icons/notifications.svg';
+        noticeImg.src='/assets/icons/notifications.svg';
         if (profileModal.style.display === 'flex') {
             profileModal.style.display = 'none';
         }

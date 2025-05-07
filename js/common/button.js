@@ -51,20 +51,20 @@ document.addEventListener('DOMContentLoaded', function() {
             let currentLikes = parseInt(likeCount.textContent.replace(/[^0-9]/g, ''));
             if (!liked) {
                 currentLikes += 1;
-                likeImg.src = '../assets/icons/like-filled.svg'; // 채워진 좋아요 아이콘
+                likeImg.src = '/assets/icons/like-filled.svg'; // 채워진 좋아요 아이콘
                 likeCount.textContent = currentLikes;
                 liked = true;
                 // 만약 싫어요 눌려있으면 원래대로
                 if (disliked) {
                     let currentDislikes = parseInt(dislikeCount.textContent.replace(/[^0-9]/g, ''));
                     currentDislikes -= 1;
-                    dislikeImg.src = '../assets/icons/dislike2.svg';
+                    dislikeImg.src = '/assets/icons/dislike2.svg';
                     dislikeCount.textContent = currentDislikes;
                     disliked = false;
                 }
             } else {
                 currentLikes -= 1;
-                likeImg.src = '../assets/icons/like2.svg'; // 빈 좋아요 아이콘
+                likeImg.src = '/assets/icons/like2.svg'; // 빈 좋아요 아이콘
                 likeCount.textContent = currentLikes;
                 liked = false;
             }
@@ -74,20 +74,20 @@ document.addEventListener('DOMContentLoaded', function() {
             let currentDislikes = parseInt(dislikeCount.textContent.replace(/[^0-9]/g, ''));
             if (!disliked) {
                 currentDislikes += 1;
-                dislikeImg.src = '../assets/icons/dislike-filled.svg'; // 채워진 싫어요 아이콘
+                dislikeImg.src = '/assets/icons/dislike-filled.svg'; // 채워진 싫어요 아이콘
                 dislikeCount.textContent = currentDislikes;
                 disliked = true;
                 // 만약 좋아요 눌려있으면 원래대로
                 if (liked) {
                     let currentLikes = parseInt(likeCount.textContent.replace(/[^0-9]/g, ''));
                     currentLikes -= 1;
-                    likeImg.src = '../assets/icons/like2.svg';
+                    likeImg.src = '/assets/icons/like2.svg';
                     likeCount.textContent = currentLikes;
                     liked = false;
                 }
             } else {
                 currentDislikes -= 1;
-                dislikeImg.src = '../assets/icons/dislike2.svg'; // 빈 싫어요 아이콘
+                dislikeImg.src = '/assets/icons/dislike2.svg'; // 빈 싫어요 아이콘
                 dislikeCount.textContent = currentDislikes;
                 disliked = false;
             }

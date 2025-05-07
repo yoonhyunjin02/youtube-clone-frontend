@@ -1,4 +1,6 @@
-/* 공통 설정                */
+/* ============================= */
+/* 공통 설정 (body, main 등) */
+/* ============================= */
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
@@ -20,7 +22,19 @@ main {
     overflow-x: hidden;
 }
 
-/* Filter Bar (카테고리 버튼) */
+/* ============================= */
+/* container (nav + main) */
+/* ============================= */
+.container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+/* ============================= */
+/* filter-bar (카테고리 버튼) */
+/* ============================= */
 .filter-bar {
     position: relative;
     display: flex;
@@ -121,14 +135,9 @@ main {
     background-color: #555;
 }
 
-/* 비디오 그리드 & 카드 레이아웃 */
-.container {
-    width: 100%;
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-}
-
+/* ============================= */
+/* video-grid (메인 비디오 영역) */
+/* ============================= */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -139,31 +148,9 @@ main {
     margin: 0 auto;
 }
 
-/* 반응형 설정 */
-@media (max-width: 599px) {
-    .video-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media (min-width: 600px) and (max-width: 899px) {
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 900px) and (max-width: 1199px) {
-    .video-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1200px) {
-    .video-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
+/* ============================= */
+/* video-card (비디오 카드) */
+/* ============================= */
 .video-card {
     width: 100%;
     max-width: 240px;
@@ -209,18 +196,9 @@ main {
     opacity: 0;
 }
 
-/* .video-length {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    background: rgba(0, 0, 0, 0.75);
-    color: white;
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 2px;
-} */
-
-/* 비디오 설명 영역*/
+/* ============================= */
+/* video-info (비디오 설명) */
+/* ============================= */
 .video-info {
     display: flex;
     gap: 10px;
@@ -273,24 +251,53 @@ main {
     color: #ffffff;
 }
 
-/* =================================== */
+/* ============================= */
+/* video-list (홈 비디오 리스트) */
+/* ============================= */
 .video-list {
-    display: flex;             /* 가로로 배열 */
-    flex-wrap: wrap;           /* 넘치면 자동 줄바꿈 */
-    gap: 20px;                 /* 카드 사이 여백 */
-    justify-content: flex-start; /* 왼쪽 정렬 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
 }
 
 .video-card-home {
-    width: 300px;               /* 카드 하나의 너비 고정 */
-    background-color: #181818;  /* (원하면) 카드 배경색 */
+    width: 300px;
+    background-color: #181818;
     padding: 10px;
     border-radius: 8px;
-    box-sizing: border-box;     /* padding 포함 계산 */
+    box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+}
+
+/* ============================= */
+/* 반응형 설정 (미디어 쿼리) */
+/* ============================= */
+@media (max-width: 599px) {
+    .video-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .video-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
