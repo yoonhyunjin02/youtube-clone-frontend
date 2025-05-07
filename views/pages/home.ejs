@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/home.css">
+
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <%- include('../partials/header') %>
+
+    <div class="container">
+        <!-- nav : 홈 화면 네비게이션 -->
+        <%- include('../partials/nav') %>
+        <!-- main : 홈 화면 블록 -->
+        <main>
+            <!--filter-bar-->
+            <section class="filter-bar">
+                <div>
+                    <button class="scroll-next" id="left">
+                        <img src="/assets/icons/Top-Menu.svg" alt="이전 버튼" />
+                    </button>
+                </div>
+
+                <div class="filter-wrapper" id="scroll-container">
+                    <button class="category-btn active">전체</button>
+                    <button class="category-btn">동물</button>
+                    <button class="category-btn">복제</button>
+                    <button class="category-btn">멸종</button>
+                    <button class="category-btn">과학</button>
+                    <button class="category-btn">상어</button>
+                    <button class="category-btn">바다</button>
+                    <button class="category-btn">고양이</button>
+                    <button class="category-btn">새끼</button>
+                    <button class="category-btn">귀여운</button>
+                    <button class="category-btn">윤리</button>
+                    <button class="category-btn">토끼</button>
+                    <button class="category-btn">먹방</button>
+                    <button class="category-btn">고라니</button>
+                    <button class="category-btn">위기</button>
+                    <button class="category-btn">수의사</button>
+                    <button class="category-btn">의사</button>
+                    <button class="category-btn">동물원</button>
+                    <button class="category-btn">혁신</button>
+                    <button class="category-btn">AI</button>
+                    <button class="category-btn">기술</button>
+                    <button class="category-btn">기업</button>
+                    <button class="category-btn">의학</button>
+                    <button class="category-btn">배민</button>
+                    <button class="category-btn">로봇</button>
+                    <button class="category-btn">배달</button>
+                    <button class="category-btn">운전</button>
+                    <button class="category-btn">자율주행</button>
+                    <button class="category-btn">알고리즘</button>
+                    <button class="category-btn">음향</button>
+                    <button class="category-btn">콩</button>
+                    <button class="category-btn">의료</button>
+                    <button class="category-btn">병원</button>
+                    <button class="category-btn">뉴스</button>
+                    <button class="category-btn">교육</button>
+                    <button class="category-btn">저속노화</button>
+                    <button class="category-btn">방송</button>
+                    <button class="category-btn">상식</button>
+                    <button class="category-btn">정보</button>
+                </div>
+                <div>
+                    <button class="scroll-next" id="right">
+                        <img src="/assets/icons/Top-Menu.svg" alt="다음 버튼" />
+                    </button>
+                </div>
+            </section>
+
+            <!--video-grid 검색 시 홈 화면에 등장 방지를 위해서 display:none 설정-->  
+            <section class="video-grid" style="display: none;"> 
+                <% videoList.forEach(video => { %>
+                    <%- include('../partials/videoCard-home', { video: video }) %>
+                <% }); %>
+            </section>
+
+            <!-- search-result: 검색 결과용 (처음엔 display: none) -->
+            <section class="search-result" style="display: none;"></section>
+        </main>
+    </div>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+
+    <script src="/js/home/home-search.js"></script>
+    <script src="/js/home/topmenu.js"></script>
+</body> 
+</html>

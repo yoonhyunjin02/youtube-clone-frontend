@@ -1,0 +1,339 @@
+/* ======================== */
+/* 공통 */
+/* ======================== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: 56px;
+    width: 100%;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 1px 1px rgba(255,255,255,0.05);
+}
+
+/* ======================== */
+/* 왼쪽 영역 (left-section) */
+/* ======================== */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-icon {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.menu-icon:hover {
+    background-color: #303030;
+}
+
+.youtube-logo {
+    height: 20px;
+    cursor: pointer;
+}
+
+/* ======================== */
+/* 검색창 (search-form) */
+/* ======================== */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.search-form input {
+    height: 36px;
+    width: 362px;
+    background-color: #121212;
+    color: white;
+    border: 1px solid #303030;
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    padding: 0 16px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-form button {
+    height: 36px;
+    width: 50px;
+    background-color: #303030;
+    border: 1px solid #303030;
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.search-form button img {
+    width: 24px;
+    height: 24px;
+}
+
+.mic {
+    height: 36px;
+    width: 36px;
+    background-color: black;
+    border-radius: 50%;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.mic:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mic img {
+    width: 13px;
+    height: 18px;
+}
+
+/* ======================== */
+/* 오른쪽 영역 (right-section) */
+/* ======================== */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 16px;
+    height: 40px;
+}
+
+.right-section button {
+    all: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 40px;
+}
+
+.icon-Create img {
+    height: 40px;
+}
+
+.icon-Create button {
+    padding-right: 10px;
+    width: 80px;
+}
+
+.right-section button:not(.profile-btn):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.right-section img {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-profile img {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ======================== */
+/* Create 모달 */
+/* ======================== */
+.icon-Create {
+    position: relative;
+}
+
+.create-modal {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.create-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 160px;
+    border-radius: 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.create-modal-content button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    width: 100%;
+    gap: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+    color: white;
+    border-radius: 0;
+}
+
+.create-modal-content span {
+    font-size: 13px;
+    padding-left: 5px;
+}
+
+.create-modal-content img {
+    width: 20px;
+    margin-left: 7px;
+}
+
+/* ======================== */
+/* Notifications 모달 */
+/* ======================== */
+.icon-Notifications {
+    position: relative;
+}
+
+.notice-modal {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.notice-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 480px;
+    height: 650px;
+    border-radius: 12px;
+}
+
+.notice-modal-header {
+    display: flex;
+    border-bottom: 1px solid rgb(87, 87, 87);
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.notice-modal-text {
+    color: rgb(114, 114, 114);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 150px;
+}
+
+.notice-modal-main img {
+    width: 120px;
+    height: 120px;
+    filter: invert(60%);
+}
+
+.notice-modal-main span {
+    width: 300px;
+    text-align: center;
+}
+
+/* ======================== */
+/* Profile 모달 */
+/* ======================== */
+.icon-profile {
+    position: relative;
+}
+
+.profile-modal {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.profile-modal-container {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    border-radius: 12px;
+    width: 300px;
+}
+
+.profile-modal-header {
+    display: flex;
+    padding: 16px;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+
+.profile-modal img {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+    fill: "currentColor";
+}
+
+.profile-modal-header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+}
+
+.profile-modal-container button {
+    width: 100%;
+    padding-left: 16px;
+    border-radius: 0;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.profile-modal-header button {
+    color: #3EA6FF;
+    padding-left: 0;
+}
+
+.profile-modal-main1,
+.profile-modal-main2,
+.profile-modal-main3,
+.profile-modal-main4,
+.profile-modal-main5 {
+    padding: 8px 0px;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+
+.profile-modal-main5 {
+    border-bottom: none;
+}
+
+.filter {
+    filter: invert(1);
+}
+
+.profile-modal-headertext button:hover {
+    background-color: #212121;
+}

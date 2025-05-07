@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/video.css">
+
+<!-- sidebar toggle용 class -->
+<body class="video-page">
+    <!-- header : 홈 화면 상단바 -->
+    <%- include('../partials/header') %>
+
+    <!-- nav : 홈 화면 네비게이션 -->
+    <%- include('../partials/nav') %>
+    
+    <!--전체 화면 -->
+    <div class="video-page-container">
+        <!--본 영상 영역-->
+        <main class="video-main">
+            <!--영상 재생 영역-->
+            <section class="video-player">
+                <video controls autoplay width="100%">
+                    <source src="https://storage.googleapis.com/youtube-clone-video/<%= videoInfo.id %>.mp4" type="video/mp4">
+                    동영상을 찾을 수 없습니다.
+                </video>
+            </section>
+
+            <!--영상 제목 및 정보-->
+            <section class="video-title-info">
+                <!-- 제목 -->
+                <span class="video-player-title"><%= videoInfo.title %></span>
+
+                <div class="video-stats">
+                    <!-- 조회수, 날짜 -->
+                    <span class="video-meta">
+                        <%= videoInfo.views.toLocaleString() %> views • <%= getRelativeTime(videoInfo.created_dt) %>
+                    </span>
+
+                    <!-- 좋아요, 싫어요, 공유, 저장, 더보기 -->
+                    <div class="video-actions">
+                        <div class="action-button">
+                            <button><img class="action-img" src="/assets/icons/like2.svg" alt="Like" />
+                            <span class="action-text"><%= videoInfo.likes.toLocaleString() %></span></button>
+                        </div>
+                        <div class="action-button">
+                            <button><img class="action-img" src="/assets/icons/dislike2.svg" alt="Dislike" />
+                            <span class="action-text"><%= videoInfo.dislikes.toLocaleString() %></span></button>
+                        </div>
+                        <div class="action-button">
+                            <button><img class="action-img" src="/assets/icons/share2.svg" alt="Share" />
+                            <span class="action-text">SHARE</span></button>
+                        </div>
+                        <div class="action-button">
+                            <button><img class="action-img" src="/assets/icons/save2.svg" alt="Save" />
+                            <span class="action-text">SAVE</span></button>
+                            <!-- 저장 모달 -->
+                            <div class="save-modal">
+                                <div class="save-modal-content">
+                                    <button class="save-option-btn"><img src="/assets/icons/save-offline.svg" alt="Download"><span class="save-text">Download</span></button>
+                                    <button class="save-option-btn"><img src="/assets/icons/save-online.svg" alt="Save"><span class="save-text">Save</span></button>
+                                </div>
+                            </div>
+                            <!-- 저장 모달 -->
+                        </div>
+                        <div class="action-button">
+                            <button class="action-text"><img class="action-img" src="/assets/icons/more2.svg" alt="More" /></button>
+                            <!-- 더보기 모달 -->
+                            <div class="more-modal">
+                                <div class="more-modal-content">
+                                    <button class="more-option-btn"><img src="/assets/icons/report.svg" alt="report"><span class="report-text">Report</span></button>
+                                </div>
+                            </div>
+                            <!-- 더보기 모달 -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 채널 정보 -->
+            <section class="channel-info">
+                <div class="channel-info-top">
+                    <!-- 채널 프로필 정보 -->
+                    <a href="/channel?id=<%= channelInfo.id %>" class="channel-owner" style="text-decoration: none; color: inherit;">
+                        <!-- 채널 프로필 이미지 -->
+                        <img class="channel-owner-img" src="<%= channelInfo.channel_profile %>" alt="<%= channelInfo.channel_name %> profile" />
+                        
+                        <!-- 채널 이름, 구독자 수 -->
+                        <div class="channel-owner-info">
+                            <span class="channel-owner-name"><%= channelInfo.channel_name %></span><br>
+                            <span class="channel-subscription"><%= channelInfo.subscribers.toLocaleString() %> subscribers</span>
+                        </div>
+                    </a>
+                    <!-- 구독 버튼 -->
+                    <button class="subscribe-btn">SUBSCRIBE</button>
+                </div>
+                <!-- 설명은 API에 없으니까 이 아래 부분은 주석처리 -->
+                <!--<div>
+                    <p class="channel-description">
+                        설명이 들어갈 자리 (API 없으므로 생략)
+                    </p>  
+                    <button class="show-more">SHOW MORE</button>  
+                </div>-->
+            </section>
+
+            <!-- 댓글 영역 -->
+            <section class="comments-section">
+                <!-- 댓글 수 및 정렬 -->
+                <div class="comments-header">
+                    <div class="sort">
+                        <span class="comments-num">0 Comments</span>
+                        <button class="sortby-btn">
+                            <img class="sortby-img" src="/assets/icons/list filter.png" alt="Sort icon">
+                            <span>SORT BY</span>
+                        </button>
+                        <!-- 정렬 모달 -->
+                        <div class="sortby-modal">
+                            <div class="sortby-modal-content">
+                                <button class="sortby-option-btn"><span class="sortby-text">Top comments</span></button>
+                                <button class="sortby-option-btn"><span class="sortby-text">Newest first</span></button>
+                            </div>
+                        </div>
+                        <!-- 정렬 모달 -->
+                    </div>
+                </div> 
+                <!-- 댓글 입력 -->
+                <div class="comment-input">
+                    <img class="input-img" src="/assets/profile/Profile-pic.svg" alt="profile img">
+                    <input class="input-text" type="text" placeholder="Add a public comment...">
+                </div>
+                <!-- 댓글 리스트 -->
+                <div class="comment"></div>
+            </section>
+        </main>
+
+        <!--추천 영상 영역-->
+        <section class="recommended-videos">
+            <!--추천 영상 필터-->
+            <nav class="recommended-tag">
+                <button>All</button>
+                <button>From Marcus Levin</button>
+            </nav>
+            <!--추천 영상 카드-->
+            <div class="recommended-list">
+                <article class="video-card">
+                    <% recommendedVideos.forEach(video => { %>
+                        <%- include('../partials/videoCard-video', { video: video }) %>
+                    <% }); %>
+                </article>  
+            </div>                         
+        </section>
+    </div>
+    <!-- 댓글 기능 -->
+
+    <!-- 공유 모달 -->
+    <div class="share-modal">
+        <div class="share-box">
+            <div class="share-header">
+                <span>SHARE</span>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="link-container">
+                <input 
+                    type="text" 
+                    id="share-link" 
+                    value="https://localhost:3000/video?id=<%= videoInfo.id %>" 
+                    readonly
+                >
+                <button class="copy-btn">copy</button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+    <script src="/js/common/button.js"></script>
+
+    <script src="/js/video/video-search.js"></script>
+    <script src="/js/video/comment.js"></script>
+</body> 
+</html>

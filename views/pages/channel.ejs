@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/channel.css">
+
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <%- include('../partials/header') %>
+
+    <!-- nav : 홈 화면 네비게이션 -->
+    <%- include('../partials/nav') %>
+
+    <!-- main : 홈 화면 블록 -->
+    <main>
+        <section class="channel-header">
+            <img class="channel-banner" src="<%= channelInfo.channel_banner %>" alt="<%= channelInfo.channel_name %>">
+
+            <div class="channel-info">
+                <div class="channel-left">
+                    <img class="channel-profile" src="<%= channelInfo.channel_profile %>" alt="<%= channelInfo.channel_name %>">
+                    <div class="channel-text">
+                        <h2 class="channel-owner"><%= channelInfo.channel_name %></h2>
+                        <p class="channel-subscription"><%= channelInfo.subscribers.toLocaleString() %> subscribers</p>
+                    </div>
+                </div>
+                <button class="subscribe-btn">SUBSCRIBE</button>
+            </div>
+            
+            <nav class="channel-nav">
+                <div class="nav-scroll-wrapper">
+                    <!-- 왼쪽 버튼 -->
+                    <button class="scroll-tab-btn scroll-tab-left">
+                        <img src="/assets/icons/Top-Menu.svg" alt="←">
+                    </button>
+                
+                    <!-- 스크롤 가능한 탭 컨테이너 -->
+                    <div class="nav-links-scrollable">
+                        <div class="nav-links">
+                        <a href="#" class="active">HOME</a>
+                        <a href="#">VIDEOS</a>
+                        <a href="#">PLAYLIST</a>
+                        <a href="#">COMMUNITY</a>
+                        <a href="#">CHANNELS</a>
+                        <a href="#">ABOUT</a>
+                        <img src="/assets/icons/search.svg">
+                        </div>
+                    </div>
+                
+                    <!-- 오른쪽 버튼 -->
+                    <button class="scroll-tab-btn scroll-tab-right">
+                        <img src="/assets/icons/Top-Menu.svg" alt="→">
+                    </button>
+                </div>
+            </nav>
+        </section>
+
+        <section class="channel-featured-video">
+            <div class="video-thumbnail">
+                <!-- 첫 번째 영상만 표시 -->
+                <video controls width="640" height="360">
+                    <source src="https://storage.googleapis.com/youtube-clone-video/<%= featuredVideo.id %>.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        
+            <div class="featured-vid-info">
+                <h3 class="featured-vid-title"><%= featuredVideo.title %></h3>
+                <p>
+                    <span class="featured-vid-views"><%= featuredVideo.views.toLocaleString() %> views • </span>
+                    <span class="featured-vid-date"><%= getRelativeTime(featuredVideo.created_dt) %></span>
+                </p>
+                <p class="featured-vid-description">
+                    <!-- description이 있다면 description, 없다면 tags 나열해도 괜찮 -->
+                    <% if (featuredVideo.description) { %>
+                        <%= featuredVideo.description %>
+                    <% } else { %>
+                        <%= featuredVideo.tags.join(' • ') %>
+                    <% } %>
+                </p>
+            </div>
+        </section>
+
+        <section class="channel-video-listall">
+            <%- include('../partials/videoCard-channel', {
+                channelVideoList,
+                sortedVideos,
+                recommendedVideos,
+                channelInfo,
+                formatViews,
+                getRelativeTime,
+                sectionTitles,
+            }) %>            
+        </section>        
+    </main>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+    <script src="/js/common/button.js"></script>
+    
+    <script src="/js/channel/channel-search.js"></script>
+    <script src="/js/channel/channel-nav-scroll.js"></script>
+    <script src="/js/channel/channel-scroll.js"></script>
+</body>
+</html>

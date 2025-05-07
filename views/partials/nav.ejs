@@ -1,0 +1,74 @@
+<nav class="sidebar">
+    <!-- 기본 메뉴 -->
+    <section class="topsection">
+        <ul class="nav-section">
+            <li class="home">
+                <a href="/"> <!-- 여기를 '/'로 수정 -->   
+                    <img src="/assets/icons/homeicon.svg" alt="Home icon" />
+                    <span>Home</span>
+                </a> 
+            </li>
+            <li><a href="#"><img src="/assets/icons/explore.svg" alt="Explore icon" /><span>Explore</span></a></li>
+            <li><a href="#"><img src="/assets/icons/subscriptions.svg" alt="Subscriptions icon" /><span>Subscriptions</span></a></li>
+        </ul>
+    </section>
+
+    <!-- 라이브러리 -->
+    <section>
+        <ul class="nav-section">
+            <li><a href="#"><img src="/assets/icons/library.svg" alt="Library icon" /><span>Library</span></a></li>
+            <li><a href="#"><img src="/assets/icons/history.svg" alt="History icon" /><span>History</span></a></li>
+            <li><a href="#"><img src="/assets/icons/yourvideos.svg" alt="Your Videos icon" /><span>Your Videos</span></a></li>
+            <li><a href="#"><img src="/assets/icons/watchlater.svg" alt="Watch Later icon" /><span>Watch Later</span></a></li>
+            <li><a href="#"><img src="/assets/icons/likedvideos.svg" alt="Liked Videos icon" /><span>Liked Videos</span></a></li>
+        </ul>
+    </section>
+    
+    <!--구독자 목록-->
+    <section aria-label="SUBSCRIPTIONS">
+        <ul class="nav-section">
+            <h2 class="nav-title">SUBSCRIPTIONS</h2>
+            <% subscriberList.forEach((sub, index) => { %>
+                <li class="subscriber-item <%= index >= 7 ? 'hidden' : '' %>">
+                    <!-- 구독자 채널 클릭 시 해당 채널 페이지로 이동 -->
+                    <a href="/channel?id=<%= sub.id %>"> <!--네비게이션에서 클릭할 때 id를 넘김 -->
+                        <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
+                        <span><%= sub.channel_name %></span>
+                    </a>                    
+                </li>
+            <% }); %>
+            <% if (subscriberList.length > 7) { %>
+                <li class="show-more">
+                    <a href="#" class="show-more-btn">
+                        <img src="/assets/icons/showmore.svg" alt="Show More icon">
+                        <span>Show <%= subscriberList.length - 7 %> More</span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </section>
+    
+    <!--탐색-->
+    <section aria-label="MORE FROM YOUTUBE">
+        
+        <ul class="nav-section">
+            <h2 class="nav-title">MORE FROM YOUTUBE</h2>
+            <li><a href="#"><img src="/assets/icons/youtubepremium.svg" alt="youtubepremium" /><span>YouTube Premium</span></a></li>
+            <li><a href="#"><img src="/assets/icons/gaming.svg" alt="Gaming" /><span>Gaming</span></a></li>
+            <li><a href="#"><img src="/assets/icons/live.svg" alt="Live" /><span>Live</span></a></li>
+            <li><a href="#"><img src="/assets/icons/sports.svg" alt="sports" /><span>sports</span></a></li>
+        </ul>
+    </section>
+    
+    <!--설정-->
+    <section>
+        <ul class="nav-section">
+            <li><a href="#"><img src="/assets/icons/settings.svg" alt="Settings" /><span>Settings</span></a></li>
+            <li><a href="#"><img src="/assets/icons/reporthistory.svg" alt="Reporthistory" /><span>Report history</span></a></li>
+            <li><a href="#"><img src="/assets/icons/help.svg" alt="Help" /><span>Help</span></a></li>
+            <li><a href="#"><img src="/assets/icons/feedback.svg" alt="Sendfeedback" /><span>Send feedback</span></a></li>
+        </ul>
+    </section>
+</nav>
+<script src="/js/sidebarToggle.js"></script>
+<script src="/js/sidebarshowmore.js"></script>

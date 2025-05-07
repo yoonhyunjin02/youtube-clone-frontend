@@ -1,0 +1,50 @@
+<%
+const sections = [channelVideoList, sortedVideos, recommendedVideos];
+sections.forEach((videos, sectionIndex) => {
+    const sectionTitle = sectionTitles[sectionIndex] || 'Videos';
+%>
+    <div class="channel-video-list">
+        <div class="section-header">
+            <h2><%= sectionTitle %></h2>
+            <button class="play-all">
+                <p>▶ PLAY ALL</p>
+            </button>
+        </div>
+        <div class="scroll-wrapper">
+            <button class="scroll-left">
+                <img src="/assets/icons/Top-Menu.svg" alt="이전 버튼" />
+            </button>
+
+            <div class="video-list scrollable-list">
+                <% videos.forEach(video => { %>
+                    <article class="video-card">
+                        <a href="/video?id=<%= video.id %>">
+                            <figure class="video-figure">
+                                <img class="thumbnail" src="<%= video.thumbnail %>" alt="썸네일">
+                                
+                                <video class="preview" muted loop preload="none">
+                                    <source src="https://storage.googleapis.com/youtube-clone-video/<%= video.id %>.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </figure>
+                            <figcaption class="video-info">
+                                <div class="video-description">
+                                    <p class="video-title"><%= video.title %></p>
+                                    <p>
+                                        <span class="channel-name"><%= channelInfo.channel_name %></span><br>
+                                        <span class="view"><%= formatViews(video.views) %> Views • </span>
+                                        <span class="update-date"><%= getRelativeTime(video.created_dt) %></span>
+                                    </p>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </article>
+                <% }); %>
+            </div>
+
+            <button class="scroll-right">
+                <img src="/assets/icons/Top-Menu.svg" alt="다음 버튼" />
+            </button>
+        </div>
+    </div>
+<% }); %>

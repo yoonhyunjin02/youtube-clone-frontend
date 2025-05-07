@@ -1,0 +1,67 @@
+.search-result {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/*검색 결과 카드 가로 길이 확장 */
+.search-result .video-card {
+  max-width: 500px;
+}
+
+.search-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 24px;
+}
+
+/* 썸네일 왼쪽 */
+.search-item .video-thumbnail {
+  width: 250px;
+  height: 140px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.search-item .video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* 오른쪽 정보 */
+.search-item .video-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+/* 제목 */
+.search-item .video-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.search-item .channel-meta {
+  display: flex;
+  align-items: flex-start; /* 또는 center */
+  gap: 6px;
+}
+
+.search-item .channel-name {
+  padding-top: 14px; /* 아래로 살짝 내리기 */
+  font-size: 14px;
+  color: white;
+}
+
+
+

@@ -1,0 +1,26 @@
+{
+  "name": "youtube-clone-frontend",
+  "version": "1.0.0",
+  "description": "오르미 11기 백엔드 양성 과정\r 첫 번째 프론트엔트 프로젝트 - 영상 추천 Youtube 클론 페이지",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonhyunjin02/youtube-clone-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoonhyunjin02/youtube-clone-frontend/issues"
+  },
+  "homepage": "https://github.com/yoonhyunjin02/youtube-clone-frontend#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}

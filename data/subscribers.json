@@ -1,0 +1,44 @@
+[
+    {
+        "id": 4,
+        "channel_name": "Alan Cooper",
+        "channel_profile": "/assets/profile/AlanCooper.svg",
+        "subscribers": 25000
+    },
+    {
+        "id": 5,
+        "channel_name": "Skylar Dias",
+        "channel_profile": "/assets/profile/SkylarDias.svg",
+        "subscribers": 74000
+    },
+    {
+        "id": 6,
+        "channel_name": "Alexis Sears",
+        "channel_profile": "/assets/profile/AlexisSears.svg",
+        "subscribers": 8900
+    },
+    {
+        "id": 7,
+        "channel_name": "Anna White",
+        "channel_profile": "/assets/profile/AnnaWhite.svg",
+        "subscribers": 889
+    },
+    {
+        "id": 8,
+        "channel_name": "James Gouse",
+        "channel_profile": "/assets/profile/JamesGouse.svg",
+        "subscribers": 62
+    },
+    {
+        "id": 9,
+        "channel_name": "Jesica Lambert",
+        "channel_profile": "/assets/profile/JesicaLambert.svg",
+        "subscribers": 795
+    },
+    {
+        "id": 10,
+        "channel_name": "Marcus Levin",
+        "channel_profile": "/assets/profile/MarcusLevin.svg",
+        "subscribers": 45681
+    }
+]
