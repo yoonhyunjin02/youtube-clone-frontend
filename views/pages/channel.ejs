@@ -81,7 +81,15 @@
         </section>
 
         <section class="channel-video-listall">
-            <%- include('../partials/videoCard-channel', { channelVideoList, channelInfo, formatViews, getRelativeTime }) %>
+            <%- include('../partials/videoCard-channel', {
+                channelVideoList,
+                sortedVideos,
+                recommendedVideos,
+                channelInfo,
+                formatViews,
+                getRelativeTime,
+                sectionTitles,
+            }) %>            
         </section>        
     </main>
     <script src="/js/common/buttonHeader.js"></script>

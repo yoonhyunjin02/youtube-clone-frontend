@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+// 영상 올린 시간 포맷터
 function getRelativeTime(dateString) {
     const uploadDate = new Date(dateString);
     const now = new Date();
@@ -23,6 +24,7 @@ function getRelativeTime(dateString) {
     return `just now`;
 }
 
+// 조회수 포맷터
 function formatViews(views) {
     if (views >= 1_000_000_000) return (views / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'B';
     if (views >= 1_000_000)     return (views / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
@@ -30,6 +32,7 @@ function formatViews(views) {
     return views.toString();
 }
 
+// 구독자 API + 더미 데이터
 async function getSubscriberList() {
     const subscriberIds = [1, 2, 3];
     const apiSubscriberList = await Promise.all(
@@ -53,4 +56,30 @@ async function getSubscriberList() {
     return [...apiSubscriberList, ...dummySubscribers];  // 합친 리스트
 }
 
-module.exports = { getRelativeTime, formatViews, getSubscriberList };
+// 조회수 기준 내림차순 정렬
+function sortVideosByViews(videos) {
+    return videos.slice().sort((a, b) => b.views - a.views);
+}
+
+// 좋아요 기준 내림차순 정렬
+function sortVideosByLikes(videos) {
+    return videos.slice().sort((a, b) => b.likes - a.likes);
+}
+
+// 채널 페이지 영상 리스트 배열 청크 나누기
+function chunkArray(array, size) {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+        result.push(array.slice(i, i + size));
+    }
+    return result;
+}
+
+module.exports = {
+    getSubscriberList,
+    getRelativeTime,
+    formatViews,
+    sortVideosByViews,
+    sortVideosByLikes,
+    chunkArray,
+};

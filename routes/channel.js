@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const { getSubscriberList, getRelativeTime, formatViews } = require('../utils/helpers');
+const {
+    getSubscriberList,
+    getRelativeTime,
+    formatViews,
+    sortVideosByViews,
+    sortVideosByLikes,
+    chunkArray,
+} = require('../utils/helpers');
+
 const {
     get_channel_getChannelInfo,
     get_video_getChannelVideoList
@@ -21,17 +29,32 @@ router.get('/', async (req, res) => {
             channelVideoList = [];
         }
 
+        // (3) 대표 영상 (맨 앞 1개) + 나머지 목록
         const featuredVideo = channelVideoList[0];
         const videoListWithoutFirst = channelVideoList.slice(1);
 
-        // (3) 구독자 목록
+        // (4) 인기 동영상 (조회수 내림차순 정렬)
+        const sortedVideos = sortVideosByViews(videoListWithoutFirst);
+
+        // (5) 추천 동영상 (좋아요 내림차순 정렬)
+        const recommendedVideos = sortVideosByLikes(videoListWithoutFirst);
+
+        // (6) 섹션 제목 배열 & 청크 크기
+        const sectionTitles = ['동영상', '인기동영상', '추천동영상'];
+        // const chunkSize = 6;
+
+        // (7) 구독자 목록
         const subscriberList = await getSubscriberList();
 
-        // (4) EJS에 넘겨주기
+        // (8) EJS에 넘겨주기
         res.render('pages/channel', {
             channelInfo,
             featuredVideo,
-            channelVideoList: videoListWithoutFirst,
+            channelVideoList: videoListWithoutFirst, // 원본 배열
+            sortedVideos,                            // 조회수 정렬 배열
+            recommendedVideos,                       // 좋아요 정렬 배열
+            sectionTitles,                           // 섹션 이름 배열
+            //chunkSize,                               // 청크 크기
             subscriberList,
             getRelativeTime,
             formatViews
