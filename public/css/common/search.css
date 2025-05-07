@@ -51,28 +51,17 @@
   line-height: 1.4;
 }
 
-/* 프로필 + 채널명 + 날짜 */
 .search-item .channel-meta {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #aaa;
+  align-items: flex-start; /* 또는 center */
+  gap: 6px;
 }
 
-.search-item .channel-meta img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-}
-
-.search-item .channel-meta span:hover {
+.search-item .channel-name {
+  padding-top: 14px; /* 아래로 살짝 내리기 */
+  font-size: 14px;
   color: white;
 }
 
-/* 설명 텍스트 */
-.search-item .video-desc {
-  font-size: 13px;
-  color: #ccc;
-  line-height: 1.5;
-}
+
+
