@@ -27,7 +27,15 @@
                     <a href="/channel/<%= channelInfo.id %>/Podcasts" class="<%= activeTab === 'Podcasts' ? 'active' : '' %>">Podcasts</a>
                     <a href="/channel/<%= channelInfo.id %>/Playlists" class="<%= activeTab === 'Playlists' ? 'active' : '' %>">Playlists</a>
                     <a href="/channel/<%= channelInfo.id %>/Posts" class="<%= activeTab === 'Posts' ? 'active' : '' %>">Posts</a>                    
-                    <img src="/assets/icons/search.svg">
+                    
+                    <div class="search-container">
+                        <div class="search-icon" id="searchIcon">
+                            <img src="/assets/icons/search.svg" alt="Search">
+                        </div>
+                        <form action="/channel/<%= channelInfo.id %>/Search" method="get">
+                            <input type="text" name="query" class="search-input" id="searchInput" placeholder="Search">
+                        </form>
+                    </div>
                 </div>
             </div>
         

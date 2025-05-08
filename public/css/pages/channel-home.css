@@ -185,3 +185,73 @@
     text-decoration: none;
 }
 
+/* ============================= */
+/* 스크롤 및 슬라이드 스타일 */
+/* ============================= */
+.scrollable-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    align-items: center;
+}
+
+.scrollable-list::-webkit-scrollbar {
+    display: none;
+}
+
+.video-card {
+    flex: 0 0 auto;
+    width: 240px;
+}
+
+.scroll-wrapper {
+    position: relative;
+    /* display: flex;
+    align-items: center; */
+}
+
+.scroll-left,
+.scroll-right {
+    position: absolute;
+    top: 50%;
+    background-color: #303030;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.scroll-left:hover,
+.scroll-right:hover {
+    background-color: lightgray;
+}
+
+.scroll-left:hover img,
+.scroll-right:hover img {
+    filter: invert(100%);
+}
+
+.scroll-left {
+    left: -20px;
+}
+
+.scroll-left img {
+    transform: rotate(180deg);
+}
+
+.scroll-right {
+    right: -20px;
+}
+
+.scroll-left img,
+.scroll-right img {
+    width: 16px;
+    height: 16px;
+}
