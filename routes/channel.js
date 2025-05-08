@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const podcastList = require('../data/podcasts.json');
 
+const fs = require('fs').promises;
+const path = require('path');
+
 const {
     getSubscriberList,
     getRelativeTime,
@@ -15,8 +18,9 @@ const {
     get_video_getChannelVideoList
 } = require('../utils/api');
 
+// 채널 공통 정보 로딩 미들웨어
 async function loadChannelBase(req, res, next) {
-    const channelId = req.params.id;
+    const channelId = parseInt(req.params.id, 10);
     try {
         const channelInfo = await get_channel_getChannelInfo(channelId);
         res.locals.channelInfo = channelInfo;
@@ -172,10 +176,32 @@ router.get('/:id/Playlists', async (req, res) => {
 
 
 // /channel/:id/Posts
+// /channel/:id/Posts
 router.get('/:id/Posts', loadChannelBase, async (req, res) => {
-    // 여기에 posts 불러오기 API 연결 필요
-    const posts = []; // TODO: posts 데이터
-    res.render('pages/channel-posts', { posts, activeTab: 'Posts' });
+    try {
+        const subscriberList = await getSubscriberList();
+        const channelId = parseInt(req.params.id, 10);
+
+        // posts.json 파일 경로
+        const postsFile = path.join(__dirname, '../data/posts.json');
+
+        // 파일 읽기
+        const data = await fs.readFile(postsFile, 'utf8');
+        const allPosts = JSON.parse(data);
+
+        // channelId로 필터링
+        const posts = allPosts.filter(post => post.channelId === channelId);
+
+        res.render('pages/channel-posts', {
+            subscriberList,
+            posts,
+            channelInfo: res.locals.channelInfo,  // loadChannelBase에서 가져온 값
+            activeTab: 'Posts'
+        });
+    } catch (error) {
+        console.error('채널 Posts 페이지 에러:', error);
+        res.status(500).send('Server Error');
+    }
 });
 
 module.exports = router;

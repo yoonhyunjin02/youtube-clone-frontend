@@ -1,0 +1,62 @@
+[
+    {
+        "channelId": 1,
+        "postId": 1,
+        "date": "12 days ago",
+        "content": "안녕하세요, 동물의 왕국입니다~ 🐾\n오늘도 귀여운 친구들과 함께 힐링하세요! 💕\n곧 올라올 아기 토끼 영상 기대해주세요! 깡총깡총🐇✨\n여러분이 보고 싶은 동물이나 이야기 댓글로 남겨주세요! 언제나 소통하는 동물의 왕국이 되겠습니다 😊",
+        "likes": 1000,
+        "dislikes": 0,
+        "comments": 68,
+        "image": "/assets/img/post1.png"
+    },
+    {
+        "channelId": 1,
+        "postId": 2,
+        "date": "3 months ago",
+        "content": "안녕하세요, 동물의 왕국입니다~ 🦁\n오늘은 깜찍한 아기 곰의 스쿠터 타기 영상이 업로드됩니다! 🐻🛴\n웃음과 힐링이 필요할 땐 언제든 놀러 오세요~\n구독과 좋아요는 저희에게 큰 힘이 됩니다! 감사합니다 💛",
+        "likes": 713,
+        "dislikes": 0,
+        "comments": 86,
+        "image": null
+    },
+    {
+        "channelId": 2,
+        "postId": 1,
+        "date": "2 days ago",
+        "content": "안녕하세요, 오르미혁신정보입니다! 🚀\n오늘도 최신 기술 소식으로 찾아왔습니다! 💡\n곧 공개될 AI 로봇 영상 기대해주세요! 🤖✨\n궁금한 기술이나 보고 싶은 콘텐츠가 있다면 댓글로 남겨주세요! 언제나 소통하는 오르미혁신정보가 되겠습니다 😊",
+        "likes": 54,
+        "dislikes": 0,
+        "comments": 2,
+        "image": "/assets/img/post2.png"
+    },
+    {
+        "channelId": 2,
+        "postId": 2,
+        "date": "3 months ago",
+        "content": "안녕하세요, 오르미혁신정보입니다! 📡\n오늘도 혁신 가득한 소식과 함께합니다! 🔥\n다가올 자율주행차 리뷰 영상, 많은 관심 부탁드려요! 🚗✨\n여러분의 생각과 질문은 언제나 환영입니다! 댓글로 소통해요 😊",
+        "likes": 90,
+        "dislikes": 0,
+        "comments": 38,
+        "image": null
+    },
+    {
+        "channelId": 3,
+        "postId": 1,
+        "date": "12 days ago",
+        "content": "안녕하세요, 헬스프렌즈입니다! 💙\n오늘도 건강한 정보로 찾아왔습니다! 💪\n곧 올라올 저탄수화물 식단 꿀팁 영상 기대해주세요! 🍽️✨\n궁금한 건강 고민이나 주제가 있다면 댓글로 남겨주세요! 언제나 소통하는 헬스프렌즈가 되겠습니다 😊",
+        "likes": 74,
+        "dislikes": 0,
+        "comments": 5,
+        "image": "/assets/img/post3.png"
+    },
+    {
+        "channelId": 3,
+        "postId": 2,
+        "date": "5 days ago",
+        "content": "안녕하세요, 헬스프렌즈입니다! 🩺\n오늘도 유익한 건강 이야기로 인사드립니다! 🌿\n다가올 기능의학 병원 찾는 꿀팁 영상, 많은 관심 부탁드려요! 🏥✨\n여러분의 의견과 질문은 언제나 환영입니다! 댓글로 소통해요 😊",
+        "likes": 55,
+        "dislikes": 0,
+        "comments": 7,
+        "image": null
+    }
+]

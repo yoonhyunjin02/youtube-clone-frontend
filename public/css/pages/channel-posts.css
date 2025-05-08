@@ -1,0 +1,134 @@
+.posts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 카드 가운데 정렬 */
+    gap: 20px;
+    padding: 20px;
+}
+
+.post-card {
+    width: 100%;
+    max-width: 700px; /* 최대 너비 제한 */
+    padding: 16px;
+    border-radius: 12px;
+    color: white;
+    border: 0.5px solid gray;
+}
+
+.post-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+}
+
+.post-left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.post-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* 오른쪽 영역 간격 추가 */
+}
+
+.author-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.author-link {
+    color: white;
+    text-decoration: none;
+}
+
+.author-link:hover {
+    cursor: pointer;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.post-date:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.post-content .post-text {
+    margin: 0;
+    white-space: pre-line;
+    line-height: 1.5;
+}
+
+.post-image img {
+    width: 100%;
+    max-height: 400px; /* 최대 높이 제한 */
+    object-fit: cover; /* 비율 유지하며 채우기 */
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: gray;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    margin-top: 4px;
+}
+
+.read-more-btn:hover {
+    cursor: pointer;
+}
+
+.post-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.action-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* 동그란 배경 */
+    transition: background-color 0.3s ease;
+}
+
+.action-icon-wrapper:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* 투명 회색 배경 */
+}
+
+.action-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+}

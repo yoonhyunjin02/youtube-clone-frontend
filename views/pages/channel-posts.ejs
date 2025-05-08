@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/channel.css">
+<link rel="stylesheet" href="/css/pages/channel-posts.css">
+
+<body>
+    <!-- header -->
+    <%- include('../partials/header') %>
+
+    <!-- nav -->
+    <%- include('../partials/nav') %>
+
+    <main>
+        <!-- 채널 header + nav -->
+        <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
+        <section class="posts-section">
+            <% posts.forEach((post, index) => { %>
+            <div class="post-card">
+                <div class="post-wrapper">
+                    <!-- 왼쪽: 프로필 -->
+                    <div class="post-left">
+                        <a href="/channel/<%= post.channelId %>/Home">
+                            <img src="<%= channelInfo.channel_profile %>" class="author-profile" alt="Profile">
+                        </a>
+                    </div>
+
+                    <!-- 오른쪽: 내용 -->
+                    <div class="post-right">
+                        <div class="author-info">
+                            <a href="/channel/<%= post.channelId %>/Home" class="author-link">
+                                <h4><%= channelInfo.channel_name %></h4>
+                            </a>
+                            <span class="post-date"><%= post.date %></span>
+                        </div>
+
+                        <div class="post-content">
+                            <p class="post-text" id="post-text-<%= index %>" data-full-text="<%= post.content.replace(/"/g, '&quot;') %>">
+                                <%- post.content.split('\n').slice(0, 3).join('<br>') %>
+                            </p>
+                            <% if (post.content.split('\n').length > 3) { %>
+                                <button class="read-more-btn" data-index="<%= index %>">Read more</button>
+                            <% } %>
+                            <% if (post.image) { %>
+                                <div class="post-image">
+                                    <img src="<%= post.image %>" alt="Post Image">
+                                </div>
+                            <% } %>
+                        </div>
+
+                        <div class="post-actions">
+                            <span class="action-item like-btn">
+                                <span class="action-icon-wrapper">
+                                    <img src="/assets/icons/like2.svg" alt="Like" class="action-icon like-img">
+                                </span>
+                                <span class="action-count like-count"><%= post.likes.toLocaleString() %></span>
+                            </span>
+                            
+                            <span class="action-item dislike-btn">
+                                <span class="action-icon-wrapper">
+                                    <img src="/assets/icons/dislike2.svg" alt="Dislike" class="action-icon dislike-img">
+                                </span>
+                                <span class="action-count dislike-count"><%= post.dislikes ? post.dislikes.toLocaleString() : '0' %></span>
+                            </span>
+                            <span class="action-item">
+                                <span class="action-icon-wrapper">
+                                    <img src="/assets/icons/share2.svg" alt="Share" class="action-icon">
+                                </span>
+                            </span>
+                            <span class="action-item">
+                                <span class="action-icon-wrapper">
+                                    <img src="/assets/icons/comment.svg" alt="Comment" class="action-icon">
+                                </span>
+                                <%= post.comments.toLocaleString() %>
+                            </span>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </section>
+    </main>
+
+    <!-- JS 파일들 -->
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+    <script src="/js/common/button.js"></script>
+
+    <script src="/js/channel/channel-search.js"></script>
+    <script src="/js/channel/channel-nav-scroll.js"></script>
+    <script src="/js/channel/channel-scroll.js"></script>
+    <script src="/js/channel/posts.js"></script>
+</body>
+</html>
