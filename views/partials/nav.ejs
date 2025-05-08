@@ -31,7 +31,7 @@
             <% subscriberList.forEach((sub, index) => { %>
                 <li class="subscriber-item <%= index >= 7 ? 'hidden' : '' %>">
                     <!-- 구독자 채널 클릭 시 해당 채널 페이지로 이동 -->
-                    <a href="/channel?id=<%= sub.id %>"> <!--네비게이션에서 클릭할 때 id를 넘김 -->
+                    <a href="/channel/<%= sub.id %>/Home">
                         <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
                         <span><%= sub.channel_name %></span>
                     </a>                    

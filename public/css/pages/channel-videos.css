@@ -1,0 +1,95 @@
+/* ============================= */
+/* channel-videos.css */
+/* ============================= */
+
+/* 비디오 그리드: 한 줄 5개, 최대 넓이 고정, 좌우 패딩 */
+.channel-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 비디오 카드 */
+.video-card {
+    width: 100%;
+    max-width: 240px;
+}
+
+.video-card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 썸네일 영역 */
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+.video-thumbnail img,
+.video-thumbnail video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.video-thumbnail video {
+    opacity: 0;
+}
+
+.video-thumbnail:hover video {
+    opacity: 1;
+}
+
+.video-thumbnail:hover img {
+    opacity: 0;
+}
+
+/* ============================= */
+/* 비디오 정보 (조회수, 올린 시간) */
+/* ============================= */
+.video-info {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 4px 0 4px;
+}
+
+.video-title {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 4px 0;
+    line-height: 1.4;
+
+    /* 최대 2줄, 넘으면 ... */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.video-meta {
+    font-size: 12px;
+    color: #aaaaaa;
+    margin: 2px 0;
+}

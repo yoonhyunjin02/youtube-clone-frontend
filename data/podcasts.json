@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "동물의 왕국",
+        "thumbnail": "/assets/img/podcasts1.png",
+        "episodes": 8,
+        "updated": "7 days ago"
+    },
+    {
+        "id": 2,
+        "title": "오르미혁신정보",
+        "thumbnail": "/assets/img/podcasts2.png",
+        "episodes": 12,
+        "updated": "3 days ago"
+    },
+    {
+        "id": 3,
+        "title": "헬스프렌즈",
+        "thumbnail": "/assets/img/podcasts3.png",
+        "episodes": 5,
+        "updated": "1 week ago"
+    }
+]

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/channel.css">
+<link rel="stylesheet" href="/css/pages/channel-videos.css">
+
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <%- include('../partials/header') %>
+
+    <!-- nav : 홈 화면 네비게이션 -->
+    <%- include('../partials/nav') %>
+
+    <!-- main : 홈 화면 블록 -->
+    <main>
+        <!-- 채널 header + nav -->
+        <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
+        
+        <div class="channel-video-grid">
+            <% channelVideoList.forEach(video => { %>
+                <a href="/video?id=<%= video.id %>" class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="<%= video.thumbnail %>" alt="썸네일">
+                        <video class="preview" muted loop preload="none">
+                            <source src="https://storage.googleapis.com/youtube-clone-video/<%= video.id %>.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <p class="video-title"><%= video.title %></p>
+                        <p class="video-meta"><%= formatViews(video.views) %> • <%= getRelativeTime(video.created_dt) %></p>
+                    </div>
+                </a>
+            <% }); %>
+        </div>
+        
+    </main>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+    <script src="/js/common/button.js"></script>
+    
+    <script src="/js/channel/channel-search.js"></script>
+    <script src="/js/channel/channel-nav-scroll.js"></script>
+    <script src="/js/channel/channel-scroll.js"></script>
+</body>
+</html>
