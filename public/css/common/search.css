@@ -9,14 +9,17 @@
 
 /*검색 결과 카드 가로 길이 확장 */
 .search-result .video-card {
-  max-width: 500px;
+  max-width: 1000px;
 }
 
 .search-item {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: flex-start;
-  padding-bottom: 24px;
+  padding: 12px;
+  border: 1px solid white;
+  background-color: rgb(50, 50, 50);
+  border-radius: 10px;
 }
 
 /* 썸네일 왼쪽 */
@@ -40,6 +43,7 @@
   flex-direction: column;
   gap: 10px;
   flex: 1;
+  padding: 0px;
 }
 
 /* 제목 */
@@ -54,13 +58,12 @@
 .search-item .channel-meta {
   display: flex;
   align-items: flex-start; /* 또는 center */
-  gap: 6px;
+  
 }
 
 .search-item .channel-name {
   padding-top: 14px; /* 아래로 살짝 내리기 */
-  font-size: 14px;
-  color: white;
+  padding-left: 5px;
 }
 
 
