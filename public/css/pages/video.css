@@ -585,3 +585,60 @@ a > .video-thumbnail {
     width: 16px;
     height: 16px;
 }
+
+.video-card-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: white;
+    width: 100%;
+  }
+  
+  .video-card-horizontal a {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+  
+  .video-thumbnail {
+    flex-shrink: 0;
+    width: 176px;
+    height: 94px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .video-thumbnail img,
+  .video-thumbnail video {
+    width: 176px;
+    height: 94px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .video-description-horizontal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: calc(100% - 188px);
+  }
+  
+  .video-description-horizontal .video-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  
+  .video-description-horizontal .channel-name,
+  .video-description-horizontal .view {
+    font-size: 12px;
+    color: #aaaaaa;
+    margin: 1px 0;
+  }
+  
