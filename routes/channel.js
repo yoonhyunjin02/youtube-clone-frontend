@@ -172,10 +172,6 @@ router.get('/:id/Playlists', async (req, res) => {
     }
 });
 
-
-
-
-// /channel/:id/Posts
 // /channel/:id/Posts
 router.get('/:id/Posts', loadChannelBase, async (req, res) => {
     try {
