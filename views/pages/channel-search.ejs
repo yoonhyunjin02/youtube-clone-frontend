@@ -17,7 +17,7 @@
 
         <section class="search-results">
             <% if (searchResults.length === 0) { %>
-                <p class="no-results">No results found for "<%= query %>".</p>
+                <p class="no-results">"<%= query %>" 검색 결과가 없습니다.</p>
             <% } else { %>
                 <% searchResults.forEach(video => { %>
                     <div class="search-result-item">
