@@ -1,0 +1,120 @@
+.podcast-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.podcast-card {
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.podcast-image-wrapper {
+    position: relative;
+}
+
+.podcast-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.episode-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color:  rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.episode-badge img.badge-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.podcast-card h3 {
+    font-size: 14px;
+    margin: 8px 12px 4px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.podcast-card p {
+    font-size: 12px;
+    margin: 0 12px 4px;
+    color: #aaa;
+    text-align: left;
+}
+
+.podcast-card a {
+    font-size: 12px;
+    margin: 0 12px 12px;
+    color: gray;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.podcast-card a:hover {
+    color: white;
+}
+
+.episode-badge img.badge-icon {
+    width: 12px;
+    height: 12px;
+    filter: brightness(0) invert(1);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.play-icon {
+    font-size: 18px;
+}
+
+.podcast-image-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.podcast-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.podcast-image-wrapper:hover::before {
+    opacity: 1;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/channel.css">
+<link rel="stylesheet" href="/css/pages/channel-podcasts.css">
+
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <%- include('../partials/header') %>
+
+    <!-- nav : 홈 화면 네비게이션 -->
+    <%- include('../partials/nav') %>
+
+    <!-- main : 홈 화면 블록 -->
+    <main>
+        <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
+        
+        <div class="podcast-list">
+            <% podcasts.forEach(podcast => { %>
+            <div class="podcast-card">
+                <div class="podcast-image-wrapper">
+                    <img src="<%= podcast.thumbnail %>" alt="<%= podcast.title %>">
+                    <div class="overlay">
+                        <span class="play-text">▶ Play all</span>
+                    </div>
+                    <div class="episode-badge">
+                        <img src="/assets/icons/podcasts.svg" alt="Podcast Icon" class="badge-icon">
+                        <span><%= podcast.episodes %> episodes</span>
+                    </div>
+                </div>
+                <h3><%= podcast.title %></h3>
+                <p>Updated <%= podcast.updated %></p>
+                <a href="#">View full podcast</a>
+            </div>
+            <% }); %>
+        </div>
+    </main>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+    <script src="/js/common/button.js"></script>
+    
+    <script src="/js/channel/channel-search.js"></script>
+    <script src="/js/channel/channel-nav-scroll.js"></script>
+    <script src="/js/channel/channel-scroll.js"></script>
+</body>
+</html>

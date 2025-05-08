@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const podcastList = require('../data/podcasts.json');
 
 const {
     getSubscriberList,
@@ -76,6 +77,7 @@ router.get('/:id/Home', async (req, res) => {
     }
 });
 
+// /channel/:id/Videos
 router.get('/:id/Videos', async (req, res) => {
     const channelId = req.params.id;
 
@@ -104,6 +106,28 @@ router.get('/:id/Videos', async (req, res) => {
     }
 });
 
+// /channel/:id/podcast
+router.get('/:id/Podcasts', async (req, res) => {
+    const channelId = parseInt(req.params.id);
+
+    try {
+        const channelInfo = await get_channel_getChannelInfo(channelId);
+        const subscriberList = await getSubscriberList();
+
+        // ✅ id로 해당 podcast만 찾음
+        const channelPodcast = podcastList.find(podcast => podcast.id === channelId);
+
+        res.render('pages/channel-podcasts', {
+            channelInfo,
+            subscriberList,
+            podcasts: channelPodcast ? [channelPodcast] : [],
+            activeTab: 'Podcasts'
+        });
+    } catch (error) {
+        console.error('채널 Podcasts 페이지 에러:', error);
+        res.status(500).send('Server Error');
+    }
+});
 
 // /channel/:id/Playlists
 router.get('/:id/Playlists', loadChannelBase, async (req, res) => {
