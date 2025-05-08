@@ -24,14 +24,14 @@
         </ul>
     </section>
     
-    <!--구독자 목록-->
+    <!-- 구독자 목록 -->
     <section aria-label="SUBSCRIPTIONS">
         <ul class="nav-section">
             <h2 class="nav-title">SUBSCRIPTIONS</h2>
             <% subscriberList.forEach((sub, index) => { %>
                 <li class="subscriber-item <%= index >= 7 ? 'hidden' : '' %>">
                     <!-- 구독자 채널 클릭 시 해당 채널 페이지로 이동 -->
-                    <a href="/channel/<%= sub.id %>/Home">
+                    <a href="/channel/<%= sub.id %>/Home" data-dummy="<%= index >= 3 ? 'true' : 'false' %>">
                         <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
                         <span><%= sub.channel_name %></span>
                     </a>                    
@@ -47,6 +47,7 @@
             <% } %>
         </ul>
     </section>
+
     
     <!--탐색-->
     <section aria-label="MORE FROM YOUTUBE">
@@ -70,5 +71,3 @@
         </ul>
     </section>
 </nav>
-<script src="/js/sidebarToggle.js"></script>
-<script src="/js/sidebarshowmore.js"></script>

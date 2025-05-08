@@ -16,7 +16,7 @@ showMoreBtn.addEventListener("click", (e) => {
         ? "Show Less"
         : `Show ${hiddenItems.length} More`;
 
-    // 🔥 아이콘 회전 추가
+    // 아이콘 회전 추가
     if (isExpanded) {
         showMoreIcon.style.transform = "rotate(180deg)";
     } else {
