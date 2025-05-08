@@ -1,0 +1,60 @@
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 80px;
+}
+
+.search-result-item {
+    display: flex;
+    gap: 16px;
+
+    border-bottom: 1px solid #333;  /* 선 색상 */
+    padding-bottom: 16px;          /* 아래쪽 여백 */
+    margin-bottom: 16px;           /* 다음 카드와 간격 */
+}
+
+.thumbnail {
+    position: relative;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.video-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-title a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.video-meta {
+    font-size: 14px;
+    color: #aaa;
+    margin: 4px 0;
+}
+
+.video-description {
+    font-size: 14px;
+    color: #ccc;
+}

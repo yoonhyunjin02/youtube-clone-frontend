@@ -33,9 +33,15 @@
                             <img src="/assets/icons/search.svg" alt="Search">
                         </div>
                         <form action="/channel/<%= channelInfo.id %>/Search" method="get">
-                            <input type="text" name="query" class="search-input" id="searchInput" placeholder="Search">
+                            <input 
+                                type="text" 
+                                name="query" 
+                                class="search-input <%= typeof query !== 'undefined' && query ? 'active' : '' %>" 
+                                id="searchInput" 
+                                placeholder="Search"
+                                value="<%= typeof query !== 'undefined' ? query : '' %>">
                         </form>
-                    </div>
+                    </div>                                        
                 </div>
             </div>
         

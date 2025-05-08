@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/channel.css">
+<link rel="stylesheet" href="/css/pages/channel-search.css">
+
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <%- include('../partials/header') %>
+
+    <!-- nav : 홈 화면 네비게이션 -->
+    <%- include('../partials/nav') %>
+
+    <!-- main : 홈 화면 블록 -->
+    <main>
+        <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
+
+        <section class="search-results">
+            <% if (searchResults.length === 0) { %>
+                <p class="no-results">No results found for "<%= query %>".</p>
+            <% } else { %>
+                <% searchResults.forEach(video => { %>
+                    <div class="search-result-item">
+                        <div class="thumbnail">
+                            <a href="/video/<%= video.id %>">
+                                <img src="<%= video.thumbnail %>" alt="Thumbnail">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <h3 class="video-title">
+                                <a href="/video/<%= video.id %>"><%= video.title %></a>
+                            </h3>
+                            <p class="video-meta">
+                                <%= channelInfo.channel_name %> · <%= formatViews(video.views) %> views · <%= getRelativeTime(video.created_dt) %>
+                            </p>
+                            <p class="video-description">
+                                <%= video.description %>
+                            </p>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </section>        
+    </main>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+    <script src="/js/common/button.js"></script>
+    
+    <script src="/js/channel/channel-search.js"></script>
+    <script src="/js/channel/channel-nav-scroll.js"></script>
+    <script src="/js/channel/channel-scroll.js"></script>
+    <script src="/js/channel/nav-search.js"></script>
+</body>
+</html>

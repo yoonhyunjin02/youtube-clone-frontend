@@ -74,6 +74,7 @@ router.get('/:id/Home', async (req, res) => {
             getRelativeTime,
             formatViews,
             activeTab: 'Home',
+            query: ''
         });
     } catch (error) {
         console.error('채널 Home 페이지 에러:', error);
@@ -103,6 +104,7 @@ router.get('/:id/Videos', async (req, res) => {
             getRelativeTime,
             formatViews,
             activeTab: 'Videos',
+            query: ''
         });
     } catch (error) {
         console.error('채널 Videos 페이지 에러:', error);
@@ -124,7 +126,8 @@ router.get('/:id/Podcasts', async (req, res) => {
             channelInfo,
             subscriberList,
             podcasts: channelPodcast ? [channelPodcast] : [],
-            activeTab: 'Podcasts'
+            activeTab: 'Podcasts',
+            query: ''
         });
     } catch (error) {
         console.error('채널 Podcasts 페이지 에러:', error);
@@ -164,7 +167,8 @@ router.get('/:id/Playlists', async (req, res) => {
             playlists,
             subscriberList,
             sectionTitles: ['동영상', '인기동영상', '추천동영상'],
-            activeTab: 'Playlists'
+            activeTab: 'Playlists',
+            query: ''
         });
     } catch (error) {
         console.error('채널 Playlists 페이지 에러:', error);
@@ -192,10 +196,56 @@ router.get('/:id/Posts', loadChannelBase, async (req, res) => {
             subscriberList,
             posts,
             channelInfo: res.locals.channelInfo,  // loadChannelBase에서 가져온 값
-            activeTab: 'Posts'
+            activeTab: 'Posts',
+            query: ''
         });
     } catch (error) {
         console.error('채널 Posts 페이지 에러:', error);
+        res.status(500).send('Server Error');
+    }
+});
+
+router.get('/:id/Search', async (req, res) => {
+    const channelId = req.params.id;
+    const query = req.query.query;
+
+    try {
+        const channelInfo = await get_channel_getChannelInfo(channelId);
+        const allVideos = await get_video_getChannelVideoList(channelId);
+        const subscriberList = await getSubscriberList();
+
+        // 빈 검색어 → 빈 결과로 처리
+        if (!query || query.trim() === '') {
+            return res.render('pages/channel-search', {
+                channelInfo,
+                subscriberList,
+                searchResults: [],
+                getRelativeTime,
+                formatViews,
+                query,
+                activeTab: 'Search',
+            });
+        }
+
+        // 제목, 설명, 태그에서 검색어 포함된 영상 필터링
+        const searchResults = allVideos.filter(video =>
+            video.title.toLowerCase().includes(query.toLowerCase()) ||
+            video.description.toLowerCase().includes(query.toLowerCase()) ||
+            (Array.isArray(video.tags) && video.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase())))
+        );        
+
+        res.render('pages/channel-search', {
+            channelInfo,
+            subscriberList,
+            searchResults,
+            getRelativeTime,
+            formatViews,
+            query,
+            activeTab: 'Search',
+        });
+
+    } catch (error) {
+        console.error('채널 Search 페이지 에러:', error);
         res.status(500).send('Server Error');
     }
 });

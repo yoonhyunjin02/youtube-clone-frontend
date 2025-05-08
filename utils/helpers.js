@@ -3,7 +3,10 @@ const path = require('path');
 
 // 영상 올린 시간 포맷터
 function getRelativeTime(dateString) {
+    if (!dateString) return 'unknown time';
     const uploadDate = new Date(dateString);
+    if (isNaN(uploadDate)) return 'unknown time';
+    
     const now = new Date();
     const diffMs = now - uploadDate;
 
