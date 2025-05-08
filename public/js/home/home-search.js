@@ -171,18 +171,23 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBtn.addEventListener("click", (e) => {
         e.preventDefault();
         const keyword = searchInput.value;
-        if (keyword) {
-            window.location.href = `/?search=${encodeURIComponent(keyword)}`; 
+        if (keyword === "") {
+            window.location.href = "/";
+            return;
         }
+        window.location.href = `/?search=${encodeURIComponent(keyword)}`;
     });
     //검색창에서 엔터키 눌렀을 때도 검색 실행됨.
     searchInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
             const keyword = searchInput.value.trim();
-            if (keyword) {
-                window.location.href = `/?search=${encodeURIComponent(keyword)}`;
+            if (keyword === "") {
+                window.location.href = "/";
+                return;
             }
+
+            window.location.href = `/?search=${encodeURIComponent(keyword)}`;
         }
     });
 
@@ -205,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (searchQuery) {
         searchInput.value = searchQuery;
         handleSearch(searchQuery);
-    } else {
+    }  else {
         videoGrid.style.display = "grid";
         searchResult.style.display = "none";
     }
