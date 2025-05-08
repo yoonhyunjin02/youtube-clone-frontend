@@ -21,26 +21,30 @@
             <% } else { %>
                 <% searchResults.forEach(video => { %>
                     <div class="search-result-item">
-                        <div class="thumbnail">
-                            <a href="/video/<%= video.id %>">
-                                <img src="<%= video.thumbnail %>" alt="Thumbnail">
-                            </a>
-                        </div>
+                        <a href="/video?id=<%= video.id %>" class="thumbnail">
+                            <img src="<%= video.thumbnail %>" alt="Thumbnail">
+                        </a>                        
                         <div class="video-info">
                             <h3 class="video-title">
                                 <a href="/video/<%= video.id %>"><%= video.title %></a>
                             </h3>
                             <p class="video-meta">
-                                <%= channelInfo.channel_name %> · <%= formatViews(video.views) %> views · <%= getRelativeTime(video.created_dt) %>
+                                <a href="/channel/<%= channelInfo.id %>/Home" class="channel-link">
+                                    <%= channelInfo.channel_name %>
+                                </a>
+                                · 
+                                <a href="/video/<%= video.id %>" class="video-meta-link">
+                                    <%= formatViews(video.views) %> views · <%= getRelativeTime(video.created_dt) %>
+                                </a>
                             </p>
-                            <p class="video-description">
+                            <a href="/video/<%= video.id %>" class="video-description">
                                 <%= video.description %>
-                            </p>
+                            </a>
                         </div>
                     </div>
                 <% }); %>
             <% } %>
-        </section>        
+        </section>                
     </main>
     <script src="/js/common/buttonHeader.js"></script>
     <script src="/js/common/thumbnail-play.js"></script>

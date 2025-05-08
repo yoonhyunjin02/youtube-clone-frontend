@@ -58,3 +58,38 @@
     font-size: 14px;
     color: #ccc;
 }
+
+.video-title a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;   /* 최대 2줄 */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.video-description {
+    max-height: 100px; /* 썸네일 높이에 맞게 조정, 예: 100px */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;    /* 최대 4줄 (썸네일 높이에 맞게 조정) */
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.channel-link {
+    text-decoration: none;
+}
+.channel-link:hover {
+    color: white;
+}
+
+.video-meta-link,
+.video-title a,
+.thumbnail,
+.video-description {
+    text-decoration: none;
+}
