@@ -78,7 +78,7 @@
             <section class="channel-info">
                 <div class="channel-info-top">
                     <!-- 채널 프로필 정보 -->
-                    <a href="/channel?id=<%= channelInfo.id %>" class="channel-owner" style="text-decoration: none; color: inherit;">
+                    <a href="/channel/<%= channelInfo.id %>/Home" class="channel-owner" style="text-decoration: none; color: inherit;">
                         <!-- 채널 프로필 이미지 -->
                         <img class="channel-owner-img" src="<%= channelInfo.channel_profile %>" alt="<%= channelInfo.channel_name %> profile" />
                         
@@ -139,11 +139,9 @@
             </nav>
             <!--추천 영상 카드-->
             <div class="recommended-list">
-                <article class="video-card">
                     <% recommendedVideos.forEach(video => { %>
                         <%- include('../partials/videoCard-video', { video: video }) %>
                     <% }); %>
-                </article>  
             </div>                         
         </section>
     </div>
