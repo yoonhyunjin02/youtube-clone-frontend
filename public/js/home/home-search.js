@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </a>
                         </div>
                         
-                        <a href="/channel?id=${video.channel.id}" class="channel-meta">
+                        <a href="/channel/${video.channel.id}/Home" class="channel-meta">
                             <img class="channel-avatar" src="${video.channel.channel_profile}" alt="channel-profile">
                             <span class="channel-name">${video.channel.channel_name}</span>
                         </a>
