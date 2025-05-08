@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<link rel="stylesheet" href="/css/pages/channel.css">
+<link rel="stylesheet" href="/css/pages/channel-playlists.css">
+
+<body>
+    <!-- header : 홈 화면 상단바 -->
+    <%- include('../partials/header') %>
+
+    <!-- nav : 홈 화면 네비게이션 -->
+    <%- include('../partials/nav') %>
+
+    <!-- main : 홈 화면 블록 -->
+    <main>
+        <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
+        
+        <div class="playlist-list">
+            <% sectionTitles.forEach((title, index) => {
+                const playlist = playlists[index];
+            %>
+            <div class="playlist-card">
+                <div class="playlist-image-wrapper">
+                    <img src="<%= playlist.videos[0].thumbnail %>" alt="<%= title %>">
+                    <div class="video-count-badge">
+                        <img src="/assets/icons/playlist.svg" alt="Playlist Icon" class="badge-icon">
+                        <%= playlist.total %> videos
+                    </div>
+                    <div class="playlist-overlay">
+                        <span class="play-text">▶ Play all</span>
+                    </div>
+                </div>
+                <h3><%= title %></h3>
+                <a href="#" class="view-full-link">View full playlist</a>
+            </div>
+            <% }); %>
+        </div>        
+        
+    </main>
+    <script src="/js/common/buttonHeader.js"></script>
+    <script src="/js/common/thumbnail-play.js"></script>
+    <script src="/js/common/sidebarshowmore.js"></script>
+    <script src="/js/common/sidebarToggle.js"></script>
+    <script src="/js/common/button.js"></script>
+    
+    <script src="/js/channel/channel-search.js"></script>
+    <script src="/js/channel/channel-nav-scroll.js"></script>
+    <script src="/js/channel/channel-scroll.js"></script>
+</body>
+</html>

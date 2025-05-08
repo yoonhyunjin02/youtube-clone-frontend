@@ -114,7 +114,6 @@ router.get('/:id/Podcasts', async (req, res) => {
         const channelInfo = await get_channel_getChannelInfo(channelId);
         const subscriberList = await getSubscriberList();
 
-        // ✅ id로 해당 podcast만 찾음
         const channelPodcast = podcastList.find(podcast => podcast.id === channelId);
 
         res.render('pages/channel-podcasts', {
@@ -130,11 +129,47 @@ router.get('/:id/Podcasts', async (req, res) => {
 });
 
 // /channel/:id/Playlists
-router.get('/:id/Playlists', loadChannelBase, async (req, res) => {
-    // 여기에 playlist 불러오기 API 연결 필요
-    const playlists = []; // TODO: playlist 데이터
-    res.render('pages/channel-playlists', { playlists, activeTab: 'Playlists' });
+router.get('/:id/Playlists', async (req, res) => {
+    const channelId = req.params.id;
+
+    try {
+        const channelInfo = await get_channel_getChannelInfo(channelId);
+        let channelVideoList = await get_video_getChannelVideoList(channelId);
+        const subscriberList = await getSubscriberList();
+
+        const sortedVideos = sortVideosByViews(channelVideoList.slice(1));
+        const recommendedVideos = sortVideosByLikes(channelVideoList.slice(1));
+
+        const playlists = [
+            {
+                videos: channelVideoList.slice(0, 5),
+                total: channelVideoList.length
+            },
+            {
+                videos: sortedVideos.slice(0, 5),
+                total: sortedVideos.length
+            },
+            {
+                videos: recommendedVideos.slice(0, 5),
+                total: recommendedVideos.length
+            }
+        ];
+
+        res.render('pages/channel-playlists', {
+            channelInfo,
+            playlists,
+            subscriberList,
+            sectionTitles: ['동영상', '인기동영상', '추천동영상'],
+            activeTab: 'Playlists'
+        });
+    } catch (error) {
+        console.error('채널 Playlists 페이지 에러:', error);
+        res.status(500).send('Server Error');
+    }
 });
+
+
+
 
 // /channel/:id/Posts
 router.get('/:id/Posts', loadChannelBase, async (req, res) => {
