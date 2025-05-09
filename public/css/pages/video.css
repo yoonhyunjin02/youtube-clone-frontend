@@ -13,6 +13,10 @@ a {
 /* ============================= */
 /* 기본 레이아웃 */
 /* ============================= */
+.video-player { order: 1; }
+.video-title-info { order: 2; }
+.channel-info { order: 3; }
+.comments-section { order: 4; }
 .video-page-container {
     padding-top: 56px;
     box-sizing: border-box;
@@ -20,7 +24,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     background-color: rgb(22, 22, 22);
 }
 
@@ -42,11 +46,23 @@ header {
 /* 영상 메인 영역 */
 /* ============================= */
 .video-main {
-    padding-left: 24px;
-    padding-top: 24px;
-    width: 664px;
+    display: grid;
+    grid-template-columns: minmax(640px, 1fr) 426px;
+    /* gap: 24px; */
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: start;
 }
-
+/* 수정 */
+.video-player,
+.video-title-info,
+.channel-info,
+.comments-section {
+    grid-column: 1;
+}
+/* 수정 */
 .video-player-img {
     max-width: 100%;
     height: auto;
@@ -303,8 +319,12 @@ header {
 /* ============================= */
 .recommended-videos {
     padding-left: 24px;
-    padding-top: 24px;
-    width: 426px;
+    /* padding-top: 24px; */
+    /* 수정 */
+    grid-column: 2;
+    grid-row:1/7;
+    align-self: start; /* 상단 정렬 */
+    /* 수정 */
 }
 
 .recommended-tag {
@@ -669,10 +689,40 @@ a > .video-thumbnail {
     gap: 8px;
 }
 
+.video-player { order: 1; }
+.video-title-info { order: 2; }
+.channel-info { order: 3; }
+.comments-section { order: 4; }
+.recommended-videos { 
+    order: 5;
+    grid-column: 2;
+    position: sticky;
+    top: 80px;
+}
+
 @media screen and (max-width: 1100px) {
-    .recommended-videos{
-        width: 640px;
+    .video-main {
+        display:flex;
+        flex-direction: column;
+        width:100%;
     }
+    .video-player,
+    .video-title-info,
+    .channel-info,
+    .comments-section,
+    .recommended-videos{
+        width:100%;
+    }
+    
+    .recommended-videos { 
+        order: 4;
+        padding-left:0;
+        padding-top:10px;
+    }
+    .comments-section { 
+        order: 5; 
+    }
+
     .recommended-list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -690,4 +740,6 @@ a > .video-thumbnail {
         width: 176px;
 
     }
+    
+    
 }
