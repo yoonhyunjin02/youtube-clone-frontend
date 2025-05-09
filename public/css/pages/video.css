@@ -696,7 +696,6 @@ a > .video-thumbnail {
 .recommended-videos { 
     order: 5;
     grid-column: 2;
-    position: sticky;
     top: 80px;
 }
 
