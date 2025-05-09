@@ -1,22 +1,18 @@
 <div align="center">
-<<<<<<< HEAD
-  <h1>
-    <img src="./assets/img/youtubelogo.png" width="120px" style="vertical-align: middle; margin-right: 3px;">
-    YouTube Clone Frontend
-  </h1>
+  <h1><img src="./assets/img/youtubelogo.png" width="120px" style="vertical-align: middle; margin-right: 3px;"> Clone Frontend</h1>
 </div>
 
 ---
 
-## 📍 목차
+<h1>📍 목차</h1>
 
-1. [프로젝트 소개](#1)
-2. [팀원 소개 및 역할](#2)
-3. [주요 기능](#3)
-4. [프로젝트 구조 및 흐름](#4)
-5. [사용 기술 및 도구](#5)
-6. [브랜치 전략 및 커밋 컨벤션](#6)
-7. [최종 회고](#7)
+1. [프로젝트 소개](#1-프로젝트-소개)  
+2. [팀원 소개 및 역할](#2-팀원-소개-및-역할)  
+3. [주요 기능](#3-주요-기능)  
+4. [프로젝트 구조 및 흐름](#4-프로젝트-구조-및-흐름)  
+5. [사용 기술 및 도구](#5-사용-기술-및-도구)  
+6. [브랜치 전략 및 커밋 컨벤션](#6-브랜치-전략-및-커밋-컨벤션)  
+7. [최종 회고](#7-최종-회고)
 
 ---
 
@@ -35,17 +31,66 @@
 ---
 
 ## 2. 팀원 소개 및 역할
+<table>
+  <tr>
+    <td align="center" width="150px">
+      <a href="https://github.com/KIMYOUNGLONG" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/206796619?v=4" alt="김영롱 프로필" /></a>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/sungyeonkim27" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/192389552?v=4" alt="김성연 프로필" /></a>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/yoonhyunjin02" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/97629676?v=4"
+        alt="윤현진 프로필" /></a>
+    </td>
+    <td align="center" width="150px">
+      <a href="https://github.com/jwljwljwl" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/206796485?v=4"
+        alt="이재원 프로필" /></a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/KIMYOUNGLONG" target="_blank">김영롱</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/sungyeonkim27" target="_blank">김성연</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/yoonhyunjin02" target="_blank">윤현진</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/jwljwljwl" target="_blank">이재원</a>
+    </td>
+</table>
 
-<div align="center">
+### 📆 기간별 작업 요약
 
-| 이름       | 주요 구현 영역                                                                 |
-|------------|----------------------------------------------------------------------------------|
-| 윤현진     | 🔧 구조 설계, API 연동, 템플릿 재사용<br>– 공통 UI 템플릿화 및 브랜치 전략 수립<br>– develop 통합 관리, 충돌 해결, 전체 흐름 조율<br>– 필터바 동적 구현, API 데이터 연동, 썸네일 hover 구현 등 고급 기능 구현 |
-| 김성연     | 🔍 검색 기능, UI 정리, 반응형<br>– 홈/비디오/채널 페이지 검색 기능 구축<br>– 필터바 클릭 이벤트 및 API 태그 연동<br>– 반응형 레이아웃 구현 및 조회수 포맷 커스터마이징 |
-| 이재원     | 🎮 사용자 인터랙션 중심 기능<br>– 사이드바 토글 구현 및 js 모듈화<br>– 구독/좋아요/싫어요 버튼 처리<br>– 공유/저장 기능과 동적 SVG 교체 적용<br>– video 페이지 모달/정렬 기능까지 총괄 |
-| 김영롱     | 📚 문서화 및 UI 보완<br>– README 작성 및 정리 총괄<br>– channel.css, 버튼 UI, 필터바 기본 스타일링<br>– hover 효과 및 결과화면 디버깅 보조 |
+| 날짜        | 작업 내용 요약                                                                 |
+|-------------|----------------------------------------------------------------------------------|
+| 4/21 (Day 1) | GitHub 초기 세팅, Notion 공유 환경 구축, 브랜치 전략 논의                    |
+| 4/22 (Day 2) | 상단바/네비바 HTML·CSS 설계, feature/header 병합, 기본 템플릿 구조 확립      |
+| 4/23 (Day 3) | 필터바 기능 구축, 영상 카드 레이아웃 정렬, 버튼 UI 분리, 브랜치 작업 분담 시작 |
+| 4/24 (Day 4) | 채널 페이지 UI 설계 시작, 썸네일/프로필/구독 정보 블럭 레이아웃 구성         |
+| 4/25 (Day 5) | video.ejs 구성, 추천영상 카드 리스트 수평정렬 및 레이아웃 안정화              |
+| 4/26~27      | videoCard 템플릿 분기 재사용 적용, hover 시 영상 미리보기 기능 구현           |
+| 4/28 (Day 6) | 검색 기능 확장 (태그/채널명 기반), 좋아요/싫어요/공유/저장 인터랙션 구현     |
+| 4/29         | JS 모듈화(button.js 등), 대댓글 기초 구조 작성, 검색 모듈 리팩토링            |
+| 4/30~5/2     | 정렬 기능 구현, 반응형 보완, 추천영상 카드 디버깅, 댓글 컴포넌트 정리         |
+| 5/3~5/5      | 플레이리스트 기능 구현, 홈/채널/비디오 전체 흐름 통합, 스타일링 마무리        |
+| 5/6~         | 테마(다크/라이트) 토글 기획 및 구조 분리, 검색 결과 페이지 스타일 개선 중     |
 
-</div>
+### 🧩 팀원별 구현 내역
+
+| 이름     | 주요 구현 내용                                                                                              |
+|----------|-------------------------------------------------------------------------------------------------------------|
+| **윤현진** | 🔧 전체 구조 설계, API 연동 총괄, 템플릿 모듈화<br>– 필터바/hover 썸네일 구현, 공통 템플릿 재사용 설계<br>– develop 통합 관리 및 충돌 해결 |
+| **김성연** | 🔍 검색 기능 전체 설계<br>– 홈/채널/비디오 각 페이지별 검색 구현, 필터바 클릭 이벤트 연동<br>– 반응형 대응, 조회수 단위 포맷팅, 테마 기능 구조 조사 |
+| **이재원** | 🎮 사용자 인터랙션 중심<br>– 구독/좋아요/싫어요 동작 구현, 공유/저장 기능<br>– 댓글 정렬, 대댓글 기능, sidebar 토글 및 js 모듈화(button.js 등) |
+| **김영롱** | 📚 문서화 및 스타일 보조<br>– README 전체 구성 및 흐름 정리<br>– videoCard-video 레이아웃 구성, 추천영상 정렬 구조 및 스타일링 보완       |
 
 ---
 
@@ -102,20 +147,36 @@ youtube-clone-frontend/
 
 ## 5. 사용 기술 및 도구
 
-### 🔹 협업 & 관리
+---
 
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)
-![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
+### 🔹 협업
 
-### 🔹 개발 언어 & 환경
+<img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
+<img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 
-![HTML5](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![EJS](https://img.shields.io/badge/EJS-8A2BE2?style=for-the-badge&logo=ejs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+---
+
+### 🔹 개발 도구
+
+<span style="display: inline-block; background-color:rgb(35, 83, 114); color: white; padding: 6px 12px; font-weight: bold; font-size: 12px; border-radius: 4px;">
+  <img src="./assets/img/vscodelogo.png" width="16px" style="vertical-align: middle; margin-right: 6px;" />
+  VS Code
+</span>
+
+---
+
+### 🔹 커뮤니케이션
+
+<img src="https://img.shields.io/badge/notion-FEFEFE?style=for-the-badge&logo=notion&logoColor=black">
+<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+
+---
+
+### 🔹 개발 언어
+
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
 ---
 
@@ -157,108 +218,3 @@ youtube-clone-frontend/
 <div align="center">
   <strong>✨ Team 초보탈출 넘버원 - YouTube Clone 프로젝트 완료! ✨</strong>
 </div>
-=======
-  <h1><img src="./assets/img/youtubelogo.png" width="120px" style="vertical-align: middle; margin-right: 3px;"> clone frontend</h1>
-</div>
-
-<h1>📍 목차</h1>
-
-  1. [프로젝트 소개](#1)
-  2. [팀원 소개 및 역할](#2)
-  3. [주요 기능](#3)
-  4. [프로젝트 구조](#4)
-  5. [사용 기술 및 도구](#5)
-  6. [컨벤션](#6)
-
-# 프로젝트  소개
-
-#### [ 오르미 11기 백엔드 양성 과정 ]
-
-> 첫 번째 프론트엔트 프로젝트 - 영상 추천 Youtube 클론 페이지
-
-- 기간 : 2025년 4월 21일 ~ 2025년 5월 12일
-
-# 팀원 소개 및 역할
-<table>
-  <tr>
-    <td align="center" width="150px">
-      <a href="https://github.com/KIMYOUNGLONG" target="_blank">
-        <img src="https://avatars.githubusercontent.com/u/206796619?v=4" alt="김영롱 프로필" /></a>
-    </td>
-    <td align="center" width="150px">
-      <a href="https://github.com/sungyeonkim27" target="_blank">
-        <img src="https://avatars.githubusercontent.com/u/192389552?v=4" alt="김성연 프로필" /></a>
-    </td>
-    <td align="center" width="150px">
-      <a href="https://github.com/yoonhyunjin02" target="_blank">
-        <img src="https://avatars.githubusercontent.com/u/97629676?v=4"
-        alt="윤현진 프로필" /></a>
-    </td>
-    <td align="center" width="150px">
-      <a href="https://github.com/jwljwljwl" target="_blank">
-        <img src="https://avatars.githubusercontent.com/u/206796485?v=4"
-        alt="이재원 프로필" /></a>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/KIMYOUNGLONG" target="_blank">김영롱</a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/sungyeonkim27" target="_blank">김성연</a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/yoonhyunjin02" target="_blank">윤현진</a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/jwljwljwl" target="_blank">이재원</a>
-    </td>
-</table>
-
-<!-- 역할분담 추가 -->
-
-# 주요 기능
-- 홈 화면
-- 재생 화면
-- 비디오 화면
-
-<!-- 각 화면 소개 추가 예정 -->
-<!-- AI API 뭐 썼는지 -->
-
-# 프로젝트 구조
-> 디렉토리 구조 설명
-> 브렌치 전략
-> 커밋
-
-# 사용 기술 및 도구
-개발 도구
-
-- 협업
-
-<img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
-<img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
-
-- 개발 도구
-
-<span style="display: inline-block; background-color:rgb(35, 83, 114); color: white; padding: 4px 10px; font-weight: bold; font-size: 12px;">
-  <img src="./assets/img/vscodelogo.png" width="16px" style="vertical-align: middle; margin-right: 6px;" />
-  VS Code
-</span>
-
-- 커뮤티케이션
-
-<img src="https://img.shields.io/badge/notion-FEFEFE?style=for-the-badge&logo=notion&logoColor=black">
-<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
-<br>
-- 개발 언어
-
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-
-<br><br><br>
-
-# 컨벤션
-- 브랜치 전략
-- 커밋 컨벤션
->>>>>>> ad28dbf7f5a2f35eff8b7a88d21c5afcd9857fe7
