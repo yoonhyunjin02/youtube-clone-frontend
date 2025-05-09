@@ -75,6 +75,26 @@
                 </div>
             </section>
 
+            <!-- platlist 구현 -->
+            <section class="mix-playlist">
+                <div class="mix-header">
+                    <h3>Mix - <%= videoInfo.title %></h3>
+                    <button id="play-all-btn">Play All</button>
+                </div>
+                <ul class="mix-list">
+                    <% playlist.forEach(video => { %>
+                        <li class="mix-item" data-url="/video?id=<%= video.id %>&queue=mix">
+                            <img src="<%= video.thumbnail %>" alt="<%= video.title %>" class="mix-thumb">
+                            <div class="mix-info">
+                                <div class="mix-title"><%= video.title %></div>
+                                <div class="mix-channel"><%= video.channel_name %></div>
+                                <div class="mix-duration"><%= video.duration %></div>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+            </section>
+
             <!-- 채널 정보 -->
             <section class="channel-info">
                 <div class="channel-info-top">
@@ -178,5 +198,6 @@
 
     <script src="/js/video/video-search.js"></script>
     <script src="/js/video/comment.js"></script>
+    <script src="/js/video/mix-playlist.js"></script>
 </body> 
 </html>

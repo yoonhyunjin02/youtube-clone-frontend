@@ -6,9 +6,12 @@ sections.forEach((videos, sectionIndex) => {
     <div class="channel-video-list">
         <div class="section-header">
             <h2><%= sectionTitle %></h2>
-            <button class="play-all">
+            <button class="play-all"
+                data-first-id="<%= videos[0]?.id %>"
+                data-channel-id="<%= channelInfo.id %>">
                 <p>▶ PLAY ALL</p>
             </button>
+
         </div>
         <div class="scroll-wrapper">
             <button class="scroll-left">

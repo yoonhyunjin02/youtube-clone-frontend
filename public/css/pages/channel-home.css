@@ -83,7 +83,6 @@
     display: flex;
     align-items: center;
     border-top: 1px solid #303030;
-    justify-content: space-between;
     padding: 16px 65px 0 0;
     color: white;
 }
