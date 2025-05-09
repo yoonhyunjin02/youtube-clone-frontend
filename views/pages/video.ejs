@@ -129,22 +129,24 @@
                 <!-- 댓글 리스트 -->
                 <div class="comment"></div>
             </section>
+            
+            <!--추천 영상 영역-->
+            <section class="recommended-videos">
+                <!--추천 영상 필터-->
+                <nav class="recommended-tag">
+                    <button>All</button>
+                    <button>From Marcus Levin</button>
+                </nav>
+                <!--추천 영상 카드-->
+                <div class="recommended-list">
+                    <% recommendedVideos.forEach(video => { %>
+                    <%- include('../partials/videoCard-video', { video: video }) %>
+                    <% }); %>
+                </div>                         
+            </section>
         </main>
 
-        <!--추천 영상 영역-->
-        <section class="recommended-videos">
-            <!--추천 영상 필터-->
-            <nav class="recommended-tag">
-                <button>All</button>
-                <button>From Marcus Levin</button>
-            </nav>
-            <!--추천 영상 카드-->
-            <div class="recommended-list">
-                    <% recommendedVideos.forEach(video => { %>
-                        <%- include('../partials/videoCard-video', { video: video }) %>
-                    <% }); %>
-            </div>                         
-        </section>
+        
     </div>
     <!-- 댓글 기능 -->
 
