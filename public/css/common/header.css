@@ -337,3 +337,65 @@ header {
 .profile-modal-headertext button:hover {
     background-color: #212121;
 }
+
+/* ======================== */
+/* Appearance 모달 */
+/* ======================== */
+.icon-Notifications {
+    position: relative;
+}
+
+.appear-modal {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    display: none;
+    z-index: 1000;
+}
+
+.appear-modal-content {
+    display: flex;
+    flex-direction: column;
+    background: #282828;
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+}
+
+.appear-modal-header {
+    display: flex;
+    border-bottom: 1px solid rgb(87, 87, 87);
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.appear-modal-main{
+    padding: 8px 0;
+    display:flex;
+    flex-direction:column;
+}
+
+.appear-modal-main span{
+    color: #AAAAAA;
+    font-size:14px;
+    padding:16px;
+    text-align: center;
+}
+.appear-modal-main button{
+    width:100%;
+    padding-left:16px;
+    text-align:left;
+    border-radius: 0;
+    font-size:14px;
+    justify-content: flex-start;
+    gap:16px;
+}
+.appear-modal-main button img {
+    visibility: hidden;
+}
+
+.appear-modal-main button.active img {
+    visibility: visible;
+}
