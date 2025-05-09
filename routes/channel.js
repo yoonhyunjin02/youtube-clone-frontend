@@ -144,8 +144,8 @@ router.get('/:id/Playlists', async (req, res) => {
         let channelVideoList = await get_video_getChannelVideoList(channelId);
         const subscriberList = await getSubscriberList();
 
-        const sortedVideos = sortVideosByViews(channelVideoList.slice(1));
-        const recommendedVideos = sortVideosByLikes(channelVideoList.slice(1));
+        const sortedVideos = sortVideosByViews(channelVideoList);
+        const recommendedVideos = sortVideosByLikes(channelVideoList);
 
         const playlists = [
             {

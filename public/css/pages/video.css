@@ -215,11 +215,15 @@ header {
     height: auto;
 }
 
-.comment-input {
+.comment-input, .reply-input-text{
     display: flex;
     align-items: center;
     padding-top: 15px;
     padding-bottom: 32px;
+}
+
+.reply-input-text{
+    padding-bottom:10px;
 }
 
 .input-img {
@@ -229,7 +233,7 @@ header {
     margin-right: 16px;
 }
 
-.input-text {
+.input-text, .reply-input{
     all: unset;
     font-size: 14px;
     padding-bottom: 8px;
@@ -243,8 +247,11 @@ header {
     display: flex;
     padding-bottom: 16px;
 }
+.reply{
+    display:flex;
+}
 
-.comment-actions {
+.comment-actions, .reply-actions {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -254,22 +261,26 @@ header {
     padding: 5px;
 }
 
-.comment-meta {
+.comment-meta, .reply-meta {
     padding-bottom: 8px;
 }
 
-.comment-body-name {
+.comment-body,.reply-body{
+    width:100%;
+}
+/* 수정 */
+.comment-body-name ,.reply-author{
     font-weight: 700;
     font-size: 13px;
 }
 
-.comment-body-date {
+.comment-body-date ,.reply-time{
     font-weight: 400;
     font-size: 12px;
     color: rgba(170, 170, 170, 1);
 }
 
-.comment-body-detail {
+.comment-body-detail ,.reply-text{
     font-weight: 400;
     font-size: 14px;
 }
@@ -279,7 +290,7 @@ header {
     height: 24px;
 }
 
-.comment-actions button {
+.comment-actions button,.reply-actions button{
     all: unset;
     width: 24px;
     display: flex;
@@ -580,15 +591,63 @@ a > .video-thumbnail {
 /* 댓글 아이콘 크기 */
 /* ============================= */
 .comment-actions img[src*="like.svg"],
-.comment-actions img[src*="dislike.svg"] {
+.comment-actions img[src*="dislike.svg"],
+.reply-actions img[src*="like.svg"],
+.reply-actions img[src*="dislike.svg"] {
     width: 24px;
     height: 24px;
 }
 
 .comment-actions img[src*="like-filled"],
-.comment-actions img[src*="dislike-filled"] {
+.comment-actions img[src*="dislike-filled"],
+.reply-actions img[src*="like-filled.svg"],
+.reply-actions img[src*="dislike-filled.svg"] {
     width: 16px;
     height: 16px;
+}
+
+.reply-input-wrapper{
+    width:100%;
+}
+.reply-input-wrapper img{
+    width: 24px;
+    height:24px;
+}
+.reply-input-wrapper input{
+    border-bottom: 1px solid white;
+    color:white;
+}
+.reply-input-wrapper button{
+    all:unset;
+    padding:10px;
+    margin:10px;
+    border-radius: 10px;
+}
+.reply-input-button{
+    display:flex;
+    justify-content: flex-end;
+}
+.reply-Reply-button{
+    background-color:#2d8fd6;
+    color:black;
+}
+.reply img{
+    width:24px;
+    height:24px;
+    margin-right:16px;
+}
+.reply-toggle {
+    background: none;
+    border: none;
+    color: #1e90ff;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding:0 0 8px 0;
+
 }
 
 .recommended-videos .video-card {
