@@ -19,7 +19,7 @@ sections.forEach((videos, sectionIndex) => {
                 <% videos.forEach(video => { %>
                     <article class="video-card">
                         <a href="/video?id=<%= video.id %>">
-                            <figure class="video-figure">
+                            <figure class="video-figure no-invert">
                                 <img class="thumbnail" src="<%= video.thumbnail %>" alt="썸네일">
                                 
                                 <video class="preview" muted loop preload="none">

@@ -19,9 +19,9 @@
         <div class="channel-video-grid">
             <% channelVideoList.forEach(video => { %>
                 <a href="/video?id=<%= video.id %>" class="video-card">
-                    <div class="video-thumbnail">
+                    <div class="video-thumbnail no-invert">
                         <img src="<%= video.thumbnail %>" alt="썸네일">
-                        <video class="preview" muted loop preload="none">
+                        <video class="preview no-invert" muted loop preload="none">
                             <source src="https://storage.googleapis.com/youtube-clone-video/<%= video.id %>.mp4" type="video/mp4">
                         </video>
                     </div>

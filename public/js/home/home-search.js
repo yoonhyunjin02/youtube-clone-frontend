@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div.innerHTML = `
                 <article class="search-item">
                     <a href="/video?id=${video.id}">
-                        <figure class="video-thumbnail video-card">
+                        <figure class="video-thumbnail video-card no-invert">
                             <img class="thumbnail" src="${video.thumbnail}" alt="video thumbnail">
                             <video class="preview" muted loop preload="none">
                                 <source src="https://storage.googleapis.com/youtube-clone-video/${video.id}.mp4" type="video/mp4">
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         
                         <a href="/channel/${video.channel.id}/Home" class="channel-meta">
-                            <img class="channel-avatar" src="${video.channel.channel_profile}" alt="channel-profile">
+                            <img class="channel-avatar no-invert" src="${video.channel.channel_profile}" alt="channel-profile">
                             <span class="channel-name">${video.channel.channel_name}</span>
                         </a>
                         

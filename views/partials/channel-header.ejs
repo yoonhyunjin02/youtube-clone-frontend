@@ -1,15 +1,15 @@
 <section class="channel-header">
-    <img class="channel-banner" src="<%= channelInfo.channel_banner %>" alt="<%= channelInfo.channel_name %>">
+    <img class="channel-banner no-invert" src="<%= channelInfo.channel_banner %>" alt="<%= channelInfo.channel_name %>">
 
     <div class="channel-info">
         <div class="channel-left">
-            <img class="channel-profile" src="<%= channelInfo.channel_profile %>" alt="<%= channelInfo.channel_name %>">
+            <img class="channel-profile no-invert" src="<%= channelInfo.channel_profile %>" alt="<%= channelInfo.channel_name %>">
             <div class="channel-text">
                 <h2 class="channel-owner"><%= channelInfo.channel_name %></h2>
                 <p class="channel-subscription"><%= channelInfo.subscribers.toLocaleString() %> subscribers</p>
             </div>
         </div>
-        <button class="subscribe-btn">SUBSCRIBE</button>
+        <button class="subscribe-btn no-invert">SUBSCRIBE</button>
     </div>
     
     <nav class="channel-nav">
