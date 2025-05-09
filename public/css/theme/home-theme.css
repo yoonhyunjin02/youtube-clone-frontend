@@ -1,0 +1,12 @@
+/*======================*/
+/*====테마 토글 영역 ====*/
+/* =====================*/
+/* 전체 배경과 글자색 */
+body.light-mode {
+  filter: invert(1);
+}
+
+body.light-mode .no-invert {
+  filter: invert(1) !important;
+}
+

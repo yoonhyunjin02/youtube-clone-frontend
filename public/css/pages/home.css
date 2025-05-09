@@ -20,6 +20,7 @@ main {
     margin: 0 auto;
     display: block;
     overflow-x: hidden;
+    background-color: black;
 }
 
 /* ============================= */

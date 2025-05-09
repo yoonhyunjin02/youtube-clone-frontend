@@ -1,7 +1,7 @@
 <article class="video-card">
     <!-- 썸네일: 영상 페이지로 이동 -->
     <a href="/video?id=<%= video.id %>">
-        <figure class="video-thumbnail video-card">
+        <figure class="video-thumbnail video-card no-invert">
             <img class="thumbnail" src="<%= video.thumbnail %>" alt="video thumbnail">
             
             <video class="preview" muted loop preload="none">
@@ -14,7 +14,7 @@
     <figcaption class="video-info">
         <!-- 프로필: 채널 페이지로 이동 -->
         <a href="/channel/<%= video.channel.id %>/Home">
-            <img class="channel-avatar" src="<%= video.channel.channel_profile %>" alt="channel-profile">
+            <img class="channel-avatar no-invert" src="<%= video.channel.channel_profile %>" alt="channel-profile">
         </a>
 
         <div class="video-description">
