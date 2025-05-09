@@ -32,7 +32,7 @@
                 <li class="subscriber-item <%= index >= 7 ? 'hidden' : '' %>">
                     <!-- 구독자 채널 클릭 시 해당 채널 페이지로 이동 -->
                     <a href="/channel/<%= sub.id %>/Home" data-dummy="<%= index >= 3 ? 'true' : 'false' %>">
-                        <img src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
+                        <img class="no-invert" src="<%= sub.channel_profile %>" alt="<%= sub.channel_name %>" />
                         <span><%= sub.channel_name %></span>
                     </a>                    
                 </li>
