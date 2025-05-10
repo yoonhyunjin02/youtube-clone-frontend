@@ -26,6 +26,7 @@ a {
     justify-content: center;
     /* align-items: flex-start; */
     background-color: rgb(22, 22, 22);
+    transition: all 0.3s ease;
 }
 
 header {
@@ -698,6 +699,63 @@ a > .video-thumbnail {
     grid-column: 2;
     top: 80px;
 }
+
+/* ============================= */
+/* play list */
+/* ============================= */
+.mix-playlist {
+    position: fixed;
+    top: 56px;  /* header 높이만큼 내림 */
+    right: 0;
+    width: 300px;
+    height: calc(100vh - 56px);
+    background-color: #111;
+    padding: 10px;
+    color: white;
+    overflow-y: auto;
+    display: none;  /* 기본 숨김 */
+    z-index: 1000;  /* header, sidebar 위에 뜨도록 */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+body.has-mix .video-main {
+    margin-right: 300px;  /* mix-playlist width만큼 밀어줌 */
+}
+
+
+.mix-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mix-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.mix-item {
+    display: flex;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.mix-thumb {
+    width: 80px;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.mix-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================= */
+/* 반응형 */
+/* ============================= */
 
 @media screen and (max-width: 1100px) {
     .video-main {

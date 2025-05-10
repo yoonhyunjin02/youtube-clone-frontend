@@ -9,7 +9,8 @@ const {
 
 router.get('/', async (req, res) => {
     const videoId = parseInt(req.query.id);
-
+    const isMixQueue = req.query.queue === 'mix';
+    
     try {
         // (1) 전체 비디오 리스트 가져오기
         const videoList = await get_video_getVideoList();
@@ -45,11 +46,27 @@ router.get('/', async (req, res) => {
                 })
         );
 
+        // (6) Mix playlist (queue=mix일 때만)
+        let playlist = [];
+        if (isMixQueue) {
+            playlist = videoList
+                .filter(video => video.id !== videoId)  // 현재 영상 제외
+                .slice(0, 10)                           // 최대 10개
+                .map(video => ({
+                    id: video.id,
+                    title: video.title,
+                    channel_name: channelInfo.channel_name,
+                    duration: video.duration || '3:00',  // duration 없으면 기본값
+                    thumbnail: video.thumbnail || '/assets/default-thumb.jpg'
+                }));
+        }
+
         res.render('pages/video', {
             videoInfo,
             channelInfo,
             subscriberList,
             recommendedVideos,
+            playlist,
             getRelativeTime,
             formatViews
         });

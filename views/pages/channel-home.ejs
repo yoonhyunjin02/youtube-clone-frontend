@@ -16,7 +16,7 @@
     <main>
         <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
 
-        <section class="channel-featured-video">
+        <section class="channel-featured-video theme-wrapper">
             <div class="video-thumbnail no-invert">
                 <!-- 첫 번째 영상만 표시 -->
                 <video controls width="640" height="360">
@@ -42,7 +42,7 @@
             </div>
         </section>
 
-        <section class="channel-video-listall">
+        <section class="channel-video-listall theme-wrapper">
             <%- include('../partials/videoCard-channel', {
                 channelVideoList,
                 sortedVideos,
@@ -66,5 +66,6 @@
     <script src="/js/channel/channel-nav-scroll.js"></script>
     <script src="/js/channel/channel-scroll.js"></script>
     <script src="/js/channel/nav-search.js"></script>
+    <script src="/js/channel/play-all.js"></script>
 </body>
 </html>

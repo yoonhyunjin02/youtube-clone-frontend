@@ -1,5 +1,7 @@
 /*====테마 토글 영역 ====*/
 /* 전체 배경과 글자색 */
+
+
 body.light-mode .theme-wrapper{
   filter: invert(1);
 }

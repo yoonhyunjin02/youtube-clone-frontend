@@ -1,5 +1,5 @@
 <!--header--> 
-<header>
+<header class="theme-wrapper">
     <!-- 로고영역 -->
     <div class="left-section">
         <!-- 햄버거 버튼에 네비 토글 적용 -->
@@ -8,8 +8,6 @@
             <img class="youtube-logo no-invert" src="/assets/logos/Youtube-Logo.svg" alt="youtube logo">
         </a>
     </div>
-
-    <button id="theme-toggle">테마변경</button>
 
     <!--검색창 영역-->
     <form class="search-form">
@@ -79,8 +77,7 @@
                     </div>
                     <div class="profile-modal-main3">
                         <button><img src="/assets/icons/yourdata.svg" alt="Your data in Youtube"><span>Your data in Youtube</span></button>
-                        <!--테마 토글 버튼-->
-                        <button><img src="/assets/icons/appearance.svg" alt="Appearance: Device theme"><span>Appearance: Device theme</span></button>
+                        <button class="appearance-btn"><img src="/assets/icons/appearance.svg" alt="Appearance: Device theme"><span>Appearance: Device theme</span></button>
                         <button><img src="/assets/icons/language.svg" alt="Language: English"><span>Language: English</span></button>
                         <button><img src="/assets/icons/restrictedmode.svg" alt="Restricted Mode: off"><span>Restricted Mode: off</span></button>
                         <button><img src="/assets/icons/location.svg" alt="Location: South Korea"><span>Location: South Korea</span></button>
@@ -95,6 +92,19 @@
                     </div>
                 </div>
             </div>
+            <div class="appear-modal">
+                    <div class="appear-modal-content">
+                        <div class="appear-modal-header">
+                            <button class="back-btn"><img src="/assets/icons/back.svg" alt="back"></button>
+                            <span>Appearance</span>
+                        </div>
+                        <div class="appear-modal-main">
+                            <span>Setting applies to this browser only</span>
+                            <button data-theme="dark"><img src="/assets/icons/check.svg" alt="check">Dark theme</button>
+                            <button data-theme="light"><img src="/assets/icons/check.svg" alt="check">Light theme</button>
+                        </div>
+                    </div>
+            </div>            
         </div>
     </div>
 </header>
