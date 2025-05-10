@@ -1,10 +1,16 @@
 /*====테마 토글 영역 ====*/
 /* 전체 배경과 글자색 */
-body.light-mode {
+body.light-mode .theme-wrapper{
   filter: invert(1);
 }
 
 body.light-mode .no-invert {
-  filter: invert(1) !important;
+  filter: invert(1);
 }
+
+/* body.light-mode .sidebar {
+  position: fixed;
+  z-index: 10;
+  will-change: transform;
+} */
 
