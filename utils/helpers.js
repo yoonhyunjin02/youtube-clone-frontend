@@ -41,7 +41,7 @@ async function getSubscriberList() {
     const apiSubscriberList = await Promise.all(
         subscriberIds.map(async (id) => {
             try {
-                const subRes = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${id}`);
+                const subRes = await fetch(`https://www.techfree-oreumi-api.ai.kr/channel/getChannelInfo?id=${id}`);
                 return await subRes.json();
 
             } catch (subError) {

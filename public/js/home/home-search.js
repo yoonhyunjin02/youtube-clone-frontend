@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //영상 가져오기 함수
     async function fetchVideos() {
-        try {const res = await fetch("http://techfree-oreumi-api.kro.kr:5000/video/getVideoList");
+        try {const res = await fetch("https://www.techfree-oreumi-api.ai.kr/video/getVideoList");
             const data = await res.json();
         
             // 영상 데이터 부르기
             const videosWithChannel = await Promise.all(
                 data.map(async (video) => {
                     try {
-                        const channelRes = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${video.channel_id}`);
+                        const channelRes = await fetch(`https://www.techfree-oreumi-api.ai.kr/channel/getChannelInfo?id=${video.channel_id}`);
                         const channelInfo = await channelRes.json();
                         return { ...video, channel: channelInfo };
                     } catch (error) {

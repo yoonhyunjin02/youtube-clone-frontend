@@ -1,7 +1,7 @@
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 async function get_channel_getChannelInfo(channelId) {
-    const res = await fetch(`http://techfree-oreumi-api.kro.kr:5000/channel/getChannelInfo?id=${channelId}`);
+    const res = await fetch(`https://www.techfree-oreumi-api.ai.kr/channel/getChannelInfo?id=${channelId}`);
     // 데이터 확인용
     // const data = await res.json();
     // console.log('getChannelInfo:', data);
@@ -10,7 +10,7 @@ async function get_channel_getChannelInfo(channelId) {
 }
 
 async function get_video_getChannelVideoList(channelId) {
-    const res = await fetch(`http://techfree-oreumi-api.kro.kr:5000/video/getChannelVideoList?channel_id=${channelId}`);
+    const res = await fetch(`https://www.techfree-oreumi-api.ai.kr/video/getChannelVideoList?channel_id=${channelId}`);
     // 데이터 확인용
     // const data = await res.json();
     // console.log('getChannelVideoList:', data);
@@ -19,7 +19,7 @@ async function get_video_getChannelVideoList(channelId) {
 }
 
 async function get_video_getVideoInfo(videoId) {
-    const res = await fetch(`http://techfree-oreumi-api.kro.kr:5000/video/getVideoInfo?id=${videoId}`);
+    const res = await fetch(`https://www.techfree-oreumi-api.ai.kr/video/getVideoInfo?id=${videoId}`);
     // 데이터 확인용
     // const data = await res.json();
     // console.log('getVideoInfo:', data);
@@ -28,7 +28,7 @@ async function get_video_getVideoInfo(videoId) {
 }
 
 async function get_video_getVideoList() {
-    const res = await fetch(`http://techfree-oreumi-api.kro.kr:5000/video/getVideoList`);
+    const res = await fetch(`https://www.techfree-oreumi-api.ai.kr/video/getVideoList`);
     // 데이터 확인용
     // const data = await res.json();
     // console.log('getVideoList:', data);
