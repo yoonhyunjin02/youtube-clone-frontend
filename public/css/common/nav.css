@@ -14,12 +14,12 @@
     width: 240px;
     top: 56px;
     overflow-y: auto;
-
     scrollbar-width: none;              /* Firefox */
     -ms-overflow-style: none;           /* IE, Edge */
     transition: all 0.1s ease;
     transform: translateX(0);
     z-index: 500;
+    height: calc(100vh - 56px);
 }
 
 .sidebar::-webkit-scrollbar {         /* Chrome, Safari */
@@ -44,6 +44,10 @@
 .sidebar.open ~ div {
     margin-left: 72px;
     width: calc(100% - 0px);
+}
+
+.sidebar.collapsed ~ main {
+    margin-left: 72px;
 }
 
 .nav-section {

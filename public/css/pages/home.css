@@ -21,6 +21,7 @@ main {
     display: block;
     overflow-x: hidden;
     background-color: black;
+    margin-left: 240px;
 }
 
 /* ============================= */
@@ -47,6 +48,7 @@ main {
     border-top: 1px solid #303030;
     border-bottom: 1px solid #303030;
     white-space: nowrap;
+    margin-top: 56px;
 }
 
 .filter-wrapper {

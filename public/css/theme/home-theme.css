@@ -2,11 +2,11 @@
 /* 전체 배경과 글자색 */
 
 
-body.light-mode .theme-wrapper{
+body.light-theme .theme-wrapper{
   filter: invert(1);
 }
 
-body.light-mode .no-invert {
+body.light-theme .no-invert {
   filter: invert(1);
 }
 
