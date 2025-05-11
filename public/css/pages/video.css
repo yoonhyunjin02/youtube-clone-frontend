@@ -13,14 +13,27 @@ a {
 /* ============================= */
 /* 기본 레이아웃 */
 /* ============================= */
-.video-player { order: 1; }
-.video-title-info { order: 2; }
-.channel-info { order: 3; }
-.comments-section { order: 4; }
+.video-player {
+    order: 1;
+}
+
+.video-title-info {
+    order: 2;
+}
+
+.channel-info {
+    order: 3;
+}
+
+.comments-section {
+    order: 4;
+}
+
 .video-page-container {
     padding-top: 56px;
     box-sizing: border-box;
-    width: calc(100%); /*너비는 화면에 꽉 차도록 */
+    width: calc(100%);
+    /*너비는 화면에 꽉 차도록 */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -56,6 +69,7 @@ header {
     width: 100%;
     align-items: start;
 }
+
 /* 수정 */
 .video-player,
 .video-title-info,
@@ -63,6 +77,7 @@ header {
 .comments-section {
     grid-column: 1;
 }
+
 /* 수정 */
 .video-player-img {
     max-width: 100%;
@@ -232,15 +247,16 @@ header {
     height: auto;
 }
 
-.comment-input, .reply-input-text{
+.comment-input,
+.reply-input-text {
     display: flex;
     align-items: center;
     padding-top: 15px;
     padding-bottom: 32px;
 }
 
-.reply-input-text{
-    padding-bottom:10px;
+.reply-input-text {
+    padding-bottom: 10px;
 }
 
 .input-img {
@@ -250,7 +266,8 @@ header {
     margin-right: 16px;
 }
 
-.input-text, .reply-input{
+.input-text,
+.reply-input {
     all: unset;
     font-size: 14px;
     padding-bottom: 8px;
@@ -264,11 +281,13 @@ header {
     display: flex;
     padding-bottom: 16px;
 }
-.reply{
-    display:flex;
+
+.reply {
+    display: flex;
 }
 
-.comment-actions, .reply-actions {
+.comment-actions,
+.reply-actions {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -278,26 +297,32 @@ header {
     padding: 5px;
 }
 
-.comment-meta, .reply-meta {
+.comment-meta,
+.reply-meta {
     padding-bottom: 8px;
 }
 
-.comment-body,.reply-body{
-    width:100%;
+.comment-body,
+.reply-body {
+    width: 100%;
 }
+
 /* 수정 */
-.comment-body-name ,.reply-author{
+.comment-body-name,
+.reply-author {
     font-weight: 700;
     font-size: 13px;
 }
 
-.comment-body-date ,.reply-time{
+.comment-body-date,
+.reply-time {
     font-weight: 400;
     font-size: 12px;
     color: rgba(170, 170, 170, 1);
 }
 
-.comment-body-detail ,.reply-text{
+.comment-body-detail,
+.reply-text {
     font-weight: 400;
     font-size: 14px;
 }
@@ -307,7 +332,8 @@ header {
     height: 24px;
 }
 
-.comment-actions button,.reply-actions button{
+.comment-actions button,
+.reply-actions button {
     all: unset;
     width: 24px;
     display: flex;
@@ -323,14 +349,35 @@ header {
     /* padding-top: 24px; */
     /* 수정 */
     grid-column: 2;
-    grid-row:1/7;
-    align-self: start; /* 상단 정렬 */
+    grid-row: 1/7;
+    align-self: start;
+    /* 상단 정렬 */
     /* 수정 */
 }
 
 .recommended-tag {
     padding-top: 4px;
     padding-bottom: 16px;
+}
+
+.sort-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.sort-btn:hover {
+    background-color: #555;
+}
+
+.sort-btn.active {
+    background-color: white;
+    color: black;
 }
 
 .recommended-tag button {
@@ -343,11 +390,11 @@ header {
     border: 1px solid rgb(65, 65, 65);
 }
 
-.recommended-list a {
+#recommend-list-container a {
     display: flex;
 }
 
-.recommended-list-a {
+#recommend-list-container-a {
     margin-bottom: 5px;
     width: 402px;
     padding-right: 20px;
@@ -393,14 +440,16 @@ header {
 /* ============================= */
 /* 비디오 썸네일 */
 /* ============================= */
-a > .video-thumbnail {
+a>.video-thumbnail {
     position: relative;
     width: 176px;
     height: 94px;
     overflow: hidden;
     display: block;
-    margin: 0px; /* 썸네일 간격 제거 */
-    border-radius: 10px; /* 썸네일 모서리 둥굴게 */
+    margin: 0px;
+    /* 썸네일 간격 제거 */
+    border-radius: 10px;
+    /* 썸네일 모서리 둥굴게 */
 }
 
 .video-thumbnail img,
@@ -627,36 +676,43 @@ a > .video-thumbnail {
     height: 16px;
 }
 
-.reply-input-wrapper{
-    width:100%;
+.reply-input-wrapper {
+    width: 100%;
 }
-.reply-input-wrapper img{
+
+.reply-input-wrapper img {
     width: 24px;
-    height:24px;
+    height: 24px;
 }
-.reply-input-wrapper input{
+
+.reply-input-wrapper input {
     border-bottom: 1px solid white;
-    color:white;
+    color: white;
 }
-.reply-input-wrapper button{
-    all:unset;
-    padding:10px;
-    margin:10px;
+
+.reply-input-wrapper button {
+    all: unset;
+    padding: 10px;
+    margin: 10px;
     border-radius: 10px;
 }
-.reply-input-button{
-    display:flex;
+
+.reply-input-button {
+    display: flex;
     justify-content: flex-end;
 }
-.reply-Reply-button{
-    background-color:#2d8fd6;
-    color:black;
+
+.reply-Reply-button {
+    background-color: #2d8fd6;
+    color: black;
 }
-.reply img{
-    width:24px;
-    height:24px;
-    margin-right:16px;
+
+.reply img {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
 }
+
 .reply-toggle {
     background: none;
     border: none;
@@ -667,7 +723,7 @@ a > .video-thumbnail {
     align-items: center;
     gap: 4px;
     cursor: pointer;
-    padding:0 0 8px 0;
+    padding: 0 0 8px 0;
 
 }
 
@@ -678,23 +734,35 @@ a > .video-thumbnail {
 
 }
 
-.video-card-horizontal{
+.video-card-horizontal {
     display: flex;
     gap: 10px;
-    
+
 }
 
-.recommended-list {
+#recommend-list-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.video-player { order: 1; }
-.video-title-info { order: 2; }
-.channel-info { order: 3; }
-.comments-section { order: 4; }
-.recommended-videos { 
+.video-player {
+    order: 1;
+}
+
+.video-title-info {
+    order: 2;
+}
+
+.channel-info {
+    order: 3;
+}
+
+.comments-section {
+    order: 4;
+}
+
+.recommended-videos {
     order: 5;
     grid-column: 2;
     top: 80px;
@@ -705,7 +773,8 @@ a > .video-thumbnail {
 /* ============================= */
 .mix-playlist {
     position: fixed;
-    top: 56px;  /* header 높이만큼 내림 */
+    top: 56px;
+    /* header 높이만큼 내림 */
     right: 0;
     width: 300px;
     height: calc(100vh - 56px);
@@ -713,13 +782,16 @@ a > .video-thumbnail {
     padding: 10px;
     color: white;
     overflow-y: auto;
-    display: none;  /* 기본 숨김 */
-    z-index: 1000;  /* header, sidebar 위에 뜨도록 */
+    display: none;
+    /* 기본 숨김 */
+    z-index: 1000;
+    /* header, sidebar 위에 뜨도록 */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 body.has-mix .video-main {
-    margin-right: 300px;  /* mix-playlist width만큼 밀어줌 */
+    margin-right: 300px;
+    /* mix-playlist width만큼 밀어줌 */
 }
 
 
@@ -759,44 +831,49 @@ body.has-mix .video-main {
 
 @media screen and (max-width: 1100px) {
     .video-main {
-        display:flex;
+        display: flex;
         flex-direction: column;
-        width:100%;
+        width: 100%;
     }
+
     .video-player,
     .video-title-info,
     .channel-info,
     .comments-section,
-    .recommended-videos{
-        width:100%;
-    }
-    
-    .recommended-videos { 
-        order: 4;
-        padding-left:0;
-        padding-top:10px;
-    }
-    .comments-section { 
-        order: 5; 
+    .recommended-videos {
+        width: 100%;
     }
 
-    .recommended-list {
+    .recommended-videos {
+        order: 4;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+    .comments-section {
+        order: 5;
+    }
+
+    #recommend-list-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
-    .video-card-horizontal{
+
+    .video-card-horizontal {
         flex-direction: column;
         gap: 10px;
-        
+
     }
+
     .recommended-videos .video-card {
         width: 35%;
-    
+
     }
+
     .video-thumbnail.video-card {
         width: 176px;
 
     }
-    
-    
+
+
 }

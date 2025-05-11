@@ -18,6 +18,10 @@ const {
     get_video_getChannelVideoList
 } = require('../utils/api');
 
+const {
+    calculateAverageSimilarity
+} = require('../utils/ai');
+
 // 채널 공통 정보 로딩 미들웨어
 async function loadChannelBase(req, res, next) {
     const channelId = parseInt(req.params.id, 10);
@@ -227,12 +231,15 @@ router.get('/:id/Search', async (req, res) => {
             });
         }
 
-        // 제목, 설명, 태그에서 검색어 포함된 영상 필터링
-        const searchResults = allVideos.filter(video =>
-            video.title.toLowerCase().includes(query.toLowerCase()) ||
-            video.description.toLowerCase().includes(query.toLowerCase()) ||
-            (Array.isArray(video.tags) && video.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase())))
-        );        
+        // // 제목, 설명, 태그에서 검색어 포함된 영상 필터링
+        // const searchResults = allVideos.filter(video =>
+        //     video.title.toLowerCase().includes(query.toLowerCase()) ||
+        //     video.description.toLowerCase().includes(query.toLowerCase()) ||
+        //     (Array.isArray(video.tags) && video.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase())))
+        // );        
+
+        // ✅ 유사도 기반 정렬
+        const searchResults = await calculateAverageSimilarity(query, allVideos);
 
         res.render('pages/channel-search', {
             channelInfo,
