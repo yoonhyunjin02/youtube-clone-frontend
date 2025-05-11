@@ -103,4 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     darkThemeBtn.classList.add('active');
+
+    
 });

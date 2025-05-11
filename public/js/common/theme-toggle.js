@@ -39,4 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     youtubeLogoImg.src = '/assets/logos/Youtube-Logo.svg';
     appearanceBtn.innerHTML = '<img src="/assets/icons/appearance.svg" alt="Appearance: Device theme"><span>Appearance: dark theme</span>';
   }
+
+  if (savedTheme) {
+    document.body.classList.add(`${savedTheme}-mode`);
+    
+    // 버튼 상태 반영
+    const themeButtons = document.querySelectorAll('.appear-modal-main button');
+    themeButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.theme === savedTheme);
+    });
+  }
 });
