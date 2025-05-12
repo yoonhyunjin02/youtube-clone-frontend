@@ -112,9 +112,14 @@
                             <ul class="mix-list">
                                 <% playlist.forEach((video,index) => { %>
                                     <li class="mix-item <%= video.id === videoInfo.id ? 'active' : '' %>" data-url="/video?id=<%= video.id %>&queue=mix">
-                                        <span>
-                                            <%= video.id === videoInfo.id ? '▶' : index + 1 %>
-                                        </span>
+                                        <!-- 수정 -->
+                                        <div class="playlist-index-container">
+                                            <span class="playlist-item-index">  
+                                                <%= video.id === videoInfo.id ? '▶' : index + 1 %>
+                                            </span>   
+                                        </div>
+                                            <!-- 수정 -->
+                                            
                                         <img src="<%= video.thumbnail %>" alt="<%= video.title %>" class="mix-thumb no-invert">
                                         <div class="mix-info">
                                             <div class="mix-title">
