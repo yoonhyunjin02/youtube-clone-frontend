@@ -8,7 +8,8 @@ sections.forEach((videos, sectionIndex) => {
             <h2><%= sectionTitle %></h2>
             <button class="play-all"
                 data-first-id="<%= videos[0]?.id %>"
-                data-channel-id="<%= channelInfo.id %>">
+                data-channel-id="<%= channelInfo.id %>"
+                data-playlist-name="<%= sectionTitle %>">
                 <p>▶ PLAY ALL</p>
             </button>
 

@@ -3,9 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const videoId = urlParams.get('id');
     let sort = urlParams.get('sort');
+    let queue= urlParams.get('queue');
+    
 
     // sort 파라미터가 없을 경우 → 기본값 'all'로 URL 업데이트
-    if (videoId && !sort) {
+    if (videoId && !sort && !queue) {
         sort = 'all';
         history.replaceState(null, '', `/video?id=${videoId}&sort=${sort}`);
     }
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('recommend-list-container').innerHTML = html;
                     history.replaceState(null, '', `/video?id=${videoId}&sort=${selectedSort}`);
 
-                    // 썸네일 hover 다시 바인딩
+                    // ✅ 썸네일 hover 다시 바인딩
                     if (window.bindThumbnailHover) {
                         window.bindThumbnailHover();
                     }

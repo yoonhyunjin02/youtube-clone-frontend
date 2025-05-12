@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const firstVideoId = button.dataset.firstId;
             const channelId = button.dataset.channelId;
+            const playlistName=button.dataset.playlistName;
 
             if (firstVideoId && channelId) {
-                const url = `/video?id=${firstVideoId}&queue=mix&channelId=${channelId}`;
-                window.location.href = url;
+                console.log(playlistName);
+                const url = `/video?id=${firstVideoId}&queue=mix&channelId=${channelId}&playlist=${playlistName}`;
+                window.location.href = url;                
             } else {
                 console.warn('Play All: 데이터 누락');
             }

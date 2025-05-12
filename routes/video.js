@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {
-    getSubscriberList,
-    getRelativeTime,
-    formatViews
-} = require('../utils/helpers');
-
+const { getSubscriberList, getRelativeTime, formatViews } = require('../utils/helpers');
 const {
     get_video_getVideoList,
     get_channel_getChannelInfo
@@ -21,24 +16,16 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
 
     if (sortType === 'recommend') {
         const otherVideos = videoList.filter(video => video.id !== videoId && Array.isArray(video.tags));
-
         const similarityScoredVideos = await Promise.all(
             otherVideos.map(async (video) => {
-                const [scoredVideo] = await calculateAverageSimilarity(videoInfo.tags.join(' '), [video]);
-                return scoredVideo;
+                const similarity = await calculateAverageSimilarity(videoInfo.tags.join(' '), [video]);
+                return { ...video, averageSimilarity: similarity };
             })
         );
 
         const topRecommendedVideos = similarityScoredVideos
             .sort((a, b) => b.averageSimilarity - a.averageSimilarity)
             .slice(0, 20);
-
-        // 영상 제목 + 유사도 출력(recommend, 추천 영상)
-        console.log(`\n추천 영상 목록 (정렬 기준: ${sortType})`);
-        topRecommendedVideos.forEach((video, i) => {
-            const score = Number(video.averageSimilarity || 0);
-            console.log(`${i + 1}. "${video.title}" | 유사도: ${score.toFixed(4)}`);
-        });
 
         return Promise.all(
             topRecommendedVideos.map(async (video) => {
@@ -48,10 +35,7 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
                 } catch (err) {
                     return {
                         ...video,
-                        channel: {
-                            channel_name: 'Unknown',
-                            channel_profile: '/assets/icons/default-profile.svg'
-                        }
+                        channel: { channel_name: 'Unknown', channel_profile: '/assets/icons/default-profile.svg' }
                     };
                 }
             })
@@ -67,13 +51,6 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
         const similarityScoredVideos = await calculateAverageSimilarity(videoInfo.tags.join(' '), sameChannelVideos);
         const topRecommendedVideos = similarityScoredVideos.slice(0, 20);
 
-        // 영상 제목 + 유사도 출력(channel, 해당 채널 추천)
-        console.log(`\n추천 영상 목록 (정렬 기준: ${sortType})`);
-        topRecommendedVideos.forEach((video, i) => {
-            const score = Number(video.averageSimilarity || 0);
-            console.log(`${i + 1}. "${video.title}" | 유사도: ${score.toFixed(4)}`);
-        });
-
         return Promise.all(
             topRecommendedVideos.map(async (video) => {
                 try {
@@ -82,10 +59,7 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
                 } catch (err) {
                     return {
                         ...video,
-                        channel: {
-                            channel_name: 'Unknown',
-                            channel_profile: '/assets/icons/default-profile.svg'
-                        }
+                        channel: { channel_name: 'Unknown', channel_profile: '/assets/icons/default-profile.svg' }
                     };
                 }
             })
@@ -105,10 +79,7 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
                 } catch (err) {
                     return {
                         ...video,
-                        channel: {
-                            channel_name: 'Unknown',
-                            channel_profile: '/assets/icons/default-profile.svg'
-                        }
+                        channel: { channel_name: 'Unknown', channel_profile: '/assets/icons/default-profile.svg' }
                     };
                 }
             })
@@ -118,12 +89,13 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
     return [];
 }
 
-
 router.get('/', async (req, res) => {
     const videoId = parseInt(req.query.id);
     const isMixQueue = req.query.queue === 'mix';
     const sortType = req.query.sort || 'all';
-
+    const urlParams = req.query;
+    const playlistName = urlParams.playlist || 'playlist';
+    
     try {
         const videoList = await get_video_getVideoList();
         const videoInfo = videoList.find(video => video.id === videoId);
@@ -132,12 +104,22 @@ router.get('/', async (req, res) => {
         const channelInfo = await get_channel_getChannelInfo(videoInfo.channel_id);
         const subscriberList = await getSubscriberList();
         const recommendedVideos = await getRecommendedVideos(videoList, videoInfo, sortType);
+        
 
         let playlist = [];
         if (isMixQueue) {
             playlist = videoList
-                .filter(video => video.id !== videoId)
-                .slice(0, 10)
+                .filter(video => video.channel_id === videoInfo.channel_id)
+                .sort((a, b) => {
+                    switch(playlistName) {
+                        case "인기동영상":
+                            return b.views - a.views; // 조회수 내림차순
+                        case "추천동영상":
+                            return (b.likes - b.dislikes) - (a.likes - a.dislikes); // 추천점수 내림차순
+                        default: 
+                            return a.id - b.id; // ID 오름차순
+                    }
+                })
                 .map(video => ({
                     id: video.id,
                     title: video.title,
@@ -146,13 +128,13 @@ router.get('/', async (req, res) => {
                     thumbnail: video.thumbnail || '/assets/default-thumb.jpg'
                 }));
         }
-
         res.render('pages/video', {
             videoInfo,
             channelInfo,
             subscriberList,
             recommendedVideos,
             playlist,
+            playlistName,
             getRelativeTime,
             formatViews
         });
