@@ -21,6 +21,7 @@ main {
     width: calc(100% - 240px);
     background-color: #0f0f0f;
     transition: all 0.3s ease;
+    height: 100%;
 }
 
 .sidebar.collapsed ~ main {

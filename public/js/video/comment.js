@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newComment.classList.add('comment-flex');
         newComment.setAttribute('data-time', Date.now());
         newComment.innerHTML = `
-            <img class="input-img" src="/assets/profile/Profile-pic.svg" alt="profile">
+            <img class="input-img no-invert" src="/assets/profile/Profile-pic.svg" alt="profile">
             <div class="comment-body">
                 <div class="comment-meta">
                     <span class="comment-body-name">You</span>
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
             replyInputWrapper.classList.add('reply-input-wrapper');
             replyInputWrapper.innerHTML = `
                 <div class="reply-input-text">
-                    <img class="input-img" src="/assets/profile/Profile-pic.svg" alt="profile">
+                    <img class="input-img no-invert" src="/assets/profile/Profile-pic.svg" alt="profile">
                     <input type="text" class="reply-input">
                 </div>
                 <div class="reply-input-button">
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const replyElement = document.createElement('div');
         replyElement.classList.add('reply');
         replyElement.innerHTML = `
-            <img src="/assets/profile/Profile-pic.svg" alt="profile">
+            <img class="no-invert" src="/assets/profile/Profile-pic.svg" alt="profile">
             <div class="reply-body">
                 <div class="reply-meta">
                     <span class="reply-author">You</span>
