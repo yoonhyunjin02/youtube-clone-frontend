@@ -94,14 +94,67 @@
 | 5/11 (토)    | 전체 페이지 레이아웃 통일성 점검, 반응형 미세 보완, 최종 버그 픽스             |
 | 5/12 (일)    | 리드미 최종 정리, 발표 자료 구성, GitHub 토글/시각화 적용, 프로젝트 마감 🎉    |
 
-### 🧩 팀원별 구현 내역
+<h3>🧩 팀원별 구현 내역</h3>
 
-| 이름       | 주요 구현 내용 |
-|------------|----------------|
-| &nbsp;**윤현진**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 🔧 프로젝트 설계 및 기술 구조 전반 총괄<br>– `partials/` 내 공통 템플릿 구조 설계 (`header.ejs`, `nav.ejs`, `videoCard.ejs`)<br>– `videoCard.ejs` 템플릿을 홈/채널/비디오에서 분기 재사용 가능하게 구현<br>– 썸네일 hover 시 영상 미리보기 동작 (`thumbnail-play.js`)<br>– 플레이리스트/추천영상/댓글 흐름 전체 구현<br>– 페이지 간 상태 유지 포함한 테마(다크/라이트) 토글 구현<br>– API 연동 흐름 구성 (`post.js`, `comment.js`, `search.js` 등)<br>– 브랜치 전략 및 Git 협업 구조 주도 (`develop` 운영, 충돌 해결 포함) |
-| &nbsp;**김성연**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 🔍 검색 기능 전체 설계 및 반응형 전담<br>– 홈/채널/비디오 페이지별 검색 모듈 구현 (`*_search.js` 분리)<br>– 필터바 클릭 → 태그 기반 필터 검색 구현<br>– 조회수 포맷 변환 (예: 1234 → 1.2K)<br>– 비디오 페이지 반응형 구조 설계 및 CSS 디버깅<br>– 테마 토글 기능 구조 이해 및 다크/라이트 디자인 테마 분리<br>– 레이아웃 테두리 색, 카드 간 padding 등 UI 세부 시각 조정 |
-| &nbsp;**이재원**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 🎮 UI 인터랙션 및 댓글 시스템 구현<br>– 좋아요/싫어요/구독 기능 + SVG 상태 전환 구현<br>– 공유/저장 기능 모달 UI + 기능 처리 (`button.js`)<br>– 댓글 정렬 및 대댓글 구조 구현 (들여쓰기 포함 UI 완성)<br>– video.ejs 추천 영상 카드 정렬, 반응형 맞춤 CSS<br>– sidebar toggle 기능 구현 및 channel/video 화면 적용 |
-| &nbsp;**김영롱**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 📚 문서화 및 CSS 구조 보조<br>– `README.md` 전체 구성, 목차 및 흐름 설계<br>– 기술 스택 시각화 및 shields 뱃지 마크업 정리<br>– 목차 토글 기능 적용 (`<details>` + `<summary>`)<br>– videoCard-video.ejs 내 추천 영상 레이아웃 수평 정렬 구현<br>– 초반 margin/padding 구조 조정 (channel.css, video.css)<br><br>※ 본 프로젝트의 핵심 기능 구현은 모두 다른 팀원들에 의해 전적으로 수행되었으며, 본인은 문서 정리 및 구조 보조 중심으로 기여했습니다. |
+<table>
+  <thead>
+    <tr>
+      <th style="width: 140px;">이름</th>
+      <th>주요 구현 내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>윤현진</strong></td>
+      <td>
+        🔧 프로젝트 설계 및 기술 구조 전반 총괄<br>
+        – <code>partials/</code> 내 공통 템플릿 구조 설계 (<code>header.ejs</code>, <code>nav.ejs</code>, <code>videoCard.ejs</code>)<br>
+        – <code>videoCard.ejs</code> 템플릿을 홈/채널/비디오에서 분기 재사용 가능하게 구현<br>
+        – 썸네일 hover 시 영상 미리보기 동작 (<code>thumbnail-play.js</code>)<br>
+        – 플레이리스트/추천영상/댓글 흐름 전체 구현<br>
+        – 페이지 간 상태 유지 포함한 테마(다크/라이트) 토글 구현<br>
+        – API 연동 흐름 구성 (<code>post.js</code>, <code>comment.js</code>, <code>search.js</code> 등)<br>
+        – 브랜치 전략 및 Git 협업 구조 주도 (<code>develop</code> 운영, 충돌 해결 포함)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>김성연</strong></td>
+      <td>
+        🔍 검색 기능 전체 설계 및 반응형 전담<br>
+        – 홈/채널/비디오 페이지별 검색 모듈 구현 (<code>*_search.js</code> 분리)<br>
+        – 필터바 클릭 → 태그 기반 필터 검색 구현<br>
+        – 조회수 포맷 변환 (예: 1234 → 1.2K)<br>
+        – 비디오 페이지 반응형 구조 설계 및 CSS 디버깅<br>
+        – 테마 토글 기능 구조 이해 및 다크/라이트 디자인 테마 분리<br>
+        – 레이아웃 테두리 색, 카드 간 padding 등 UI 세부 시각 조정
+      </td>
+    </tr>
+    <tr>
+      <td><strong>이재원</strong></td>
+      <td>
+        🎮 UI 인터랙션 및 댓글 시스템 구현<br>
+        – 좋아요/싫어요/구독 기능 + SVG 상태 전환 구현<br>
+        – 공유/저장 기능 모달 UI + 기능 처리 (<code>button.js</code>)<br>
+        – 댓글 정렬 및 대댓글 구조 구현 (들여쓰기 포함 UI 완성)<br>
+        – <code>video.ejs</code> 추천 영상 카드 정렬, 반응형 맞춤 CSS<br>
+        – sidebar toggle 기능 구현 및 channel/video 화면 적용
+      </td>
+    </tr>
+    <tr>
+      <td><strong>김영롱</strong></td>
+      <td>
+        📚 문서화 및 CSS 구조 보조<br>
+        – <code>README.md</code> 전체 구성, 목차 및 흐름 설계<br>
+        – 기술 스택 시각화 및 shields 뱃지 마크업 정리<br>
+        – 목차 토글 기능 적용 (<code>&lt;details&gt;</code> + <code>&lt;summary&gt;</code>)<br>
+        – <code>videoCard-video.ejs</code> 내 추천 영상 레이아웃 수평 정렬 구현<br>
+        – 초반 margin/padding 구조 조정 (<code>channel.css</code>, <code>video.css</code>)<br><br>
+        ※ 본 프로젝트의 핵심 기능 구현은 모두 다른 팀원들에 의해 전적으로 수행되었으며, 본인은 문서 정리 및 구조 보조 중심으로 기여했습니다.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
   
 
 </details>
