@@ -3,7 +3,7 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 const similarityCache = new Map();
 
 const apiKey = 'b4f5b1b3-b272-4b80-a5eb-9b158e4457fa';
-const USE_DUMMY = true; // 개발 중에는 true로 설정
+const USE_DUMMY = true; // 개발 중에는 true(더미 데이터)로 설정
 
 // 더미 유사도 생성기 (0.5 ~ 1.0 사이 랜덤 값)
 function getDummySimilarity(firstWord, secondWord) {

@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('comment.js 실행됨');
     const commentInput = document.querySelector('.input-text');
     const commentList = document.querySelector('.comment');
     const commentNum = document.querySelector('.comments-num');
-    
+
     let commentCount = document.querySelectorAll('.comment-flex').length;
 
     document.addEventListener('keydown', function (e) {
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const dislikeImg = dislikeBtn.querySelector('img');
         const likeCount = newComment.querySelector('.like-count');
         const dislikeCount = newComment.querySelector('.dislike-count');
+        likeCount.textContent = Math.floor(Math.random() * 100); // 랜덤 좋아요 수
 
         let liked = false;
         let disliked = false;
@@ -147,12 +149,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             const cancelBtn = replyInputWrapper.querySelector('.reply-Cancel-button');
-                cancelBtn.addEventListener('click', () => {
+            cancelBtn.addEventListener('click', () => {
                 replyInputWrapper.remove();
             });
 
             const replyBtn = replyInputWrapper.querySelector('.reply-Reply-button');
-                replyBtn.addEventListener('click', () => {
+            replyBtn.addEventListener('click', () => {
                 const replyText = replyInput.value.trim();
                 if (replyText !== '') {
                     addReply(commentElement, replyText);
@@ -161,43 +163,43 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-// 답글 추가 함수
-    function addReply(commentElement, replyText) {
-        let commentBody = commentElement.querySelector('.comment-body');
-        let repliesContainer = commentElement.querySelector('.replies-container');
-        const replyToggle = document.createElement('button');
-        replyToggle.classList.add('reply-toggle');
-        
-        
-        if (!repliesContainer) {
-            repliesContainer = document.createElement('div');
-            repliesContainer.classList.add('replies-container');
+        // 답글 추가 함수
+        function addReply(commentElement, replyText) {
+            let commentBody = commentElement.querySelector('.comment-body');
+            let repliesContainer = commentElement.querySelector('.replies-container');
+            const replyToggle = document.createElement('button');
+            replyToggle.classList.add('reply-toggle');
 
-            replyToggle.innerHTML = `
+
+            if (!repliesContainer) {
+                repliesContainer = document.createElement('div');
+                repliesContainer.classList.add('replies-container');
+
+                replyToggle.innerHTML = `
                 <img class="reply-toggle-icon" src="/assets/icons/arrow-up.svg" alt="Toggle Arrow">
                 <span class="reply-toggle-text">${repliesContainer.children.length} repl${repliesContainer.children.length > 1 ? 'ies' : 'y'}</span>
             `;
 
-            replyToggle.addEventListener('click', () => {
-                const isHidden = repliesContainer.style.display === 'none';
-                repliesContainer.style.display = isHidden ? 'block' : 'none';
-            
-                const icon = replyToggle.querySelector('.reply-toggle-icon');
-                const text = replyToggle.querySelector('.reply-toggle-text');
-                const count = repliesContainer.children.length;
-            
-                
-                icon.src = isHidden ? '/assets/icons/arrow-up.svg' : '/assets/icons/arrow-down.svg';
-                text.textContent = `${count} repl${count > 1 ? 'ies' : 'y'}`;
-            });
+                replyToggle.addEventListener('click', () => {
+                    const isHidden = repliesContainer.style.display === 'none';
+                    repliesContainer.style.display = isHidden ? 'block' : 'none';
 
-            commentBody.appendChild(replyToggle);
-            commentBody.appendChild(repliesContainer);
-        } 
+                    const icon = replyToggle.querySelector('.reply-toggle-icon');
+                    const text = replyToggle.querySelector('.reply-toggle-text');
+                    const count = repliesContainer.children.length;
 
-        const replyElement = document.createElement('div');
-        replyElement.classList.add('reply');
-        replyElement.innerHTML = `
+
+                    icon.src = isHidden ? '/assets/icons/arrow-up.svg' : '/assets/icons/arrow-down.svg';
+                    text.textContent = `${count} repl${count > 1 ? 'ies' : 'y'}`;
+                });
+
+                commentBody.appendChild(replyToggle);
+                commentBody.appendChild(repliesContainer);
+            }
+
+            const replyElement = document.createElement('div');
+            replyElement.classList.add('reply');
+            replyElement.innerHTML = `
             <img class="no-invert" src="/assets/profile/Profile-pic.svg" alt="profile">
             <div class="reply-body">
                 <div class="reply-meta">
@@ -213,143 +215,148 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-        repliesContainer.prepend(replyElement);
-        if (!replyToggle)   {
-            console.log("fuckl");
-        }else{
-            console.log("aa");
-        }
-        const text = commentElement.querySelector('.reply-toggle-text');
-        const count = repliesContainer.children.length;
-        const icon = commentElement.querySelector('reply-toggle-icon');
-
-        //icon.src = repliesContainer.style.display === 'none' ? '/assets/icons/arrow-down.svg' : '/assets/icons/arrow-up.svg';
-        text.textContent = `${count} repl${count > 1 ? 'ies' : 'y'}`;
-
-        const likeBtn = replyElement.querySelector('.like-btn');
-        const dislikeBtn = replyElement.querySelector('.dislike-btn');
-        const likeImg = likeBtn.querySelector('img');
-        const dislikeImg = dislikeBtn.querySelector('img');
-        const likeCount = replyElement.querySelector('.like-count');
-        const dislikeCount = replyElement.querySelector('.dislike-count');
-
-        let liked = false;
-        let disliked = false;
-
-        likeBtn.addEventListener('click', () => {
-            let currentLikes = parseInt(likeCount.textContent);
-            if (!liked) {
-                currentLikes++;
-                likeImg.src = '/assets/icons/like-filled.svg';
-                likeCount.textContent = currentLikes;
-                liked = true;
-                likeBtn.classList.add('active');
-
-                if (disliked) {
-                    let currentDislikes = parseInt(dislikeCount.textContent);
-                    currentDislikes--;
-                    dislikeImg.src = '/assets/icons/dislike.svg';
-                    dislikeCount.textContent = currentDislikes;
-                    disliked = false;
-                    dislikeBtn.classList.remove('active');
-                }
+            repliesContainer.prepend(replyElement);
+            if (!replyToggle) {
+                console.log("fuckl");
             } else {
-                currentLikes--;
-                likeImg.src = '/assets/icons/like.svg';
-                likeCount.textContent = currentLikes;
-                liked = false;
-                likeBtn.classList.remove('active');
+                console.log("aa");
             }
-        });
+            const text = commentElement.querySelector('.reply-toggle-text');
+            const count = repliesContainer.children.length;
+            const icon = commentElement.querySelector('reply-toggle-icon');
 
-        dislikeBtn.addEventListener('click', () => {
-            let currentDislikes = parseInt(dislikeCount.textContent);
-            if (!disliked) {
-                currentDislikes++;
-                dislikeImg.src = '/assets/icons/dislike-filled.svg';
-                dislikeCount.textContent = currentDislikes;
-                disliked = true;
-                dislikeBtn.classList.add('active');
+            //icon.src = repliesContainer.style.display === 'none' ? '/assets/icons/arrow-down.svg' : '/assets/icons/arrow-up.svg';
+            text.textContent = `${count} repl${count > 1 ? 'ies' : 'y'}`;
 
-                if (liked) {
-                    let currentLikes = parseInt(likeCount.textContent);
+            const likeBtn = replyElement.querySelector('.like-btn');
+            const dislikeBtn = replyElement.querySelector('.dislike-btn');
+            const likeImg = likeBtn.querySelector('img');
+            const dislikeImg = dislikeBtn.querySelector('img');
+            const likeCount = replyElement.querySelector('.like-count');
+            const dislikeCount = replyElement.querySelector('.dislike-count');
+
+            let liked = false;
+            let disliked = false;
+
+            likeBtn.addEventListener('click', () => {
+                let currentLikes = parseInt(likeCount.textContent);
+                if (!liked) {
+                    currentLikes++;
+                    likeImg.src = '/assets/icons/like-filled.svg';
+                    likeCount.textContent = currentLikes;
+                    liked = true;
+                    likeBtn.classList.add('active');
+
+                    if (disliked) {
+                        let currentDislikes = parseInt(dislikeCount.textContent);
+                        currentDislikes--;
+                        dislikeImg.src = '/assets/icons/dislike.svg';
+                        dislikeCount.textContent = currentDislikes;
+                        disliked = false;
+                        dislikeBtn.classList.remove('active');
+                    }
+                } else {
                     currentLikes--;
                     likeImg.src = '/assets/icons/like.svg';
                     likeCount.textContent = currentLikes;
                     liked = false;
                     likeBtn.classList.remove('active');
                 }
-            } else {
-                currentDislikes--;
-                dislikeImg.src = '/assets/icons/dislike.svg';
-                dislikeCount.textContent = currentDislikes;
-                disliked = false;
-                dislikeBtn.classList.remove('active');
-            }
-        });
-    }
+            });
 
-    function escapeHtml(unsafe) {
-        return unsafe
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
+            dislikeBtn.addEventListener('click', () => {
+                let currentDislikes = parseInt(dislikeCount.textContent);
+                if (!disliked) {
+                    currentDislikes++;
+                    dislikeImg.src = '/assets/icons/dislike-filled.svg';
+                    dislikeCount.textContent = currentDislikes;
+                    disliked = true;
+                    dislikeBtn.classList.add('active');
 
-    // 공유 모달
-    const shareBtn = document.querySelector('.share-btn');
-    const ShareModal = document.querySelector('.share-modal');
-    if (shareBtn && ShareModal) {
-        shareBtn.addEventListener('click', () => {
-            ShareModal.style.display = 'flex';
-        });
-    }
+                    if (liked) {
+                        let currentLikes = parseInt(likeCount.textContent);
+                        currentLikes--;
+                        likeImg.src = '/assets/icons/like.svg';
+                        likeCount.textContent = currentLikes;
+                        liked = false;
+                        likeBtn.classList.remove('active');
+                    }
+                } else {
+                    currentDislikes--;
+                    dislikeImg.src = '/assets/icons/dislike.svg';
+                    dislikeCount.textContent = currentDislikes;
+                    disliked = false;
+                    dislikeBtn.classList.remove('active');
+                }
+            });
+        }
 
-    // 정렬
-    const sortButtons = document.querySelectorAll('.sortby-option-btn');
+        function escapeHtml(unsafe) {
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
 
-    sortButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const sortText = button.textContent.trim().toLowerCase();
+        // 공유 모달
+        const shareBtn = document.querySelector('.share-btn');
+        const ShareModal = document.querySelector('.share-modal');
+        if (shareBtn && ShareModal) {
+            shareBtn.addEventListener('click', () => {
+                ShareModal.style.display = 'flex';
+            });
+        }
 
-            if (sortText === 'top comments') {
+        document.querySelector('.sortby-modal-content').addEventListener('click', function (e) {
+            const btn = e.target.closest('.sortby-option-btn');
+            if (!btn) return;
+
+            const sortText = btn.textContent.trim().toLowerCase();
+            console.log('정렬 실행됨:', sortText);
+
+            if (sortText.includes('top')) {
                 sortCommentsByLikes();
-            } else if (sortText === 'newest first') {
+            } else if (sortText.includes('newest')) {
                 sortCommentsByRecent();
             }
 
-            // 모달 닫기 (선택사항)
+            // 모달 닫기
             const sortModal = document.querySelector('.sortby-modal');
             sortModal.style.display = 'none';
         });
-    });
 
-    function sortCommentsByLikes() {
-        const commentList = document.querySelector('.comment');
-        const comments = Array.from(commentList.querySelectorAll('.comment-flex'));
+        function sortCommentsByLikes() {
+            console.log('sortCommentsByLikes Top Comments 정렬 실행됨');
+            const commentList = document.querySelector('.comment');
+            const comments = Array.from(commentList.querySelectorAll('.comment-flex'));
 
-        const sorted = comments.sort((a, b) => {
-            const aLikes = parseInt(a.querySelector('.like-count')?.textContent || '0');
-            const bLikes = parseInt(b.querySelector('.like-count')?.textContent || '0');
-            return bLikes - aLikes;
-        });
+            const sorted = comments.sort((a, b) => {
+                const aLikes = parseInt(a.querySelector('.like-count')?.textContent || '0');
+                const bLikes = parseInt(b.querySelector('.like-count')?.textContent || '0');
+                return bLikes - aLikes;
+            });
+            sorted.forEach(comment => commentList.removeChild(comment));  // 기존 요소 제거
+            sorted.forEach(comment => commentList.appendChild(comment)); // 정렬된 순서로 재삽입
+            // commentList.innerHTML = '';
+            // sorted.forEach(comment => commentList.appendChild(comment));
+        }
 
-        sorted.forEach(comment => commentList.appendChild(comment));
-    }
+        function sortCommentsByRecent() {
+            console.log('sortCommentsByRecent Newest First 정렬 실행됨');
+            const commentList = document.querySelector('.comment');
+            const comments = Array.from(commentList.querySelectorAll('.comment-flex'));
 
-    function sortCommentsByRecent() {
-        const commentList = document.querySelector('.comment');
-        const comments = Array.from(commentList.querySelectorAll('.comment-flex'));
-    
-        const sorted = comments.sort((a, b) => {
-            const timeA = parseInt(a.getAttribute('data-time') || '0');
-            const timeB = parseInt(b.getAttribute('data-time') || '0');
-            return timeB - timeA; 
-        });
-    
-        sorted.forEach(comment => commentList.appendChild(comment));
-    }
+            const sorted = comments.sort((a, b) => {
+                const timeA = parseInt(a.getAttribute('data-time') || '0');
+                const timeB = parseInt(b.getAttribute('data-time') || '0');
+                return timeB - timeA;
+            });
+            sorted.forEach(comment => commentList.removeChild(comment));  // 기존 요소 제거
+            sorted.forEach(comment => commentList.appendChild(comment)); // 정렬된 순서로 재삽입
+            // commentList.innerHTML = '';
+            // sorted.forEach(comment => commentList.appendChild(comment));
+        }
     }
 });
