@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }); 
         // share-modal
         shareBtn.addEventListener('click', () => {
+            document.getElementById('share-link').value = window.location.href;
             ShareModal.style.display = 'flex';
         });
 
