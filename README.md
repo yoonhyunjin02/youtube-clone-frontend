@@ -21,7 +21,7 @@
 
 <details>
   
-<summary>## 1. 프로젝트 소개</summary>
+<summary>1. 프로젝트 소개</summary>
 
 #### [오르미 11기 백엔드 양성과정 - 프론트엔드 실전 협업 프로젝트]
 
@@ -39,7 +39,7 @@
 
 <details>
   
-<summary>## 2. 팀원 소개 및 역할</summary>
+<summary>2. 팀원 소개 및 역할</summary>
 <table>
   <tr>
     <td align="center" width="150px">
@@ -160,7 +160,7 @@
 
 <details>
   
-<summary>## 3. 주요 기능</summary>
+<summary>3. 주요 기능</summary>
 
 ### ✅ 홈(Home)
 - 최신 영상 카드 출력 / 검색창 기능 / 필터 카테고리 클릭 이동
@@ -187,7 +187,7 @@
 
 <details>
   
-<summary>## 4. 프로젝트 구조</summary>
+<summary>4. 프로젝트 구조</summary>
 
 ### 📂 디렉토리 구조
 
@@ -210,7 +210,7 @@ youtube-clone-frontend/
 
 <details>
   
-<summary>## 5. 사용 기술 및 도구</summary>
+<summary>5. 사용 기술 및 도구</summary>
 
 ---
 
@@ -249,7 +249,7 @@ youtube-clone-frontend/
 
 <details>
   
-<summary>## 6. 브랜치 전략 및 커밋 컨벤션</summary>
+<summary>6. 브랜치 전략 및 커밋 컨벤션</summary>
 
 ### 🔹 브랜치 전략
 
@@ -275,7 +275,7 @@ youtube-clone-frontend/
 
 <details>
   
-<summary>## 7. 최종 회고</summary>
+<summary>7. 최종 회고</summary>
 
 > “초보탈출 넘버원” 팀은 단순한 클론이 아니라 실전 개발 프로세스를 전부 경험했습니다.
 
