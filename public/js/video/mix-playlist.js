@@ -59,9 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', () => {
         mixPlaylist.style.display = 'none';
         miniPlaylist.style.display = 'flex';
+        miniPlaylist.classList.add('active');
+        
     });
     openBtn.addEventListener('click', () => {
         mixPlaylist.style.display = 'block';
         miniPlaylist.style.display = 'none';
+        miniPlaylist.classList.remove('active');
     });
+
+    
 });

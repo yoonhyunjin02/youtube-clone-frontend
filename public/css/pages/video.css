@@ -772,6 +772,10 @@ a>.video-thumbnail {
     top: 80px;
 }
 
+.mini-playlist.active ~ .recommended-videos {
+    margin-top: -435px;
+}
+
 /* ============================= */
 /* play list */
 /* ============================= */
