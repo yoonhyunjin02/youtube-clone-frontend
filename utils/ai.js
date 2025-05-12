@@ -23,7 +23,7 @@ async function getSimilarity(firstWord, secondWord) {
     if (similarityCache.has(reverseKey)) {
         return similarityCache.get(reverseKey)
     };
-    console.log(similarityCache) // similarityCache map내에 저장된 단어 쌍
+    //console.log(similarityCache) // similarityCache map내에 저장된 단어 쌍
     if (
         firstWord === secondWord ||
         firstWord.includes(secondWord) ||
@@ -40,14 +40,13 @@ async function getSimilarity(firstWord, secondWord) {
     }
 
     try {
-        const response = await fetch('http://aiopen.etri.re.kr:8000/WiseWWN/WordRel', {
+        const response = await fetch('https://www.techfree-oreumi-api.ai.kr/WiseWWN/WordRel', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': apiKey,
             },
             body: JSON.stringify({
-                request_id: 'uuid-anything',
                 argument: {
                     first_word: firstWord,
                     second_word: secondWord,
@@ -55,18 +54,15 @@ async function getSimilarity(firstWord, secondWord) {
             }),
         });
 
+
+        // ETRI 점수로 유사도 계산
         const data = await response.json();
-        const similarity = data?.return_object?.result ?? 0;
 
-        similarityCache.set(key, similarity);
-        return similarity;
-        // const data = await response.json();
+        const simList = data?.return_object?.['WWN WordRelInfo']?.WordRelInfo?.Similarity;
+        const etriScore = simList?.find(s => s.Algorithm === 'ETRI')?.SimScore ?? 0;
 
-        // const simList = data?.return_object?.['WWN WordRelInfo']?.WordRelInfo?.Similarity;
-        // const etriScore = simList?.find(s => s.Algorithm === 'ETRI')?.SimScore ?? 0;
-
-        // similarityCache.set(key, etriScore);
-        // return etriScore;
+        similarityCache.set(key, etriScore);
+        return etriScore;
     } catch (error) {
         console.error(`유사도 계산 실패 (${firstWord}, ${secondWord}):`, error);
         return 0;
@@ -75,7 +71,7 @@ async function getSimilarity(firstWord, secondWord) {
 
 async function calculateAverageSimilarity(query, videos, topN = 2) {
     const queryWords = [...new Set(query.trim().split(/\s+/))];
-    
+
     for (const video of videos) {
         let totalSim = 0;
         let count = 0;
@@ -95,7 +91,6 @@ async function calculateAverageSimilarity(query, videos, topN = 2) {
 
     // 유사도 기준 정렬 (내림차순)
     videos.sort((a, b) => b.averageSimilarity - a.averageSimilarity);
-
     return videos;
 }
 

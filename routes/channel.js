@@ -238,8 +238,14 @@ router.get('/:id/Search', async (req, res) => {
         //     (Array.isArray(video.tags) && video.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase())))
         // );        
 
-        // ✅ 유사도 기반 정렬
+        // 유사도 기반 정렬
         const searchResults = await calculateAverageSimilarity(query, allVideos);
+
+        // 영상 제목 + 유사도 출력
+        console.log('채널 검색 유사도 정렬 결과:');
+        searchResults.forEach((video, i) => {
+            console.log(`${i + 1}. "${video.title}" | 평균 유사도: ${video.averageSimilarity.toFixed(4)}`);
+        });
 
         res.render('pages/channel-search', {
             channelInfo,

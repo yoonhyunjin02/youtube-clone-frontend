@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { getSubscriberList, getRelativeTime, formatViews } = require('../utils/helpers');
+const {
+    getSubscriberList,
+    getRelativeTime,
+    formatViews
+} = require('../utils/helpers');
+
 const {
     get_video_getVideoList,
     get_channel_getChannelInfo
@@ -16,16 +21,24 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
 
     if (sortType === 'recommend') {
         const otherVideos = videoList.filter(video => video.id !== videoId && Array.isArray(video.tags));
+
         const similarityScoredVideos = await Promise.all(
             otherVideos.map(async (video) => {
-                const similarity = await calculateAverageSimilarity(videoInfo.tags.join(' '), [video]);
-                return { ...video, averageSimilarity: similarity };
+                const [scoredVideo] = await calculateAverageSimilarity(videoInfo.tags.join(' '), [video]);
+                return scoredVideo;
             })
         );
 
         const topRecommendedVideos = similarityScoredVideos
             .sort((a, b) => b.averageSimilarity - a.averageSimilarity)
             .slice(0, 20);
+
+        // 영상 제목 + 유사도 출력(recommend, 추천 영상)
+        console.log(`\n추천 영상 목록 (정렬 기준: ${sortType})`);
+        topRecommendedVideos.forEach((video, i) => {
+            const score = Number(video.averageSimilarity || 0);
+            console.log(`${i + 1}. "${video.title}" | 유사도: ${score.toFixed(4)}`);
+        });
 
         return Promise.all(
             topRecommendedVideos.map(async (video) => {
@@ -35,7 +48,10 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
                 } catch (err) {
                     return {
                         ...video,
-                        channel: { channel_name: 'Unknown', channel_profile: '/assets/icons/default-profile.svg' }
+                        channel: {
+                            channel_name: 'Unknown',
+                            channel_profile: '/assets/icons/default-profile.svg'
+                        }
                     };
                 }
             })
@@ -51,6 +67,13 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
         const similarityScoredVideos = await calculateAverageSimilarity(videoInfo.tags.join(' '), sameChannelVideos);
         const topRecommendedVideos = similarityScoredVideos.slice(0, 20);
 
+        // 영상 제목 + 유사도 출력(channel, 해당 채널 추천)
+        console.log(`\n추천 영상 목록 (정렬 기준: ${sortType})`);
+        topRecommendedVideos.forEach((video, i) => {
+            const score = Number(video.averageSimilarity || 0);
+            console.log(`${i + 1}. "${video.title}" | 유사도: ${score.toFixed(4)}`);
+        });
+
         return Promise.all(
             topRecommendedVideos.map(async (video) => {
                 try {
@@ -59,7 +82,10 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
                 } catch (err) {
                     return {
                         ...video,
-                        channel: { channel_name: 'Unknown', channel_profile: '/assets/icons/default-profile.svg' }
+                        channel: {
+                            channel_name: 'Unknown',
+                            channel_profile: '/assets/icons/default-profile.svg'
+                        }
                     };
                 }
             })
@@ -79,7 +105,10 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
                 } catch (err) {
                     return {
                         ...video,
-                        channel: { channel_name: 'Unknown', channel_profile: '/assets/icons/default-profile.svg' }
+                        channel: {
+                            channel_name: 'Unknown',
+                            channel_profile: '/assets/icons/default-profile.svg'
+                        }
                     };
                 }
             })
@@ -88,6 +117,7 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
 
     return [];
 }
+
 
 router.get('/', async (req, res) => {
     const videoId = parseInt(req.query.id);

@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('recommend-list-container').innerHTML = html;
                     history.replaceState(null, '', `/video?id=${videoId}&sort=${selectedSort}`);
 
-                    // ✅ 썸네일 hover 다시 바인딩
+                    // 썸네일 hover 다시 바인딩
                     if (window.bindThumbnailHover) {
                         window.bindThumbnailHover();
                     }
