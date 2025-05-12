@@ -19,10 +19,12 @@
         <section class="channel-featured-video">
             <div class="video-thumbnail no-invert">
                 <!-- 첫 번째 영상만 표시 -->
+                <a href="/video?id=<%= featuredVideo.id %>">
                 <video controls width="640" height="360">
                     <source src="https://storage.googleapis.com/youtube-clone-video/<%= featuredVideo.id %>.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                </a>
             </div>
         
             <div class="featured-vid-info">

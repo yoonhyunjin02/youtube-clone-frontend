@@ -1,3 +1,4 @@
+<!-- 추천 영상 목록을 반복 렌더링하는 EJS partial 템플릿 파일 -->
 <% recommendedVideos.forEach(video=> { %>
     <%- include('./videoCard-video', { video, formatViews, getRelativeTime }) %>
 <% }) %>

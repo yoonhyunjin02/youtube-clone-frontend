@@ -98,7 +98,7 @@ router.get('/:id/Videos', async (req, res) => {
             channelVideoList = [];
         }
 
-        // ✅ subscriberList 추가
+        // subscriberList 추가
         const subscriberList = await getSubscriberList();
 
         res.render('pages/channel-videos', {
