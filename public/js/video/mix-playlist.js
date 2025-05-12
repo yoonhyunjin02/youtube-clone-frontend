@@ -67,15 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
         mixPlaylist.style.display = 'block';
         miniPlaylist.style.display = 'none';
         miniPlaylist.classList.remove('active');
-    });
-
-    
-
-    if (miniPlaylist && miniPlaylist.classList.contains('active') && recommended) {
-    const height = miniPlaylist.offsetHeight;
-    recommended.style.marginTop = height + 40 + 'px'; // 약간의 여유 포함
-    }
-
-
-    
+    });    
 });
