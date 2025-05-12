@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const apiKey = process.env.ETRI_API_KEY;
 console.log('[ETRI API KEY]', apiKey);
-const USE_DUMMY = true; // 개발 중에는 true(더미 데이터)로 설정
+const USE_DUMMY = false; // 개발 중에는 사용량 제한으로 인해 true(더미 데이터)로 설정
 
 // 더미 유사도 생성기 (0.5 ~ 1.0 사이 랜덤 값)
 function getDummySimilarity(firstWord, secondWord) {

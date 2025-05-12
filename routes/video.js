@@ -16,16 +16,30 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
 
     if (sortType === 'recommend') {
         const otherVideos = videoList.filter(video => video.id !== videoId && Array.isArray(video.tags));
+        // const similarityScoredVideos = await Promise.all(
+        //     otherVideos.map(async (video) => {
+        //         const similarity = await calculateAverageSimilarity(videoInfo.tags.join(' '), [video]);
+        //         return { ...video, averageSimilarity: similarity };
+        //     })
+        // );
         const similarityScoredVideos = await Promise.all(
             otherVideos.map(async (video) => {
-                const similarity = await calculateAverageSimilarity(videoInfo.tags.join(' '), [video]);
-                return { ...video, averageSimilarity: similarity };
+                await calculateAverageSimilarity(videoInfo.tags.join(' '), [video]);
+                return { ...video, averageSimilarity: video.averageSimilarity };
             })
         );
+
 
         const topRecommendedVideos = similarityScoredVideos
             .sort((a, b) => b.averageSimilarity - a.averageSimilarity)
             .slice(0, 20);
+
+        // 영상 제목 + 유사도 출력(recommend, 추천 영상)
+        console.log(`\n추천 영상 목록 (정렬 기준: ${sortType})`);
+        topRecommendedVideos.forEach((video, i) => {
+            const score = Number(video.averageSimilarity || 0);
+            console.log(`${i + 1}. "${video.title}" | 유사도: ${score.toFixed(4)}`);
+        });
 
         return Promise.all(
             topRecommendedVideos.map(async (video) => {
@@ -50,6 +64,13 @@ async function getRecommendedVideos(videoList, videoInfo, sortType) {
 
         const similarityScoredVideos = await calculateAverageSimilarity(videoInfo.tags.join(' '), sameChannelVideos);
         const topRecommendedVideos = similarityScoredVideos.slice(0, 20);
+
+        // 영상 제목 + 유사도 출력(channel, 해당 채널 추천)
+        console.log(`\n추천 영상 목록 (정렬 기준: ${sortType})`);
+        topRecommendedVideos.forEach((video, i) => {
+            const score = Number(video.averageSimilarity || 0);
+            console.log(`${i + 1}. "${video.title}" | 유사도: ${score.toFixed(4)}`);
+        });
 
         return Promise.all(
             topRecommendedVideos.map(async (video) => {
@@ -95,7 +116,7 @@ router.get('/', async (req, res) => {
     const sortType = req.query.sort || 'all';
     const urlParams = req.query;
     const playlistName = urlParams.playlist || 'playlist';
-    
+
     try {
         const videoList = await get_video_getVideoList();
         const videoInfo = videoList.find(video => video.id === videoId);
@@ -104,19 +125,19 @@ router.get('/', async (req, res) => {
         const channelInfo = await get_channel_getChannelInfo(videoInfo.channel_id);
         const subscriberList = await getSubscriberList();
         const recommendedVideos = await getRecommendedVideos(videoList, videoInfo, sortType);
-        
+
 
         let playlist = [];
         if (isMixQueue) {
             playlist = videoList
                 .filter(video => video.channel_id === videoInfo.channel_id)
                 .sort((a, b) => {
-                    switch(playlistName) {
+                    switch (playlistName) {
                         case "인기동영상":
                             return b.views - a.views; // 조회수 내림차순
                         case "추천동영상":
                             return (b.likes - b.dislikes) - (a.likes - a.dislikes); // 추천점수 내림차순
-                        default: 
+                        default:
                             return a.id - b.id; // ID 오름차순
                     }
                 })

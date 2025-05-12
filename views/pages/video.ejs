@@ -28,32 +28,46 @@
 
                         <!--영상 제목 및 정보-->
                         <section class="video-title-info">
-                            <!-- 제목 -->
+
                             <span class="video-player-title">
                                 <%= videoInfo.title %>
                             </span>
 
-                            <div class="video-stats">
-                                <!-- 조회수, 날짜 -->
-                                <span class="video-meta">
-                                    <%= videoInfo.views.toLocaleString() %> views • <%=
-                                            getRelativeTime(videoInfo.created_dt) %>
-                                </span>
+                            <!-- 프로필+구독 / 버튼들 -->
+                            <div class="video-header-bar">
+                                <!-- 좌측: 프로필 + 구독 -->
+                                <div class="channel-info-left">
+                                    <a href="/channel/<%= channelInfo.id %>/Home" class="channel-owner">
+                                        <img class="channel-owner-img no-invert"
+                                            src="<%= channelInfo.channel_profile %>" />
+                                        <div class="channel-text">
+                                            <div class="channel-owner-name">
+                                                <%= channelInfo.channel_name %>
+                                            </div>
+                                            <div class="channel-subscription">
+                                                <%= channelInfo.subscribers.toLocaleString() %> subscribers
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <button class="subscribe-btn no-invert">SUBSCRIBE</button>
+                                </div>
 
-                                <!-- 좋아요, 싫어요, 공유, 저장, 더보기 -->
+                                <!-- 우측: 기존 버튼들 -->
                                 <div class="video-actions">
                                     <div class="action-button">
                                         <button><img class="action-img" src="/assets/icons/like2.svg" alt="Like" />
                                             <span class="action-text">
                                                 <%= videoInfo.likes.toLocaleString() %>
-                                            </span></button>
+                                            </span>
+                                        </button>
                                     </div>
                                     <div class="action-button">
                                         <button><img class="action-img" src="/assets/icons/dislike2.svg"
                                                 alt="Dislike" />
                                             <span class="action-text">
                                                 <%= videoInfo.dislikes.toLocaleString() %>
-                                            </span></button>
+                                            </span>
+                                        </button>
                                     </div>
                                     <div class="action-button">
                                         <button><img class="action-img" src="/assets/icons/share2.svg" alt="Share" />
@@ -62,17 +76,18 @@
                                     <div class="action-button">
                                         <button><img class="action-img" src="/assets/icons/save2.svg" alt="Save" />
                                             <span class="action-text">SAVE</span></button>
+
                                         <!-- 저장 모달 -->
                                         <div class="save-modal">
                                             <div class="save-modal-content">
                                                 <button class="save-option-btn"><img
-                                                        src="/assets/icons/save-offline.svg" alt="Download"><span
-                                                        class="save-text">Download</span></button>
+                                                        src="/assets/icons/save-offline.svg" alt="Download">
+                                                    <span class="save-text">Download</span></button>
                                                 <button class="save-option-btn"><img src="/assets/icons/save-online.svg"
-                                                        alt="Save"><span class="save-text">Save</span></button>
+                                                        alt="Save">
+                                                    <span class="save-text">Save</span></button>
                                             </div>
                                         </div>
-                                        <!-- 저장 모달 -->
                                     </div>
                                     <div class="action-button">
                                         <button class="action-text"><img class="action-img"
@@ -81,12 +96,29 @@
                                         <div class="more-modal">
                                             <div class="more-modal-content">
                                                 <button class="more-option-btn"><img src="/assets/icons/report.svg"
-                                                        alt="report"><span class="report-text">Report</span></button>
+                                                        alt="report">
+                                                    <span class="report-text">Report</span></button>
                                             </div>
                                         </div>
-                                        <!-- 더보기 모달 -->
                                     </div>
                                 </div>
+                            </div>
+
+                            <!-- 설명은 가장 아래 -->
+                            <div class="channel-description-box">
+                                <!-- 첫 줄: 조회수 + 날짜 -->
+                                <div class="description-meta">
+                                    <%= videoInfo.views.toLocaleString() %> views • <%=
+                                            getRelativeTime(videoInfo.created_dt) %>
+                                </div>
+
+                                <!-- 영상 설명 -->
+                                <p class="channel-description">
+                                    <%= videoInfo.description %>
+                                </p>
+
+                                <!-- 더보기 버튼 -->
+                                <button class="show-more">...more</button>
                             </div>
                         </section>
 
@@ -94,33 +126,35 @@
                         <section class="mix-playlist">
                             <div class="mix-header">
                                 <div class="mix-header-flex">
-                                    <span class="playlist-name"><%= playlistName %></span>
-                                    <% 
-                                        let currentPlaylistIndex = 0;
-                                        for (let i = 0; i < playlist.length; i++) {
-                                            if (playlist[i].id === videoInfo.id) {
-                                                currentPlaylistIndex = i + 1; // 인덱스는 1부터 표시
-                                                break;
-                                            }
-                                        }
-                                    %>
-                                    <span class="playlist-meta"><%= channelInfo.channel_name %> - <span><%= currentPlaylistIndex %></span> / <%= playlist.length %></span>
+                                    <span class="playlist-name">
+                                        <%= playlistName %>
+                                    </span>
+                                    <% let currentPlaylistIndex=0; for (let i=0; i < playlist.length; i++) { if
+                                        (playlist[i].id===videoInfo.id) { currentPlaylistIndex=i + 1; // 인덱스는 1부터 표시
+                                        break; } } %>
+                                        <span class="playlist-meta">
+                                            <%= channelInfo.channel_name %> - <span>
+                                                    <%= currentPlaylistIndex %>
+                                                </span> / <%= playlist.length %>
+                                        </span>
                                 </div>
                                 <button class="playlist-close"><img src="/assets/icons/close.svg" alt="close"></button>
                             </div>
-                            
+
                             <ul class="mix-list">
-                                <% playlist.forEach((video,index) => { %>
-                                    <li class="mix-item <%= video.id === videoInfo.id ? 'active' : '' %>" data-url="/video?id=<%= video.id %>&queue=mix">
+                                <% playlist.forEach((video,index)=> { %>
+                                    <li class="mix-item <%= video.id === videoInfo.id ? 'active' : '' %>"
+                                        data-url="/video?id=<%= video.id %>&queue=mix">
                                         <!-- 수정 -->
                                         <div class="playlist-index-container">
-                                            <span class="playlist-item-index">  
-                                                <%= video.id === videoInfo.id ? '▶' : index + 1 %>
-                                            </span>   
+                                            <span class="playlist-item-index">
+                                                <%= video.id===videoInfo.id ? '▶' : index + 1 %>
+                                            </span>
                                         </div>
-                                            <!-- 수정 -->
-                                            
-                                        <img src="<%= video.thumbnail %>" alt="<%= video.title %>" class="mix-thumb no-invert">
+                                        <!-- 수정 -->
+
+                                        <img src="<%= video.thumbnail %>" alt="<%= video.title %>"
+                                            class="mix-thumb no-invert">
                                         <div class="mix-info">
                                             <div class="mix-title">
                                                 <%= video.title %>
@@ -136,106 +170,79 @@
 
                         <section class="mini-playlist">
                             <div class="mini-header">
-                                <% if(playlist && playlist.length > 0) { 
+                                <% if(playlist && playlist.length> 0) {
                                     const currentIndex = playlist.findIndex(v => v.id === videoInfo.id);
                                     let nextIndex = currentIndex + 1;
 
-                                    if(currentIndex !== -1) { 
-                                        // 마지막 영상인 경우
-                                        if(currentIndex === playlist.length - 1) {
-                                        nextIndex = currentIndex - 1;
+                                    if(currentIndex !== -1) {
+                                    // 마지막 영상인 경우
+                                    if(currentIndex === playlist.length - 1) {
+                                    nextIndex = currentIndex - 1;
                                     }
-                
+
                                     if(nextIndex >= 0 && nextIndex < playlist.length) { %>
                                         <span class="mini-title">Next: <%= playlist[nextIndex].title %></span><br>
-                                        <span class="mini-meta"><%= playlist[currentIndex].channel_name %> - <%= currentIndex + 1 %> / <%= playlist.length %></span>
-                                    <% } 
-                                    } 
-                                } %>
+                                        <span class="mini-meta">
+                                            <%= playlist[currentIndex].channel_name %> - <%= currentIndex + 1 %> / <%=
+                                                        playlist.length %>
+                                        </span>
+                                        <% } } } %>
                             </div>
                             <button class="playlist-open">
                                 <img src="/assets/icons/arrow-down.svg" alt="open">
                             </button>
                         </section>
 
-                        <!-- 채널 정보 -->
-                        <section class="channel-info">
-                            <div class="channel-info-top">
-                                <!-- 채널 프로필 정보 -->
-                                <a href="/channel/<%= channelInfo.id %>/Home" class="channel-owner"
-                                    style="text-decoration: none; color: inherit;">
-                                    <!-- 채널 프로필 이미지 -->
-                                    <img class="channel-owner-img no-invert" src="<%= channelInfo.channel_profile %>"
-                                        alt="<%= channelInfo.channel_name %> profile" />
-
-                                    <!-- 채널 이름, 구독자 수 -->
-                                    <div class="channel-owner-info">
-                                        <span class="channel-owner-name">
-                                            <%= channelInfo.channel_name %>
-                                        </span><br>
-                                        <span class="channel-subscription">
-                                            <%= channelInfo.subscribers.toLocaleString() %> subscribers
-                                        </span>
+                        <!-- 댓글 영역 -->
+                        <section class="comments-section">
+                            <!-- 댓글 수 및 정렬 -->
+                            <div class="comments-header">
+                                <div class="sort">
+                                    <span class="comments-num">0 Comments</span>
+                                    <button class="sortby-btn">
+                                        <img class="sortby-img" src="/assets/icons/list filter.png" alt="Sort icon">
+                                        <span>SORT BY</span>
+                                    </button>
+                                    <!-- 정렬 모달 -->
+                                    <div class="sortby-modal">
+                                        <div class="sortby-modal-content">
+                                            <button class="sortby-option-btn"><span class="sortby-text">Top
+                                                    comments</span></button>
+                                            <button class="sortby-option-btn"><span class="sortby-text">Newest
+                                                    first</span></button>
+                                        </div>
                                     </div>
-                                </a>
-                                <!-- 구독 버튼 -->
-                                <button class="subscribe-btn no-invert">SUBSCRIBE</button>
-                                <!-- 설명은 API에 없으니까 이 아래 부분은 주석처리 -->
-                                <!-- <p class="channel-description">
-                                    설명이 들어갈 자리 (API 없으므로 생략)
-                                </p> -->
-                                <!-- <button class="show-more">SHOW MORE</button> -->
-                            </div>
-                        </section>
-
-                <!-- 댓글 영역 -->
-                <section class="comments-section">
-                    <!-- 댓글 수 및 정렬 -->
-                    <div class="comments-header">
-                        <div class="sort">
-                            <span class="comments-num">0 Comments</span>
-                            <button class="sortby-btn">
-                                <img class="sortby-img" src="/assets/icons/list filter.png" alt="Sort icon">
-                                <span>SORT BY</span>
-                            </button>
-                            <!-- 정렬 모달 -->
-                            <div class="sortby-modal">
-                                <div class="sortby-modal-content">
-                                    <button class="sortby-option-btn"><span class="sortby-text">Top
-                                            comments</span></button>
-                                    <button class="sortby-option-btn"><span class="sortby-text">Newest
-                                            first</span></button>
+                                    <!-- 정렬 모달 -->
                                 </div>
                             </div>
-                            <!-- 정렬 모달 -->
-                        </div>
-                    </div>
-                    <!-- 댓글 입력 -->
-                    <div class="comment-input">
-                        <img class="input-img no-invert" src="/assets/profile/Profile-pic.svg" alt="profile img">
-                        <input class="input-text" type="text" placeholder="Add a public comment...">
-                    </div>
-                    <!-- 댓글 리스트 -->
-                    <div class="comment"></div>
-                </section>
+                            <!-- 댓글 입력 -->
+                            <div class="comment-input">
+                                <img class="input-img no-invert" src="/assets/profile/Profile-pic.svg"
+                                    alt="profile img">
+                                <input class="input-text" type="text" placeholder="Add a public comment...">
+                            </div>
+                            <!-- 댓글 리스트 -->
+                            <div class="comment"></div>
+                        </section>
 
-                <!--추천 영상 영역-->
-                <section class="recommended-videos <%= playlist.length === 0 ? 'full-height' : '' %>">
-                    <!--추천 영상 필터-->
-                    <nav class="recommended-tag">
-                        <button class="sort-btn active" data-sort="all">전체</button>
-                        <button class="sort-btn" data-sort="recommend">추천 영상</button>
-                        <button class="sort-btn" data-sort="channel">해당 채널 추천</button>
-                    </nav>
-                    <!--추천 영상 카드-->
-                    <div id="recommend-list-container">
-                        <% recommendedVideos.forEach(video=> { %>
-                            <%- include('../partials/videoCard-video', { video, formatViews, getRelativeTime }) %>
-                                <% }); %>
-                    </div>
+                        <!--추천 영상 영역-->
+                        <section class="recommended-videos <%= playlist.length === 0 ? 'full-height' : '' %>">
+                            <!--추천 영상 필터-->
+                            <nav class="recommended-tag">
+                                <button class="sort-btn active" data-sort="all">전체</button>
+                                <button class="sort-btn" data-sort="recommend">추천 영상</button>
+                                <button class="sort-btn" data-sort="channel">해당 채널 추천</button>
+                            </nav>
+                            <!--추천 영상 카드-->
+                            <div id="recommend-list-container">
+                                <% recommendedVideos.forEach(video=> { %>
+                                    <%- include('../partials/videoCard-video', { video, formatViews, getRelativeTime })
+                                        %>
+                                        <% }); %>
+                            </div>
 
-                </section>
-                </main>
+                        </section>
+                    </main>
                 </div>
                 <!-- 댓글 기능 -->
 
@@ -264,6 +271,7 @@
                 <script src="/js/video/video-search.js"></script>
                 <script src="/js/video/comment.js"></script>
                 <script src="/js/video/mix-playlist.js"></script>
+                <script src="/js/video/description-toggle.js"></script>
                 <script src="/js/video/sort.js"></script>
     </body>
 
