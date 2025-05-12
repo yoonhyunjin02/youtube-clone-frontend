@@ -40,6 +40,7 @@ a {
     /* align-items: flex-start; */
     background-color: rgb(22, 22, 22);
     transition: all 0.3s ease;
+    height: 100%;
 }
 
 header {
