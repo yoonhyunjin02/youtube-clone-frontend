@@ -3,6 +3,7 @@
 <%- include('../partials/head') %>
 <link rel="stylesheet" href="/css/pages/channel.css">
 <link rel="stylesheet" href="/css/pages/channel-playlists.css">
+<link rel="stylesheet" href="/css/theme/home-theme.css">
 
 <body>
     <!-- header : 홈 화면 상단바 -->
@@ -12,7 +13,7 @@
     <%- include('../partials/nav') %>
 
     <!-- main : 홈 화면 블록 -->
-    <main>
+    <main class="theme-wrapper">
         <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
         
         <div class="playlist-list">
@@ -20,7 +21,7 @@
                 const playlist = playlists[index];
             %>
             <div class="playlist-card">
-                <div class="playlist-image-wrapper">
+                <div class="playlist-image-wrapper no-invert">
                     <img src="<%= playlist.videos[0].thumbnail %>" alt="<%= title %>">
                     <div class="video-count-badge">
                         <img src="/assets/icons/playlist.svg" alt="Playlist Icon" class="badge-icon">
@@ -43,6 +44,7 @@
     <script src="/js/common/sidebarToggle.js"></script>
     <script src="/js/common/button.js"></script>
     <script src="/js/common/subscriber-nav.js"></script>
+    <script src="/js/common/theme-toggle.js"></script>
     
     <script src="/js/channel/channel-search.js"></script>
     <script src="/js/channel/channel-nav-scroll.js"></script>

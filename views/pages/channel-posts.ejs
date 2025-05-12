@@ -3,6 +3,7 @@
 <%- include('../partials/head') %>
 <link rel="stylesheet" href="/css/pages/channel.css">
 <link rel="stylesheet" href="/css/pages/channel-posts.css">
+<link rel="stylesheet" href="/css/theme/home-theme.css">
 
 <body>
     <!-- header -->
@@ -11,7 +12,7 @@
     <!-- nav -->
     <%- include('../partials/nav') %>
 
-    <main>
+    <main class="theme-wrapper">
         <!-- 채널 header + nav -->
         <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
         <section class="posts-section">
@@ -21,7 +22,7 @@
                     <!-- 왼쪽: 프로필 -->
                     <div class="post-left">
                         <a href="/channel/<%= post.channelId %>/Home">
-                            <img src="<%= channelInfo.channel_profile %>" class="author-profile" alt="Profile">
+                            <img src="<%= channelInfo.channel_profile %>" class="author-profile no-invert" alt="Profile">
                         </a>
                     </div>
 
@@ -42,7 +43,7 @@
                                 <button class="read-more-btn" data-index="<%= index %>">Read more</button>
                             <% } %>
                             <% if (post.image) { %>
-                                <div class="post-image">
+                                <div class="post-image no-invert">
                                     <img src="<%= post.image %>" alt="Post Image">
                                 </div>
                             <% } %>
@@ -88,6 +89,7 @@
     <script src="/js/common/sidebarToggle.js"></script>
     <script src="/js/common/button.js"></script>
     <script src="/js/common/subscriber-nav.js"></script>
+    <script src="/js/common/theme-toggle.js"></script>
 
     <script src="/js/channel/channel-search.js"></script>
     <script src="/js/channel/channel-nav-scroll.js"></script>
