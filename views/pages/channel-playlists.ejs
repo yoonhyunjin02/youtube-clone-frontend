@@ -20,7 +20,9 @@
             <% sectionTitles.forEach((title, index) => {
                 const playlist = playlists[index];
             %>
-            <div class="playlist-card">
+            <div class="playlist-card" data-first-id="<%= playlist.videos[0].id %>"
+  data-channel-id="<%= channelInfo.id %>"
+  data-playlist-name="<%= title %>">
                 <div class="playlist-image-wrapper no-invert">
                     <img src="<%= playlist.videos[0].thumbnail %>" alt="<%= title %>">
                     <div class="video-count-badge">
@@ -50,5 +52,6 @@
     <script src="/js/channel/channel-nav-scroll.js"></script>
     <script src="/js/channel/channel-scroll.js"></script>
     <script src="/js/channel/nav-search.js"></script>
+    <script src="/js/channel/play-all.js"></script>
 </body>
 </html>
