@@ -99,13 +99,13 @@
 <table>
   <thead>
     <tr>
-      <th style="width: 140px;">이름</th>
+      <th style="min-width: 120px; max-width: 120px;">이름</th>
       <th>주요 구현 내용</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>윤현진</strong></td>
+      <td style="min-width: 120px; max-width: 120px;"><strong>윤현진</strong></td>
       <td>
         🔧 프로젝트 설계 및 기술 구조 전반 총괄<br>
         – <code>partials/</code> 내 공통 템플릿 구조 설계 (<code>header.ejs</code>, <code>nav.ejs</code>, <code>videoCard.ejs</code>)<br>
@@ -118,7 +118,7 @@
       </td>
     </tr>
     <tr>
-      <td><strong>김성연</strong></td>
+      <td style="min-width: 120px; max-width: 120px;"><strong>김성연</strong></td>
       <td>
         🔍 검색 기능 전체 설계 및 반응형 전담<br>
         – 홈/채널/비디오 페이지별 검색 모듈 구현 (<code>*_search.js</code> 분리)<br>
@@ -130,7 +130,7 @@
       </td>
     </tr>
     <tr>
-      <td><strong>이재원</strong></td>
+      <td style="min-width: 120px; max-width: 120px;"><strong>이재원</strong></td>
       <td>
         🎮 UI 인터랙션 및 댓글 시스템 구현<br>
         – 좋아요/싫어요/구독 기능 + SVG 상태 전환 구현<br>
@@ -141,7 +141,7 @@
       </td>
     </tr>
     <tr>
-      <td><strong>김영롱</strong></td>
+      <td style="min-width: 120px; max-width: 120px;"><strong>김영롱</strong></td>
       <td>
         📚 문서화 및 CSS 구조 보조<br>
         – <code>README.md</code> 전체 구성, 목차 및 흐름 설계<br>
@@ -154,7 +154,6 @@
     </tr>
   </tbody>
 </table>
-
   
 
 </details>
