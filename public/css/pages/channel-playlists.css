@@ -8,6 +8,7 @@
 }
 
 .playlist-card {
+    all:unset;
     width: 280px;
     position: relative;
 }

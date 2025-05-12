@@ -779,30 +779,14 @@ a>.video-thumbnail {
 .mix-playlist {
     grid-column:2;
     grid-row:1;
-    /* max-height:400px; */
+    /* height:100%; */
     background-color: #111;
-    /* padding: 10px; */
     color: white;
-    /* overflow-y: auto; */
     display: none;
-
-
-    /* 수정 */
-    /* z-index: 1000; */
-    
-
-
-
-
-    /* 수정 */
-
-
-
-
-
     margin-left:24px;
     border-radius: 12px;
     border:1px solid #3b3b3b;
+    overflow: hidden;
 }
 
 
@@ -864,14 +848,14 @@ a>.video-thumbnail {
 }
 
 .mix-list {
-    flex: 1 1 auto;
+    display:flex;
+    flex-direction: column;
     list-style: none;
     padding: 0;
+    flex: 1 1 auto;
     height: 80%;
     overflow-y: auto;
-    /* 수정 */
     padding-bottom:10px;
-    /* 수정 */
 }
 
 .mix-item {

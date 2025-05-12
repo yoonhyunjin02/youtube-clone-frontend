@@ -1,18 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const playAllButtons = document.querySelectorAll('.play-all');
+    const playAllButtons = document.querySelectorAll('.play-all, .playlist-card');
 
     playAllButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // 기본 링크 동작 방지
+            
             const firstVideoId = button.dataset.firstId;
             const channelId = button.dataset.channelId;
-            const playlistName=button.dataset.playlistName;
+            const playlistName = button.dataset.playlistName;
 
             if (firstVideoId && channelId) {
-                console.log(playlistName);
-                const url = `/video?id=${firstVideoId}&queue=mix&channelId=${channelId}&playlist=${playlistName}`;
-                window.location.href = url;                
+                const url = `/video?id=${firstVideoId}&queue=mix&channelId=${channelId}&playlist=${encodeURIComponent(playlistName)}`;
+                window.location.href = url;
             } else {
-                console.warn('Play All: 데이터 누락');
+                console.warn('데이터 누락:', { firstVideoId, channelId });
             }
         });
     });
