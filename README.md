@@ -147,7 +147,6 @@
         – <code>README.md</code> 전체 구성, 목차 및 흐름 설계<br>
         – 기술 스택 시각화 및 shields 뱃지 마크업 정리<br>
         – 목차 토글 기능 적용 (<code>&lt;details&gt;</code> + <code>&lt;summary&gt;</code>)<br>
-        – <code>videoCard-video.ejs</code> 내 추천 영상 레이아웃 수평 정렬 구현<br>
         – 초반 margin/padding 구조 조정 (<code>channel.css</code>, <code>video.css</code>)<br>
       </td>
     </tr>
