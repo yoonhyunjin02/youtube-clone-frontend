@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <%- include('../partials/head') %>
 <link rel="stylesheet" href="/css/pages/channel.css">
 <link rel="stylesheet" href="/css/pages/channel-playlists.css">
+<link rel="stylesheet" href="/css/theme/home-theme.css">
 
 <body>
     <!-- header : 홈 화면 상단바 -->
@@ -12,18 +13,15 @@
     <%- include('../partials/nav') %>
 
     <!-- main : 홈 화면 블록 -->
-    <main>
+    <main class="theme-wrapper">
         <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
         
         <div class="playlist-list">
             <% sectionTitles.forEach((title, index) => {
                 const playlist = playlists[index];
             %>
-            <button class="playlist-card"
-                data-first-id="<%= playlist.videos[0].id %>"
-                data-channel-id="<%= channelInfo.id %>"
-                data-playlist-name="<%= title %>">
-                <div class="playlist-image-wrapper">
+            <div class="playlist-card">
+                <div class="playlist-image-wrapper no-invert">
                     <img src="<%= playlist.videos[0].thumbnail %>" alt="<%= title %>">
                     <div class="video-count-badge">
                         <img src="/assets/icons/playlist.svg" alt="Playlist Icon" class="badge-icon">
@@ -35,9 +33,9 @@
                 </div>
                 <h3><%= title %></h3>
                 <a href="#" class="view-full-link">View full playlist</a>
-            </button>
+            </div>
             <% }); %>
-        </div>
+        </div>        
         
     </main>
     <script src="/js/common/buttonHeader.js"></script>
@@ -46,8 +44,8 @@
     <script src="/js/common/sidebarToggle.js"></script>
     <script src="/js/common/button.js"></script>
     <script src="/js/common/subscriber-nav.js"></script>
-    <script src="/js/channel/play-all.js"></script>
-
+    <script src="/js/common/theme-toggle.js"></script>
+    
     <script src="/js/channel/channel-search.js"></script>
     <script src="/js/channel/channel-nav-scroll.js"></script>
     <script src="/js/channel/channel-scroll.js"></script>
