@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const miniPlaylist = document.querySelector('.mini-playlist');
     const closeBtn = document.querySelector('.playlist-close');
     const openBtn = document.querySelector('.playlist-open');
+    const recommended = document.querySelector('.recommended-videos');
     closeBtn.addEventListener('click', () => {
         mixPlaylist.style.display = 'none';
         miniPlaylist.style.display = 'flex';
@@ -67,6 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
         miniPlaylist.style.display = 'none';
         miniPlaylist.classList.remove('active');
     });
+
+    
+
+    if (miniPlaylist && miniPlaylist.classList.contains('active') && recommended) {
+    const height = miniPlaylist.offsetHeight;
+    recommended.style.marginTop = height + 40 + 'px'; // 약간의 여유 포함
+    }
+
 
     
 });

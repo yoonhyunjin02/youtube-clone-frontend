@@ -771,10 +771,27 @@ a>.video-thumbnail {
     grid-column: 2;
     top: 80px;
 }
-
 .mini-playlist.active ~ .recommended-videos {
     margin-top: -435px;
 }
+
+@media screen and (max-width: 1400px) {
+    .mini-playlist.active ~ .recommended-videos {
+    margin-top: -350px;
+}
+}
+@media screen and (max-width: 1140px) {
+    .mini-playlist.active ~ .recommended-videos {
+    margin-top: -280px;
+}
+}
+@media screen and (max-width: 950px) {
+    .mini-playlist.active ~ .recommended-videos {
+    margin-top: 0;
+    padding-top: 20px;
+}
+}
+
 
 /* ============================= */
 /* play list */
