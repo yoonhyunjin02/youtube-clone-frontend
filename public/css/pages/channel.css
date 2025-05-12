@@ -19,7 +19,7 @@ main {
     padding-top: 56px;
     box-sizing: border-box;
     width: calc(100% - 240px);
-    background-color: #0f0f0f;
+    background-color: #000000;
     transition: all 0.3s ease;
     height: 100%;
 }
