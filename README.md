@@ -4,7 +4,8 @@
 
 ---
 
-<h1>📍 목차</h1>
+<details>
+  <summary><h1>📍 목차</h1>
 
 1. [프로젝트 소개](#1-프로젝트-소개)  
 2. [팀원 소개 및 역할](#2-팀원-소개-및-역할)  
@@ -13,9 +14,13 @@
 5. [사용 기술 및 도구](#5-사용-기술-및-도구)  
 6. [브랜치 전략 및 커밋 컨벤션](#6-브랜치-전략-및-커밋-컨벤션)  
 7. [최종 회고](#7-최종-회고)
+    </summary>
+  </details>
 
 ---
 
+<details>
+  <summary>
 ## 1. 프로젝트 소개
 
 #### [오르미 11기 백엔드 양성과정 - 프론트엔드 실전 협업 프로젝트]
@@ -27,9 +32,13 @@
   - Home / Channel / Video / Search / Subscribe / Like 기능 완전 구현
   - HTML/CSS/JS 기반 프론트엔드 구조 설계 및 컴포넌트 재사용
   - Express 기반 서버와 API 연동 포함한 실전 협업 경험 축적
+    </summary>
+  </details>
 
 ---
 
+<details>
+  <summary>
 ## 2. 팀원 소개 및 역할
 <table>
   <tr>
@@ -92,8 +101,12 @@
 | **이재원** | 🎮 인터랙션 중심 기능 및 상태 전환 UI 구현<br>– `subscribe`, `like`, `dislike` 기능 버튼 구현 및 SVG 상태 전환 적용<br>– 공유/저장 모달 UI 구성 및 동작 처리<br>– `comments` 정렬, `reply` 대댓글 기능 추가 및 레이아웃 구성<br>– `sidebar toggle` 기능 구현 및 버튼 이벤트 모듈화 (`button.js`) |
 | **김영롱** | 📚 문서화 및 레이아웃 디버깅 보조<br>– `README.md` 전체 구조 설계 및 프로젝트 흐름 작성<br>– `videoCard-video.ejs` 내 추천 영상 레이아웃 수평 정렬 구현<br>– `channel.css`, `video.css`의 margin/padding 구조 조정 및 hover 클래스 통일<br>– 기술 스택 시각화 및 shields 배지 마크업 정리 |
 
+  </summary>
+</details>
 ---
 
+<details>
+  <summary>
 ## 3. 주요 기능
 
 ### ✅ 홈(Home)
@@ -114,9 +127,13 @@
 - 사이드바 토글 기능 / JS 기능 분리 및 모듈화
 - SVG 버튼 상태 변화 및 아이콘 동적 처리 구현
 - **videoCard 템플릿 분기 사용으로 모든 페이지에서 공통 카드 컴포넌트 재사용**
+  </summary>
+</details>
 
 ---
 
+<details>
+  <summary>
 ## 4. 프로젝트 구조
 
 ### 📂 디렉토리 구조
@@ -133,9 +150,13 @@ youtube-clone-frontend/
 ├── server.js
 └── README.md
 ```
+  </summary>
+</details>
 
 ---
 
+<details>
+  <summary>
 ## 5. 사용 기술 및 도구
 
 ---
@@ -168,9 +189,13 @@ youtube-clone-frontend/
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  </summary>
+<details>
 
 ---
 
+<details>
+  <summary>
 ## 6. 브랜치 전략 및 커밋 컨벤션
 
 ### 🔹 브랜치 전략
@@ -191,9 +216,12 @@ youtube-clone-frontend/
 | `style`     | 코드 포맷팅 (기능 변화 없음)     |
 | `refactor`  | 코드 구조 개선                   |
 | `chore`     | 기타 작업 (빌드, 설정 등)        |
-
+  </summary>
+</details>
 ---
 
+<details>
+  <summary>
 ## 7. 최종 회고
 
 > “초보탈출 넘버원” 팀은 단순한 클론이 아니라 실전 개발 프로세스를 전부 경험했습니다.
@@ -203,6 +231,8 @@ youtube-clone-frontend/
 - Git 충돌 해결, js 모듈화, 시멘틱 마크업 등 실무에 준하는 과정을 겪으며 **개발자로 성장하는 기반**을 만들었습니다.
 
 > 기능을 구현하는 것에서 끝나지 않고, **협업, 책임감, 소통, 그리고 도전정신**을 함께 체득한 의미 있는 프로젝트였습니다.
+  </summary>
+</details>
 
 ---
 
