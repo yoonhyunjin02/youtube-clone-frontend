@@ -13,10 +13,10 @@
     <%- include('../partials/nav') %>
 
     <!-- main : 홈 화면 블록 -->
-    <main>
+    <main class="theme-wrapper">
         <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
 
-        <section class="channel-featured-video theme-wrapper">
+        <section class="channel-featured-video">
             <div class="video-thumbnail no-invert">
                 <!-- 첫 번째 영상만 표시 -->
                 <video controls width="640" height="360">
@@ -42,7 +42,7 @@
             </div>
         </section>
 
-        <section class="channel-video-listall theme-wrapper">
+        <section class="channel-video-listall">
             <%- include('../partials/videoCard-channel', {
                 channelVideoList,
                 sortedVideos,

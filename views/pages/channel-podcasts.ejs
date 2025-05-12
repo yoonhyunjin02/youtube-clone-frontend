@@ -3,6 +3,7 @@
 <%- include('../partials/head') %>
 <link rel="stylesheet" href="/css/pages/channel.css">
 <link rel="stylesheet" href="/css/pages/channel-podcasts.css">
+<link rel="stylesheet" href="/css/theme/home-theme.css">
 
 <body>
     <!-- header : 홈 화면 상단바 -->
@@ -12,13 +13,13 @@
     <%- include('../partials/nav') %>
 
     <!-- main : 홈 화면 블록 -->
-    <main>
+    <main class="theme-wrapper">
         <%- include('../partials/channel-header', { channelInfo, activeTab }) %>
         
         <div class="podcast-list">
             <% podcasts.forEach(podcast => { %>
             <div class="podcast-card">
-                <div class="podcast-image-wrapper">
+                <div class="podcast-image-wrapper no-invert">
                     <img src="<%= podcast.thumbnail %>" alt="<%= podcast.title %>">
                     <div class="overlay">
                         <span class="play-text">▶ Play all</span>
@@ -41,6 +42,7 @@
     <script src="/js/common/sidebarToggle.js"></script>
     <script src="/js/common/button.js"></script>
     <script src="/js/common/subscriber-nav.js"></script>
+    <script src="/js/common/theme-toggle.js"></script>
     
     <script src="/js/channel/channel-search.js"></script>
     <script src="/js/channel/channel-nav-scroll.js"></script>

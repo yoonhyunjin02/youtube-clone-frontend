@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (savedTheme) {
-    document.body.classList.add(`${savedTheme}-mode`);
+    document.body.classList.add(`${savedTheme}-theme`);
     
     // 버튼 상태 반영
     const themeButtons = document.querySelectorAll('.appear-modal-main button');
