@@ -134,6 +134,7 @@
   <img src="./public/assets/img/nav.png" alt="nav" width="300"/><br>
   - 햄버거 버튼 토글 → 아이콘만
   - 구독자 목록: 상단 3개(API), 나머지 더미데이터, 버튼 구현
+  - 더미 데이터 클릭시 alert창으로 안내
 
 - 비디오 리스트
   <br>
@@ -149,8 +150,6 @@
   <img src="./public/assets/img/topbar-search.png" alt="topbar-search" width="200"/><br>
   - 화면에서 길이 초과시 조건부 버튼 구현
   - 검색 필터를 누르면 제목과 태그 기준으로 검색됨
-  - 채널 프로필/배너 출력 / 채널별 영상 리스트 동적 렌더링
-  - 구독 기능, show more 구독자 목록 확장 / 동적 정렬 구현
 
 ### 🚩 채널(channel)
 - 홈 탭
