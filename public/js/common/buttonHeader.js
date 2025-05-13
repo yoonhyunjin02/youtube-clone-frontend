@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         createModal.style.display = 'none';
         profileModal.style.display = 'none';
         if (noticeModal.style.display === 'flex') {
-            noticeImg.src='/assets/icons/notifications.svg';
+            noticeImg.src='/assets/icons/Notifications.svg';
             noticeModal.style.display = 'none';
         }
         else {
