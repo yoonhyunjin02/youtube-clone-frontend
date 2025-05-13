@@ -233,8 +233,8 @@
   - 태그 수와 검색어 수 차이에 대해 공정하게 비교 가능
 
 - 적용한 곳
-- 🚩 채널 서치 탭
-- 🚩 비디오 리스트 버튼(추천영상, 해당 채널 추전)
+  - 🚩 채널 서치 탭
+  - 🚩 비디오 리스트 버튼(추천영상, 해당 채널 추전)
 
 
 
@@ -311,33 +311,33 @@
 ## 8. 사용 기술 및 도구
 
 ### 🔹 협업
-<a href="https://github.com/yoonhyunjin02/youtube-clone-frontend" target="_blank">
-  <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
-</a>
-<img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
-
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+  <a href="https://github.com/yoonhyunjin02/youtube-clone-frontend" target="_blank">
+    <img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=Github&logoColor=white">
+  </a>
+  <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
+</div>
 
 ### 🔹 개발 도구
-
-<span style="display: inline-block; background-color: #235372; color: white; padding: 6px 12px; font-weight: bold; font-size: 12px;">
-  VS Code
-</span>
+<img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
 
 ### 🔹 커뮤니케이션
-<a href="https://chain-winter-af2.notion.site/1dc2233de693802780c2d36dd66faaa1?pvs=4" target="_blank">
-  <img src="https://img.shields.io/badge/notion-FEFEFE?style=for-the-badge&logo=notion&logoColor=black">
-</a>
-<img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+  <a href="https://chain-winter-af2.notion.site/1dc2233de693802780c2d36dd66faaa1?pvs=4" target="_blank">
+    <img src="https://img.shields.io/badge/notion-FEFEFE?style=for-the-badge&logo=notion&logoColor=black">
+  </a>
+  <img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+</div>
 
 
 ### 🔹 개발 언어
-
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-<img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
-<img src="https://img.shields.io/badge/ejs-8D0000?style=for-the-badge&logo=javascript&logoColor=white">
-
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
+  <img src="https://img.shields.io/badge/ejs-8D0000?style=for-the-badge&logo=javascript&logoColor=white">
+</div>
 
 
 ## 9. 최종 회고
