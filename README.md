@@ -204,6 +204,7 @@
   <img src="./public/assets/img/playlists.png" alt="playlists" width="300"/><br>
   - 채널 홈 탭과 채널 플레이리스트에서 넘어오는 페이지
   - 재생중인 비디오가 표시됨
+  - 한 영상 재생이 끝나면 자동으로 다음 영상이 재생됨
 
 - 댓글
   <br>
