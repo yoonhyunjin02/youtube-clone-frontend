@@ -14,7 +14,7 @@ themeButtons.forEach(button => {
     localStorage.setItem('theme', selectedTheme);
 
     if (document.body.classList.contains('light-theme')) { 
-      youtubeLogoImg.src = '/assets/toggleicons/youtube-logo.svg'; 
+      youtubeLogoImg.src = '/assets/logos/Youtube-Toggle-logo.svg'; 
       appearanceBtn.innerHTML = '<img src="/assets/icons/appearance-sun.svg" alt="Appearance: Device theme"><span>Appearance: light theme</span>'; 
     } else {
       youtubeLogoImg.src = '/assets/logos/Youtube-Logo.svg'; 
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (document.body.classList.contains('light-theme')) { 
-    youtubeLogoImg.src = '/assets/toggleicons/youtube-logo.svg'; 
+    youtubeLogoImg.src = '/assets/logos/Youtube-Toggle-logo.svg'; 
     appearanceBtn.innerHTML = '<img src="/assets/icons/appearance-sun.svg" alt="Appearance: Device theme"><span>Appearance: light theme</span>'; 
   } else {
     youtubeLogoImg.src = '/assets/logos/Youtube-Logo.svg'; 
