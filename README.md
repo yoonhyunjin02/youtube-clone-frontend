@@ -34,9 +34,9 @@
   - Render에 배포
   - AI APIkey는 보안을 위해 코드에 추가하지 않고 따로 API 키 등록
   <br>
-    <img src="./public/assets/img/apikey.png" alt="apikey" width="300"/>
+    <img src="https://github.com/user-attachments/assets/088934f1-c9b2-4a7f-9c58-57be67e5d00c" alt="apikey" width="300"/>
 - 📺[시연 영상](https://youtu.be/sWw8Yp1vN-E)
-- 📢[발표 자료](./public/docs/초보탈출%20넘버원(1팀).pptx)
+- 📢[발표 자료](https://docs.google.com/presentation/d/1Y4zZWE8r1-sE7PlCJraJKmTGHiZ1D-bW/edit?usp=drive_link&ouid=107771278135945552523&rtpof=true&sd=true)
 ---
 
 ## 2. 팀원 소개 및 역할
@@ -77,24 +77,24 @@
 </table>
 
 ### 📆 역할 분담 및 기간별 작업 요약
-<img src="./public/assets/img/project timeline.png" alt="timeline" width="700"/>
+<img src="https://github.com/user-attachments/assets/d37d357e-cc18-4d0e-be3e-bfb54dca4ef9" alt="timeline" width="700"/>
 
 ## 3. 프로젝트 요약
 - 구현한 페이지 3개(홈, 채널, 비디오)
     <details>
     <summary>Home</summary>
     <br>
-    <img src="./public/assets/img/home.png" alt="home" width="600"/>
+    <img src="https://github.com/user-attachments/assets/1fa9d000-5bbc-41c5-ac83-6ff8a4ab5675" alt="home" width="600"/>
     </details>
     <details>
     <summary>channel</summary>
     <br>
-    <img src="./public/assets/img/channel.png" alt="channel" width="600"/>
+    <img src="https://github.com/user-attachments/assets/bd597fd2-a736-4e51-8c79-c1ad30f9efdd" alt="channel" width="600"/>
     </details>
     <details>
     <summary>video</summary>
     <br>
-    <img src="./public/assets/img/video.png" alt="video" width="600"/>
+    <img src="https://github.com/user-attachments/assets/6c1bf31d-07a1-48e5-9743-daae2cc82f15" alt="video" width="600"/>
     </details>
 
 <br>
@@ -112,18 +112,18 @@
 ### 🚩 공통 기능(홈, 채널, 비디오)
 - 파비콘
   <br>
-  <img src="./public/assets/img/favicon.png" alt="파비콘" width="300"/><br>
+  <img src="https://github.com/user-attachments/assets/f1991b11-1440-4603-87b1-fea000f4cbee" alt="파비콘" width="300"/><br>
   - 반응형으로 동작
 
 - 헤더
   <br>
-  <img src="./public/assets/img/header.png" alt="header" width="300"/><br>
+  <img src="https://github.com/user-attachments/assets/ca6b55d4-5e13-4b53-8550-e520119e2eb8" alt="header" width="300"/><br>
   - 햄버거 버튼 토글
   - 로고 누르면 홈 페이지로 이동
 
 - 검색
   <br>
-  <img src="./public/assets/img/search.png" alt="search" width="300"/><br>
+  <img src="https://github.com/user-attachments/assets/cd3073ca-b894-485f-acff-fa8180c62e60" alt="search" width="300"/><br>
   - 검색된 결과가 없을 때 alert창으로 안내
   - 버튼
     - +creat, 알람, 프로필 모달 구현
@@ -131,14 +131,14 @@
 
 - 네비게이션
   <br>
-  <img src="./public/assets/img/nav.png" alt="nav" width="300"/><br>
+  <img src="https://github.com/user-attachments/assets/000d6e16-66b1-4648-9e57-2197af62d771" alt="nav" width="300"/><br>
   - 햄버거 버튼 토글 → 아이콘만
   - 구독자 목록: 상단 3개(API), 나머지 더미데이터, 버튼 구현
   - 더미 데이터 클릭시 alert창으로 안내
 
 - 비디오 리스트
   <br>
-  <img src="./public/assets/img/move.png" alt="move" width="300"/>
+  <img src="https://github.com/user-attachments/assets/a62a2ec4-cea2-4e25-acdc-af1eb4626105)" alt="move" width="300"/>
   - 썸네일에 마우스 올리면 재생
   - 썸네일, 영상 제목, 조회수 및 시간 → 비디오 페이지로 이동
   - 프로필, 채널 이름 → 채널 페이지 이동
@@ -146,15 +146,15 @@
 ### 🚩 홈(home)
 - topbar
   <br>
-  <img src="./public/assets/img/topbar.png" alt="topbar" width="200"/>
-  <img src="./public/assets/img/topbar-search.png" alt="topbar-search" width="200"/><br>
+  <img src="https://github.com/user-attachments/assets/9428551d-b242-45b5-98a7-6ce7e0b95b2d" alt="topbar" width="200"/>
+  <img src="https://github.com/user-attachments/assets/7e700aea-764e-461b-abed-6f4aeba81c63" alt="topbar-search" width="200"/><br>
   - 화면에서 길이 초과시 조건부 버튼 구현
   - 검색 필터를 누르면 제목과 태그 기준으로 검색됨
 
 ### 🚩 채널(channel)
 - 홈 탭
   <br>
-  <img src="./public/assets/img/home-tab.png" alt="home-tab" width="300"/>
+  <img src="https://github.com/user-attachments/assets/c64ab890-3aca-487b-8305-f6ebc08bc147" alt="home-tab" width="300"/>
   - 동영상: 대표 영상 제외 API 순으로 정렬
   - 인기동영상: 대표 영상 제외 조회순으로 정렬
   - 추천동영상: 대표 영상 제외 좋아요순으로 정렬
@@ -163,23 +163,23 @@
 
 - 비디오 탭
   <br>
-  <img src="./public/assets/img/video-tab.png" alt="video-tab" width="300"/>
+  <img src="https://github.com/user-attachments/assets/d86724d1-a75e-4166-bc56-bd48b203c4c3" alt="video-tab" width="300"/>
   - 해당 채널의 모든 영상 카드형으로 배치<br>
 
 - 팟캐스트 탭
   <br>
-  <img src="./public/assets/img/podcasts-tab.png" alt="podcasts-tab" width="300"/>
+  <img src="https://github.com/user-attachments/assets/31dceb82-a929-4da0-a83e-e33938280d79" alt="podcasts-tab" width="300"/>
   - 팟캐스트 더미데이터 생성 후 구현<br>
 
 - 플레이리스트 탭
   <br>
-  <img src="./public/assets/img/playlists-tab.png" alt="playlists-tab" width="300"/>
+  <img src="https://github.com/user-attachments/assets/6fb44419-8bdd-4888-bafc-acf2b776946f" alt="playlists-tab" width="300"/>
   - 홈 탭에 있는 각각의 리스트들
   - 썸네일 play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동<br>
 
 - 포스트 탭
   <br>
-  <img src="./public/assets/img/post-tab.png" alt="post-tab" width="300"/>
+  <img src="https://github.com/user-attachments/assets/c12e3b47-92bd-4137-aac7-61efceda7ec6" alt="post-tab" width="300"/>
   - 팟캐스트 더미데이터 생성 후 구현
   - 프로필, 채널 이름 클릭 → 채널 페이지 홈 탭으로 이동
   - 좋아요, 싫어요, read more, Show less 버튼 구현<br>
@@ -189,26 +189,26 @@
   - 단어간 유사도 AI API 사용
   - 검색어 입력 시 띄어쓰기 단위로 슬라이스하여, 해당 채널 영상 태그와 유사도 측정
   - 유사도가 높은 것부터 내림차순 정렬<br>
-  <img src="./public/assets/img/search-tab.png" alt="search-tab" width="300"/><br>
+  <img src="https://github.com/user-attachments/assets/e1b1e19a-8317-4d1d-8668-68eeec15d4fc" alt="search-tab" width="300"/><br>
   - 돋보기 클릭 시 입력창 생김
   - 검색어 입력 안하고 검색 시 alert 창
 
 ### 🚩 비디오(video)
 - 구독, 좋아요, 싫어요, 공유, 저장, 더보기 버튼 모달 구현
   <br>
-  <img src="./public/assets/img/video-function.png" alt="video-function" width="300"/>
-  <img src="./public/assets/img/video-function2.png" alt="video-function2" width="300"/>
+  <img src="https://github.com/user-attachments/assets/162e5168-588e-4b41-a18a-83763143369d" alt="video-function" width="300"/>
+  <img src="https://github.com/user-attachments/assets/38af16b0-ceb1-4122-b131-35b8c9e3b01a" alt="video-function2" width="300"/>
 
 - 플레이리스트
   <br>
-  <img src="./public/assets/img/playlists.png" alt="playlists" width="300"/><br>
+  <img src="https://github.com/user-attachments/assets/b949151f-e7ad-42c3-8f39-c85588389b13" alt="playlists" width="300"/><br>
   - 채널 홈 탭과 채널 플레이리스트에서 넘어오는 페이지
   - 재생중인 비디오가 표시됨
   - 한 영상 재생이 끝나면 자동으로 다음 영상이 재생됨
 
 - 댓글
   <br>
-  <img src="./public/assets/img/comment.png" alt="comment" width="300"/>
+  <img src="https://github.com/user-attachments/assets/081a1202-1ef3-4f37-9d87-ab81c92a3e4c" alt="comment" width="300"/>
   - 댓글, 대댓글 입력
   - 좋아요, 싫어요, reply, cancel, Reply 버튼 구현
   - 정렬 기능
@@ -217,7 +217,7 @@
 
 - 영상 리스트
   <br>
-  <img src="./public/assets/img/video-ai.png" alt="video-ai" width="300"/>
+  <img src="https://github.com/user-attachments/assets/43158c57-bf21-4095-97d6-e88d8fcdb637" alt="video-ai" width="300"/>
   - 전체: API 영상순
   - 영상 추천: 현재 재생되고 있는 영상의 태그를 기반으로 전체 동영상 유사도 계산 후 내림차순
   - 해당 채널 추천: 현재 재생되고 있는 영상의 태그를 기반으로 해당 채널 동영상 유사도 계산 후 내림차순
@@ -296,17 +296,17 @@
 ## 7. 브랜치 전략 및 컨벤션
 
 ### 🔹 브랜치 전략
-  <img src="./public/assets/img/branch.png" alt="branch" width="400"/>
+  <img src="https://github.com/user-attachments/assets/ba2db2be-81dc-4c32-9374-3b8bf3391db9" alt="branch" width="400"/>
 
 
 ### 🔸 폴더, 파일 네이밍 컨벤션
-  <img src="./public/assets/img/name.png" alt="name" width="400"/>
+  <img src="https://github.com/user-attachments/assets/c3bd5449-c050-41bf-9976-9d81a55da974" alt="name" width="400"/>
 
 ### 🔸 커밋 컨벤션
-  <img src="./public/assets/img/comment-coc.png" alt="comment" width="400"/>
+  <img src="https://github.com/user-attachments/assets/2eb3dbac-b165-4ff2-aa6c-5cbffe265b53" alt="comment" width="400"/>
 
 ### 🔸 이슈 컨벤션
-  <img src="./public/assets/img/issue.png" alt="issue" width="400"/>
+  <img src="https://github.com/user-attachments/assets/649494e2-4b67-4323-ad9e-050ffeb7822f" alt="issue" width="400"/>
 
 ## 8. 사용 기술 및 도구
 
