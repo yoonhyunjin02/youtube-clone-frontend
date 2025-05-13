@@ -118,4 +118,34 @@ const openBtn = document.querySelector('.playlist-open');
             wrapPlaylist();
         }
     });
+    const videoEl = document.querySelector('video');
+
+    if (videoEl && mixItems.length > 0) {
+        videoEl.addEventListener('ended', () => {
+            const currentUrl = new URL(window.location.href);
+            const currentVideoId = currentUrl.searchParams.get('id');
+
+            const mixArray = Array.from(mixItems);
+            const currentIndex = mixArray.findIndex(item => {
+                const dataUrl = new URL(item.dataset.url, window.location.origin);
+                return dataUrl.searchParams.get('id') === currentVideoId;
+            });
+
+            const nextItem = mixArray[currentIndex + 1];
+
+            if (nextItem) {
+                const currentParams = new URLSearchParams(window.location.search);
+                const channelId = currentParams.get('channelId');
+                const playlist = currentParams.get('playlist');
+
+                const nextUrl = new URL(nextItem.dataset.url, window.location.origin);
+                const newParams = new URLSearchParams(nextUrl.search);
+                if (channelId) newParams.set('channelId', channelId);
+                if (playlist) newParams.set('playlist', playlist);
+
+                const finalUrl = `${nextUrl.pathname}?${newParams.toString()}`;
+                window.location.href = finalUrl;
+            }
+        });
+    }
 });
