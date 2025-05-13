@@ -144,7 +144,7 @@
 
 ### 🚩 홈(home)
 - topbar
-<br>
+  <br>
   <img src="./public/assets/img/topbar.png" alt="topbar" width="200"/>
   <img src="./public/assets/img/topbar-search.png" alt="topbar-search" width="200"/><br>
   - 화면에서 길이 초과시 조건부 버튼 구현
@@ -154,7 +154,7 @@
 
 ### 🚩 채널(channel)
 - 홈 탭
-<br>
+  <br>
   <img src="./public/assets/img/home-tab.png" alt="home-tab" width="300"/>
   - 동영상: 대표 영상 제외 API 순으로 정렬
   - 인기동영상: 대표 영상 제외 조회순으로 정렬
@@ -163,36 +163,36 @@
   - play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동<br>
 
 - 비디오 탭
-
+  <br>
   <img src="./public/assets/img/video-tab.png" alt="video-tab" width="300"/>
   - 해당 채널의 모든 영상 카드형으로 배치<br>
 
 - 팟캐스트 탭
-<br>
+  <br>
   <img src="./public/assets/img/podcasts-tab.png" alt="podcasts-tab" width="300"/>
   - 팟캐스트 더미데이터 생성 후 구현<br>
 
 - 플레이리스트 탭
-<br>
+  <br>
   <img src="./public/assets/img/playlists-tab.png" alt="playlists-tab" width="300"/>
   - 홈 탭에 있는 각각의 리스트들
   - 썸네일 play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동<br>
 
 - 포스트 탭
 <br>
-  <img src="./public/assets/img/post-tab.png" alt="post-tab" width="300"/>
-  - 팟캐스트 더미데이터 생성 후 구현
-  - 프로필, 채널 이름 클릭 → 채널 페이지 홈 탭으로 이동
-  - 좋아요, 싫어요, read more, Show less 버튼 구현<br>
+<img src="./public/assets/img/post-tab.png" alt="post-tab" width="300"/>
+- 팟캐스트 더미데이터 생성 후 구현
+- 프로필, 채널 이름 클릭 → 채널 페이지 홈 탭으로 이동
+- 좋아요, 싫어요, read more, Show less 버튼 구현<br>
 
 - 서치 탭
-  - 단어간 유사도 AI API 사용
-  - 검색어 입력 시 띄어쓰기 단위로 슬라이스하여, 해당 채널 영상 태그와 유사도 측정
-  - 유사도가 높은 것부터 내림차순 정렬
-  <br>
-  <img src="./public/assets/img/search-tab.png" alt="search-tab" width="300"/>
-  - 돋보기 클릭 시 입력창 생김
-  - 검색어 입력 안하고 검색 시 alert 창
+<br>
+- 단어간 유사도 AI API 사용
+- 검색어 입력 시 띄어쓰기 단위로 슬라이스하여, 해당 채널 영상 태그와 유사도 측정
+- 유사도가 높은 것부터 내림차순 정렬<br>
+<img src="./public/assets/img/search-tab.png" alt="search-tab" width="300"/><br>
+- 돋보기 클릭 시 입력창 생김
+- 검색어 입력 안하고 검색 시 alert 창
 
 ### 🚩 비디오(video)
 - 구독, 좋아요, 싫어요, 공유, 저장, 더보기 버튼 모달 구현
