@@ -199,9 +199,10 @@
   <br>
   <img src="./public/assets/img/video-function.png" alt="video-function" width="300"/>
   <img src="./public/assets/img/video-function2.png" alt="video-function2" width="300"/>
-  - 플레이리스트
+
+- 플레이리스트
   <br>
-  <img src="./public/assets/img/playlists.png" alt="playlists" width="300"/>
+  <img src="./public/assets/img/playlists.png" alt="playlists" width="300"/><br>
   - 채널 홈 탭과 채널 플레이리스트에서 넘어오는 페이지
   - 재생중인 비디오가 표시됨
 
