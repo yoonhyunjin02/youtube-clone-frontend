@@ -112,21 +112,22 @@
 ### 🚩 공통 기능(홈, 채널, 비디오)
 - 파비콘
   <br>
-  <img src="./public/assets/img/favicon.png" alt="파비콘" width="300"/>
-- 반응형으로 동작
-<br>
+  <img src="./public/assets/img/favicon.png" alt="파비콘" width="300"/><br>
+  반응형으로 동작
+
 - 헤더
-<br>
-  <img src="./public/assets/img/header.png" alt="header" width="300"/>
-    - 햄버거 버튼 토글
-    - 로고 누르면 홈 페이지로 이동
-    - 검색
-    <br>
-  <img src="./public/assets/img/search.png" alt="search" width="300"/>
-        - 검색된 결과가 없을 때 alert창으로 안내
-    - 버튼
-        - +creat, 알람, 프로필 모달 구현
-        - 프로필 모달의 Appearance 버튼을 눌러 테마 토글 가능
+  <br>
+  <img src="./public/assets/img/header.png" alt="header" width="300"/><br>
+  - 햄버거 버튼 토글
+  - 로고 누르면 홈 페이지로 이동
+
+- 검색
+  <br>
+  <img src="./public/assets/img/search.png" alt="search" width="300"/><br>
+  - 검색된 결과가 없을 때 alert창으로 안내
+  - 버튼
+    - +creat, 알람, 프로필 모달 구현
+    - 프로필 모달의 Appearance 버튼을 눌러 테마 토글 가능
 <br>
 - 네비게이션
 <br>
