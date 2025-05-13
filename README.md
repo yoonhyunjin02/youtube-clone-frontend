@@ -35,7 +35,7 @@
   - AI APIkey는 보안을 위해 코드에 추가하지 않고 따로 API 키 등록
   <br>
     <img src="./public/assets/img/apikey.png" alt="apikey" width="300"/>
-- 📺[시연 영상](https://youtu.be/VsP6Sy-87bA?si=u7tlt0s2-LB7lc71)
+- 📺[시연 영상](https://youtu.be/sWw8Yp1vN-E)
 - 📢[발표 자료](./public/docs/초보탈출%20넘버원(1팀).pptx)
 ---
 
