@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         profileModal.style.display = 'none';
         noticeModal.style.display = 'none';
-        noticeImg.src='/assets/icons/notifications.svg';
+        noticeImg.src='/assets/icons/Notifications.svg';
         if (createModal.style.display === 'flex') {
             createModal.style.display = 'none';
         }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         createModal.style.display = 'none';
         profileModal.style.display = 'none';
         if (noticeModal.style.display === 'flex') {
-            noticeImg.src='/assets/icons/notifications.svg';
+            noticeImg.src='/assets/icons/Notifications.svg';
             noticeModal.style.display = 'none';
         }
         else {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', (e) => {
         if (noticeModal.style.display === 'flex') {
             noticeModal.style.display = 'none';
-            noticeImg.src='/assets/icons/notifications.svg';
+            noticeImg.src='/assets/icons/Notifications.svg';
         }
     });
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         createModal.style.display = 'none';
         noticeModal.style.display = 'none';
-        noticeImg.src='/assets/icons/notifications.svg';
+        noticeImg.src='/assets/icons/Notifications.svg';
         if (profileModal.style.display === 'flex') {
             profileModal.style.display = 'none';
         }
