@@ -113,7 +113,7 @@
 - 파비콘
   <br>
   <img src="./public/assets/img/favicon.png" alt="파비콘" width="300"/><br>
-  반응형으로 동작
+  - 반응형으로 동작
 
 - 헤더
   <br>
@@ -130,14 +130,14 @@
     - 프로필 모달의 Appearance 버튼을 눌러 테마 토글 가능
 
 - 네비게이션
-<br>
+  <br>
   <img src="./public/assets/img/nav.png" alt="nav" width="300"/><br>
   - 햄버거 버튼 토글 → 아이콘만
   - 구독자 목록: 상단 3개(API), 나머지 더미데이터, 버튼 구현
 
 - 비디오 리스트
-<br>
-  <img src="./public/assets/img/move.png" alt="move" width="300"/><br>
+  <br>
+  <img src="./public/assets/img/move.png" alt="move" width="300"/>
   - 썸네일에 마우스 올리면 재생
   - 썸네일, 영상 제목, 조회수 및 시간 → 비디오 페이지로 이동
   - 프로필, 채널 이름 → 채널 페이지 이동
@@ -184,7 +184,7 @@
   - 팟캐스트 더미데이터 생성 후 구현
   - 프로필, 채널 이름 클릭 → 채널 페이지 홈 탭으로 이동
   - 좋아요, 싫어요, read more, Show less 버튼 구현<br>
-  
+
 - 서치 탭
   - 단어간 유사도 AI API 사용
   - 검색어 입력 시 띄어쓰기 단위로 슬라이스하여, 해당 채널 영상 태그와 유사도 측정
