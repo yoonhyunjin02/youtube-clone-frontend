@@ -179,41 +179,43 @@
   - 썸네일 play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동<br>
 
 - 포스트 탭
-<br>
-<img src="./public/assets/img/post-tab.png" alt="post-tab" width="300"/>
-- 팟캐스트 더미데이터 생성 후 구현
-- 프로필, 채널 이름 클릭 → 채널 페이지 홈 탭으로 이동
-- 좋아요, 싫어요, read more, Show less 버튼 구현<br>
+  <br>
+  <img src="./public/assets/img/post-tab.png" alt="post-tab" width="300"/>
+  - 팟캐스트 더미데이터 생성 후 구현
+  - 프로필, 채널 이름 클릭 → 채널 페이지 홈 탭으로 이동
+  - 좋아요, 싫어요, read more, Show less 버튼 구현<br>
 
 - 서치 탭
-<br>
-- 단어간 유사도 AI API 사용
-- 검색어 입력 시 띄어쓰기 단위로 슬라이스하여, 해당 채널 영상 태그와 유사도 측정
-- 유사도가 높은 것부터 내림차순 정렬<br>
-<img src="./public/assets/img/search-tab.png" alt="search-tab" width="300"/><br>
-- 돋보기 클릭 시 입력창 생김
-- 검색어 입력 안하고 검색 시 alert 창
+  <br>
+  - 단어간 유사도 AI API 사용
+  - 검색어 입력 시 띄어쓰기 단위로 슬라이스하여, 해당 채널 영상 태그와 유사도 측정
+  - 유사도가 높은 것부터 내림차순 정렬<br>
+  <img src="./public/assets/img/search-tab.png" alt="search-tab" width="300"/><br>
+  - 돋보기 클릭 시 입력창 생김
+  - 검색어 입력 안하고 검색 시 alert 창
 
 ### 🚩 비디오(video)
 - 구독, 좋아요, 싫어요, 공유, 저장, 더보기 버튼 모달 구현
-<br>
+  <br>
   <img src="./public/assets/img/video-function.png" alt="video-function" width="300"/>
   <img src="./public/assets/img/video-function2.png" alt="video-function2" width="300"/>
-- 플레이리스트
-<br>
+  - 플레이리스트
+  <br>
   <img src="./public/assets/img/playlists.png" alt="playlists" width="300"/>
   - 채널 홈 탭과 채널 플레이리스트에서 넘어오는 페이지
   - 재생중인 비디오가 표시됨
+
 - 댓글
-<br>
+  <br>
   <img src="./public/assets/img/comment.png" alt="comment" width="300"/>
-    - 댓글, 대댓글 입력
-    - 좋아요, 싫어요, reply, cancel, Reply 버튼 구현
-    - 정렬 기능
-        - top comment: 좋아요순
-        - Newest first: 최신순
+  - 댓글, 대댓글 입력
+  - 좋아요, 싫어요, reply, cancel, Reply 버튼 구현
+  - 정렬 기능
+      - top comment: 좋아요순
+      - Newest first: 최신순<br>
+
 - 영상 리스트
-<br>
+  <br>
   <img src="./public/assets/img/video-ai.png" alt="video-ai" width="300"/>
   - 전체: API 영상순
   - 영상 추천: 현재 재생되고 있는 영상의 태그를 기반으로 전체 동영상 유사도 계산 후 내림차순
@@ -221,13 +223,13 @@
 
 ## 5. AI API 최적화 및 적용한 곳
 - API 호출 최적화
-    - 단어쌍 유사도 값 저장해서 호출 전 확인하고 재활용
-    - 동일한 단어는 API를 호출하지 않고 1값 주기
-    - 상위 2개 태그만 비교
+  - 단어쌍 유사도 값 저장해서 호출 전 확인하고 재활용
+  - 동일한 단어는 API를 호출하지 않고 1값 주기
+  - 상위 2개 태그만 비교
 
 - API 유사도 계산법: 유사도 평균 선정(average similarity)
-    - 유사도 합계 / 태그 수 * 검색어 수
-    - 태그 수와 검색어 수 차이에 대해 공정하게 비교 가능
+  - 유사도 합계 / 태그 수 * 검색어 수
+  - 태그 수와 검색어 수 차이에 대해 공정하게 비교 가능
 
 - 적용한 곳
 - 🚩 채널 서치 탭
