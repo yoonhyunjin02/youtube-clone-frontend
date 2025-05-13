@@ -128,29 +128,29 @@
   - 버튼
     - +creat, 알람, 프로필 모달 구현
     - 프로필 모달의 Appearance 버튼을 눌러 테마 토글 가능
-<br>
+
 - 네비게이션
 <br>
-  <img src="./public/assets/img/nav.png" alt="nav" width="300"/>
-    - 햄버거 버튼 토글 → 아이콘만
-    - 구독자 목록: 상단 3개(API), 나머지 더미데이터, 버튼 구현
-<br>
+  <img src="./public/assets/img/nav.png" alt="nav" width="300"/><br>
+  - 햄버거 버튼 토글 → 아이콘만
+  - 구독자 목록: 상단 3개(API), 나머지 더미데이터, 버튼 구현
+
 - 비디오 리스트
 <br>
-  <img src="./public/assets/img/move.png" alt="move" width="300"/>
-    - 썸네일에 마우스 올리면 재생
-    - 썸네일, 영상 제목, 조회수 및 시간 → 비디오 페이지로 이동
-    - 프로필, 채널 이름 → 채널 페이지 이동
+  <img src="./public/assets/img/move.png" alt="move" width="300"/><br>
+  - 썸네일에 마우스 올리면 재생
+  - 썸네일, 영상 제목, 조회수 및 시간 → 비디오 페이지로 이동
+  - 프로필, 채널 이름 → 채널 페이지 이동
 
 ### 🚩 홈(home)
 - topbar
 <br>
-  <img src="./public/assets/img/topbar.png" alt="topbar" width="300"/>
-  <img src="./public/assets/img/topbar-search.png" alt="topbar-search" width="300"/>
-    - 화면에서 길이 초과시 조건부 버튼 구현
-    - 검색 필터를 누르면 제목과 태그 기준으로 검색됨
-- 채널 프로필/배너 출력 / 채널별 영상 리스트 동적 렌더링
-- 구독 기능, show more 구독자 목록 확장 / 동적 정렬 구현
+  <img src="./public/assets/img/topbar.png" alt="topbar" width="200"/>
+  <img src="./public/assets/img/topbar-search.png" alt="topbar-search" width="200"/><br>
+  - 화면에서 길이 초과시 조건부 버튼 구현
+  - 검색 필터를 누르면 제목과 태그 기준으로 검색됨
+  - 채널 프로필/배너 출력 / 채널별 영상 리스트 동적 렌더링
+  - 구독 기능, show more 구독자 목록 확장 / 동적 정렬 구현
 
 ### 🚩 채널(channel)
 - 홈 탭
@@ -160,26 +160,31 @@
   - 인기동영상: 대표 영상 제외 조회순으로 정렬
   - 추천동영상: 대표 영상 제외 좋아요순으로 정렬
   - 화면에서 길이 초과시 조건부 버튼 구현
-  - play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동
+  - play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동<br>
+
 - 비디오 탭
-<br>
+
   <img src="./public/assets/img/video-tab.png" alt="video-tab" width="300"/>
-  - 해당 채널의 모든 영상 카드형으로 배치
+  - 해당 채널의 모든 영상 카드형으로 배치<br>
+
 - 팟캐스트 탭
 <br>
   <img src="./public/assets/img/podcasts-tab.png" alt="podcasts-tab" width="300"/>
-  - 팟캐스트 더미데이터 생성 후 구현
+  - 팟캐스트 더미데이터 생성 후 구현<br>
+
 - 플레이리스트 탭
 <br>
   <img src="./public/assets/img/playlists-tab.png" alt="playlists-tab" width="300"/>
   - 홈 탭에 있는 각각의 리스트들
-  - 썸네일 play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동
+  - 썸네일 play all 버튼 → 비디오 페이지 플레이리스트 화면으로 이동<br>
+
 - 포스트 탭
 <br>
   <img src="./public/assets/img/post-tab.png" alt="post-tab" width="300"/>
   - 팟캐스트 더미데이터 생성 후 구현
   - 프로필, 채널 이름 클릭 → 채널 페이지 홈 탭으로 이동
-  - 좋아요, 싫어요, read more, Show less 버튼 구현
+  - 좋아요, 싫어요, read more, Show less 버튼 구현<br>
+  
 - 서치 탭
   - 단어간 유사도 AI API 사용
   - 검색어 입력 시 띄어쓰기 단위로 슬라이스하여, 해당 채널 영상 태그와 유사도 측정
