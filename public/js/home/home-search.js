@@ -2,26 +2,26 @@
 // html보다 나중에 js가 실행되도록 DOMContentLoaded 감쌈
 document.addEventListener("DOMContentLoaded", () => {
     // 검색창, 검색버튼, 영상리스트 불러오기
-    const searchInput = document.querySelector(".search-form input[type='search']");
-    const searchBtn = document.querySelector(".search-form button");
-    const videoGrid = document.querySelector(".video-grid");
-    const searchResult = document.querySelector(".search-result");
+    const searchInput = document.querySelector(".search-form input[type='search']"); 
+    const searchBtn = document.querySelector(".search-form button"); 
+    const videoGrid = document.querySelector(".video-grid"); 
+    const searchResult = document.querySelector(".search-result"); 
     const categoryBtns = document.querySelectorAll(".category-btn");  
     // 현재 페이지 url의 쿼리스트링 가져오기
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get("search");
+    const urlParams = new URLSearchParams(window.location.search); 
+    const searchQuery = urlParams.get("search"); 
 
     // 페이지 로드 시작하자마자 무조건 videoGrid 숨기기
-    if (videoGrid) videoGrid.style.display = "none";
+    if (videoGrid) videoGrid.style.display = "none"; 
     if (searchResult) searchResult.style.display = "none";
 
     //영상 가져오기 함수
     async function fetchVideos() {
-        try {const res = await fetch("https://www.techfree-oreumi-api.ai.kr/video/getVideoList");
-            const data = await res.json();
+        try {const res = await fetch("https://www.techfree-oreumi-api.ai.kr/video/getVideoList"); 
+            const data = await res.json(); 
         
             // 영상 데이터 부르기
-            const videosWithChannel = await Promise.all(
+            const videosWithChannel = await Promise.all( 
                 data.map(async (video) => {
                     try {
                         const channelRes = await fetch(`https://www.techfree-oreumi-api.ai.kr/channel/getChannelInfo?id=${video.channel_id}`);
@@ -51,13 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //영상 리스트 불러오기 함수 생성
     function renderVideos(videos) {
-        videoGrid.style.display = "none";        // 홈 화면 숨기기
-        searchResult.style.display = "block";     // 검색 결과 보여주기
-        searchResult.innerHTML = "";              // 기존 검색결과 비우기
+        videoGrid.style.display = "none";       
+        searchResult.style.display = "block";    
+        searchResult.innerHTML = "";            
     
         videos.forEach(video => {
             const div = document.createElement("article");
-            div.className = "video-card"; // 검색 결과 전용 스타일
+            div.className = "video-card"; 
             div.innerHTML = `
                 <article class="search-item">
                     <a href="/video?id=${video.id}">
