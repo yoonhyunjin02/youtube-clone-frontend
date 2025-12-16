@@ -138,7 +138,7 @@
 
 - 비디오 리스트
   <br>
-  <img src="https://github.com/user-attachments/assets/a62a2ec4-cea2-4e25-acdc-af1eb4626105)" alt="move" width="300"/>
+  <img src="https://github.com/user-attachments/assets/a62a2ec4-cea2-4e25-acdc-af1eb4626105" alt="move" width="300"/>
   - 썸네일에 마우스 올리면 재생
   - 썸네일, 영상 제목, 조회수 및 시간 → 비디오 페이지로 이동
   - 프로필, 채널 이름 → 채널 페이지 이동
