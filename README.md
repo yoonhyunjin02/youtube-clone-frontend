@@ -30,13 +30,13 @@
   - 부트캠프에서 처음으로 진행하는 프로젝트 + 1팀
   - 이번 프로젝트를 통해 초보를 탈출하자는 목표를 담고 있다!
 - 📚 [Notion](https://chain-winter-af2.notion.site/1dc2233de693802780c2d36dd66faaa1?pvs=4)
-- 📬[배포](https://youtube-clone-frontend-9hhj.onrender.com/)
+- 📬[배포](https://youtube-clone-frontend-9hhj.onrender.com/) 중단됨
   - Render에 배포
   - AI APIkey는 보안을 위해 코드에 추가하지 않고 따로 API 키 등록
   <br>
     <img src="https://github.com/user-attachments/assets/088934f1-c9b2-4a7f-9c58-57be67e5d00c" alt="apikey" width="300"/>
 - 📺[시연 영상](https://youtu.be/sWw8Yp1vN-E)
-- 📢[발표 자료](https://docs.google.com/presentation/d/1Y4zZWE8r1-sE7PlCJraJKmTGHiZ1D-bW/edit?usp=drive_link&ouid=107771278135945552523&rtpof=true&sd=true)
+- 📢[발표 자료](https://drive.google.com/file/d/1ISQx8JrfI11iLVJ8Xo-yBWblmuKz8qJA/view?usp=sharing)
 ---
 
 ## 2. 팀원 소개 및 역할
