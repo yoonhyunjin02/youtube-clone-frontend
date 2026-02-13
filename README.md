@@ -2,7 +2,7 @@
   <h1><img src="./public/assets/logos/youtubelogo.png" width="120px" style="vertical-align: middle; margin-right: 3px;"> Clone Frontend</h1>
 </div>
 
-<summary><h1>📍 목차</h1></summary>
+<h1>📍 목차</h1>
 
 1. [프로젝트 소개](#1-프로젝트-소개)  
 2. [팀원 소개 및 역할](#2-팀원-소개-및-역할)  
@@ -105,7 +105,8 @@
     - `/video/getVideoInfo` : 영상 정보 반환  
     - `/video/getVideoList` : 전체 영상 목록 반환
 
-- 사용한 API: [어휘 간 유사도 분석 API](https://aiopen.etri.re.kr/guide/WordRel)
+- 사용한 API: [어휘 간 유사도 분석 API](https://aiopen.etri.re.kr/guide/WordRel) 해당 API 종료됨
+  - [어휘 간 유사도 분석 API 노션 페이지 참고](https://www.notion.so/AI-1e52233de69380ef94a5c220c2699354?source=copy_link)
 
 ## 4. 페이지 주요 기능
 
